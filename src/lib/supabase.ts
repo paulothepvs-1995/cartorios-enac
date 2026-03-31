@@ -11,12 +11,12 @@ export interface QuestionEntry {
 export interface StudyData {
   id?: string;
   discipline_hours: Record<string, number>;
-  // weekly_hours: { [weekKey: string]: { [discipline: string]: number } }
   weekly_hours: Record<string, Record<string, number>>;
   questions_resolved: number;
   question_entries: QuestionEntry[];
   simulados: Simulado[];
   legislation_progress: Record<string, number>;
+  completed_tasks: Record<string, boolean>; // "trilha_id:task_id" -> true
   updated_at?: string;
 }
 
@@ -44,6 +44,7 @@ export async function loadData(): Promise<StudyData | null> {
     question_entries: data.question_entries || [],
     simulados: data.simulados || [],
     legislation_progress: data.legislation_progress || {},
+    completed_tasks: data.completed_tasks || {},
     updated_at: data.updated_at,
   };
 }
@@ -59,6 +60,7 @@ export async function saveData(studyData: StudyData): Promise<void> {
       question_entries: studyData.question_entries,
       simulados: studyData.simulados,
       legislation_progress: studyData.legislation_progress,
+      completed_tasks: studyData.completed_tasks,
       updated_at: new Date().toISOString(),
     });
 

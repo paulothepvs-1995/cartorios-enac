@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWeekStartDate } from "@/lib/plan";
 import { loadData, saveData, type StudyData, type QuestionEntry } from "@/lib/supabase";
 import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
+import { TRILHAS, type Trilha } from "@/lib/trilhas";
 
 const defaultData = (): StudyData => ({
   discipline_hours: {},
@@ -12,6 +13,7 @@ const defaultData = (): StudyData => ({
   question_entries: [],
   simulados: [],
   legislation_progress: {},
+  completed_tasks: {},
 });
 
 export default function App() {
@@ -102,7 +104,7 @@ export default function App() {
       {/* TABS */}
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
         <div style={{ display: "flex", gap: 4, padding: "16px 0 0", borderBottom: "1px solid #e2e8f0", overflowX: "auto" }}>
-          {["dashboard", "disciplinas", "questões", "legislação", "simulados"].map((t) => (
+          {["dashboard", "disciplinas", "questões", "legislação", "simulados", "trilhas"].map((t) => (
             <button key={t} onClick={() => setTab(t)} style={{
               padding: "10px 16px", background: tab === t ? "rgba(99,102,241,0.1)" : "transparent", border: "none",
               borderBottom: tab === t ? "2px solid #6366f1" : "2px solid transparent",
@@ -119,6 +121,7 @@ export default function App() {
         {tab === "questões" && <QuestoesTab data={data} />}
         {tab === "legislação" && <Legislacao data={data} save={save} />}
         {tab === "simulados" && <Simulados data={data} onLogSimulado={() => setSimModal(true)} />}
+        {tab === "trilhas" && <TrilhasTab data={data} save={save} />}
       </div>
 
       {logModal && <LogModal data={data} save={save} onClose={() => setLogModal(false)} />}
@@ -615,6 +618,105 @@ function SimModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
           <button onClick={handleSave} style={{ flex: 1, padding: "10px", background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 8, color: "white", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Salvar</button>
         </div>
       </div>
+    </div>
+  );
+}
+
+/* ─── TRILHAS TAB ─── */
+function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
+  const [selectedTrilha, setSelectedTrilha] = useState(0);
+  const trilha = TRILHAS[selectedTrilha];
+
+  const completedCount = useMemo(() => {
+    if (!trilha) return 0;
+    return trilha.days.reduce((acc, day) =>
+      acc + day.tasks.filter(t => data.completed_tasks[`${trilha.id}:${t.id}`]).length, 0);
+  }, [trilha, data.completed_tasks]);
+
+  const totalTasks = trilha ? trilha.days.reduce((a, d) => a + d.tasks.length, 0) : 0;
+
+  const toggleTask = async (taskId: number) => {
+    const key = `${trilha.id}:${taskId}`;
+    const newCompleted = { ...data.completed_tasks };
+    if (newCompleted[key]) {
+      delete newCompleted[key];
+    } else {
+      newCompleted[key] = true;
+    }
+    await save({ ...data, completed_tasks: newCompleted });
+  };
+
+  if (!trilha) return null;
+
+  return (
+    <div>
+      {/* Trilha selector */}
+      <div style={{ display: "flex", gap: 6, marginBottom: 16, overflowX: "auto", paddingBottom: 4 }}>
+        {TRILHAS.map((t, i) => {
+          const tTotal = t.days.reduce((a, d) => a + d.tasks.length, 0);
+          const tDone = t.days.reduce((a, d) => a + d.tasks.filter(tk => data.completed_tasks[`${t.id}:${tk.id}`]).length, 0);
+          const isDone = tDone === tTotal;
+          return (
+            <button key={t.id} onClick={() => setSelectedTrilha(i)} style={{
+              padding: "8px 14px", borderRadius: 8, border: "none", cursor: "pointer", fontSize: 12, fontWeight: 600,
+              fontFamily: "'JetBrains Mono', monospace", whiteSpace: "nowrap",
+              background: selectedTrilha === i ? "#4338ca" : isDone ? "#dcfce7" : "white",
+              color: selectedTrilha === i ? "white" : isDone ? "#059669" : "#64748b",
+              boxShadow: selectedTrilha === i ? "0 2px 8px rgba(67,56,202,0.3)" : "0 1px 2px rgba(0,0,0,0.05)",
+            }}>
+              {t.id} {isDone ? "✓" : `${tDone}/${tTotal}`}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Progress */}
+      <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 16, marginBottom: 16, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
+          <span style={{ fontSize: 14, fontWeight: 600, color: "#334155" }}>{trilha.title}</span>
+          <span style={{ fontSize: 12, color: "#64748b", fontFamily: "'JetBrains Mono', monospace" }}>{completedCount}/{totalTasks} tarefas</span>
+        </div>
+        <div style={{ height: 6, background: "#e2e8f0", borderRadius: 3, overflow: "hidden" }}>
+          <div style={{ height: "100%", width: `${totalTasks > 0 ? (completedCount / totalTasks) * 100 : 0}%`, background: completedCount === totalTasks ? "#059669" : "#6366f1", borderRadius: 3, transition: "width 0.3s" }} />
+        </div>
+      </div>
+
+      {/* Days & Tasks */}
+      {trilha.days.map((day) => (
+        <div key={day.dayLabel} style={{ marginBottom: 16 }}>
+          <h4 style={{ fontSize: 12, fontWeight: 700, color: "#4338ca", textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'JetBrains Mono', monospace", marginBottom: 8 }}>{day.dayLabel}</h4>
+          <div style={{ display: "grid", gap: 6 }}>
+            {day.tasks.map((task) => {
+              const isDone = !!data.completed_tasks[`${trilha.id}:${task.id}`];
+              return (
+                <div key={task.id} style={{
+                  background: isDone ? "#f0fdf4" : "white", border: `1px solid ${isDone ? "#bbf7d0" : "#e2e8f0"}`,
+                  borderRadius: 10, padding: "12px 16px", boxShadow: "0 1px 2px rgba(0,0,0,0.03)",
+                  opacity: isDone ? 0.7 : 1, transition: "all 0.2s",
+                }}>
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+                    <button onClick={() => toggleTask(task.id)} style={{
+                      width: 22, height: 22, borderRadius: 6, border: isDone ? "none" : "2px solid #cbd5e1",
+                      background: isDone ? "#059669" : "white", cursor: "pointer", display: "flex",
+                      alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2,
+                      color: "white", fontSize: 12, fontWeight: 700,
+                    }}>{isDone ? "✓" : ""}</button>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 2 }}>
+                        <span style={{ fontSize: 10, padding: "1px 6px", borderRadius: 4, background: "rgba(99,102,241,0.1)", color: "#4338ca", fontWeight: 600, fontFamily: "'JetBrains Mono', monospace" }}>T{String(task.id).padStart(2, '0')}</span>
+                        <span style={{ fontSize: 11, color: "#6366f1", fontWeight: 600 }}>{task.discipline}</span>
+                      </div>
+                      <div style={{ fontSize: 13, fontWeight: 500, color: "#334155", textDecoration: isDone ? "line-through" : "none" }}>{task.title}</div>
+                      {task.description && <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4, lineHeight: 1.4 }}>{task.description.substring(0, 150)}{task.description.length > 150 ? "..." : ""}</div>}
+                      {task.link && <a href={task.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: 11, color: "#6366f1", textDecoration: "none", marginTop: 4, display: "inline-block" }}>Abrir no LDI &#8599;</a>}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
