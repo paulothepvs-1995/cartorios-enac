@@ -19,25 +19,25 @@ export interface Trilha {
 
 export const TRILHAS: Trilha[] = [
   {
-    "id": "00",
-    "title": "Trilha 00",
+    "id": "01",
+    "title": "Ciclo 01 — Fundamentos da Atividade Notarial e Registral",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
             "id": 1,
-            "discipline": "DIREITO ADMINISTRATIVO",
-            "title": "Estudo do capítulo 3.2",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Direito Administrativo Iniciando nossa Trilha de Direito Administrativo, estudaremos nesta tarefa os seguintes tópicos do capítulo: Regime Jurídico Administrativo. Princípios Informativos do Direito Administrativo:"
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Introdução ao Direito Notarial e Registral — Natureza Jurídica da Atividade",
+            "link": "",
+            "description": "Natureza jurídica da atividade (delegação estatal a particulares — função pública exercida em caráter privado). Memorizar: Art. 236 CF é o fundamento constitucional. Armadilha FGV: a atividade é estatal (poder delegante é a União), mas a outorga é pelo TJ do estado. Distinção entre titular e delegat"
           },
           {
             "id": 2,
-            "discipline": "Direito Administrativo",
-            "title": "Estudo do capítulo 3.3",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Direito Administrativo e Administração Pública Você vai estudar o ramo do Direito que organiza e disciplina a atuação da administração pública. Aqui, o foco é entender como o Estado funciona no dia a dia, com base em normas jurídicas."
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Dos Serviços Notariais e de Registros — Espécies e Atribuições",
+            "link": "",
+            "description": "Art. 5º — tabeliães de notas; Art. 6º — tabeliães e oficiais de protestos; Art. 7º — oficiais de registro de imóveis; Art. 8º — oficiais de RCPN; Art. 9º — oficiais de RTD; Art. 10 — oficiais de RCPJ. Armadilha FGV: confundir atribuições entre serventias (ex: certidão de nascimento é RCPN, não RI). "
           }
         ]
       },
@@ -46,17 +46,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 3,
-            "discipline": "DIREITO EMPRESARIAL",
-            "title": "Estudo dos capítulos 1, 2 e 3, tópicos “Introdução ao Direito Empresarial”, “Histórico e",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "Direito Empresarial Evolução” e “Empresa”. Daremos início ao estudo de Direito Empresarial para o seu concurso. Como é um curso regular para vários"
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Ingresso na Atividade — Concurso, Requisitos e Vacância",
+            "link": "",
+            "description": "Requisitos para ingresso (Art. 14 — não ter condenação criminal, aptidão física e mental, habilitação em concurso). Art. 15 — concurso público de provas e títulos. Art. 16 — prazo para preenchimento de vaga (6 meses). Armadilha FGV: Art. 14, §1º — nacionalidade brasileira exigida (nato ou naturaliza"
           },
           {
             "id": 4,
-            "discipline": "Direito Empresarial",
-            "title": "Estudo dos capítulos 4 e 5, tópicos “Empresário” e “Registro Empresarial”.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "Antes de iniciar o tópico Empresários, leia os artigos 3º a 5º, 179, 968 a 980 e 984 do CC e artigo 68 da LC Prossiga o estudo pelo tópico Empresários no material da aula. Aproveite as artes e tabelas do professor na explicação da matéria."
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Prepostos — Escreventes e Substitutos",
+            "link": "",
+            "description": "Art. 20 — os notários e oficiais de registro podem contratar escreventes e auxiliares. Art. 21 — o gerenciamento administrativo e financeiro é de responsabilidade exclusiva do titular. Distinção preposto vs. substituto (quem pratica atos vs. quem substitui o titular). Armadilha FGV: responsabilidade"
           }
         ]
       },
@@ -65,17 +65,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 5,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 2 do LDI, toda a teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Iniciaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI."
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Responsabilidade Civil e Criminal dos Notários e Registradores",
+            "link": "",
+            "description": "Art. 22 — notários e registradores responderão pelos danos que praticarem. §1º — prescrição (3 anos, art. 206, §3º, V do CC). Art. 23 — responsabilidade do substituto. Art. 24 — responsabilidade civil independe da criminal. Armadilha FGV: natureza da responsabilidade — objetiva ou subjetiva? (STF: s"
           },
           {
             "id": 6,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 3 do LDI, toda a teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI. O Poder Constituinte é aquele que cria a Constituição, cujo titular é o povo, que o exerce direta ou"
+            "discipline": "DIREITO CIVIL",
+            "title": "LINDB e Parte Geral do CC — Pessoas Naturais e Capacidade",
+            "link": "",
+            "description": "Vigência da lei (art. 1º LINDB — 45 dias, salvo disposição contrária). Capacidade civil — absolutamente incapaz (art. 3º CC: menores de 16) vs. relativamente incapaz (art. 4º CC). Emancipação (art. 5º CC). Armadilha FGV: A Lei 13.146/2015 (Estatuto da Pessoa com Deficiência) alterou os arts. 3º e 4º"
           }
         ]
       },
@@ -84,17 +84,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 7,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 4 do LDI, toda a teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI. Nesse capítulo 04 trataremos de Normas Constitucionais e Hermenêutica Constitucional."
+            "discipline": "DIREITO CONSTITUCIONAL",
+            "title": "Art. 236 CF + Organização do Estado aplicada à atividade notarial",
+            "link": "",
+            "description": "Art. 236 é o fundamento constitucional de toda a atividade — DECORAR literalmente cada parágrafo. Art. 22, XXV — competência privativa da União para legislar sobre registros públicos. Armadilha FGV: a lei que regulamenta é federal (Lei 8.935/94), mas a fiscalização é estadual (TJ). Art. 37 se aplica"
           },
           {
             "id": 8,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo da LINDB, subcapítulo 2; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Bem-vindo a nossa trilha regular de Direito Civil para os concursos ENAC II. Iniciaremos o estudo pela Lei de Introdução. Faça as marcações e anotações utilizando o LDI."
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Incompatibilidades e Impedimentos",
+            "link": "",
+            "description": "Art. 25 — impedimentos para exercício (situações pessoais que impedem a prática de atos específicos, ex: parentesco). Art. 26 — incompatibilidades (atividades que não podem ser acumuladas com a função notarial/registral). Art. 27 — vedações. Armadilha FGV: distinção entre impedimento (caso específic"
           }
         ]
       },
@@ -103,17 +103,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 9,
-            "discipline": "Direito Civil",
-            "title": "Estudo da Teoria Geral do Direito Civil, subcapítulo 3; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a Teoria Geral do Direito Civil. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/w3xev9 Leia a correção daquelas que errar ou ficar em dúvida. Marque os principais exercícios, aqueles difíceis ou"
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Princípios do Direito Notarial e Registral",
+            "link": "",
+            "description": "DECORAR todos os princípios e suas definições: publicidade (art. 1º Lei 6.015), autenticidade, segurança jurídica, eficácia (art. 1º Lei 8.935). Princípios registrais específicos: inscrição, prioridade (art. 186 LRP), especialidade (objetiva e subjetiva), legalidade/qualificação, continuidade (art. "
           },
           {
             "id": 10,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Introdução ao Direito Processual Civil, capítulo 2 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Iniciaremos a trilha de Direito Processual Civil para o ENAC. Como base para o nosso estudo, utilizaremos o Curso Direto ao Ponto."
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Direitos e Deveres dos Notários e Registradores",
+            "link": "",
+            "description": "Deveres: independência no exercício, sigilo, manutenção do arquivo, atendimento prioritário (idosos, deficientes, gestantes), conservação de livros. Direitos: exercer a delegação (art. 28), auferir emolumentos, organizar o trabalho. Armadilha FGV: o dever de sigilo não é absoluto (ex: requisição jud"
           }
         ]
       },
@@ -122,161 +122,10 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 11,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo da Jurisdição, capítulo 3 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Nesta tarefa estudaremos a Jurisdição. Faça as marcações e anotações utilizando o LDI. O primeiro tópico da aula explora as fases da evolução do direito. Observe que na fase primitiva o poder está fundado no princípio do parentesco, o direito e o usos e costumes não se diferenciavam. Lembre-se que"
-          },
-          {
-            "id": 12,
-            "discipline": "TEORIA GERAL DO DIREITO NOTARIAL E REGISTRAL",
-            "title": "Estudo dos tópicos: Direito Notarial e Registral, capítulo 2",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Teoria Geral do Direito Notarial e Registral Caros alunos, iniciaremos agora a trilha de estudo da Teoria Geral dos Atos Notariais para Cartórios para o ENAC. Como base para o nosso estudo, utilizaremos o Curso Direto ao Ponto."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 13,
-            "discipline": "Teoria Geral do Direito Notarial e Registral",
-            "title": "Estudo do tópico: Serviços Notariais e Registrais, capítulo 3",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Conforme a Lei nº 8.935/94, artigo 1º: Art. 1º Serviços notariais e de registro são os de organização técnica e administrativa destinados a garantir a publicidade, autenticidade, segurança e eficácia dos atos jurídicos."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "01",
-    "title": "Trilha 01",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 14,
             "discipline": "DIREITO CIVIL",
-            "title": "Estudo das Pessoas naturais, subcapítulo 4; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre as pessoas naturais. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/b0alg6"
-          },
-          {
-            "id": 15,
-            "discipline": "Direito Civil",
-            "title": "Estudo das Pessoas Jurídicas, subcapítulo 5; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre as Pessoas Jurídicas. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/iwwzjy Leia a correção daquelas que errar ou ficar em dúvida. Marque os principais exercícios, aqueles difíceis ou"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 16,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 5 do LDI, toda a teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI."
-          },
-          {
-            "id": 17,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 6 do LDI, até o tópico 6.3 Classificação Trialista.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI. Inicie o seu estudo pelo tópico que trata da Origem dos Direitos Fundamentais, não é um assunto"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 18,
-            "discipline": "DIREITO ADMINISTRATIVO",
-            "title": "Estudo do capítulo 4 – Organização da Administração Pública – PARTE 1",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Direito Administrativo Daremos início ao assunto Organização da Administração Pública, tema bastante importante para o nosso concurso."
-          },
-          {
-            "id": 19,
-            "discipline": "Direito Administrativo",
-            "title": "Estudo do capítulo 4 – Organização da Administração Pública – PARTE 2",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Seguindo o estudo para as OSCIPs, reiteramos a necessidade de saber diferenciar os dois tipos de organizações. Esse é, talvez, parte mais importante da matéria. Faça uma leitura deste item dando atenção aos objetivos delas e às proibições quanto a elas:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 20,
-            "discipline": "DIREITO EMPRESARIAL",
-            "title": "Estudo do capítulo 06, tópico “Estabelecimento Empresarial”.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "Direito Empresarial Em relação ao Estabelecimento Empresarial, grave a literalidade do art. 1142 do CC. A sua natureza jurídica trata-se de uma Universalidade de Fato. Porém, leia o quadro deste item para entender as divergências"
-          },
-          {
-            "id": 21,
-            "discipline": "Direito Empresarial",
-            "title": "Estudo dos capítulos 7, 8, 9 e 10, tópicos “Dos Prepostos, Do Gerente e Do Contabilista e",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "Outros Auxiliares”, “Escrituração Empresarial”, “Nome Empresarial” e “Comércio Eletrônico e Marco Legal das Startups”. Começando agora o estudo Dos Prepostos, Do Gerente e Do Contabilista e Outros Auxiliares, é"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 22,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Competência, capítulo 4 do Direto ao Ponto, de “Conceito de",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Competência” até o tópico “Critérios determinativos da competência”. Nesta tarefa estudaremos da Competência. Como o professor bem menciona, a cobrança inicial dos certames"
-          },
-          {
-            "id": 23,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo da Ação, capítulo 5 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Nesta tarefa estudaremos a Ação. Faça as marcações e anotações utilizando o LDI. Nesta tarefa, estudaremos o conceito de ação, a evolução histórica das teorias e sobre o momento de análise das condições da ação. Primeiramente, observe que a palavra ação pode ter várias acepções, sabia"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 24,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo do Processo, capítulo 6 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Nesta tarefa estudaremos o Processo. Faça as marcações e anotações utilizando o LDI. Antes de iniciar o capítulo sobre Processo, faça uma primeira (e breve) leitura dos arts. 70 ao 76 do Lembre-se que o processo é a forma por meio da qual a jurisdição é exercida, sua exteriorização. Trata-se do"
-          },
-          {
-            "id": 25,
-            "discipline": "TEORIA GERAL DOS ATOS NOTARIAIS E REGISTRAIS",
-            "title": "Estudo do tópico: 4. Ingresso na Atividade",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Teoria Geral do Direito Notarial e Registral O tópico é fundamental para a compreensão da atividade, e está ligado com o tópico de “Delegação” lá do Direito Administrativo. Se houver tempo, faça um estudo conjunto do tema, após a leitura do tópico de TGNR."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 26,
-            "discipline": "Teoria Geral do Direito Notarial e Registral",
-            "title": "Revisão da semana: Ao final, revise os seus próprios grifos feitos durante estas Tarefas e aproveite para",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Estudo do tópico: 5. Prepostos O titular é a pessoa que presta o concurso público de provas e títulos e recebe a delegação do Estado. O titular não pode transferir a sua delegação a outra pessoa. Ele pode contratar pessoas para lhe auxiliar na atividade,"
+            "title": "Pessoas Jurídicas e Negócio Jurídico — Visão Registral",
+            "link": "",
+            "description": "Classificação das PJs (direito público vs. privado — art. 40-44). Constituição de PJ: registro (art. 45 — começo da existência legal). DECORAR art. 104 (requisitos de validade do NJ: agente capaz, objeto lícito, forma prescrita). Art. 108 — escritura pública obrigatória para imóveis acima de 30 salá"
           }
         ]
       }
@@ -284,24 +133,24 @@ export const TRILHAS: Trilha[] = [
   },
   {
     "id": "02",
-    "title": "Trilha 02",
+    "title": "Ciclo 02 — Fiscalização, Infrações e Lei 6.015 — Disposições Gerais",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
-            "id": 27,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo dos Bens, subcapítulo 7; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre os Bens. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/jngtd0"
+            "id": 12,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Infrações Disciplinares e Penalidades",
+            "link": "",
+            "description": "Art. 31 — infrações sujeitas a penalidades: negligência, conduta atentatória. Art. 32 — penalidades: repreensão, multa, suspensão (90 dias), perda da delegação. Art. 34 — processo disciplinar (devido processo legal). Art. 35 — competência do Poder Judiciário para aplicar penalidades. Armadilha FGV: "
           },
           {
-            "id": 28,
-            "discipline": "Direito Civil",
-            "title": "Estudo do fato jurídico, subcapítulo 8; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre o fato jurídico, lendo do início do subcapítulo 8 até o final do tópico sobre “Fatos Ilícitos em Sentindo Amplo (Stricto Sensu)”. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/fect2z"
+            "id": 13,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Fiscalização pelo Poder Judiciário",
+            "link": "",
+            "description": "§1º do Art. 236 CF — a fiscalização é exercida pelo Poder Judiciário (TJ). Art. 37 — a corregedoria é o órgão fiscalizador. Art. 38 — competência do CNJ e da Corregedoria Nacional de Justiça. Armadilha FGV: quem fiscaliza é o TJ estadual (corregedoria), mas o CNJ tem competência supletiva/subsidiári"
           }
         ]
       },
@@ -309,18 +158,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 02",
         "tasks": [
           {
-            "id": 29,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 6 do LDI, do tópico 6.4 Classificação em Dimensões até o tópico",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1/?topic=6",
-            "description": "Direito Constitucional Conflito entre Direitos Fundamentais. Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC (2026.1). Como base para o"
+            "id": 14,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Extinção da Delegação",
+            "link": "",
+            "description": "Causas de extinção: morte, aposentadoria, renúncia, perda (sentença judicial), descumprimento de requisitos. Art. 39 — a delegação é personalíssima (intransferível e incomunicável). Armadilha FGV: serventia NÃO se herda (personalíssima). A aposentadoria é compulsória aos 75 anos (EC 88/2015 + LC 152"
           },
           {
-            "id": 30,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 6 do LDI, do tópico 6.7 Características até o tópico Tratados",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1/?topic=6",
-            "description": "Internacionais e Tribunal Penal Internacional. Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC (2026.1). Como base para o nosso estudo, utilizaremos o LDI."
+            "id": 15,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Lei 6.015/73 — Disposições Gerais (Título I)",
+            "link": "",
+            "description": "Art. 1º — os serviços concernentes aos Registros Públicos são os seguintes: (I) RCPN, (II) RCPJ, (III) RTD, (IV) RI. Art. 9º — sede, horário. Art. 10 — qualquer pessoa pode requerer certidão. Art. 13 — livros obrigatórios. Art. 16 — os oficiais e substitutos são civilmente responsáveis. Art. 198 — d"
           }
         ]
       },
@@ -328,18 +177,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 03",
         "tasks": [
           {
-            "id": 31,
-            "discipline": "DIREITO ADMINISTRATIVO",
-            "title": "Estudo do capítulo 5 - Entidades Paraestatais e Terceiro Setor.",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Direito Administrativo Olá, tudo bem? Vamos estudar hoje o assunto de: Entidades paraestatais e terceiro setor. Parcerias com organizações da sociedade civil (Lei nº 13.019/2014)."
+            "id": 16,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Competência Material e Territorial — Serventias",
+            "link": "",
+            "description": "Competência material — qual serventia pratica qual ato (tabelião de notas ≠ oficial de RI ≠ oficial de RCPN). Competência territorial — circunscrição. No RI: Art. 169 LRP — o registro deve ser feito no cartório da situação do imóvel (forum rei sitae). No RCPN: nascimento no local do parto ou da resi"
           },
           {
-            "id": 32,
-            "discipline": "Direito Administrativo",
-            "title": "Estudo do capítulo 6 (Atos e Poderes)",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Seguindo nosso roteiro de Direito Administrativo, estudaremos agora o importante assunto relacionado aos Poderes Administrativos. Passamos agora ao estudo do capítulo 6, que trata do importante tema relacionado aos Atos"
+            "id": 17,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Interinidade e Provimento 149/2023 — Aspectos Gerais",
+            "link": "",
+            "description": "O Provimento 149/2023 é o Código Nacional de Normas do Foro Extrajudicial. Estrutura: Parte Geral + Parte Especial. Interinidade — quem responde pela serventia quando o titular se afasta (substituto legal, interino designado pelo juiz). Armadilha FGV: interino NÃO é titular, é designado pelo juízo c"
           }
         ]
       },
@@ -347,68 +196,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 04",
         "tasks": [
           {
-            "id": 33,
-            "discipline": "DIREITO EMPRESARIAL",
-            "title": "Estudo do capítulo 12, do tópico “Teoria Geral do Direito Societário” ao “Teoria Maior”",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1/",
-            "description": "Direito Empresarial (pertencente ao tópico “Desconsideração da Personalidade Jurídica”), inclusive. Neste capítulo, vamos estudar a Teoria Geral do Direito Societário. Inicialmente, vale a pena você ler"
+            "id": 18,
+            "discipline": "DIREITO CIVIL",
+            "title": "Prescrição e Decadência — Foco Registral",
+            "link": "",
+            "description": "Distinção prescrição (pretensão, patrimonial, renunciável) vs. decadência (direito potestativo, pode ser legal ou convencional). DECORAR prazos: 3 anos para reparação civil (art. 206, §3º, V) — aplica-se à responsabilidade do notário. 10 anos para ação fundada em direito pessoal (art. 205). Armadilh"
           },
           {
-            "id": 34,
-            "discipline": "Direito Empresarial",
-            "title": "Estudo do capítulo 12, do tópico “Teoria Menor” (pertencente ao tópico “Desconsideração",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1/",
-            "description": "da Personalidade Jurídica”) ao “Operações Societárias”, inclusive. Vamos reiniciar o estudo lendo sobre a Teoria Menor, presente no CDC. Como já comentado na tarefa anterior, é importante você saber diferenciar a Teoria Menor da Teoria Maior."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 35,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo dos Deveres das Partes e Procuradores, capítulo 7 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1/",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos os Deveres das Partes e Procuradores. Faça as marcações e anotações utilizando o Saiba que parte é todo sujeito que participa da relação jurídica processual em contraditório defendendo"
-          },
-          {
-            "id": 36,
-            "discipline": "REGISTRO CIVIL DE PESSOAS NATURAIS",
-            "title": "Estudo do tópico completo \"Da Atividade”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1/",
-            "description": "Registro Civil das Pessoas Naturais Pessoal, daremos início agora ao estudo do Registro Civil de Pessoas Naturais para ENAC 2026, com base na ferramenta do LDI (Curso completo)"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 37,
-            "discipline": "Registro Civil das Pessoas Naturais",
-            "title": "Estudo do tópico completo \"Organização da Atividade Aplicável do Registro Civil",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1/",
-            "description": "das Pessoas Naturais” Essa temática prevista nesta tarefa é muito importante e merece atenção dobrada. O tema sobre a escrituração é de grande importância haja vista se tratar da forma como os atos públicos são"
-          },
-          {
-            "id": 38,
-            "discipline": "TEORIA GERAL DOS ATOS NOTARIAIS E REGISTRAIS",
-            "title": "Revisão da semana: Ao final, revise os seus próprios grifos feitos durante estas Tarefas e aproveite para",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Teoria Geral do Direito Notarial e Registral Estudo do tópico: Prepostos O titular é a pessoa que presta o concurso público de provas e títulos e recebe a delegação do Estado. O titular"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 39,
-            "discipline": "Teoria Geral do Direito Notarial e Registral",
-            "title": "Estudo do tópico: “Responsabilidade Civil e Criminal!",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/Sobre",
-            "description": "responsabilidade dos interinos, entenda quem são os interinos e como se dá sua designação, no LDI foi destacado as normas do Código Nacional de Normas (Provimento nº 176/24) que trata deste assunto, isso deve ser marcado devido a sua probabilidade de cobrança em prova. E o que acontece se o prazo de"
+            "id": 19,
+            "discipline": "DIREITO ADMINISTRATIVO",
+            "title": "Agentes Públicos — Notários e Registradores como Agentes Delegados",
+            "link": "",
+            "description": "Notários e registradores são agentes públicos? SIM — são particulares em colaboração com o Estado (agentes delegados). Consequência: se submetem à LIA (Art. 2º — todo aquele que exerce função pública). Princípios do art. 37 CF se aplicam por analogia. Armadilha FGV: notários NÃO são servidores públi"
           }
         ]
       }
@@ -416,24 +215,24 @@ export const TRILHAS: Trilha[] = [
   },
   {
     "id": "03",
-    "title": "Trilha 03",
+    "title": "Ciclo 03 — Lei 8.935 Completa + Emolumentos + CC Obrigações",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
-            "id": 40,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo das nulidades, subcapítulo 8, integralmente.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre as nulidades, lendo a partir do tópico “Teoria das Invalidades” até o final do subcapítulo. Faça as marcações e anotações utilizando o LDI."
+            "id": 20,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Seguridade Social dos Notários e Registradores",
+            "link": "",
+            "description": "Notários e registradores são segurados obrigatórios do RGPS (Regime Geral) como contribuintes individuais, NÃO do RPPS. Armadilha FGV: notário não tem aposentadoria por tempo de serviço pelo regime estatutário."
           },
           {
-            "id": 41,
-            "discipline": "Direito Civil",
-            "title": "Estudo da caducidade: prescrição e decadência e provas, subcapítulos 9 e 10; e resolução",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "de questões. Nesta tarefa veremos a teoria sobre a caducidade e a provas. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões dos seguintes cadernos do SQ: http://questo.es/ykd6zq e"
+            "id": 21,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Emolumentos — Lei 10.169/2000 + Natureza Jurídica",
+            "link": "",
+            "description": "Natureza jurídica dos emolumentos — taxa sui generis (ADI 1.378-5). Art. 1º — emolumentos são fixados por lei estadual. Art. 2º — para fixação, observar natureza pública e caráter social. Art. 3º — gratuidade (Lei 9.534/97 — registros de nascimento e óbito são gratuitos). Armadilha FGV: emolumentos "
           }
         ]
       },
@@ -441,18 +240,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 02",
         "tasks": [
           {
-            "id": 42,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 7 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC (2026.1). Como base para o nosso estudo, utilizaremos o LDI."
+            "id": 22,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Acervo das Serventias + Organização Digital",
+            "link": "",
+            "description": "O acervo pertence ao Estado (art. 46 Lei 8.935). O titular é depositário. Na vacância, o acervo deve ser entregue ao substituto/interino. Organização digital: e-Notariado, SREI, SERP. Armadilha FGV: o notário NÃO é dono do acervo; é fiel depositário. Destruição de acervo = crime."
           },
           {
-            "id": 43,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 8 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC (2026.1). Como base para o nosso estudo, utilizaremos o LDI. O objeto do capítulo são as Ações Constitucionais. Esse tema possui importância alta nas provas para"
+            "id": 23,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Atribuições e Competências dos Oficiais de Registros",
+            "link": "",
+            "description": "Revisão consolidada de todas as atribuições por serventia. Art. 12 LRP — serviço de registro é atividade exercida por oficiais privativos. Armadilha FGV: competência para certidão é do próprio oficial (qualquer pessoa pode requerer); não precisa de autorização judicial."
           }
         ]
       },
@@ -460,18 +259,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 03",
         "tasks": [
           {
-            "id": 44,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 2, subcapítulos “Introdução ao Estudo do Direito Penal” a “Velocidades",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal do Direito Penal”, inclusive. Daremos início agora ao estudo do Direito Penal para o ENAC 2026.1."
+            "id": 24,
+            "discipline": "DIREITO CIVIL",
+            "title": "Obrigações — Modalidades e Transmissão",
+            "link": "",
+            "description": "Obrigações de dar coisa certa (art. 233-242) — relevância registral: tradição de imóvel se faz pelo registro (art. 1.245 CC). Cessão de crédito (art. 286-298) — registro no RTD para efeito contra terceiros. Armadilha FGV: distinção entre tradição (móvel) e registro (imóvel) como modo de aquisição."
           },
           {
-            "id": 45,
-            "discipline": "Direito Penal",
-            "title": "Estudo do capítulo 2, subcapítulo “A Lei Penal e o Tempo” ao final da teoria; e resolução de",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "A Lei Penal no Tempo despenca em provas, então muita atenção no estudo! Compreenda o conflito de leis penais no tempo, observando que: a teoria do Tempo do Crime adotada no Brasil é a Teoria da Atividade."
+            "id": 25,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Apostilamento e Legalização de Documentos",
+            "link": "",
+            "description": "O que é apostilamento: certificação de autenticidade de documentos para uso internacional. Quem apostila no Brasil: cartórios de registro civil, de notas e de RTD. Armadilha FGV: apostilamento ≠ tradução juramentada. A apostila substitui a legalização consular."
           }
         ]
       },
@@ -479,68 +278,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 04",
         "tasks": [
           {
-            "id": 46,
-            "discipline": "DIREITO EMPRESARIAL",
-            "title": "Estudo do capítulo 12, toda a teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "Direito Empresarial Agora, veremos o tema Sociedades Não Personificadas no Código Civil. Iniciaremos pelo subtópico Sociedades em Comum:"
+            "id": 26,
+            "discipline": "DIREITO CONSTITUCIONAL",
+            "title": "Direitos Fundamentais aplicados à atividade notarial — Art. 5º CF",
+            "link": "",
+            "description": "Art. 5º, LXXVI — gratuidade de registro de nascimento e certidão de óbito para os reconhecidamente pobres. Conexão direta com emolumentos e gratuidade nos cartórios. Art. 5º, XXXIII — direito de informação/publicidade registral. Armadilha FGV: a gratuidade do LXXVI é para reconhecidamente pobres; a "
           },
           {
-            "id": 47,
-            "discipline": "Direito Empresarial",
-            "title": "Estudo do capítulo 13, do tópico “Introdução” ao “Sociedade em Comandita Simples”,",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "Na última tarefa, estudamos as sociedades não personificadas. Agora, vamos começar a estudar as sociedades personificadas no Código Civil. As Sociedades Simples são todas as empresas que não se enquadram no conceito de empresa."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 48,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo das Despesas Processuais, capítulo 8 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos as Despesas Processuais. Faça as marcações e anotações utilizando o LDI. Sobre as despesas processuais, o professor divide a explicação dos dispositivos legais conforme a"
-          },
-          {
-            "id": 49,
-            "discipline": "REGISTRO CIVIL DAS PESSOAS NATURAIS",
-            "title": "Estudo do tópico completo \" Dos Atos de Registro Civil das Pessoas Naturais”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1",
-            "description": "Registro Civil das Pessoas Naturais Respirem fundo e vamos lá! Temos que ter o conceito do RCPN em mente: “As funções do RCPN não se esgotam na lei, transcendem o"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 50,
-            "discipline": "Registro Civil das Pessoas Naturais",
-            "title": "Estudo do tópico completo \" Livros e Atos do Registro Civil das Pessoas Naturais”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1",
-            "description": "No primeiro momento a professora explicará a diferença entre: REGISTRO > AVERBAÇÃO > ANOTAÇÃO Na sequencia, entenderemos a ordem do serviço, os professores colocam como pontos importantes a serem"
-          },
-          {
-            "id": 51,
-            "discipline": "TEORIA GERAL DOS ATOS NOTARIAIS",
-            "title": "Estudo do tópico: Princípios de Direito Notarial e Registral",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Teoria Geral do Direito Notarial e Registral Este tópico é vital para a resolução de questões em todas as fases, inclusive auxiliando na interpretação de temas. Então concentre-se em entender as ideias principais que diferenciam cada um dos princípios e sua"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 52,
-            "discipline": "Teoria Geral do Direito Notarial e Registral",
-            "title": "Estudo do tópico: “Direitos e Deveres dos Notários”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-",
-            "description": "enac-2026-1/ No tópico sobre Deontologia deve-se atentar para os seguintes pontos:  Quais os direitos dos Notários e Registradores? (Decore! São poucos e têm cara de prova!)"
+            "id": 27,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Conciliação, Mediação e LGPD nos Cartórios",
+            "link": "",
+            "description": "Cartórios podem realizar conciliação e mediação extrajudiciais (Provimento CNJ). LGPD: cartórios tratam dados pessoais → devem observar princípios (finalidade, necessidade, adequação). Art. 23 LGPD — tratamento pelo poder público. Armadilha FGV: a publicidade registral CONVIVE com a LGPD — há tensão"
           }
         ]
       }
@@ -548,24 +297,24 @@ export const TRILHAS: Trilha[] = [
   },
   {
     "id": "04",
-    "title": "Trilha 04",
+    "title": "Ciclo 04 — Tabelionato de Notas — Parte 1",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
-            "id": 53,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo do Direito da Personalidade, subcapítulos 6; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre o Direito da Personalidade. Faça as marcações e anotações utilizando o Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/d39ycn"
+            "id": 28,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Tabelionato de Notas — Serviço Notarial e Princípios",
+            "link": "",
+            "description": "Princípios expressos: fé pública, imparcialidade, legalidade, publicidade. Princípios implícitos: imediatidade, personalidade, rogação. O tabelião de notas é responsável pela lavratura de escrituras públicas, procurações, testamentos públicos, atas notariais. Armadilha FGV: a fé pública do tabelião "
           },
           {
-            "id": 54,
-            "discipline": "Direito Civil",
-            "title": "Estudo da teoria geral das obrigações, subcapítulo 11.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre a teoria geral das obrigações, estudando do início do subcapítulo 11 até o final do tópico 11.2.6. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/od6vqm"
+            "id": 29,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Ato Notarial — Requisitos e Classificação",
+            "link": "",
+            "description": "Classificação: atos protocolares (lavrados em livros — escrituras, testamentos, atas) vs. extraprotocolares (autenticações, reconhecimento de firma). Requisitos de validade: capacidade das partes, objeto lícito, forma legal. Armadilha FGV: autenticação e reconhecimento de firma NÃO são atos protocol"
           }
         ]
       },
@@ -573,18 +322,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 02",
         "tasks": [
           {
-            "id": 55,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 9 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1/?topic=9",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC (2026.1). Como base para o nosso estudo, utilizaremos o LDI."
+            "id": 30,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Escritura Pública — Requisitos e Formalidades",
+            "link": "",
+            "description": "Art. 215 CC — DECORAR todos os requisitos da escritura pública: (I) data e local, (II) nome e qualificação das partes, (III) manifestação de vontade, (IV) referência ao título, (V) valor do bem. Art. 108 — obrigatória para imóveis >30 salários mínimos. Lei 7.433, art. 1º — documentos necessários (RG"
           },
           {
-            "id": 56,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 10 do LDI, até o tópico Vedações Constitucionais (Inclusive).",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1/?topic=10",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC (2026.1). Como base para o nosso estudo, utilizaremos o LDI. Seguiremos com a Direitos Políticos."
+            "id": 31,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Escritura Pública de Compra e Venda",
+            "link": "",
+            "description": "Art. 481 — obrigações das partes. Art. 489 — nulo o contrato de compra e venda cujo preço é arbitrado por uma das partes. Art. 496 — anulável a venda de ascendente a descendente sem consentimento dos demais descendentes e do cônjuge. Art. 1.245 — a propriedade imobiliária se transfere pelo REGISTRO "
           }
         ]
       },
@@ -592,18 +341,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 03",
         "tasks": [
           {
-            "id": 57,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 3 (Imunidades e Conflito Aparente de Normas Penais); e resolução de",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal 25 questões. Nesta tarefa, você estudará as Imunidades e o Conflito Aparente das Normas Penais."
+            "id": 32,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Doação por Escritura Pública + Permuta",
+            "link": "",
+            "description": "Art. 541 — a doação de imóvel se faz por escritura pública (obrigatória, independente do valor). Art. 544 — doação de ascendente a descendente = antecipação de herança. Art. 548 — nula a doação de todos os bens. Art. 549 — nula se exceder legítima. Permuta: art. 533 — aplicam-se as regras da compra "
           },
           {
-            "id": 58,
-            "discipline": "Direito Penal",
-            "title": "Estudo do capítulo 4 (Imunidades e Conflito Aparente de Normas Penais); e resolução de",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "01 questão. Nesta tarefa, você vai estudar as Escolas Penais. Comece sua tarefa com a leitura do trecho inicial da aula que o ajudará a entender o histórico das Escolas Penais e seus pensadores."
+            "id": 33,
+            "discipline": "DIREITO CIVIL",
+            "title": "Direito das Obrigações — Adimplemento e Inadimplemento",
+            "link": "",
+            "description": "Pagamento (arts. 304-333) — quem paga, a quem se paga, objeto, prova, lugar, tempo. Consignação em pagamento (arts. 334-345). Novação (arts. 360-367). Compensação (arts. 368-380). Mora (arts. 394-401) — DECORAR art. 394 (mora do devedor) e art. 395 (efeitos). Armadilha FGV: consignação extrajudicial"
           }
         ]
       },
@@ -611,68 +360,11 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 04",
         "tasks": [
           {
-            "id": 59,
-            "discipline": "DIREITO EMPRESARIAL",
-            "title": "Estudo do capítulo 14, todo o tópico “Sociedades Limitadas”.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1/",
-            "description": "Direito Empresarial Iniciaremos nessa tarefa o maior tópico do capítulo: Sociedades Limitadas. O CC dedica do art. 1052 ao 1087 para abordar esse tipo de sociedade."
-          },
-          {
-            "id": 60,
-            "discipline": "Direito Empresarial",
-            "title": "Estudo do Capítulo 15 a 17, toda a teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1/",
-            "description": "Nesta tarefa, vamos ao estudo do tema Classificação das Companhias. Algumas dicas pontuais de estudo: De início saiba que cada acionista detém responsabilidade limitada ao montante investido nas ações"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 61,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo dos Honorários Advocatícios, capítulo 9 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1/",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos os Honorários Advocatícios. Faça as marcações e anotações utilizando o LDI. Inicialmente, saiba as diferenças entre o CPC/73 e CPC/2015."
-          },
-          {
-            "id": 62,
-            "discipline": "REGISTRO CIVIL DAS PESSOAS NATURAIS",
-            "title": "Estudo do tópico \" Livros e Atos do Registro Civil das Pessoas Naturais”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1/",
-            "description": "Registro Civil das Pessoas Naturais Nesta tarefa vamos aprofundar o estudo sobre a reprodução assistida. Comece pelas características existentes, os pontos mais importantes para recordarmos e estudarmos são que a existência de técnicas de"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 63,
-            "discipline": "Registro Civil das Pessoas Naturais",
-            "title": "Estudo do tópico \" Livros e Atos do Registro Civil das Pessoas Naturais”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1/",
-            "description": "Voltamos nosso estudo para outro ponto importantíssimo que envolve o assento do nascimento: O estabelecimento de filiação. Como determina o artigo 1.603 CC/2002 a filiação prova-se pela certidão do termo de nascimento registrada"
-          },
-          {
-            "id": 64,
-            "discipline": "TEORIA GERAL DOS ATOS NOTARIAIS",
-            "title": "Estudo do tópico: “Infrações Disciplinares”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Teoria Geral do Direito Notarial e Registral Observe atentamente o art. 31 da Lei dos Notários e Registradores. Revise os deveres descritos no art. 30 da LNR."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 65,
-            "discipline": "Teoria Geral do Direito Notarial e Registral",
-            "title": "Estudo do tópico: “Fiscalização pelo Poder Judiciário”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Procure entender como se dá a Fiscalização do Poder Judiciário acontece e a forma pela qual o Conselho Nacional de Justiça (CNJ) e os Tribunais locais regulamentam a fiscalização das serventias. Ao final, resolva às questões propostas."
+            "id": 34,
+            "discipline": "DIREITO ADMINISTRATIVO",
+            "title": "Improbidade Administrativa aplicada a Notários — Lei 8.429/92",
+            "link": "",
+            "description": "Art. 2º — notários e registradores se enquadram como agentes públicos para fins de LIA. Atos de improbidade: enriquecimento ilícito (art. 9), prejuízo ao erário (art. 10), violação de princípios (art. 11). A Lei 14.230/2021 eliminou a modalidade culposa (tudo agora é doloso). Armadilha FGV: após a L"
           }
         ]
       }
@@ -680,24 +372,24 @@ export const TRILHAS: Trilha[] = [
   },
   {
     "id": "05",
-    "title": "Trilha 05",
+    "title": "Ciclo 05 — Tabelionato de Notas — Parte 2 + Contratos",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
-            "id": 66,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo da teoria geral das obrigações, subcapítulo 11.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre a teoria geral das obrigações, estudando do tópico 11.2.7 até o final do subcapítulo 11. Faça as marcações e anotações utilizando o LDI."
+            "id": 35,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Escrituras de Separação, Divórcio e Inventário Extrajudiciais",
+            "link": "",
+            "description": "Requisitos para divórcio em cartório: consensual, sem filhos menores ou incapazes, assistência de advogado. Inventário extrajudicial: consenso, maiores e capazes, advogado. DECORAR: Lei 11.441/2007 autorizou. Res. CNJ 35/2007 regulamentou. Armadilha FGV: se houver testamento, pode ou não fazer inven"
           },
           {
-            "id": 67,
-            "discipline": "Direito Civil",
-            "title": "Estudo da Transmissão e Adimplemento das Obrigações, subcapítulos 12 e 13; e resolução",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "de questões. Nesta tarefa veremos a teoria sobre a Transmissão e Adimplemento das Obrigações. Faça as marcações e anotações utilizando o LDI."
+            "id": 36,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Testamentos Públicos em Cartório",
+            "link": "",
+            "description": "Art. 1.864 — testamento público: ditado pelo testador ao tabelião, na presença de 2 testemunhas. Art. 1.865 — testador não pode assinar: a rogo, indicando quem assina. Art. 1.867 — pode ser lavrado em qualquer tabelionato. Armadilha FGV: testamento público exige 2 testemunhas (art. 1.864, II); a aus"
           }
         ]
       },
@@ -705,18 +397,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 02",
         "tasks": [
           {
-            "id": 68,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 11 do LDI, até o tópico Vedações Constitucionais (Inclusive).",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1/?topic=11",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC (2026.1). Como base para o nosso estudo, utilizaremos o LDI."
+            "id": 37,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Atas Notariais e Procurações Públicas",
+            "link": "",
+            "description": "Ata notarial — art. 384 CPC: a existência e o modo de existir de algum fato pode ser atestada por ata lavrada por tabelião. Serve como prova pré-constituída. Procuração pública: obrigatória quando a lei exigir (art. 657 CC). Armadilha FGV: ata notarial NÃO é declaração de vontade (como escritura), é"
           },
           {
-            "id": 69,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 12 do LDI, até o tópico Vedações Constitucionais (Inclusive).",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1/?topic=12",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC (2026.1). Como base para o nosso estudo, utilizaremos o LDI. Nesta aula, estudaremos Organização do Estado, assunte bem significativo para provas de Delgado,"
+            "id": 38,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Carta de Sentença Notarial",
+            "link": "",
+            "description": "Instrumento pelo qual o tabelião certifica o teor de decisão judicial para fins de registro. Quando é utilizada e como se relaciona com o mandado judicial."
           }
         ]
       },
@@ -724,18 +416,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 03",
         "tasks": [
           {
-            "id": 70,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 5 (Teoria Geral do Crime: Fato Típico); e resolução de 25 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal Hoje, você estudará o Fato Típico. Inicialmente, no tópico Conceito de Crime, compreenda que crime é uma das espécies do gênero infração"
+            "id": 39,
+            "discipline": "DIREITO CIVIL",
+            "title": "Teoria Geral dos Contratos — Foco Registral",
+            "link": "",
+            "description": "Art. 421 — função social do contrato. Art. 421-A (Lei 13.874) — contratos paritários. Art. 422 — boa-fé objetiva. Art. 462 — contrato preliminar (compromisso de compra e venda — altíssima relevância registral). Art. 463 — obrigação de celebrar contrato definitivo. Armadilha FGV: compromisso de compr"
           },
           {
-            "id": 71,
-            "discipline": "Direito Penal",
-            "title": "Estudo do capítulo 6 (Teoria do Crime: Ilicitude); e resolução de 03 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Nesta tarefa, você estudará a Teoria do Crime - Ilicitude. Inicialmente, leia o Conceito de Ilicitude e o Injusto Penal. A ilicitude ou a antijuridicidade é a análise de conformidade ou não com o ordenamento jurídico. Ou"
+            "id": 40,
+            "discipline": "DIREITO CIVIL",
+            "title": "Contratos em Espécie com relevância registral",
+            "link": "",
+            "description": "Locação registrada no RI — efeito de direito real (oponível a terceiros, art. 576 CC + art. 8º Lei 8.245/91). Compromisso de compra e venda — registrado = direito real de aquisição (art. 1.417-1.418). Armadilha FGV: locação SÓ vincula terceiros se registrada no RI (art. 576 CC)."
           }
         ]
       },
@@ -743,68 +435,11 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 04",
         "tasks": [
           {
-            "id": 72,
-            "discipline": "DIREITO EMPRESARIAL",
-            "title": "Estudo do Capítulo 17, 18 e 19, toda a teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1/",
-            "description": "Direito Empresarial Nesta tarefa, vamos ao estudo do tema Capital das Sociedades Anônimas, que, segundo Modesto Carvalhosa, é o valor das entradas que os acionistas declaram vinculado aos negócios que constituem o objeto"
-          },
-          {
-            "id": 73,
-            "discipline": "Direito Empresarial",
-            "title": "Estudo dos Capítulos 20 a 24, toda a teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1/",
-            "description": "Nesta parte, vamos ao estudo dos Órgãos Societários, Administradores, Reservas, Outras Operações Societárias Na Lei Nº 6.404/1976, Sociedade Anônima de Futebol – S.A.F. (Inovação Lei Nº 14.193/2021)."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 74,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Gratuidade de Justiça, capítulo 10 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1/",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos a Gratuidade de Justiça. Faça as marcações e anotações utilizando o LDI. É essencial que você saiba conceito de Gratuidade de Justiça, Assistência Jurídica e Assistência Judiciária, e"
-          },
-          {
-            "id": 75,
-            "discipline": "REGISTRO CIVIL DAS PESSOAS NATURAIS",
-            "title": "Estudo parcial do tópico “Casamentos”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1/",
-            "description": "Registro Civil das Pessoas Naturais Vamos dividir nosso estudo sobre o casamento em dois pontos. Nesse primeiro iremos ler e entender os tópicos “A família é a Base da Sociedade” e “A Habilitação de para o Casamento”."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 76,
-            "discipline": "Registro Civil das Pessoas Naturais",
-            "title": "Estudo do tópico “Casamentos”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1/",
-            "description": "Vamos dividir nosso estudo sobre o casamento em dois pontos. Nesse primeiro iremos ler e entender os tópicos “A celebração civil do casamento” “O registro do casamento” “averbações no registro de Casamento”. A celebração do casamento civil no Brasil é um ato formal e solene, regido pelos artigos 1.5"
-          },
-          {
-            "id": 77,
-            "discipline": "TEORIA GERAL DO DIREITO NOTARIAL E REGISTRAL",
-            "title": "Estudo do tópico: “Extinção das Delegações”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-",
-            "description": "Teoria Geral do Direito Notarial e Registral enac-2026-1/ Durante os seus estudos, priorize os seguintes itens:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 78,
-            "discipline": "Teoria Geral do Direito Notarial e Registral",
-            "title": "Estudo do tópico: “Competência Material”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-",
-            "description": "enac-2026-1/ Perceba que nem todas as especialidades estão vinculadas à competência territorial e dê especial atenção aos atos notariais que tem o processo informatizado de escrituração. Neles existem regras de flexibilização da"
+            "id": 41,
+            "discipline": "DIREITO CONSTITUCIONAL",
+            "title": "Poder Judiciário e Serventias — Art. 92-126 CF",
+            "link": "",
+            "description": "CNJ — composição (art. 103-B), competência para fiscalizar serventias (art. 103-B, §4º, III — receber reclamações contra serventias). STF — decisões sobre natureza jurídica da atividade notarial (ADI 3.643, ADI 1.378). Armadilha FGV: o CNJ NÃO exerce jurisdição — é órgão administrativo. Não pode anu"
           }
         ]
       }
@@ -812,24 +447,413 @@ export const TRILHAS: Trilha[] = [
   },
   {
     "id": "06",
-    "title": "Trilha 06",
+    "title": "Ciclo 06 — Tabelionato de Protestos + Direito Tributário Registral",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 42,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Protesto Notarial — Conceito, Princípios e Função",
+            "link": "",
+            "description": "Art. 1º Lei 9.492 — protesto é o ato formal e solene pelo qual se prova a inadimplência e o descumprimento de obrigação. Art. 3º — competência do tabelião de protesto. Princípios: territorialidade, temporariedade, unicidade, legalidade. Armadilha FGV: protesto NÃO é executivo — é ato de prova, tem f"
+          },
+          {
+            "id": 43,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Protesto — Procedimento (Apresentação, Intimação, Lavratura)",
+            "link": "",
+            "description": "Art. 5º — apresentação do título. Art. 9º — prazo de 3 dias úteis para pagamento ou manifestação. Art. 12 — protocolo. Art. 14 — intimação. Art. 19 — pagamento e efeitos. Art. 20 — lavratura e registro. Armadilha FGV: prazo de 3 dias para pagamento é ÚTIL (art. 9º), não corrido. Protesto de CDA (cer"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 44,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Protesto — Cancelamento, Sustação e Desistência",
+            "link": "",
+            "description": "Art. 26 — cancelamento mediante apresentação de documento de quitação ou autorização judicial. Art. 27 — prazo de 5 anos para retirada do protesto dos índices. Sustação judicial: medida cautelar que impede a lavratura. Desistência: o credor pode desistir antes da lavratura. Armadilha FGV: cancelamen"
+          },
+          {
+            "id": 45,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Protesto — Qualificação, Competência e CENPROT",
+            "link": "",
+            "description": "Competência territorial: protesto no domicílio do devedor (regra). Qualificação: o tabelião examina a regularidade formal do título. CENPROT — Central Nacional de Protestos: base de dados eletrônica que unifica informações."
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 46,
+            "discipline": "DIREITO TRIBUTÁRIO",
+            "title": "ITBI — Imposto sobre Transmissão de Bens Imóveis",
+            "link": "",
+            "description": "ITBI — competência do município da situação do imóvel. Fato gerador: transmissão inter vivos de bens imóveis (art. 35 CTN). Base de cálculo: valor venal. IMUNIDADE: art. 156, §2º, I CF — não incide na incorporação ao patrimônio de PJ (salvo se atividade preponderante for compra/venda de imóveis). Te"
+          },
+          {
+            "id": 47,
+            "discipline": "DIREITO TRIBUTÁRIO",
+            "title": "ITCMD + ISS Notarial + Emolumentos como Taxa",
+            "link": "",
+            "description": "ITCMD — causa mortis e doação (competência estadual). ISS — incide sobre serviços notariais? Sim, lista anexa da LC 116/2003 inclui. Emolumentos como taxa — ADI 1.378 (natureza tributária). Armadilha FGV: ITBI é municipal (inter vivos), ITCMD é estadual (mortis causa/doação). O oficial de RI não pod"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 48,
+            "discipline": "DIREITO CIVIL",
+            "title": "Direitos Reais — Posse e Propriedade (Introdução)",
+            "link": "",
+            "description": "Distinção posse vs. propriedade (posse é fato, propriedade é direito). Art. 1.245 — propriedade imobiliária se adquire pelo REGISTRO. Art. 1.227 — direitos reais sobre imóveis constituídos ou transmitidos por atos entre vivos SÓ se adquirem com o registro no RI. Armadilha FGV: posse NÃO é direito re"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "title": "Ciclo 07 — RCPN (Nascimento, Casamento, Óbito) + CC Família",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 49,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RCPN — Organização, Livros e Atos",
+            "link": "",
+            "description": "Art. 29 — atos obrigatórios: nascimento, casamento, óbito. Art. 33 — livros obrigatórios: A (nascimento), B (casamento), B-Auxiliar (casamento religioso), C (óbito), C-Auxiliar (natimorto), D (proclamas), E (demais atos). DECORAR: cada livro e seu objeto."
+          },
+          {
+            "id": 50,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RCPN — Registro de Nascimento e Filiação",
+            "link": "",
+            "description": "Art. 50 — declaração de nascimento (prazo de 15 dias para o pai, 45 para a mãe). Art. 52 — elementos do registro (nome, filiação, naturalidade). Art. 1.597 CC — presunção de paternidade. Art. 1.609 — reconhecimento voluntário. Armadilha FGV: registro de nascimento é GRATUITO para todos (Lei 9.534/97"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 51,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RCPN — Casamento e Habilitação",
+            "link": "",
+            "description": "Habilitação para casamento — art. 1.525 CC (requerimento ao oficial de RCPN). Proclamas — art. 1.527. Impedimentos — art. 1.521 (DECORAR). Causas suspensivas — art. 1.523. Casamento religioso com efeitos civis — art. 1.515. Armadilha FGV: impedimento (art. 1.521) gera NULIDADE, causa suspensiva (art"
+          },
+          {
+            "id": 52,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RCPN — Registro de Óbito",
+            "link": "",
+            "description": "Art. 77 — declaração de óbito (24h). Art. 78 — quem é obrigado a declarar. Art. 79 — elementos do registro. Art. 80 — óbito sem cadáver (morte presumida — art. 7º CC: sem decretação de ausência, após esgotados meios). Art. 88 — certidão de óbito gratuita (Lei 9.534/97). Armadilha FGV: natimorto se r"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 53,
+            "discipline": "DIREITO CIVIL",
+            "title": "Direito de Família — Casamento, Regimes de Bens",
+            "link": "",
+            "description": "Regimes de bens — DECORAR: comunhão parcial (art. 1.658-1.666, regime legal), comunhão universal (art. 1.667-1.671), separação obrigatória (art. 1.641 — maiores de 70 anos), participação final nos aquestos, separação convencional. Pacto antenupcial — art. 1.640, §único (escritura pública) + art. 1.6"
+          },
+          {
+            "id": 54,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RCPN — Nome, Retificação e Alterações",
+            "link": "",
+            "description": "Princípios do nome: imutabilidade relativa, indisponibilidade. Exceções: art. 56 (1 ano após maioridade), art. 57 (exceção judicial), art. 58 (prenome definitivo, exceto coisa ridícula). Lei 14.382/2022 — facilitou retificação administrativa (sem necessidade de ação judicial em muitos casos). Armadi"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 55,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RCPN — Averbação de Registro de Pessoa Transgênero",
+            "link": "",
+            "description": "STF autorizou alteração de nome e sexo diretamente no RCPN, sem cirurgia ou laudos. Provimento 73/2018 CNJ regulamentou. Procedimento: averbação no registro original. Armadilha FGV: NÃO exige cirurgia, NÃO exige laudo psicológico, NÃO exige autorização judicial (desde 2018)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "title": "Ciclo 08 — RCPJ + RTD + CC Família/Sucessões (Introdução)",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 56,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RTD — Registro de Títulos e Documentos",
+            "link": "",
+            "description": "Art. 127 — atos sujeitos a registro facultativo (para conservação). Art. 129 — atos sujeitos a registro obrigatório (para validade contra terceiros): contratos de locação, cessão de crédito, penhor. Art. 130 — registro para mera publicidade. Armadilha FGV: registro no RTD é para OPONIBILIDADE a terc"
+          },
+          {
+            "id": 57,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RCPJ — Registro Civil de Pessoas Jurídicas",
+            "link": "",
+            "description": "Art. 114 — atos que devem ser registrados: (I) contrato social, (II) atas de sociedades civis, (III) estatutos de fundações. Art. 119 — registro de jornais, revistas e periódicos. Art. 45 CC — começo da existência legal da PJ com o registro. Armadilha FGV: PJ de direito privado começa com registro n"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 58,
+            "discipline": "DIREITO CIVIL",
+            "title": "Direito das Sucessões — Sucessão Legítima",
+            "link": "",
+            "description": "Art. 1.784 — princípio da saisine (transmissão automática no momento da morte). Art. 1.829 — DECORAR ordem de vocação: (I) descendentes em concorrência com cônjuge, (II) ascendentes em concorrência com cônjuge, (III) cônjuge sobrevivente, (IV) colaterais até 4º grau. Armadilha FGV: cônjuge em separa"
+          },
+          {
+            "id": 59,
+            "discipline": "DIREITO CIVIL",
+            "title": "Direito das Sucessões — Testamento e Inventário Extrajudicial",
+            "link": "",
+            "description": "Espécies de testamento: público (art. 1.864 — revisão), cerrado (art. 1.868), particular (art. 1.876). Legítima — 50% do patrimônio é reservado aos herdeiros necessários (art. 1.846). Inventário extrajudicial: requisitos (partes maiores e capazes, consenso, advogado). Armadilha FGV: testamento não p"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 60,
+            "discipline": "DIREITO EMPRESARIAL",
+            "title": "Teoria Geral do Direito Societário — Foco Registral",
+            "link": "",
+            "description": "Art. 966 — conceito de empresário. Art. 1.150 — empresário se registra na Junta Comercial; sociedade simples no RCPJ. Art. 985 — sociedade não registrada = sociedade em comum (sem personalidade). Armadilha FGV: sociedade simples se registra no RCPJ; sociedade empresária na Junta Comercial; sociedade"
+          },
+          {
+            "id": 61,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Interação Interinstitucional e com Órgãos Públicos",
+            "link": "",
+            "description": "Comunicações obrigatórias dos cartórios: RCPN comunica nascimentos/óbitos à Receita, INSS. RI comunica alienações à Receita (DOI — Declaração de Operações Imobiliárias). Protestos comunicam ao SPC/Serasa."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09",
+    "title": "Ciclo 09 — Registro de Imóveis — Fundamentos e Princípios",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 62,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Introdução, Propriedade Imobiliária e Sistemas de Transmissão",
+            "link": "",
+            "description": "Sistema de transmissão brasileiro: título + modo (escritura + registro). Art. 1.245 — transferência inter vivos pelo registro. Art. 1.246 — registro eficaz DESDE A PRENOTAÇÃO. Art. 1.247 — retificação se o registro não corresponder à realidade. Art. 167 LRP — DECORAR os incisos I (atos de registro) "
+          },
+          {
+            "id": 63,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Princípios do Registro de Imóveis (aprofundamento)",
+            "link": "",
+            "description": "APROFUNDAR princípios: (1) Inscrição — art. 167; (2) Prioridade — art. 186 (prenotação); (3) Especialidade objetiva (descrição do imóvel) e subjetiva (qualificação das partes); (4) Continuidade — art. 195 (encadeamento de registros); (5) Legalidade/Qualificação — o registrador examina a legalidade d"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 64,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Matrícula, Registro e Averbação",
+            "link": "",
+            "description": "DISTINÇÃO FUNDAMENTAL: matrícula ≠ registro ≠ averbação. Matrícula (art. 176): individualização do imóvel, atribuição de número próprio. Registro (art. 167, I): constituição, transferência, modificação de direitos reais. Averbação (art. 167, II): alterações posteriores (construção, demolição, mudanç"
+          },
+          {
+            "id": 65,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Livros e Processamento Registral",
+            "link": "",
+            "description": "Art. 173 — livros obrigatórios: 1 (Protocolo), 2 (Registro Geral), 3 (Auxiliar), 4 (Indicador Real), 5 (Indicador Pessoal). Protocolo: diário de prenotação (art. 174) — gera a PRIORIDADE. Registro Geral: matrículas e registros propriamente ditos."
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 66,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Qualificação Registral e Dúvida",
+            "link": "",
+            "description": "Qualificação: exame de legalidade do título pelo registrador. Dúvida registral (art. 198): procedimento administrativo quando o registrador se recusa a praticar o ato. Art. 198 — quem suscita a dúvida é o OFICIAL (não a parte); a parte REQUER a suscitação. Armadilha FGV: a dúvida é suscitada pelo of"
+          },
+          {
+            "id": 67,
+            "discipline": "DIREITO CIVIL",
+            "title": "Direitos Reais — Propriedade e Usucapião",
+            "link": "",
+            "description": "Espécies de usucapião: extraordinária (art. 1.238 — 15 ou 10 anos), ordinária (art. 1.242 — 10 ou 5 anos + justo título + boa-fé), especial urbana (art. 1.240 — 5 anos, até 250m²), especial rural (art. 1.239 — 5 anos, até 50ha). Usucapião extrajudicial — Art. 216-A LRP (IMPORTANTÍSSIMO). Armadilha F"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 68,
+            "discipline": "DIREITO CONSTITUCIONAL",
+            "title": "Ordem Econômica, Política Urbana e Função Social — Foco Registral",
+            "link": "",
+            "description": "Art. 182 — política urbana (Estatuto da Cidade). Art. 183 — usucapião especial urbano constitucional (5 anos, 250m²). Art. 170 — princípios da ordem econômica (função social da propriedade). Art. 5º, XXII — direito de propriedade; XXIII — função social."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Ciclo 10 — RI Retificação + Parcelamento + CC Vizinhança/Condomínio",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 69,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Retificação de Registro (Administrativa e Judicial)",
+            "link": "",
+            "description": "Art. 212 — retificação pode ser administrativa (pelo oficial) ou judicial. Art. 213 — retificação administrativa: (I) erro evidente na transcrição/inscrição, (II) inserção/alteração de medidas com anuência dos confrontantes, (III) área objeto de mensuração/georreferenciamento. Art. 214 — nulidades ("
+          },
+          {
+            "id": 70,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Parcelamento do Solo e Registro (Lei 6.766/79)",
+            "link": "",
+            "description": "Art. 2º — parcelamento é a divisão de lote em frações (loteamento) ou transformação de propriedade em condomínio. Art. 3º — exigências (licença municipal, aprovação, escritura, registro). Art. 4º — vedações (não-loteável menor que 125m², declividade >30%, inundável). Art. 18 — registro: compete ao R"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 71,
+            "discipline": "DIREITO CIVIL",
+            "title": "Direito de Vizinhança — Vedações, Passagem, Limites e Responsabilidade",
+            "link": "",
+            "description": "Art. 1.277 — vedação a atividades potencialmente danosas aos vizinhos (fumaça, poeira, barulho, radiação). Art. 1.279 — exceção: atividades normais de propriedade (direito de propriedade não é absoluto — função social). Art. 1.284 — direito de passagem (acesso necessário ao imóvel sem saída para via"
+          },
+          {
+            "id": 72,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Condomínio em Edifício (Unidades Autônomas e Áreas Comuns)",
+            "link": "",
+            "description": "Lei 4.591/64, Art. 2º — incorporação é atividade de promover a construção de edifício (fracionamento). Art. 8º — condomínio em edifício: cada unidade tem matrícula individual; áreas comuns são registradas em matrícula única. CC Art. 1.331 — direitos e deveres dos condôminos. Art. 1.335 — convenção d"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 73,
+            "discipline": "DIREITO CIVIL",
+            "title": "Condomínio — Deliberações, Assembleia e Dissolução",
+            "link": "",
+            "description": "Art. 1.345 — assembleia geral delibera sobre assuntos do condomínio. Art. 1.346 — convenção define modo de convocação e deliberação. Art. 1.352 — renovação de síndico (máx. 2 anos). Art. 1.354 — destituição de síndico por deliberação da assembleia. Art. 1.356 — dissolução: por consenso unânime (ence"
+          },
+          {
+            "id": 74,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Incorporação Imobiliária (Lei 4.591/64)",
+            "link": "",
+            "description": "Art. 1º — incorporação é atividade de transformação de terreno em frações autônomas (edifício). Art. 2º — incorporador é pessoa física/jurídica. Art. 3º — memorial descritivo e convenção obrigatórios (devem ser registrados no RI ANTES da comercialização). Art. 8º — registro provisório na incorporaçã"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 75,
+            "discipline": "DIREITO ADMINISTRATIVO",
+            "title": "Fiscalização e Disciplina dos Notários e Registradores — Responsabilidade e Sanções",
+            "link": "",
+            "description": "Art. 28 — fiscalização é competência do Tribunal de Justiça (visitas periódicas). Art. 29 — responsabilidade civil e criminal. Art. 30 — suspensão temporária (até 30 dias) para violações. Art. 31 — cassação da delegação (perda do exercício da atividade). Art. 32 — multa. Art. 33 — suspensão de receb"
+          },
+          {
+            "id": 76,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Garantias da Propriedade e Ordem Econômica (CF/88 + Lei 14.382/2022)",
+            "link": "",
+            "description": "Art. 5º XXII — garantia do direito de propriedade (direito fundamental). Art. 5º XXIII — propriedade atenderá função social. Tensão fundamental: propriedade ≠ irrestrita. Lei 14.382/2022 reafirma publicidade registral como GARANTIA (segurança jurídica). Art. 170, II — livre iniciativa + função socia"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 05",
+        "tasks": [
+          {
+            "id": 77,
+            "discipline": "DIREITO CIVIL",
+            "title": "Direitos Reais sobre Coisa Alheia — Servidões, Enfiteuse, Superfície",
+            "link": "",
+            "description": "Art. 1.378 — servidão é direito real que permite ao proprietário de um imóvel (dominante) usar imóvel alheio (serviente). Art. 1.380 — pode ser perpétua ou temporal. Art. 1.383 — não há direito de uso privativo de servidão (ambigüidade — ARMADILHA). Art. 1.369 — direito de superfície (uso + fruição "
+          },
+          {
+            "id": 78,
+            "discipline": "DIREITO CONSTITUCIONAL",
+            "title": "Propriedade Privada, Função Social e Políticas Públicas (CF Arts. 5º, 170, 182-184)",
+            "link": "",
+            "description": "Art. 5º XXII — propriedade é direito (não é privilégio). Art. 5º XXIII — subordinação à função social. Art. 170, II-III — livre iniciativa + propriedade privada. Art. 182 — política urbana (plano diretor municipal obrigatório). Art. 182, §4º — IPTU progressivo (sanciona imóvel não-utilizado). Art. 1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Ciclo 11 — RI Alienação Fiduciária + Incorporação/Condomínio + CC Garantias",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
             "id": 79,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo do Inadimplemento das Obrigações e Teoria do Adimplemento Substancial,",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil subcapítulo 14; e resolução de questões. Nesta tarefa veremos a teoria sobre o Inadimplemento das Obrigações e Teoria do Adimplemento Substancial."
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Alienação Fiduciária de Imóveis (Lei 9.514/97)",
+            "link": "",
+            "description": "Art. 1º — alienação fiduciária é transferência de propriedade resolúvel do imóvel ao credor. Art. 22 — deve ser registrada no RI (matrícula diferenciada). Art. 23 — contratos têm CLÁUSULA PENAL (taxa de mora + multa + juros). Art. 26 — PROCEDIMENTO EXTRAJUDICIAL DE EXECUÇÃO (não precisa ação judicia"
           },
           {
             "id": 80,
-            "discipline": "Direito Civil",
-            "title": "Estudo da Teoria geral dos contratos, subcapítulo 15; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre a Teoria geral dos contratos e seus princípios, estudando do início do subcapítulo 15 até o final do tópico 15.1.1.7. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/uq5nn4"
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Cédulas de Crédito Imobiliário (Lei 10.931/2004)",
+            "link": "",
+            "description": "Art. 1º Lei 10.931/04 — CCI é título de crédito garantido por hipoteca (ou alienação fiduciária). Art. 3º — pode ser emitida por instituição financeira ou não. Art. 4º — é negociável (pode ser transferida — endosso). Art. 14 — tem equivalência de sentença (execução extrajudicial simples). Armadilha "
           }
         ]
       },
@@ -838,17 +862,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 81,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 12 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1/?topic=12",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI."
+            "discipline": "DIREITO CIVIL",
+            "title": "Direitos Reais de Garantia — Hipoteca, Penhor, Anticrese",
+            "link": "",
+            "description": "Art. 1.473 — hipoteca é direito real de garantia (credor não tem posse, apenas direito de execução). Art. 1.478 — hipoteca é registrada no RI. Art. 1.484 — ordem de hipoteca (primeira, segunda, terceira) — determina prioridade na execução. Art. 1.505 — extinção (pagamento, renúncia, prescrição 20 an"
           },
           {
             "id": 82,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo dos Capítulos 13 e 14 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1/?topic=12",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI. Nesta aula, estudaremos Intervenção Federal e Estadual."
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Usucapião Extrajudicial (Art. 216-A LRP / Lei 13.105/2015 — CPC)",
+            "link": "",
+            "description": "Art. 216-A — procedimento ADMINISTRATIVO perante registrador (não judicial). Requisitos: (1) ata notarial comprovando posse, (2) planta e memorial descritivo georreferenciados, (3) certidões negativas (CRI, CCL, RFB), (4) justo título (comprovação de transferência anterior) OU prova de posse. Proced"
           }
         ]
       },
@@ -857,17 +881,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 83,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 7 (Teoria do Crime: Culpabilidade.); e resolução de 08 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal Nesta tarefa, você revisará tópicos importantes sobre a Culpabilidade. Como você já sabe, foi adotada a teoria tripartida ou tripartite para conceituar o crime sob o critério analítico."
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Adjudicação Compulsória (Lei 10.931/2004 + CC Arts. 1.418-1.422)",
+            "link": "",
+            "description": "Art. 1.418 CC — contrato de compra e venda pode conter cláusula de adjudicação compulsória (creditor pode obrigar devedor a transferir propriedade caso inadimplemento). Lei 10.931/04, Art. 26-35 — procedimento de adjudicação: (1) devedor inadimplente de CCI ou alienação fiduciária, (2) credor requer"
           },
           {
             "id": 84,
-            "discipline": "Direito Penal",
-            "title": "Estudo do capítulo 8 (Punibilidade); e resolução de 20 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Nesta tarefa, você revisará tópicos importantes sobre a Punibilidade. Faça anotações/marcações no seu material para futura revisão. Inicialmente, leia as Considerações Iniciais e fique por dentro do conteúdo que será estudado na aula."
+            "discipline": "DIREITO CIVIL",
+            "title": "Obrigações e Responsabilidade Civil — Inadimplemento e Indenização",
+            "link": "",
+            "description": "Art. 234 — devedor é responsável por perdas e danos (mora, culpa, garantia de resultado). Art. 237 — mora (atraso injustificado). Art. 239 — credor não é obrigado a receber antes do vencimento. Art. 402 — perdas e danos incluem prejuízos atuais e lucros cessantes (lucro que deixou de ganhar). Art. 4"
           }
         ]
       },
@@ -876,17 +900,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 85,
-            "discipline": "DIREITO EMPRESARIAL",
-            "title": "Revisão da semana: Revise os seus próprios grifos feitos durante estas Tarefas e aproveite para",
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Garantia da Propriedade — Sistema de Registro (Publicidade e Presunção)",
             "link": "",
-            "description": "Direito Empresarial aprofundar os assuntos que não ficaram bem consolidados. Aproveite para revisar as questões que você errou na resolução dos exercícios anteriores."
+            "description": "Art. 1º Lei 6.015/73 — registro é título constitutivo (faz lei, presume-se registrado). CC Art. 1.245 — transferência de propriedade por negócio jurídico é eficaz entre partes e relação a terceiros QUANDO REGISTRADA. Sem registro = vínculo obrigacional (devedor ainda é proprietário). Art. 1.251 — ad"
           },
           {
             "id": 86,
-            "discipline": "Direito Empresarial",
-            "title": "Revisão da semana: Revise os seus próprios grifos feitos durante estas Tarefas e aproveite para",
+            "discipline": "DIREITO TRIBUTÁRIO",
+            "title": "ITBI — Imposto sobre Transmissão de Bens Imóveis (Lei Complementar 116/03)",
             "link": "",
-            "description": "aprofundar os assuntos que não ficaram bem consolidados. Aproveite para revisar as questões que você errou na resolução dos exercícios anteriores."
+            "description": "Art. 2º LC 116/03 — ITBI incide sobre transmissão de bens imóveis (compra, venda, permuta, doação, adjudicação, usucapião extrajudicial). Fato gerador: assinatura do instrumento de transferência. Art. 3º — alíquota é definida por lei municipal (máx. 3%, em média 2-2,5%). Sujeito passivo: adquirente "
           }
         ]
       },
@@ -895,696 +919,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 87,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 2 do Livro Digital Interativo (LDI), subcapítulos 2.1 ao 2.2, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Iniciaremos a trilha de Direito Tributário para ENAC (2026.1). Desde já, recomendo que estejam sempre acompanhando a jurisprudência sobre os temas dos capítulos, pois"
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Tipicidade de Fatos Inscritíveis (Lei 14.382/2022)",
+            "link": "",
+            "description": "Art. 167 Lei 6.015/73 — lista de FATOS REGISTRÁVEIS em RI. Lei 14.382/2022 ampliou significativamente (permitiu mais atos). Tipicidade: atos devem estar expressamente previstos em lei (princípio de legalidade). Inovações Lei 14.382/2022: (1) servidão e direitos de passagem podem ser registrados sem "
           },
           {
             "id": 88,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 2 do Livro Digital Interativo (LDI), subcapítulos 2.3 ao 2.15, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Vamos prosseguir no estudo do capítulo vendo Princípio da Irretroatividade, Princípio da Isonomia Tributária e Princípio da Capacidade Contributiva. Nesta tarefa teremos também os princípios inseridos pela reforma tributária que poderão ser bem explorados em questões futuras por serem"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 89,
-            "discipline": "REGISTRO CIVIL DE PESSOAS NATURAIS",
-            "title": "Estudo do tópico “Óbitos”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1/",
-            "description": "Registro Civil das Pessoas Naturais Sobre este tópico, inicia-se estudo sobre a Morte real, em que há presença do cadáver. Podendo ser também natural ou provocada (por violência ou acidente) e Morte presumida, sem cadáver, com e sem declaração de"
-          },
-          {
-            "id": 90,
-            "discipline": "Registro Civil das Pessoas Naturais",
-            "title": "Estudo do tópico “Livro E”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1/",
-            "description": "O livro E é guardado para registrais especiais. O Livro E possui particularidades e não está presente em todas as serventias de RCPN. Em localidades maiores, com vários ofícios, ele pertence ao 1º Ofício, indicando que nem todas as serventias têm competência"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 91,
-            "discipline": "TEORIA GERAL DO DIREITO NOTARIAL E REGISTRAL",
-            "title": "Estudo do tópico: Seguridade Social",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-",
-            "description": "Teoria Geral do Direito Notarial e Registral enac-2026-1/ O tema da Seguridade Social é breve. Aproveite para revisar pontos que ainda não estão sedimentados."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "07",
-    "title": "Trilha 07",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 92,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo da Teoria geral dos contratos, subcapítulo 15; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre a Teoria geral dos contratos e seus princípios, estudando do início do tópico 15.1.1.8 até o final do tópico 15.4.3. Faça as marcações e anotações utilizando o LDI."
-          },
-          {
-            "id": 93,
-            "discipline": "Direito Civil",
-            "title": "Estudo da Teoria geral dos contratos, subcapítulo 15; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre a Teoria geral dos contratos e seus princípios, estudando do tópico 15.5 até o final do subcapítulo 15. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/rpbaw6"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 94,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 15 do LDI, até o tópico Ingresso no Serviço Público.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI."
-          },
-          {
-            "id": 95,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 15 do LDI, do tópico Estabilidade até o fim da teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI. Continuaremos no estudo da aula a partir do tópico que trata da Estabilidade."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 96,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 7 (Teoria do Crime: Culpabilidade.); e resolução de 08 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal Nesta tarefa, você revisará tópicos importantes sobre a Culpabilidade. Como você já sabe, foi adotada a teoria tripartida ou tripartite para conceituar o crime sob o critério analítico."
-          },
-          {
-            "id": 97,
-            "discipline": "Direito Penal",
-            "title": "Estudo do capítulo 8 (Punibilidade); e resolução de 20 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Nesta tarefa, você revisará tópicos importantes sobre a Punibilidade. Faça anotações/marcações no seu material para futura revisão. Inicialmente, leia as Considerações Iniciais e fique por dentro do conteúdo que será estudado na aula."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 98,
             "discipline": "DIREITO EMPRESARIAL",
-            "title": "Estudo do Capítulo 24, Títulos de Cré ditos.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "Direito Empresarial A partir de agora, veremos uma sequência de temas relevantes da matéria: Títulos de crédito. Os títulos de crédito são documentos formais que instrumentalizam obrigações pecuniárias,"
-          },
-          {
-            "id": 99,
-            "discipline": "Direito Empresarial",
-            "title": "Estudo do Capítulo 25, Principais Institutos Cambiários.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "A partir de agora, veremos uma sequência de temas relevantes da matéria: Principais institutos cambiários. Os principais institutos cambiários a serem estudados são: (i) endosso; (ii) aval; (iii) protesto."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 100,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 3 do Livro Digital Interativo (LDI), subcapítulos 3.1 a 3.9, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Nesta tarefa trataremos sobre as imunidades tributárias. É essencial o conhecimento da jurisprudência sobre diversos pontos do presente assunto. Cabe destacar, o “conceito de imunidade” (onde o candidato"
-          },
-          {
-            "id": 101,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 3 do Livro Digital Interativo (LDI), subcapítulos 3.10 a 3.14, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Como falado na tarefa anterior, é essencial o conhecimento da jurisprudência sobre diversos pontos do presente assunto. O destaque, dessa vez, fica por conta da imunidade tributária recíproca. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 102,
-            "discipline": "REGISTRO CIVIL DE PESSOAS NATURAIS",
-            "title": "Estudo do tópico “Filiação”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1",
-            "description": "Registro Civil das Pessoas Naturais A filiação, segundo o Código Civil brasileiro, é o vínculo jurídico que une pais e filhos, gerando direitos e deveres recíprocos de ordem pessoal e patrimonial. Nos termos do artigo 1.596 do Código Civil, “os filhos,"
-          },
-          {
-            "id": 103,
-            "discipline": "Registro Civil das Pessoas Naturais",
-            "title": "Estudo do tópico “Do Nome”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1",
-            "description": "O estudo sobre o nome civil, é um dos mais importantes. Leia sua definição tipificada no art. 16 do Código “Toda a pessoa tem direito ao nome, nele compreendidos o prenome e o sobrenome”"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 104,
-            "discipline": "TEORIA GERAL DO DIREITO NOTARIAL E REGISTRAL",
-            "title": "Estudo do tópico: Acervo das Serventias",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-",
-            "description": "Teoria Geral do Direito Notarial e Registral enac-2026-1/ Quanto ao tema do acervo das serventias, verifique:"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "08",
-    "title": "Trilha 08",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 105,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo dos Contratos em espécie - Parte I, subcapítulos 16; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre os contratos de Compra e Venda, Permuta e Estimatório estudando os subcapítulos 16.1.1 a 16.1.3. Faça as marcações e anotações utilizando o LDI."
-          },
-          {
-            "id": 106,
-            "discipline": "Direito Civil",
-            "title": "Estudo dos Contratos em espécie - Parte II, subcapítulos 16; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre os contratos de Doação, Locação de Coisa e Empréstimo estudando os subcapítulos 16.1.4 a 16.1.6. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/uqmt7i"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 107,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 16 do LDI, até o tópico atribuições do Senado Federal.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI."
-          },
-          {
-            "id": 108,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 16 do LDI, do tópico Imunidade Material dos Parlamentares até",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "o fim da teoria. Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 109,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 11 (Concurso de Pessoas); e resolução de 11 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal Nesta tarefa, você revisará tópicos importantes sobre a Concurso de Pessoas. Faça anotações/marcações no seu material para futura revisão."
-          },
-          {
-            "id": 110,
-            "discipline": "Direito Penal",
-            "title": "Estudo do capítulo 12 (Teoria Geral da Pena), subcapítulos 12.1 ao 12.5.5.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Nesta tarefa, iniciaremos o estudo da Teoria Geral da Pena. Faça anotações/marcações no seu material para futura revisão. Inicialmente, assista ao vídeo do professor que explica as Penas em Espécie. É um vídeo introdutório que"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 111,
-            "discipline": "DIREITO EMPRESARIAL",
-            "title": "Estudo do Capítulo 27, de “Introdução” a “Modalidades Especiais de Cheque: Segurança,",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "Direito Empresarial Liquidação e Garantia Bancária”, inclusive. A partir de agora, veremos uma sequência de temas relevantes da matéria: Principais Espécies de"
-          },
-          {
-            "id": 112,
-            "discipline": "Direito Empresarial",
-            "title": "Estudo do Capítulo 26, de “Cheque” ao final.",
-            "link": "https://cj.estrategia.com/ldi/direito-empresarial-enac-2026-1",
-            "description": "Retome o estudo no tópico “Cheque”. Atente-se ao quadro esquematizado apresentado pelo professor ao final do capítulo, que sintetiza as principais informações sobre o cheque:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 113,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 4 do Livro Digital Interativo (LDI), subcapítulos 4.1.1 ao 4.1.4.2, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Nesse capítulo, você estudará os seguintes temas: Sistema Tributário e Discriminação de Competências. Nesta tarefa serão estudados os Impostos. Em seguida vocês estudarão características"
-          },
-          {
-            "id": 114,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 4 do Livro Digital Interativo (LDI), subcapítulos 4.1.4.3 ao 4.1.4.5,",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Nessa tarefa, vocês estudarão as seguintes espécies tributárias: contribuições de melhoria, empréstimos compulsórios e contribuições especiais. Em termos de cobrança em concurso, as contribuições especiais somam mais questões do que as contribuições de melhoria e os empréstimos"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 115,
-            "discipline": "REGISTRO CIVIL DAS PESSOAS NATURAIS",
-            "title": "Estudo do tópico “Filiação”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1",
-            "description": "Registro Civil das Pessoas Naturais A filiação, segundo o Código Civil brasileiro, é o vínculo jurídico que une pais e filhos, gerando direitos e deveres recíprocos de ordem pessoal e patrimonial. Nos termos do artigo 1.596 do Código Civil, “os filhos,"
-          },
-          {
-            "id": 116,
-            "discipline": "Registro Civil das Pessoas Naturais",
-            "title": "Estudo do tópico “Do Nome”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-naturais-enac-2026-1",
-            "description": "O estudo sobre o nome civil, é um dos mais importantes. Leia sua definição tipificada no art. 16 do Código “Toda a pessoa tem direito ao nome, nele compreendidos o prenome e o sobrenome”"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 117,
-            "discipline": "TEORIA GERAL DO DIREITO NOTARIAL E REGISTRAL",
-            "title": "Estudo do tópico: “Emolumentos”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Teoria Geral do Direito Notarial e Registral Entenda o que é emolumento e de que forma ele é regulamentado, em qual lei. Ao final, resolva às questões propostas."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "09",
-    "title": "Trilha 09",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 118,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo dos Contratos em espécie - Parte III, subcapítulos 16; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre os contratos de Prestação de Serviço, Empreitada, Depósito e Mandato estudando os subcapítulos 16.1.7 a 16.1.10. Faça as marcações e anotações utilizando o LDI."
-          },
-          {
-            "id": 119,
-            "discipline": "Direito Civil",
-            "title": "Estudo dos Contratos em espécie - Parte IV, subcapítulos 16; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre os contratos de Comissão, Agência e Distribuição, Corretagem, Transporte e Seguro, estudando os subcapítulos 16.1.11 a 16.1.15. Faça as marcações e anotações utilizando Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/qysen9"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 120,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 17 do LDI, até o tópico Processo Legislativo Especial.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI."
-          },
-          {
-            "id": 121,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 17 do LDI, do tópico Medidas Provisórias até o fim da teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI. Hoje, o assunto alvo será Processo Legislativo."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 122,
-            "discipline": "DIREITO ADMINISTRATIVO",
-            "title": "Estudo do conteúdo referente ao capítulo 7 – Atos Administrativos.",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Direito Administrativo Passamos agora ao estudo do capítulo que trata do importante tema relacionado aos Atos Administrativos."
-          },
-          {
-            "id": 123,
-            "discipline": "Direito Administrativo",
-            "title": "Estudo do conteúdo do capítulo 8 e 9 – Serviços Públicos e Concessão, Permissão e",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Autorização de Serviços Públicos Passemos agora ao estudo dos assuntos relativos ao capítulo 8, que trata de Serviços Públicos. Na próxima tarefa, iniciaremos o estudo dos subtópicos relativos ao tema: Concessão Comum e Permissão"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 124,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 5 do Livro Digital Interativo (LDI).",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Nessa tarefa, vocês estudarão a Repartição de Competências. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das"
-          },
-          {
-            "id": 125,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 6 do Livro Digital Interativo (LDI), subcapítulos 6.1 ao 6.4.2, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Neste capítulo, vocês estudarão o tema Legislação Tributária. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões que, porventura, tenha errado ou tido algum tipo de dificuldade."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 126,
-            "discipline": "TABELIONATO DE PROTESTOS",
-            "title": "Estudo do tópico completo \"Protesto Notarial”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Tabelionato de Protestos Caros alunos, daremos início agora ao estudo da especialidade de Tabelionato de Protestos para II ENAC, com base na ferramenta do LDI (Curso completo)"
-          },
-          {
-            "id": 127,
-            "discipline": "Tabelionato de Protestos",
-            "title": "Estudo do tópico completo \"Princípios do Protesto” “",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Nessa parte da aula, veremos os primeiros princípios vinculados ao Tabelionato de Protestos. Para facilitar, colocaremos um compilado com as principais informações trazidas pelo professor sobre cada um deles abaixo. Porém, recomendamos que leia todo o conteúdo desse tema com atenção, diretamente na"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 128,
-            "discipline": "TEORIA GERAL DO DIREITO NOTARIAL E REGISTRAL",
-            "title": "Estudos do tópicos: “Apostilamento”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Teoria Geral do Direito Notarial e Registral Links: https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/ Preste atenção a quem está autorizado para realização dos procedimentos de conciliação e mediação, como"
-          },
-          {
-            "id": 129,
-            "discipline": "Teoria Geral do Direito Notarial e Registral",
-            "title": "Estudos do tópicos: “Apostilamento”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Links: https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/ Leia sobre a Convenção da Apostila de Haia e identifique o selo padrão. Ao final, resolva as questões propostas."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "10",
-    "title": "Trilha 10",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 130,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo dos Contratos em espécie - Parte V, subcapítulos 16; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre os contratos de Constituição de Renda, Jogo e Aposta, Fiança, Administração Fiduciária de Garantias, Transação e Compromisso, estudando os subcapítulos 16.1.16 a"
-          },
-          {
-            "id": 131,
-            "discipline": "Direito Civil",
-            "title": "Estudo dos Atos Unilaterais, subcapítulo 17; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre os Atos Unilaterais. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões dos seguintes cadernos do SQ: ● http://questo.es/p5fpdl"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 132,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 18 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios. Como base para o nosso estudo, utilizaremos o LDI."
-          },
-          {
-            "id": 133,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 19 do LDI, até o tópico Estatuto da Magistratura.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios. Como base para o nosso estudo, utilizaremos o LDI. Agora, nosso objetivo é estudar sobre o Poder Judiciário. Antes de iniciar o pdf, leia os arts. 92 a"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 134,
-            "discipline": "Direito Administrativo",
-            "title": "Estudo dos conteúdos do capítulo 10 - Agentes públicos – PARTE 2.",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Faça uma leitura atenta do tópico – Acumulação de cargos e empregos públicos, visto que ele é bastante explorado em provas. Por fim, decore a seguinte tabela:"
-          },
-          {
-            "id": 135,
-            "discipline": "Direito Administrativo",
-            "title": "Estudo do capítulo 11 - Controle da Administração Pública.",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Olá, tudo bem? Se levarmos em consideração a grande diversidade de assuntos cobrados em provas de concurso da disciplina de Direito Administrativo, apenas o item Controle da Administração representa mais de 5% das questões cobradas. Então, trataremos o assunto como importância alta."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 136,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 6 do Livro Digital Interativo (LDI), subcapítulos 6.4.3 ao 6.4.5, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Nessa tarefa, será feito o estudo acerca da vigência, da aplicação, da interpretação e da integração da legislação tributária."
-          },
-          {
-            "id": 137,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 7 do Livro Digital Interativo (LDI), subcapítulos 7.1 ao 7.5, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Este capítulo trata de diversos pontos acerca do tema “Obrigação Tributária”. A presente tarefa terá por base o estudo dos conceitos acerca das obrigações tributárias e dos seus respectivos fatos geradores. Em seguida, será feito o estudo acerca dos sujeitos da relação"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 138,
-            "discipline": "TABELIONATO DE PROTESTOS",
-            "title": "Estudo do tópico completo \"Aspectos Jurídicos e Função Econômica”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Tabelionato de Protestos Nessa parte da aula, iremos entender os “reflexos” do Protesto, conforme indicado no capítulo. Na aula professor reforça qual é a definição de protesto, qual seja: constituir prova, sendo simplesmente"
-          },
-          {
-            "id": 139,
-            "discipline": "Tabelionato de Protestos",
-            "title": "Estudo do tópico completo “Atribuições”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Nessa parte da aula, veremos as atribuições do Tabelião de Protestos, previstos no capítulo 5. Conforme artigo 11, Lei 8.935/1994 temos que: Aos tabeliães de protesto de título compete privativamente:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 140,
-            "discipline": "Tabelionato de Protestos",
-            "title": "Estudo do tópico completo “Apresentação, Distribuição e Providências Iniciais”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "A distribuição dos títulos no Tabelionato de Protestos. Foi através da Lei 9.492/1997 que houve a sistematização sobre a especialidade de protestos. O referido diploma legal regula os serviços concernentes ao protesto de títulos, propiciando uniformidade e"
-          },
-          {
-            "id": 141,
-            "discipline": "TEORIA GERAL DOS ATOS NOTARIAIS E REGISTRAIS",
-            "title": "Estudo do tópico:“Conciliação e Mediação”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Teoria Geral dos Atos Notariais e Registrais Olhar com atenção o art. 7º-A, que instituiu a possibilidade de os tabeliães de notas atuarem como árbitros, sem exclusividade."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 142,
-            "discipline": "Teoria Geral dos Atos Notariais e Registrais",
-            "title": "Estudo do tópico:“ Proteção de Dados Pessoais dos Usuários dos Serviços Notariais”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Quanto ao tópico da proteção de dados dos usuários do serviço, verificar as disposições da Lei nº 13.079/2018, e do Provimento nº 149, do CNJ. Resolva as questões propostas."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "11",
-    "title": "Trilha 11",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 143,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 19 do LDI, do tópico Quinto Constitucional até o tópico",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Precatórios. Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso"
-          },
-          {
-            "id": 144,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 19 do LDI, do tópico STF até o fim da teoria.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI. Nesta tarefa, veremos as disposições relacionadas ao Supremo Tribunal Federal, ao Conselho Nacional de"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 145,
-            "discipline": "DIREITO ADMINISTRATIVO",
-            "title": "Estudo do capítulo 12 e 13 – Improbidade Administrativa e Lei Anticorrupção",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Direito Administrativo Chegamos ao estudo da importante Lei 8.429/02, que trata da Improbidade Administrativa. Estude toda a parte do capítulo que trata de Improbidade Administrativa,. A parte do capítulo que trata da"
-          },
-          {
-            "id": 146,
-            "discipline": "Direito Administrativo",
-            "title": "Estudo de todo o assunto do capítulo 14 (Responsabilidade Civil do Estado)",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Continuamos com nosso método de estudo que considera apenas a leitura de resumos e grifos do aluno. É importante salientar que tentar ler as 2 aulas por completo em apenas uma tarefa seria um trabalho hercúleo e precisamos utilizar nosso tempo de maneira inteligente"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 147,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo do Juiz e dos Auxiliares da Justiça, capítulo 11 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos o Juiz e os Auxiliares da Justiça. Faça as marcações e anotações utilizando o LDI. Nesta aula, foque seu estudo nas hipóteses de impedimento e suspeição."
-          },
-          {
-            "id": 148,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo do Ministério Público, capítulo 12 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Nesta tarefa estudaremos o Ministério Público. Faça as marcações e anotações utilizando o LDI. Com relação ao Ministério Público, a própria CF/88 elenca suas funções institucionais no art. 129. Decore essas funções:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 149,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 7 do Livro Digital Interativo (LDI), subcapítulo 7.6.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Nessa tarefa, será feito o estudo acerca da responsabilidade tributária. Esse é um tema que vocês precisam estar bem atualizados quanto ao entendimento jurisprudencial. Algumas vezes, ele diverge do"
-          },
-          {
-            "id": 150,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 8 do Livro Digital Interativo (LDI), subcapítulos 8.1 ao 8.3, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Nesse capítulo, você estudará o tema Crédito Tributário. Além da sua constituição, serão estudadas as suas modalidades de suspensão da exigibilidade, extinção e exclusão. Trata-se, portanto, de um tema de grande relevância. Deixo uma dica bem simples, que vai servir"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 151,
-            "discipline": "LEGISLAÇÃO PENAL ESPECIAL",
-            "title": "Estudo do subcapítulo 2. Interceptação Telefônica. (Lei n.º 9.296/96). Resolução de",
-            "link": "https://cj.estrategia.com/ldi/legislacao-penal-especial-enac-2026-1",
-            "description": "Legislação Penal Especial Vamos começar pela Interceptação Telefônica. (Lei n.º 9.296/96). A interceptação de comunicações telefônicas, de qualquer natureza, para prova em investigação criminal e"
-          },
-          {
-            "id": 152,
-            "discipline": "Legislação Penal Especial",
-            "title": "Estudo do Capítulo 03. Lavagem de dinheiro. Resolução de questões da aula.",
-            "link": "https://cj.estrategia.com/ldi/legislacao-penal-especial-enac-2026-1",
-            "description": "Nessa tarefa estudaremos os crimes de Lavagem de dinheiro, tratados na Lei 9.613/98. A lavagem de dinheiro pode ser definida como uma atividade criminosa que tem por objetivo transformar a obtenção de recursos de origem ilícita em lícita, por meio das fases da introdução (placement), dissimulação"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 153,
-            "discipline": "TABELIONATO DE PROTESTO",
-            "title": "Estudo do tópico completo “Competência Material e Territorial”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Tabelionato de Protestos A competência territorial é crucial para a validade do protesto, sendo necessário respeitar as normas locais para sua realização."
-          },
-          {
-            "id": 154,
-            "discipline": "Tabelionato de Protestos",
-            "title": "Estudo do tópico “Qualificação dos Títulos e outros documentos de dívida (judiciais",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Vamos entender como ocorre o processo qualificatório no Tabelionato de Protestos. Para esse ponto leia também o Capítulo IV da Lei 9.492/97 da Apresentação e Protocolização. Atente ao prazo de prescrição abordado pelo professor."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 155,
-            "discipline": "TEORIA GERAL DO DIREITO NOTARIAL E REGISTRAL",
-            "title": "Estudo do tópico: “Interação Interinstitucional”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Teoria Geral do Direito Notarial e Registral Vamos entender como ocorre a interação interinstitucional. Ao final, resolva as questões propostas."
+            "title": "Títulos de Crédito — Teoria Geral e Espécies (Lei Uniforme de Genebra)",
+            "link": "",
+            "description": "Art. 887 — título de crédito é documento necessário para exercer direito nele mencionado. Requisitos: (1) literalidade (o que está escrito), (2) cartularidade (posse do documento), (3) autonomia (direito não depende de relação anterior). Art. 889 — essencialidade (deve conter: nome do credor, quanti"
           }
         ]
       }
@@ -1592,24 +937,705 @@ export const TRILHAS: Trilha[] = [
   },
   {
     "id": "12",
-    "title": "Trilha 12",
+    "title": "Ciclo 12 — RI Usucapião + Adjudicação + CC Direitos Reais sobre Coisa Alheia",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 89,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Georreferenciamento de Imóveis (Lei 10.267/2001 + Lei 14.382/2022)",
+            "link": "",
+            "description": "Lei 10.267/01 — georreferenciamento é demarcação precisa de limites de imóvel (coordenadas GPS). Art. 1º — obrigatório para imóveis maiores que 4 módulos fiscais em áreas urbanas/rurais (com exceções). Lei 14.382/2022 ampliou obrigatoriedade (também cidades médias, áreas de conflito). Planta e memor"
+          },
+          {
+            "id": 90,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Publicidade no Sistema Registral (Lei 6.015/73 + Lei 14.382/2022)",
+            "link": "",
+            "description": "Art. 1º Lei 6.015/73 — PRESUNÇÃO DE REGISTRO (quem registrou é proprietário). Publicidade é FORÇA da presunção (terceiros sabem do registro). Registrador fornece certidões (CRI — Certidão de Registro de Imóvel). Lei 14.382/2022 — SERP (Sistema Eletrônico dos Registros Públicos) modernizou publicidad"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 91,
+            "discipline": "DIREITO CIVIL",
+            "title": "Sucessões — Abertura, Herdeiros e Testamento",
+            "link": "",
+            "description": "Art. 1.784 — abertura da sucessão ocorre no momento da morte (domicílio do morto). Art. 1.786 — ordem de herança: (1) descendentes, (2) ascendentes, (3) cônjuge, (4) colaterais até 4º grau. Art. 1.789 — sucessão legítima é ordem legal. Art. 1.790 — companheiro(a) concorre com cônjuge (Lei 11.441/07 "
+          },
+          {
+            "id": 92,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Bem de Família (Lei 8.009/90)",
+            "link": "",
+            "description": "Lei 8.009/90, Art. 1º — bem de família é o imóvel residencial da família (uno + móveis de uso ordinário), IMPENHORÁVEL. Art. 2º — automático (não precisa registro; é LEGAL). Art. 3º — exceções à impenhorabilidade: (1) crédito de construtor/fornecedor material de construção, (2) crédito de pessoal da"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 93,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Sistema Financeiro Imobiliário (Lei 9.514/97 + Lei 10.931/2004)",
+            "link": "",
+            "description": "Lei 9.514/97 — modernizou financiamento imobiliário (alienação fiduciária como GARANTIA). Art. 1º — sistema financeiro imobiliário (SFI) autoriza operações de financiamento para construção, aquisição, reforma de imóvel. Art. 2º — participantes: bancos, CEF, construtoras, incorporadoras. Art. 22 — al"
+          },
+          {
+            "id": 94,
+            "discipline": "DIREITO CIVIL",
+            "title": "Contratos em Espécie — Compra e Venda (Imóvel)",
+            "link": "",
+            "description": "Art. 481 — compra e venda é contrato (obrigação mútua). Art. 482 — comprador obriga-se a pagar preço. Art. 483 — vendedor obriga-se a transferir propriedade. Art. 484 — compra e venda é CONSENSUAL (contrato se aperfeiçoa pelo consentimento, não precisa entrega). Art. 492 — obrigação do vendedor: (1)"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 95,
+            "discipline": "DIREITO ADMINISTRATIVO",
+            "title": "Atos Administrativos — Conceito, Características e Requisitos",
+            "link": "",
+            "description": "Lei 9.784/99, Art. 1º — processo administrativo federal (aplicável à Administração Pública direta/indireta). Art. 2º — administração pública obedece princípios: legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, impessoalidade. Ato administrativo: (1) emanado de autorid"
+          },
+          {
+            "id": 96,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Invalidade e Ineficácia de Contrato e Relação com Registro (CC Arts. 104-184)",
+            "link": "",
+            "description": "CC Art. 104 — requisitos ato jurídico válido: (1) agente capaz, (2) objeto lícito/possível/determinado, (3) forma prescrita/não proibida. Art. 166 — nulidade ABSOLUTA (ato é sempre nulo): incapacidade absoluta, objeto impossível, forma essencial. Art. 171 — anulabilidade (ato pode ser anulado por le"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 05",
+        "tasks": [
+          {
+            "id": 97,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Registro de Imóveis e Direito à Proteção de Dados Pessoais (LGPD + Lei 14.382/2022)",
+            "link": "",
+            "description": "Lei 13.709/18 — dados pessoais (informação relacionada a pessoa identificada/identificável). LGPD se aplica ao registro de imóveis? SIM — quando registrador coleta dados sensíveis (nome, CPF, RG, endereço). Princípios: (1) legalidade (base legal), (2) finalidade (propósito específico), (3) necessida"
+          },
+          {
+            "id": 98,
+            "discipline": "DIREITO CONSTITUCIONAL",
+            "title": "Propriedade Intelectual e Direitos Autorais (CF Art. 5º XXVII, Lei 9.610/98)",
+            "link": "",
+            "description": "CF Art. 5º XXVII — propriedade intelectual é direito fundamental (tempo limitado para autores/inventores). Lei 9.610/98 — direitos autorais: (1) direitos morais (paternidade, integridade), (2) direitos patrimoniais (reprodução, distribuição, aluguel). Duração: vida do autor + 70 anos (pessoa física)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Ciclo 13 — RI Bem de Família + SFI + Cédulas de Crédito + Empresarial Títulos",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 99,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Direito Real de Laje (Lei 13.465/2017 — Novo Instituto)",
+            "link": "",
+            "description": "Lei 13.465/2017 — criou instituto NOVO: direito real de laje (DRL). Art. 1.510-A CC — DRL é direito real de construir/plantar SOBRE laje de propriedade alheia. Art. 1.510-B — pode ser transmissível (compravenda) e alienável (hipoteca). Art. 1.510-C — obrigação: pagar contribuição ao proprietário da "
+          },
+          {
+            "id": 100,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Escrituras Públicas (Lei 8.935/94 + Provimento 149/2023)",
+            "link": "",
+            "description": "Lei 8.935/94, Art. 6º — tabelião de notas (notário) é responsável por escrituras. Art. 7º — oficiais de RI registram documentos. DISTINÇÃO: Notário (tabulião de notas) = autoridade que AUTENTICA e REDIGE escritura (valida assinatura, vontade, capacidade). Registrador = funcionário que REGISTRA no RI"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 101,
+            "discipline": "DIREITO CIVIL",
+            "title": "Contratos em Espécie — Doação (CC Arts. 538-564)",
+            "link": "",
+            "description": "Art. 538 — doação é contrato (ato de liberalidade — sem contraprestação). Art. 539 — requisitos: (1) capacidade (doador ≥ 18 anos, sã mente), (2) aceitação donatário. Art. 541 — doação é irrevogável (regra) — exceção: doador fica pobre + não consegue subsistência = revogação por ingratidão. Art. 544"
+          },
+          {
+            "id": 102,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Contrato de Compra e Venda de Imóvel (Lei 6.015/73 + CC Arts. 481-504)",
+            "link": "",
+            "description": "CC Art. 481 — contrato de compra e venda é obrigação mútua. Art. 108 — compra e venda imóvel acima de 30 SM (salários mínimos) DEVE ser por ESCRITO (Lei Uniforme de Genebra — praxe). Na prática: ESCRITURA PÚBLICA (notário redige). Obrigações: (1) vendedor: transferência propriedade (registro), entre"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 103,
+            "discipline": "DIREITO CIVIL",
+            "title": "Contratos em Espécie — Permuta (CC Arts. 533-537) + Locação (CC Arts. 565-578)",
+            "link": "",
+            "description": "PERMUTA: Art. 533 — permuta é troca de bem por bem (não há preço em dinheiro). Art. 534 — permuta de imóvel DEVE ser por ESCRITURA PÚBLICA. Art. 535 — valem as regras de compra e venda. LOCAÇÃO: Art. 565 — locação é contrato (locador cede uso/gozo; locatário paga aluguel). Art. 566 — obrigações loca"
+          },
+          {
+            "id": 104,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Títulos Admitidos a Registro (Lei 6.015/73, Art. 167)",
+            "link": "",
+            "description": "Art. 167 Lei 6.015/73 — lista exaustiva de documentos que podem ser registrados no RI: (1) escritura pública (compravenda, doação, etc.), (2) escritura de divisão (herança), (3) sentença transitada em julgado, (4) ato de governo (decreto de desapropriação), (5) testamento (após morte), (6) contrato "
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 105,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Lei de Reforma Agrária (Lei 8.629/1993 + Lei 13.465/2017)",
+            "link": "",
+            "description": "Lei 8.629/93, Art. 1º — reforma agrária é desapropriação de imóvel por interesse social (terra não cumpre função social). Art. 4º — desapropriação por interesse social: terras sem produção. Art. 6º — INCRA (Instituto Nacional de Colonização e Reforma Agrária) executa programas. Procedimento: (1) INC"
+          },
+          {
+            "id": 106,
+            "discipline": "DIREITO EMPRESARIAL",
+            "title": "Sociedade Limitada — Estrutura, Quotas e Responsabilidade (CC Arts. 1.052-1.087)",
+            "link": "",
+            "description": "Art. 1.052 — sociedade limitada é sociedade empresária (exercício profissão comercial). Art. 1.053 — contrato social é documento constitutivo (acordo entre sócios). Art. 1.054 — responsabilidade: sócios respondem limitadamente ao VALOR DA QUOTA (responsabilidade limitada — diferença de sociedade sim"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 05",
+        "tasks": [
+          {
+            "id": 107,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "RI — Parcelamento do Solo Urbano e Registro (Lei 6.766/79 — Aprofundado)",
+            "link": "",
+            "description": "Lei 6.766/79, Art. 2º — conceito: loteamento é divisão de imóvel em lotes (fração menores), com abertura de ruas. Condomínio é transformação em UNIDADES AUTÔNOMAS (Lei 4.591/64). Art. 3º — OBRIGAÇÕES DO LOTEADOR: (1) licença municipal, (2) aprovação do projeto, (3) escritura transferindo áreas públi"
+          },
+          {
+            "id": 108,
+            "discipline": "DIREITO TRIBUTÁRIO",
+            "title": "Impostos Imobiliários — ITBI, IPTU, ITR (Aprofundado)",
+            "link": "",
+            "description": "ITBI — LC 116/03: (1) fato gerador = transmissão de propriedade imóvel, (2) alíquota = máx. 3% (municipal), (3) contribuinte = adquirente, (4) isenções = cônjuge, imóvel residencial pequeno. ITBI incide sobre: compravenda, doação, permuta, adjudicação, usucapião extrajudicial. IPTU — Lei Municipal: "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Ciclo 14 — Registro de Imóveis: Restrições Administrativas + Sistemas Eletrônicos",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 109,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Tombamento: Restrição Administrativa ao Direito de Propriedade",
+            "link": "",
+            "description": "Conceito de tombamento e sua anotação no RI. Efeitos patrimoniais e restrições ao proprietário. Armadilha FGV: distinção entre tombamento federal (IPHAN), estadual (SEPAC) e municipal — cada um gera obrigação de anotação no registro com titularidade distinta. Ordem de averbação conforme Lei 14.382/2"
+          },
+          {
+            "id": 110,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Georreferenciamento de Imóveis Rurais e Urbanos",
+            "link": "",
+            "description": "Obrigatoriedade de georreferenciamento para imóveis rurais. Certificação por profissional credenciado no INCRA. Relevância para transferência de propriedade e hipotecas. Armadilha FGV: Exigência de GRU (Gleba Rural Única) — quando é obrigatório? Diferença entre georreferenciamento e simples descriçã"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 111,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Regularização Fundiária Urbana (REURB): Lei 13.465/2017",
+            "link": "",
+            "description": "Conceito de REURB e seus objetivos. Modalidades: Reurb-S (Sustentabilidade) e Reurb-E (Escrituras). Procedimento administrativo e registral. Legitimados ativos. Armadilha FGV: Aplicação em favelas e áreas precárias vs. loteamentos clandestinos. Diferença entre REURB-S (sem transferência) e REURB-E ("
+          },
+          {
+            "id": 112,
+            "discipline": "Direito Civil - Reforma Agrária",
+            "title": "Lei 8.629/1993: Reforma Agrária e Proteção ao Desapropriado",
+            "link": "",
+            "description": "Sistema de reforma agrária brasileira. Conceito de latifúndio improdutivo. Procedimento de desapropriação para reforma agrária. Restrições e impedimentos. Papel do INCRA. Armadilha FGV: Imóvel com benfeitorias úteis durante desapropriação — indenização vs. apreensão. Direitos do proprietário desapro"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 113,
+            "discipline": "Direito Civil - Reforma Agrária",
+            "title": "Instrução Normativa INCRA 128/2022: Procedimentos Fundiários",
+            "link": "",
+            "description": "Procedimentos administrativos INCRA para reforma agrária. Etapas de desapropriação. Imissão de posse. Critérios de seleção de beneficiários. Armadilha FGV: Diferença entre imissão de posse precária (antes de sentença) vs. definitiva. Documentação necessária e prazos. Cancelamento de processo quando "
+          },
+          {
+            "id": 114,
+            "discipline": "Direito Administrativo",
+            "title": "Princípios da Administração Pública: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência",
+            "link": "",
+            "description": "Princípios estruturantes do direito administrativo. Vinculação da administração pública. Aplicação aos serviços notariais e de registro. Armadilha FGV: Distinção entre moralidade administrativa e moralidade jurídica comum. Violação de princípios como fundamento para invalidação de atos. Sancionaliza"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 115,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Tipicidade de Fatos Inscritíveis à Luz da Lei 14.382/2022",
+            "link": "",
+            "description": "Conceito de tipicidade na matrícula. Fatos que admitem inscrição vs. averbação. Novos fatos inscritíveis conforme Lei 14.382/2022 (gravame de direito real de laje, direito real de garantia, restrição voluntária). Armadilha FGV: Fatos que exigem matrícula nova (propriedade + direito real) vs. averbaç"
+          },
+          {
+            "id": 116,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Código Nacional de Matrícula (CNM) e Organização de Cartórios Eletrônicos",
+            "link": "",
+            "description": "Estrutura do CNM e seus componentes (CNPJ cartório + sequencial matrícula). Unificação de matrículas. Regras de numeração e identificação única. Armadilha FGV: CNM em transferências de propriedade — quando deve ser mantido vs. criado novo. Impacto em buscas registrais e garantias. Integração com SER"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 05",
+        "tasks": [
+          {
+            "id": 117,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Serviço de Registro Eletrônico de Imóveis (SREI) e Operador Nacional (ONR)",
+            "link": "",
+            "description": "Conceito de SREI e operacionalização. ONR como intermediário. Acesso remoto e assinatura digital. Garantias de segurança e fidedignidade. Armadilha FGV: Diferença entre cartório físico que utiliza SREI vs. cartório puramente eletrônico. Responsabilidade do ONR. Requisitos de documentação eletrônica."
+          },
+          {
+            "id": 118,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Direito Real de Laje conforme Lei 14.382/2022",
+            "link": "",
+            "description": "Direito real de laje como novo direito real. Requisitos para constituição. Inscrição no registro. Relação com propriedade horizontal. Armadilha FGV: Propriedade de laje vs. concessão de uso. Diferença entre laje em imóvel convencional vs. em prédio de andares múltiplos. Transferência e gravame de la"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Ciclo 15 — Registro de Imóveis: Documentação e Contratos Registrais",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 119,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Títulos Admitidos a Registro: Tipologia Documental",
+            "link": "",
+            "description": "Conceito de título em sentido registral. Documentos admitidos a registro. Requisitos formais. Armadilha FGV: Diferença entre título suficiente (inscritível) vs. insuficiente (exigência de documentos complementares). Escritura pública como pressuposto. Sentença judicial como título. Ato administrativ"
+          },
+          {
+            "id": 120,
+            "discipline": "Direito Civil - Tabelionato",
+            "title": "Escrituras Públicas: Conceito, Requisitos e Efeitos Jurídicos",
+            "link": "",
+            "description": "Conceito e essência da escritura pública. Requisitos legais. Fé pública e presunção de veracidade. Lavratura e subscrição. Cópias e traslados. Armadilha FGV: Escritura por instrumento particular vs. pública — quando cada uma é exigida. Validade de contrato sem escritura pública (disposição sobre bem"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 121,
+            "discipline": "Direito Civil",
+            "title": "Contrato de Compra e Venda de Imóvel: Fases e Eficácia Registral",
+            "link": "",
+            "description": "Elementos essenciais do contrato de compra e venda de imóvel. Fase obrigacional vs. fase real. Efeitos antes do registro. Armadilha FGV: Contrato preliminar (promessa de venda) — direitos do promissário comprador. Inscrição de contrato preliminar como direito real. Resolução contrato por inadimpleme"
+          },
+          {
+            "id": 122,
+            "discipline": "Direito Civil",
+            "title": "Contrato de Doação de Imóvel: Formalidades e Efeitos",
+            "link": "",
+            "description": "Conceito de doação. Requisitos de forma (escritura pública obrigatória para imóvel). Animus donandi. Capacidade do doador e donatário. Armadilha FGV: Doação irrevogável vs. revogável (causas de revogação — superveniência de filhos, ingratidão). Doação com encargo (cláusula modal). Doação por morte ("
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 123,
+            "discipline": "Direito Civil",
+            "title": "Contrato de Permuta: Características Registrais",
+            "link": "",
+            "description": "Conceito de permuta (troca de dois bens). Requisitos de forma (escritura pública se envolver imóvel). Equiparação à compra e venda. Armadilha FGV: Permuta com diferença de valores (compra e venda disfarçada?). Exigência de escritura por ambos os permutantes. Registro em duas matrículas (dupla transf"
+          },
+          {
+            "id": 124,
+            "discipline": "Direito Civil",
+            "title": "Contrato de Locação de Imóvel: Anotações Registrais",
+            "link": "",
+            "description": "Conceito de locação. Requisitos de forma (não é obrigatória escritura pública, mas recomendada). Averbação de locação no RI (proteção ao locatário). Prazo máximo de locação para registro (Lei 8.245/1991). Armadilha FGV: Locação verbal X registro — validade entre partes vs. eficácia erga omnes. Averb"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 125,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Cédulas de Crédito: Hipoteca e Penhor de Imóvel",
+            "link": "",
+            "description": "Conceito de cédula de crédito imobiliário. Negociabilidade e garantia hipotecária. Requisitos de forma (pode ser eletrônica). Inscrição como direito real de garantia. Armadilha FGV: CCI vs. hipoteca comum — vantagens do CCI. Prazo de prescrição reduzido. Incorporação de multa e juros na cédula. Tran"
+          },
+          {
+            "id": 126,
+            "discipline": "Direito Constitucional",
+            "title": "Direitos e Garantias Fundamentais: Direito de Propriedade (art. 5º, XXII) e Função Social",
+            "link": "",
+            "description": "Garantia constitucional de propriedade. Função social como limitação imanente. Usucapião como forma de aquisição originária. Desapropriação por interesse social/público. Armadilha FGV: Propriedade vs. posse. Propriedade não é direito absoluto (função social). Aplicação em registro de imóveis (REURB,"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 05",
+        "tasks": [
+          {
+            "id": 127,
+            "discipline": "Direito Civil",
+            "title": "Proteção de Dados Pessoais em Serviços Notariais e Registrais",
+            "link": "",
+            "description": "Princípios de proteção de dados. Responsabilidade de cartórios e registros. Consentimento do titular. Direitos do titular (acesso, retificação, exclusão). Armadilha FGV: Dados sensíveis (origem racial, convicção religiosa, filiação sindical). Diferença entre consentimento e permissão legal. Responsa"
+          },
+          {
+            "id": 128,
+            "discipline": "Direito Empresarial",
+            "title": "Sociedades Empresárias: Registro de Contratos Sociais e Alterações",
+            "link": "",
+            "description": "Registro de contratos sociais em Junta Comercial. Diferença entre registro comercial e registro imobiliário. Sociedades imobiliárias (sociedade em comandita por ações, sociedade anônima). Armadilha FGV: Imóvel de sócios em nome de sociedade — necessidade de transferência via RI. Dissolução e liquida"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "title": "Ciclo 16 — Sistemas Eletrônicos Registrais e Garantias Mobiliárias",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 129,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Sistema Eletrônico de Registros Públicos (SERP) e Integração Nacional",
+            "link": "",
+            "description": "Estrutura e funcionamento do SERP. Acesso remoto a registros. Interoperabilidade entre cartórios. Consultas públicas (certidões). Armadilha FGV: SERP como integrador nacional de registros (não substitui registros locais). Segurança de dados e sigilo (informações protegidas). Busca por matrícula elet"
+          },
+          {
+            "id": 130,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Central Nacional de Indisponibilidade de Bens (CNIB) e Anotações de Bloqueio",
+            "link": "",
+            "description": "Conceito de CNIB como repositório de anotações de indisponibilidade. Hipóteses de bloqueio. Comunicação obrigatória por órgãos judiciais e administrativos. Armadilha FGV: CNIB vs. averbação de bloqueio no RI — diferença operacional. Prazo de bloqueio. Cancelamento automático ou mediante requerimento"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 131,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Direito Real de Garantia e Marco Legal de Garantias (Lei 13.097/2015)",
+            "link": "",
+            "description": "Novo direito real de garantia (substitui alienação fiduciária de bens imóveis). Constituição e inscrição. Vantagens vs. hipoteca. Armadilha FGV: Alienação fiduciária vs. direito real de garantia — transição Lei 14.382/2022. Hipoteca convencional X direito real de garantia (prioridade, execução, dire"
+          },
+          {
+            "id": 132,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Serviço de Atendimento Eletrônico Compartilhado (SAEC) e Operacionalização",
+            "link": "",
+            "description": "SAEC como plataforma de atendimento compartilhado. Serviços disponibilizados (certidões, consultas, agendamentos). Responsabilidade do ONR. Segurança de acesso. Armadilha FGV: SAEC X SREI — diferença operacional. SAEC como serviço auxiliar. Custos de utilização e repasse. Assinatura digital e identi"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 133,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Receita do Fundo para Implementação e Custeio do SREI (Provimento 115-2021 CNJ)",
+            "link": "",
+            "description": "Fundo SREI e sua arrecadação. Distribuição de recursos. Custos de implementação e manutenção. Responsabilidade dos cartórios. Armadilha FGV: Fundo SREI vs. emolumentos (diferença). Percentual retido pelos cartórios. Despesas com certificação digital, acesso a ONR. Transparência na gestão do fundo."
+          },
+          {
+            "id": 134,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Registro de Imóvel e Direito à Proteção dos Dados Pessoais",
+            "link": "",
+            "description": "Aplicação de LGPD ao RI. Dados pessoais em matrículas (nomes, CPF, endereços). Necessidade de consentimento ou base legal. Armadilha FGV: Publicidade registral vs. privacidade dados. Sigilo de dados sensíveis. Transferência de propriedade — consentimento para processamento. Responsabilidade do cartó"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 135,
+            "discipline": "Direito Civil",
+            "title": "Sistema Integrado de Pagamentos Eletrônicos (SIPE) e Emolumentos Eletrônicos",
+            "link": "",
+            "description": "SIPE como plataforma de pagamento integrado. Pagamento de emolumentos via sistema. Segurança de transações. Emissão de comprovantes eletrônicos. Armadilha FGV: SIPE X pagamentos convencionais (débito, crédito, transferência). Integridade de dados de pagamento. Auditoria de transações."
+          },
+          {
+            "id": 136,
+            "discipline": "Direito Tributário",
+            "title": "Impostos sobre Propriedade Imóvel: IPTU, ITBI e Imposto de Renda (Pessoa Física)",
+            "link": "",
+            "description": "IPTU como imposto municipal. Sujeito passivo (proprietário). ITBI como imposto sobre transmissão de bem imóvel. Incidência no RI. Armadilha FGV: ITBI X transferência — obrigação de recolher antes de registro. Isenções (transferências em REURB). Imposto de renda em transferência de imóvel (pessoa fís"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 05",
+        "tasks": [
+          {
+            "id": 137,
+            "discipline": "Direito Civil - Registro de Imóveis",
+            "title": "Exame Crítico de Títulos: Legitimidade, Legitimação e Defesa do Direito",
+            "link": "",
+            "description": "Obrigação de registrador de examinar títulos criticamente. Requisitos formais vs. substanciais. Legitimidade de partes. Legitimação documentada. Armadilha FGV: Dúvidas sobre autoria ou capacidade — direito de não registrar. Recusa registral fundamentada. Defesa do proprietário anterior. Prazo para a"
+          },
+          {
+            "id": 138,
+            "discipline": "Direito Processual Civil",
+            "title": "Ação Reivindicatória e Ação Possessória: Importância Registral",
+            "link": "",
+            "description": "Ação reivindicatória (vindicatio) — petitório. Posse vs. propriedade. Ação possessória (manutenção, reintegração, interdito proibitório). Armadilha FGV: Registro como prova de propriedade. Decisão em ação possessória não resolve propriedade. Efeitos registrais de sentença em reivindicação."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "title": "Ciclo 17 — Provimento 149/2023 CNJ + Lei 8.935/1994 + Revisão Intensiva",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 139,
+            "discipline": "Teoria Geral do Direito Notarial e Registral",
+            "title": "Provimento 149/2023 CNJ — Estrutura, Aplicação e Normatividade",
+            "link": "",
+            "description": "Escopo do Provimento 149 como consolidação de normas. Vigência e abrangência (notários e registradores). Estrutura dividida em partes (Geral, Tabelionato, RI). Armadilha FGV: Provimento 149 vs. normas anteriores (possíveis conflitos). Aplicabilidade a cartórios já modernizados. Alterações substancia"
+          },
+          {
+            "id": 140,
+            "discipline": "Direito Notarial",
+            "title": "Tabelionato de Notas: Atribuições, Função Pública e Responsabilidade Profissional",
+            "link": "",
+            "description": "Conceito de tabelião como oficial público. Atribuições exclusivas (lavratura de escrituras, testamentos, procurações). Responsabilidade civil e administrativa. Armadilha FGV: Tabelião X cartório (pessoa física vs. serviço). Limite de atribuições (não pode fazer trabalho notarial além de competência)"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 141,
+            "discipline": "Direito Notarial",
+            "title": "Lei 8.935/1994 — Parte I: Disposições Gerais e Requisitos de Acesso à Profissão",
+            "link": "",
+            "description": "Natureza jurídica de serviço notarial e registral. Requisitos para acesso (nacionalidade, maioridade, capacidade civil, idoneidade moral, diploma de bacharel em direito). Exame de proficiência. Armadilha FGV: \"Idoneidade moral\" — avaliação subjetiva, critério jurisprudencial. Incompatibilidades (jui"
+          },
+          {
+            "id": 142,
+            "discipline": "Direito Notarial",
+            "title": "Lei 8.935/1994 — Parte II: Delegação, Vitaliciedade, Substituição e Extinção",
+            "link": "",
+            "description": "Delegação de serviço (ato administrativo). Vitaliciedade como proteção profissional. Substituição permanente (designação de sucessor). Causas de extinção (morte, aposentadoria, exoneração, condenação). Armadilha FGV: Vitaliciedade X estabilidade — conceitos distintos. Perda de delegação por condenaç"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 143,
+            "discipline": "Direito Notarial",
+            "title": "Infrações Disciplinares e Penalidades: Sanções Administrativas e Penais",
+            "link": "",
+            "description": "Infrações administrativas vs. penais. Sanções disciplinares (advertência, multa, suspensão, cassação). Procedimento administrativo. Armadilha FGV: Falsificação de assinatura em escritura (crime de falsificação documental). Extravio de livros (crime previsão penal). Responsabilidade criminal pessoal "
+          },
+          {
+            "id": 144,
+            "discipline": "Direito Notarial",
+            "title": "Emolumentos: Conceito, Cálculo, Distribuição e Tabela de Preços",
+            "link": "",
+            "description": "Conceito de emolumento como remuneração do serviço notarial/registral. Base legal (Lei ou Provimento). Tabela de preços (atualização anual). Armadilha FGV: Emolumento X taxa (diferença — taxa é recolhimento ao governo, emolumento é ao profissional). Isenção de emolumentos (REURB, transferência para "
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 145,
+            "discipline": "Teoria Geral do Direito Notarial e Registral",
+            "title": "Apostilamento de Documentos: Convenção de Haia e Procedimento",
+            "link": "",
+            "description": "Conceito de apostilamento como certificação de autenticidade. Documentos públicos Brasil para uso no exterior (signatários Convenção). Procedimento simples (carimbo/assinatura). Armadilha FGV: Apostila vs. autenticação — diferença. Documentos que requerem apostila. Países signatários (UE, EUA, etc.)"
+          },
+          {
+            "id": 146,
+            "discipline": "Teoria Geral do Direito Notarial e Registral",
+            "title": "Conciliação e Mediação nos Serviços Notariais (Lei 13.140/2015)",
+            "link": "",
+            "description": "Mediação como forma de resolução de conflitos. Papel do notário/tabelião em mediação. Confidencialidade e sigilo. Armadilha FGV: Mediação vs. arbitragem. Notário como mediador (requisitos). Responsabilidade em mediação fracassada. Acordo em mediação (força executória)."
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 05",
+        "tasks": [
+          {
+            "id": 147,
+            "discipline": "Teoria Geral do Direito Notarial e Registral",
+            "title": "Organização Digital dos Serviços Notariais e Registrais: Modernização e Segurança",
+            "link": "",
+            "description": "Transformação digital dos serviços. Assinatura eletrônica vs. digital. Certificação digital (ICP-Brasil). Segurança de informação. Armadilha FGV: Assinatura eletrônica avançada X qualificada. Cartório digital vs. híbrido. Responsabilidade técnica. Backup e recuperação dados."
+          },
+          {
+            "id": 148,
+            "discipline": "Direito Notarial e Registral - REVISÃO INTENSIVA",
+            "title": "Lei 8.935/1994 Consolidada + Lei 14.382/2022 + Jurisprudência FGV/CEBRASPE",
+            "link": "",
+            "description": "Síntese da Lei 8.935/1994 com Lei 14.382/2022. Mudanças substanciais (SREI, direito real de garantia, tipicidade). Questões recorrentes FGV (exame títulos, emolumentos, responsabilidade). Armadilha FGV: Pegadinhas clássicas (averbação X inscrição, emolumento X taxa, vitaliciedade X estabilidade, apo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "title": "Ciclo 18 — REDUZIDA — NASCIMENTO ESPERADO",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 149,
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Tabelionato de Protestos (Arts. 1-50)",
+            "link": "",
+            "description": "Definição, competência, documentos protesto, qualidades do protesto. Armadilha FGV: Confundir protesto notarial com protesto cartorário em RFI. Arts. 14-20 (intimação do devedor)."
+          },
+          {
+            "id": 150,
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Tabelionato de Protestos (Arts. 51-100) + Atos de Protesto",
+            "link": "",
+            "description": "Procedimento do protesto (fases), atos notariais (ciência, intimação), registro em livro de protesto. Armadilha FGV: Ordem de atos — muitas questões trocam sequência de ciência/devolução."
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 151,
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Registro de Cartórios (RCPN)",
+            "link": "",
+            "description": "Registro cartorial de protesto (livro próprio), requisitos de validade, averbações. Armadilha FGV: RCPN vs. Registro de Protesto em RFI — diferenças essenciais de competência e efeitos."
+          },
+          {
+            "id": 152,
+            "discipline": "Direito Civil",
+            "title": "Revisão Leve — Títulos de Crédito e Cambial (Arts. 887-926 CC)",
+            "link": "",
+            "description": "Conceito, características (literalidade, autonomia), títulos comuns (nota promissória, duplicata, cheque). Armadilha FGV: Confundir requisitos de validade de duplicata com protesto — protesto não valida título inválido."
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 153,
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Responsabilidade Civil do Notário em Protestos",
+            "link": "",
+            "description": "Responsabilidade do notário por atos ilícitos em protesto, prazos de reclamação, compensação. Armadilha FGV: Responsabilidade objetiva vs. subjetiva — FGV mescla conceitos."
+          },
+          {
+            "id": 154,
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Tabelionato de Notas — Escrituras (Arts. 1-100)",
+            "link": "",
+            "description": "Competência do tabelião (escrituras, atas, reconhecimento), requisitos formais (partes, identificação, consentimento), livros de notas. Armadilha FGV: Quando tabelião NÃO pode recusar ato — ordem pública vs. conveniência pessoal."
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 155,
+            "discipline": "REVISÃO / SIMULADO CURTO",
+            "title": "Resumo Semanal Semana 18 — Consolidação Rápida",
+            "link": "",
+            "description": "Identificar gaps, revisar confusões comuns FGV"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Ciclo 19 — REDUZIDA",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
             "id": 156,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 20 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI."
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Registro de Créditos Pignoratícios (RCPJ)",
+            "link": "",
+            "description": "Conceito RCPJ, bens admitidos (moeda estrangeira, ouro, valores), requisitos de registro, cancelamento. Armadilha FGV: Confundir RCPJ com cartório de protestos ou RFI — jurisdições distintas."
           },
           {
             "id": 157,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 21 do LDI, até o tópico Controle Difuso de Constitucionalidade.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI. Neste capítulo estudaremos as disposições relacionadas ao Controle de Constitucionalidade,"
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Registro de Títulos e Documentos (RTD)",
+            "link": "",
+            "description": "Competência RTD (títulos, documentos), documentos admitidos, requisitos formais, prazo de guarda, cancelamento. Armadilha FGV: RTD não autentica conteúdo — autenticação é função notarial, não registral."
           }
         ]
       },
@@ -1618,17 +1644,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 158,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Advocacia Pública e da Defensoria Pública, capítulos 13 e 14 do Direto ao",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos a Advocacia Pública e a Defensoria Pública. Faça as marcações e anotações utilizando o LDI."
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Registro de Imóveis (RI) — Arts. 1-100",
+            "link": "",
+            "description": "Competência RI (imóveis urbanos/rurais), sistema de registro (aquisição, conservação, segurança), livros de registro, efeitos do registro. Armadilha FGV: Presunção de validade do registro vs. propriedade real — registro não cria propriedade, presume validade."
           },
           {
             "id": 159,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo dos atos processuais, capítulo 17 do Direto ao Ponto, de “17.1) Atos",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "processuais: Conceito” até “17.5) Da prática eletrônica dos atos processuais”. Nesta tarefa iniciaremos o estudo dos atos processuais. Faça as marcações e anotações utilizando o LDI. O tema atos processuais estão entre os mais cobrados nessa disciplina."
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Registro de Imóveis (RI) — Arts. 101-200 + Imóvel Rural",
+            "link": "",
+            "description": "Procedimento de registro (prenotação, decisão, arquivamento), imóvel rural (CCIR, cadastro técnico), matrículas. Armadilha FGV: Prenotação vs. Registro — efeitos diferentes; CCIR não é título de propriedade."
           }
         ]
       },
@@ -1637,17 +1663,17 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 160,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 8 do Livro Digital Interativo (LDI), subcapítulos 8.4 ao 8.6, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Daremos continuidade ao estudo deste capítulo com o tópico Extinção do Crédito Tributário. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões"
+            "discipline": "Direito Constitucional / Administrativo",
+            "title": "Revisão Leve — Competências Administrativa (Arts. 21-25 CF88)",
+            "link": "",
+            "description": "Competências privativas, comuns, concorrentes — foco em notarial/registral (competência estadual). Armadilha FGV: Confundir competência legislativa com administrativa."
           },
           {
             "id": 161,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 8 do Livro Digital Interativo (LDI), subcapítulos 8.7 e 8.8.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Nessa tarefa, será feito o estudo das garantias e privilégios do crédito tributário e da administração tributária. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões"
+            "discipline": "SIMULADO / REVISÃO",
+            "title": "Simulado 01 — 50 questões cronometrado (versão reduzida)",
+            "link": "",
+            "description": "Identificar padrões de erro FGV, velocidade de resposta sob pressão"
           }
         ]
       },
@@ -1656,979 +1682,10 @@ export const TRILHAS: Trilha[] = [
         "tasks": [
           {
             "id": 162,
-            "discipline": "LEGISLAÇÃO PENAL ESPECIAL",
-            "title": "Estudo do Capítulo 04; Proteção a vítima e a Testemunhas Ameaçadas e resolução de",
-            "link": "https://cj.estrategia.com/ldi/legislacao-penal-especial-enac-2026-1",
-            "description": "Legislação Penal Especial Inicie o estudo da Lei 9.807/1999, conhecida como Lei de proteção a vítima e a testemunhas. Inicialmente, saiba que a Lei n° 9.807/99 é responsável por cuidar da proteção a vítima e as"
-          },
-          {
-            "id": 163,
-            "discipline": "Legislação Penal Especial",
-            "title": "Estudo do Capítulo 05; Parcelamento do solo e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/legislacao-penal-especial-enac-2026-1",
-            "description": "Inicialmente, saiba que com o escopo de assegurar o efetivo controle da urbanização, entrou em vigência no ordenamento jurídico pátrio a lei nº 6.766/79, diploma legal incumbido de regulamentar o parcelamento do solo, contendo regras de caráter administrativo, civil e criminal."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 164,
-            "discipline": "TABELIONATO DE PROTESTO",
-            "title": "Estudo do tópico “Procedimento”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Tabelionato de Protestos O procedimento de protesto de títulos conforme a Lei nº 9.492/1997 inclui os seguintes pontos: Apresentação do título: O título deve ser apresentado pelo apresentante, que é responsável pelas"
-          },
-          {
-            "id": 165,
-            "discipline": "Tabelionato de Protestos",
-            "title": "Estudo do tópico “Lavratura do Protesto”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "A lavratura do protesto é o ato formal pelo qual o tabelião de protesto certifica, de maneira pública e solene, a existência de uma dívida não paga, seja ela representada por títulos ou outros documentos de dívida. Esse procedimento está regulamentado pela Lei nº 9.492/1997, que disciplina os serviç"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 166,
-            "discipline": "TEORIA GERAL DO DIREITO NOTARIAL E REGISTRAL",
-            "title": "Estudo do tópico “Interinidade”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Teoria Geral do Direito Notarial e Registral Em relação à interinidade, verifique como funciona a designação do interino. Ato contínuo, examine como funciona o exercício da interinidade, e como se dá a revogação da interinidade."
-          },
-          {
-            "id": 167,
-            "discipline": "Teoria Geral do Direito Notarial e Registral",
-            "title": "Estudo do tópico “Interação com Órgãos e Entes Públicos”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "Quanto à interação com os órgãos e emtes públicos, examine os detalhes do Provimento nº 149/CNJ. Ao final, resolva as questões propostas."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 168,
-            "discipline": "Teoria Geral do Direito Notarial e Registral",
-            "title": "Estudo do tópico “Organização Digital dos Serviços”",
-            "link": "https://cj.estrategia.com/ldi/teoria-geral-dos-atos-notariais-e-registrais-enac-2026-1/",
-            "description": "No que diz respeito a documentos eletrônicos, fique esperto com a certificação digital. As regras são simples, mas é um ponto que pode fazer a diferença na sua aprovação. Leia sobre as Centrais de serviços eletrônicos e busque esquematizar para entender."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "13",
-    "title": "Trilha 13",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 169,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 21 do LDI, do tópico Ação Direta de Inconstitucionalidade até",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Ação Direta de Inconstitucionalidade por Omissão. Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso"
-          },
-          {
-            "id": 170,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 21 do LDI, do tópico Ação Declaratória de Constitucionalidade",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "até Arguição de Descumprimento de Preceito Fundamental. Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 171,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 12 (Teoria Geral da Pena), subcapítulos 12.5.6 ao 12.7; e resolução de 11",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal Nesta tarefa, continuaremos o estudo da Teoria Geral da Pena. Faça anotações/marcações no seu material para futura revisão."
-          },
-          {
-            "id": 172,
-            "discipline": "Direito Penal",
-            "title": "Treino Capítulo 12. Resolução de 28 questões do Sistema de Questões.",
-            "link": "http://questo.es/rfke2p",
-            "description": "Agora que você já estudou a teoria, treine seus conhecimentos resolvendo questões de provas, no Sistema de Questões:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 173,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo das Tutela Provisória, capítulo 20 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos a Tutela Provisória. Faça as marcações e anotações utilizando o LDI. Lembre-se que tutela é a proteção prestada pelo Estado quando provocado por meio de um processo,"
-          },
-          {
-            "id": 174,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo da Petição Inicial, capítulo 22 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Nesta tarefa estudaremos a Petição Inicial. Faça as marcações e anotações utilizando o LDI. A petição inicial, conforme Didier, é o instrumento da demanda, sendo essencial para iniciar um processo. Lembre-se que ela precisa conter os três elementos fundamentais: as partes envolvidas, o pedido"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 175,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 9 do Livro Digital Interativo (LDI), subcapítulos 9.1 e 9.2.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Neste capítulo, você estudará o tema Processo Judicial Tributário. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões"
-          },
-          {
-            "id": 176,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 9 do Livro Digital Interativo (LDI), subcapítulo 9.3.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Neste capítulo, você continuará o estudo do Processo Judicial Tributário com o tema Ações Antiexacionais. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 177,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo dos tópicos: “Da Propriedade e dos Direitos Reais”; “Propriedade Imobiliária",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "Registro de Imóveis e o Registro de Imóveis (Função Social)”; “Sistemas de Transmissão da Propriedade Imobiliária”"
-          },
-          {
-            "id": 178,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo dos tópicos: “Introdução ao Registro de Imóveis”; “Princípios Registrais",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "Imobiliários”; e “Atribuições do Registro de Imóveis” Caros alunos, iniciaremos agora a trilha de estudo de Registro de Imóveis para Cartórios para o ENAC. Como base para o nosso estudo, utilizaremos o Curso Direto ao Ponto."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 179,
-            "discipline": "TABELIONATO DE NOTAS",
-            "title": "Estudo dos tópicos: “ Serviço Notarial”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "Tabelionato de Notas Nesta primeira tarefa, veremos os aspectos introdutórios da disciplina e começaremos a conhecer o que a diferencia das demais."
-          },
-          {
-            "id": 180,
-            "discipline": "Tabelionato de Notas",
-            "title": "Estudo do tópico: “Princípios Expressos da Atividade Notarial”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "O tema de princípios é extremamente relevante para todas as fases do concurso. As questões objetivas costumam ou abordar a definição do artigo, ou expõem um problema prático, e indagam qual princípio deve ser aplicado àquela situação."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 181,
-            "discipline": "Tabelionato de Notas",
-            "title": "Estudo do tópico: “Princípios Implícitos da Atividade Notarial”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "Verifique atentamente a aplicação dos princípios da legalidade, da imparcialidade, da independência, da justiça preventiva, da formalidade, da rogação, da economia, da imediação, e do consentimento. Ao final, resolva as questões propostas."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "14",
-    "title": "Trilha 14",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 182,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 21 do LDI, do tópico Representação Interventiva até o fim da",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI."
-          },
-          {
-            "id": 183,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 22 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI. Agora, estudaremos o capítulo que trata da Seguridade Social."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 184,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 13 (Concurso de Crimes); e resolução de 13 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal Nesta tarefa, estudaremos o tema Concurso de Crimes. Faça anotações/marcações no seu material para futura revisão."
-          },
-          {
-            "id": 185,
-            "discipline": "Direito Penal",
-            "title": "Estudo do capítulo 14 (Medidas de Segurança); e resolução de 13 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Nesta tarefa, estudaremos o tema Medidas de Segurança. Faça anotações/marcações no seu material para futura revisão. Inicialmente, entenda que a sanção penal pode ser:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 186,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Audiência de Conciliação e Mediação, capítulo 24 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos a Audiência de Conciliação e Mediação. Faça as marcações e anotações utilizando Após a propositura de uma ação, o juiz pode designar uma audiência de conciliação ou"
-          },
-          {
-            "id": 187,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo das Providências Preliminares e o Julgamento Conforme o Estado do",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Processo, capítulo 27 do Direto ao Ponto. Nesta tarefa estudaremos as Providências Preliminares e o Julgamento Conforme o Estado do Processo. Faça as marcações e anotações utilizando o LDI."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 188,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 9 do Livro Digital Interativo (LDI), subcapítulo 9.4.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Neste capítulo, você continuará o estudo do Processo Judicial Tributário com o tema Coisa julgada em matéria tributária"
-          },
-          {
-            "id": 189,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 10 do Livro Digital Interativo (LDI), subcapítulos 10.1 ao 10.4, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Nesse capítulo, você estudará o tema Impostos Federais. A presente tarefa terá por base o estudo dos impostos de importação (II), de exportação (IE) e imposto de renda (IR)."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 190,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo do tópico: “Tipicidade de Fatos Inscritíveis à Luz da Lei 14.382/2022”; e “Invalidade",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Registro de Imóveis e Ineficácia do Contrato e sua Relação com o Registro” Nesse capítulo, você estudará o tema da tipicidade do art. 167 da Lei de Registros Públicos, que foi alterado"
-          },
-          {
-            "id": 191,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: “Do registro. Das averbações. Das anotações/comunicações”",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Nesse capítulo, você estudará a diferença entre registros, anotações, averbações e comunicações, e como eles impactam o conteúdo que fica arquivado no Registro de Imóveis. Leia atentamente, pois o assunto é bem cobrado em provas."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 192,
-            "discipline": "TABELIONATO DE NOTAS",
-            "title": "Estudo do tópico: “Ato Notarial”",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Tabelionato de Notas Verifique atentamente o Conceito de Ato Notarial; de Regime Jurídico, Natureza Jurídica. Observe quais são os elementos fundamentais, como é atribuída a competência."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "15",
-    "title": "Trilha 15",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 193,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo dos Capítulos 23 e 24 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI."
-          },
-          {
-            "id": 194,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo dos Capítulos 25, 26 e 27 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI. O capítulo que trata de Meio Ambiente é bem curto."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 195,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 15 (Ação Penal); e resolução de 05 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal Nesta tarefa, estudaremos o tema Ação Penal. Faça anotações/marcações no seu material para futura revisão."
-          },
-          {
-            "id": 196,
-            "discipline": "Direito Penal",
-            "title": "Estudo do capítulo 16 (Dos Crimes contra a Fé Pública); e resolução de 09 questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Faça anotações/marcações no seu material para futura revisão. Nesta tarefa estudaremos exclusivamente Dos Crimes contra a Fé Pública. Tenha em mente que o Crime de Moeda falsa, previsto no art. 289 do CP, é crime comum, ou seja, pode"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 197,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo das Provas em Espécie, capítulo 29 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos as Provas em Espécie. Faça as marcações e anotações utilizando o LDI. Saibas os aspectos relevantes dos principais meios de prova:"
-          },
-          {
-            "id": 198,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo da Fase Decisória (Sentença), capítulo 30 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Nesta tarefa estudaremos a Fase Decisória (Sentença). Faça as marcações e anotações utilizando o LDI. Inicialmente, saiba que as sentenças são classificadas quanto ao conteúdo e quanto à resolução ou não do • Quanto ao Conteúdo:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 199,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 10 do Livro Digital Interativo (LDI), subcapítulos 10.5 ao 10.8, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário Esta tarefa terá por base o estudo do IPI, do IOF, do ITR e do Imposto Seletivo. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões"
-          },
-          {
-            "id": 200,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 11 do Livro Digital Interativo (LDI), subcapítulos 11.2 e 11.4, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Nesse capítulo, você estudará o tema Impostos Estaduais. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões que, porventura, tenha errado ou tido algum tipo de dificuldade."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 201,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 11 do Livro Digital Interativo (LDI), subcapítulo 11.3.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "A presente tarefa terá por base o estudo do ICMS. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões que, porventura, tenha errado ou tido algum tipo de dificuldade."
-          },
-          {
-            "id": 202,
-            "discipline": "Direito Tributário",
-            "title": "Estudo do Capítulo 12 do Livro Digital Interativo (LDI), subcapítulos 12.1 e 12.2.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-ii-enac",
-            "description": "Nesse capítulo, você estudará o tema Impostos Municipais. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões que, porventura, tenha errado ou tido algum tipo de dificuldade."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 203,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo dos tópicos: “Registro de Imóveis e o Direito à Proteção dos Dados Pessoais;",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Registro de Imóveis Proteção de Dados Pessoais e Publicidade Registral” Durante o estudo, dê especial atenção a diferença entre publicidade direta e indireta. Quanto à amplitude da"
-          },
-          {
-            "id": 204,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: “Dos Livros. Dos Classificadores.”",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Aqui, vale a pena observar: • Quais são os Livros e suas respectivas finalidades; • Qual a finalidade dos classificadores e como eles são usados;"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 205,
-            "discipline": "TABELIONATO DE NOTAS",
-            "title": "Revisão da semana: Ao final, revise os seus próprios grifos feitos durante estas Tarefas e aproveite para",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "Tabelionato de Notas Estudo do tópico: “Atos Notariais Extraprotocolares” Verifique a diferença entre atos protocolares e atos extraprotocolares. Fique atento às classificações, que"
-          },
-          {
-            "id": 206,
-            "discipline": "Tabelionato de Notas",
-            "title": "Estudo do tópico: “Escritura Pública”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "Verifique atentamente os requisitos gerais para lavratura de escritura pública, e também as normas específicas para cada tipo de escritura pública. Analise atentamente a definição de escrituras públicas declaratórias, e os atos que podem ser praticados sob o"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "16",
-    "title": "Trilha 16",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 208,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo da Teoria Geral da Responsabilidade Civil, subcapítulo 18; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil - 23 Nesta tarefa veremos a teoria sobre a Teoria Geral da Responsabilidade Civil. Faça as marcações e anotações utilizando o LDI."
-          },
-          {
-            "id": 209,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 28 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 210,
-            "discipline": "Direito Constitucional",
-            "title": "Estudo do Capítulo 29 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC. Como base para o nosso estudo, utilizaremos o LDI. Para começar, em relação a este assunto, saiba quais assuntos devem ser disciplinados por lei"
-          },
-          {
-            "id": 211,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Coisa Julgada, capítulo 32 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos a Coisa Julgada. Faça as marcações e anotações utilizando o LDI. Lembre-se que a coisa julgada é a qualidade de uma decisão judicial que a torna imutável e indiscutível"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 212,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo dos Procedimentos Especiais, capítulo 33 do Direto ao Ponto, de “33.1)",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Procedimentos Especiais: Introdução” até “33.9) Ação de Inventário e Partilha”. Nesta tarefa iniciaremos o estudo dos Procedimentos Especiais. Faça as marcações e anotações utilizando o LDI. Foque nos principais aspectos da atividade notarial e registral."
-          },
-          {
-            "id": 213,
-            "discipline": "DIREITO TRIBUTÁRIO",
-            "title": "Estudo do Capítulo 12 do Livro Digital Interativo (LDI), subcapítulos 12.3 ao 12.5, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/direito-tributario-enac-2026-1",
-            "description": "Direito Tributário A presente tarefa terá por base o estudo do ISS e do IBS. OBS: Resolva as questões contidas no decorrer da teoria e, em seguida, estude os comentários das questões"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 214,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo do tópico: “Do Processamento Registral”",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "Registro de Imóveis A regulamentação e etapas do processo de registro encontram-se nos artigos 182 e seguintes da Lei 6.015/73. Preste atenção também ao significado jurídico da prenotação."
-          },
-          {
-            "id": 215,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: “Da Qualificação Registral”",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "A retificação de registro de imóveis é um procedimento legal que visa corrigir erros, omissões, imprecisões ou divergências constatadas nos registros públicos de imóveis. Esse processo é regulado pela Lei dos Registros Públicos (Lei nº 6.015/1973), que estabelece normas específicas para a retificaçã"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 216,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: “Retificação de Registro”",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "Após realizado o lançamento do registro ou averbação na matrícula, poderão ser verificados no conteúdo dos atos alguns casos de omissão, imprecisão ou divergências com a verdade ou realidade fática. Nesses casos, o oficial deve promover a retificação, ou seja, a alteração para a devida correção do t"
-          },
-          {
-            "id": 217,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: “Da Matrícula de Imóveis”",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "Compreenda as principais diferenças entre matrícula, registro e averbação: Estude com atenção as hipóteses de abertura, cancelamento e fusão de matrículas. Ao final, resolva as questões propostas."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 218,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: “Dúvida Registral”",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "A dúvida registral é o recurso jurídico posto à disposição de qualquer pessoa que não se conforme com as exigências formuladas pelo Cartório de Registro de Imóveis para o registro de um título. Acha-se previsto em lei para os casos de discordância do interessado no registro em face de exigências fei"
-          },
-          {
-            "id": 219,
-            "discipline": "Tabelionato de Notas",
-            "title": "Estudo do tópico: “Escrituras Públicas – Compra e Venda”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "Fique atento aos requisites básicos das escrituras de compra e venda, como o rol apresentado pelo professor. Analise o conceito de compra e venda, como os detalhes trazidos pelo art. 481, do CC/02. Examine a definição de anuente e suas implicações jurídicas."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 220,
-            "discipline": "Tabelionato de Notas",
-            "title": "Estudo do tópico: “Escrituras Públicas – Troca ou Permuta”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "A troca ou permuta é o contrato segundo o qual as partes contratantes se obrigam a dar uma coisa por outra que não seja dinheiro. Na prática, ocorrem, ao mesmo tempo, duas vendas, servindo as coisas trocadas como compensação recíproca. Por isso, aplicam-se residualmente, à permuta, as mesmas regras "
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "17",
-    "title": "Trilha 17",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 221,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo da Responsabilidade Civil em sentido amplo, subcapítulo 19; e resolução de",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre a Responsabilidade Civil em sentido amplo. Faça as marcações e anotações utilizando o LDI."
-          },
-          {
-            "id": 222,
-            "discipline": "Direito Civil",
-            "title": "Estudo da Responsabilidade Civil por fato impróprio, subcapítulo 20; e resolução de",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre a Responsabilidade Civil por fato impróprio. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do(s) seguinte(s) caderno(s) do SQ:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 223,
-            "discipline": "DIREITO CONSTITUCIONAL",
-            "title": "Estudo do Capítulo 30 do LDI.",
-            "link": "https://cj.estrategia.com/ldi/direito-constitucional-enac-2026-1",
-            "description": "Direito Constitucional Continuaremos a trilha de Direito Constitucional para Cartórios – ENAC II. Como base para o nosso estudo, utilizaremos o LDI."
-          },
-          {
-            "id": 224,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo dos atos processuais, capítulo 33 do Direto ao Ponto, de “33.10) Embargos",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil de Terceiro” até “33.25) Da Organização e Fiscalização das Fundações”. Nesta tarefa concluiremos o estudo dos Procedimentos Especiais. Faça as marcações e anotações utilizando"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 225,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo da Fase Executiva, capítulo 34 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Nesta tarefa estudaremos a Fase Executiva. Faça as marcações e anotações utilizando o LDI. Saiba cada uma das classificações da tutela de acordo com a espécie de crise, que se dividem em:"
-          },
-          {
-            "id": 226,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo do tópico: “Parcelamento do Solo Urbano e Rural” (parte 1)",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "Registro de Imóveis Do parcelamento do solo urbano surgem os loteamentos e os desmembramentos. Essas são as formas pelas quais as glebas localizadas em áreas urbanas, de expansão urbana ou de"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 227,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: “Parcelamento do Solo Urbano e Rural” (parte 2)",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "O parcelamento (loteamento ou desmembramento) é regulamentado pela Lei 6.766/1979, comumente conhecida por Lei de Parcelamento do Solo (Lei 6.766/1979). Fique atento aos requisitos mínimos para a aprovação do projeto de loteamento ou desmembramento"
-          },
-          {
-            "id": 228,
-            "discipline": "TABELIONATO DE PROTESTOS",
-            "title": "Estudo do tópico “Averbações (desistência, sustação e cancelamento)”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Tabelionato de Protestos Sobre as averbações, temos: Desistência"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 229,
-            "discipline": "Tabelionato de Protestos",
-            "title": "Estudo do tópico “Publicidade e suas Restrições (Certidões)”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Vamos verificar que o artigo 31 da Lei nº 9.492/97, denota que certidões e informações de protestos não cancelados poderão ser fornecidas a qualquer interessado, sendo obrigatório o requerimento por escrito para tanto."
-          },
-          {
-            "id": 230,
-            "discipline": "REGISTRO DE TÍTULOS E DOCUMENTOS E CIVIL DE",
-            "title": "Estudo do tópico completo “Considerações Iniciais”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos Pessoal, daremos início agora ao estudo do Registro Civil de Pessoas Jurídicas, Títulos e Documentos para o curso de Cartórios Regular, com base na ferramenta do LDI (Curso completo)"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 231,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo dos tópicos “Dos Princípios aplicáveis ao Registro de Títulos e Documentos”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Na aula o professor aborda que o autor Marcelo Rodrigues (2014) apresenta cinco princípios fundamentais do Registro de Títulos e Documentos (RTD): Conservação: O arquivo garante a perenidade do ato registrado."
-          },
-          {
-            "id": 232,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo dos tópicos “Da Escrituração”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1/",
-            "description": "Nessa parte da aula, vamos entender como ocorre o procedimento registral em nossa especialidade, previsto no capítulo 9. A escrituração na especialidade ocorre em 6 livros, indicados no artigo 132 da Lei 60.15/73:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 233,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo dos tópicos “Da Transcrição e da Averbação”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Transcrever documentos no RTD? Sim, é possível — e, mais do que isso, é exatamente isso que o RTD se propõe a fazer. Como o próprio nome sugere, a transcrição é a arte de copiar fielmente, palavra por palavra, vírgula por vírgula. Parece simples? É. Mas exige rigor quase artesanal."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "18",
-    "title": "Trilha 18",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 234,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo da Teoria Geral do Direito das Coisas e Posse, subcapítulo 16.21; e resolução de",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a Teoria Geral do Direito das Coisas. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões dos seguintes cadernos do SQ:"
-          },
-          {
-            "id": 235,
-            "discipline": "Direito Civil",
-            "title": "Estudo da Teoria Geral das Coisas, subcapítulo 21; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre a Teoria Geral das Coisas. Faça as marcações e anotações utilizando o Após o estudo, resolva as questões do(s) seguinte(s) caderno(s) do SQ: ● http://questo.es/yxtj25"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 236,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Títulos Executivos, capítulo 35 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-penal-enac-2026-1/",
-            "description": "Direito Processual Civil Nesta tarefa estudaremos a Títulos Executivos. Faça as marcações e anotações utilizando o LDI. Leia inicialmente, apenas para contextualização, o texto de introdução, bem como entenda as três correntes"
-          },
-          {
-            "id": 237,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo da Responsabilidade Patrimonial, capítulo 36 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-penal-enac-2026-1/",
-            "description": "Nesta tarefa, estudaremos a Responsabilidade Patrimonial. Faça as marcações e anotações utilizando o LDI. Leia atentamente a introdução e saiba diferenciar obrigação e responsabilidade. Saiba ainda que o CPC/15,"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 238,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo do tópico: “Incorporação e Condomínio” (parte 1)",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "Registro de Imóveis A palavra condomínio diz respeito ao domínio conjunto (copropriedade), de duas ou mais pessoas sobre um mesmo bem ou um conjunto de bens."
-          },
-          {
-            "id": 239,
-            "discipline": "TABELIONATO DE PROTESTOS",
-            "title": "Estudo do tópico “Escrituração dos Atos e Gestão Documental”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Tabelionato de Protestos Em se falando de escrituração dos atos e gestão documental, temos que os livros e arquivos que compõem o Registro de Protestos estão elencados entre os artigos 32 e 36 da lei de Protestos, cada espécie de livro"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 240,
-            "discipline": "Tabelionato de Protestos",
-            "title": "Estudo do tópico “CENPROT – Central Nacional de Serviços Eletrônicos dos Tabeliães",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "de Protesto de Títulos” Sobre a CENPROT, vamos entender como ocorre o funcionamento da principal ferramenta de trabalho na especialidade, a CENPROT."
-          },
-          {
-            "id": 241,
-            "discipline": "DIREITO PENAL",
-            "title": "Estudo do capítulo 17, tópicos “Dos Crimes Praticados por Funcionário Público Contra a",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Direito Penal Administração em Geral e Dos Crimes Praticados por particular Contra a Administração Faça anotações/marcações no seu material para futura revisão."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 242,
-            "discipline": "Direito Penal",
-            "title": "Estudo do capítulo 17, tópicos “Dos Crimes Praticados por Particular Contra a",
-            "link": "https://cj.estrategia.com/ldi/direito-penal-enac-2026-1",
-            "description": "Administração Estrangeira e Dos Crimes em Licitações e Contratos Administrativos.” Faça anotações/marcações no seu material para futura revisão. Inicialmente vamos estudar Dos Crimes Praticados por Particular Contra a Administração"
-          },
-          {
-            "id": 243,
-            "discipline": "REGISTRO CIVIL DE PESSOAS JURÍDICAS, TÍTULOS E",
-            "title": "Estudo do tópico “Da Ordem do Serviço”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos A ordem do serviço diz respeito, entre outras situações, na ordem de apresentação dos títulos seguirá o número de ordem, bem como a natureza do instrumento, a espécie de lançamento a ser realizado (registro"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 244,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo do tópico “Do Cancelamento”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "A respeito do cancelamento, este tem por finalidade aniquilar os efeitos do registro, bem como extinguir o direito nele referido. O legislador fixou no artigo 164 da LRP, o cancelamento por decisão judicial e voluntário. Porém há a hipótese de cancelamento legal."
-          },
-          {
-            "id": 245,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo do tópico “Atribuições do Registro de Títulos e Documentos”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Como sabemos e vimos estudando até o momento, o Registro de Títulos e Documentos possui uma competência residual e supletiva, sendo responsável pelo recebimento de documentos e títulos que não se relacionem a outras especialidades registrais."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 246,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo do tópico “Das Comunicações Processuais mediante Notificações",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Extrajudiciais (Registros de Título e Documentos)” O ato de notificar diz respeito a informar certo indivíduo a respeito de fato ou ato que se tem intenção de que a pessoa tenha ciência. Assim é relatado o fato a essa pessoa. A notificação poderá ser no âmbito judicial"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "19",
-    "title": "Trilha 19",
-    "days": [
-      {
-        "dayLabel": "Dia 01",
-        "tasks": [
-          {
-            "id": 247,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo da Posse, subcapítulo 22; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre a Posse. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do(s) seguinte(s) caderno(s) do SQ:"
-          },
-          {
-            "id": 248,
-            "discipline": "Direito Civil",
-            "title": "Estudo de Propriedade Parte I, subcapítulo 23; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre Noções Gerais, Função Social, Extensão e Limite e Aquisição e Transmissão de Propriedade Imobiliária. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões dos seguintes cadernos do SQ:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 02",
-        "tasks": [
-          {
-            "id": 249,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Cumprimento de Sentença, capítulo 37 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa, estudaremos o Cumprimento de Sentença. Faça as marcações e anotações utilizando Inicialmente, saiba que o cumprimento provisório de sentença (nomenclatura dada pelo CPC), também se"
-          },
-          {
-            "id": 250,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo da Processo de Execução, capítulo 38 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Nesta tarefa, estudaremos o Processo de Execução. Faça as marcações e anotações utilizando o LDI. Inicialmente, entenda e guarde os requisitos da petição inicial do processo de execução, trazidos nos art. 798 e 799 do CPC. Saiba que a doutrina majoritária entende que não há instrução probatória"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 03",
-        "tasks": [
-          {
-            "id": 251,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo do tópico: “Incorporação e Condomínio” (parte 2)",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Registro de Imóveis Estude com atenção a incorporação imobiliária. No Brasil, a incorporação imobiliária é regida pela Lei nº 4.591/1964."
-          },
-          {
-            "id": 252,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: “Georreferenciamento”",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "O georreferenciamento consiste na determinação dos limites do imóvel rural, através de coordenadas georreferenciadas ao Sistema Geodésico Brasileiro. O controle do georreferenciamento é exercida pelo INCRA - Instituto Nacional de Colonização e Reforma Agrária."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 04",
-        "tasks": [
-          {
-            "id": 253,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: Alienação Fiduciária",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "A alienação fiduciária é direito real de garantia que constitui a chamada propriedade fiduciária. É hoje a modalidade de garantia mais difundida e mais utilizada, em razão de sua eficiência na recomposição do A propriedade fiduciária imobiliária é regulada pelos art. 1.361 a 1.368-B do Código Civil "
-          },
-          {
-            "id": 254,
-            "discipline": "TABELIONATO DE PROTESTOS",
-            "title": "Estudo do tópico “Emolumentos”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "Tabelionato de Protestos É de nosso conhecimento que é de caráter privado a prestação dos serviços extrajudiciais, inclusive o serviço de protestos, mediante delegação do Poder Público, segundo consta do artigo 236 da Constituição Federal."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 255,
-            "discipline": "Tabelionato de Protestos",
-            "title": "Estudo do tópico “Gratuidade”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-protestos-enac-2026-1",
-            "description": "O artigo 19 da Lei 9.492 dispõe que: Art. 19. O pagamento do título ou do documento de dívida apresentado para protesto será feito diretamente no Tabelionato competente, no valor igual ao declarado pelo apresentante, acrescido dos emolumentos e"
-          },
-          {
-            "id": 256,
-            "discipline": "REGISTRO CIVIL DE PESSOAS JURÍDICAS, TÍTULOS E",
-            "title": "Estudo do tópico “Da Competência do Registro de Título e Documentos”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos Devemos entender que os artigos 127 e 129 da Lei de Registros Públicos determinam quais documentos devem ser registrados no Registro de Títulos e Documentos (RTD). Alguns registros são obrigatórios para a"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 257,
-            "discipline": "REGISTRO CIVIL DE PESSOAS JURÍDICAS, TÍTULOS E",
-            "title": "Estudo do tópico “Do Serviço de Registro Eletrônico de Títulos e Documentos e civil",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos das pessoas jurídicas” A respeito do Sistema Eletrônico dos Registros Públicos (Serp) aplica-se a todas as relações jurídicas que"
-          },
-          {
-            "id": 258,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo do tópico “Atos Registráveis”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "O Registro de Títulos e Documentos (RTD) tem como principal finalidade assegurar a autenticidade, conservação, publicidade e segurança jurídica de documentos. Ao realizar esse registro, o interessado garante que o conteúdo do documento ficará protegido de eventuais perdas, extravios ou danos, pois f"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 259,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo do tópico “Decreto 911/69 – Alienação Fiduciária”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "O artigo 8º-B do Decreto-Lei nº 911/1969, inserido pela Lei nº 14.711/2023, permite a busca e apreensão extrajudicial de bens em contratos de alienação fiduciária, desde que haja cláusula expressa no contrato. Nesse caso, o credor, comprovando a mora do devedor, pode realizar a consolidação da propr"
+            "discipline": "REVISÃO",
+            "title": "Resumo Semanal Semana 19 — Análise de Erros Simulado 01",
+            "link": "",
+            "description": "Padrões de erro, conceitos ainda frágeis"
           }
         ]
       }
@@ -2636,24 +1693,24 @@ export const TRILHAS: Trilha[] = [
   },
   {
     "id": "20",
-    "title": "Trilha 20",
+    "title": "Ciclo 20 — REDUZIDA",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
-            "id": 260,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo de Propriedade Parte II, subcapítulo 23; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre Aquisição e Transmissão da Propriedade Mobiliária e Perda da Propriedade. Faça as marcações e anotações utilizando o LDI."
+            "id": 163,
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Registro de Imóveis (RI) — Arts. 201-300 + Transcrição/Inscrição",
+            "link": "",
+            "description": "Transcrição vs. inscrição, sequência de registro, efeitos de cada uma, cancelamento. Armadilha FGV: Confundir transcrição (aquisição) com inscrição (gravames/encargos) — ordem importa para prioridade."
           },
           {
-            "id": 261,
-            "discipline": "Direito Civil",
-            "title": "Estudo de Propriedade Parte III, subcapítulo 23; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre a propriedade resolúvel, propriedade fiduciária, direitos do promitente comprador e direito de laje. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões dos seguintes cadernos do SQ:"
+            "id": 164,
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Cartório de Protestos + RFI (Registro de Financiamento Imobiliário)",
+            "link": "",
+            "description": "Diferenças entre protesto em Cartório de Protestos vs. RI, RFI (sistema fiduciário), prioridade de registro. Armadilha FGV: RFI é registro acessório (não registra propriedade) — confundir com RI."
           }
         ]
       },
@@ -2661,18 +1718,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 02",
         "tasks": [
           {
-            "id": 262,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Execuções Especiais, capítulo 39 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa, estudaremos o Execuções Especiais. Faça as marcações e anotações utilizando o LDI. No que tange à execução de prestação alimentícia, saiba que nada mais é que uma execução de"
+            "id": 165,
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Autenticação, Reconhecimento de Assinatura + Atas",
+            "link": "",
+            "description": "Autenticação (cópia fiel), reconhecimento de assinatura (semelhança), atas (mediação/conciliação), requisitos formais. Armadilha FGV: Autenticação ≠ Certificação de conteúdo — autenticação é só forma; reconhecimento semelhança vs. tecnológico."
           },
           {
-            "id": 263,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo da Defesas do Executado, capítulo 40 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Nesta tarefa, estudaremos o Defesas do Executado. Faça as marcações e anotações utilizando o LDI. Inicialmente, veremos a impugnação ao cumprimento de sentença, prevista no art. 525 do CPC. É importante guardar as matérias alegáveis em impugnação, previstas no art. 525, §1º, CPC, quais sejam: I -"
+            "id": 166,
+            "discipline": "Notarial e Registral",
+            "title": "Provimento 149 — Disposições Finais + Fiscalização e Disciplina",
+            "link": "",
+            "description": "Deveres notariais, proibições, infrações disciplinares (suspensão, cancelamento), fiscalização pelo Judiciário. Armadilha FGV: Confundir infrações administrativas com penais — CNJ pune administrativa (suspenção), MP pune penal (crime)."
           }
         ]
       },
@@ -2680,18 +1737,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 03",
         "tasks": [
           {
-            "id": 264,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo do tópico: Usucapião Judicial e Adjudicação Compulsória",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Registro de Imóveis Usucapião judicial: Para efeitos de registro imobiliário, o importante dentro da usucapião judicial está que o procedimento é vislumbrado pelo Processo Civil e, também pela Lei 6.969/1981."
+            "id": 167,
+            "discipline": "Direito Administrativo / Constitucional",
+            "title": "Revisão Leve — Princípios Administrativos + Responsabilidade Civil da Administração",
+            "link": "",
+            "description": "Princípios (legalidade, moralidade, impessoalidade), responsabilidade solidária Estado/notário, indenização. Armadilha FGV: Notário é delegatário (não servidor) — responsabilidade não é a mesma."
           },
           {
-            "id": 265,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo dos tópicos: “Títulos Admitidos a Registro” e “Escrituras Públicas”",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Títulos Registráveis Os atos e negócios jurídicos são formalizados juridicamente a partir da confecção de títulos. São os títulos que trazem em si o conteúdo dos atos. Um mesmo ato (ex.: compra e venda) pode adentrar o registro"
+            "id": 168,
+            "discipline": "SIMULADO / REVISÃO",
+            "title": "Simulado 02 — 50 questões cronometrado (versão reduzida)",
+            "link": "",
+            "description": "Velocidade, consolidação Provimento 149, padrões FGV em questões complexas"
           }
         ]
       },
@@ -2699,68 +1756,11 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 04",
         "tasks": [
           {
-            "id": 266,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo dos tópicos: “Contrato de Compra e Venda”",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "O contrato de compra e venda é a modalidade mais comum dos contratos, seja na forma verbal ou escrita. O Código Civil o trata como a primeira espécie contratual, regendo supletivamente outros contratos. Conforme disposto no art. 481, o contrato de compra e venda implica na obrigação de uma das parte"
-          },
-          {
-            "id": 267,
-            "discipline": "TABELIONATO DE NOTAS",
-            "title": "Estudo do tópico: “Escrituras Públicas – Doação”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "Tabelionato de Notas Segundo o Código Civil, considera-se doação o contrato em que uma pessoa, por liberalidade, transfere do seu patrimônio bens ou vantagens para o de outra (art. 538)."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 05",
-        "tasks": [
-          {
-            "id": 268,
-            "discipline": "Tabelionato de Notas",
-            "title": "Estudo do tópico: Escrituras de Separação de Fato e Divórcio Consensual”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "Historicamente judicial, com as alterações promovidas no então CPC vigente, a Lei 11.441/2007 possibilitou a lavratura de atos notariais de separação, divórcio, inventário e partilha extrajudicial. Esse movimento de desjudicialização foi bastante relevante à sociedade como um todo, gerando economia"
-          },
-          {
-            "id": 269,
-            "discipline": "REGISTRO DE TÍTULOS E DOCUMENTOS E CIVIL DA",
-            "title": "Estudo do tópico “Das Pessoas Jurídicas”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos Faça a leitura do item sobre as sociedades. Importante entender que estas podem se classificar:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 270,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo do tópico “Da Desconsideração da Personalidade Jurídica”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "A desconsideração da personalidade jurídica é uma poderosa ferramenta jurídica que permite, em casos de fraude, abuso de direito ou desvio de finalidade, ultrapassar a proteção da empresa e alcançar os bens pessoais dos sócios e administradores para garantir o pagamento de dívidas."
-          },
-          {
-            "id": 271,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo do tópico “Dos Atribuições do Registro Civil de Pessoas Jurídicas”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "O registro da pessoa jurídica possui objetivo de distingui-la da pessoa física de seus sócios, ao menos no que toca ao patrimônio. Como breve conceito, temos que:"
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 07",
-        "tasks": [
-          {
-            "id": 272,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo do tópico “Registro das Pessoas Jurídicas”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "O registro público empresarial funciona como uma espécie de \"certidão de nascimento\" dos negócios, tornando visíveis e acessíveis ao público — especialmente a parceiros, clientes e investidores — os principais fatos da vida profissional e financeira do empresário."
+            "id": 169,
+            "discipline": "REVISÃO",
+            "title": "Resumo Semanal Semana 20 — Consolidação Semanas 18-20",
+            "link": "",
+            "description": "Validar conhecimento antes de retomar ritmo normal (semana 21+)"
           }
         ]
       }
@@ -2768,24 +1768,24 @@ export const TRILHAS: Trilha[] = [
   },
   {
     "id": "21",
-    "title": "Trilha 21",
+    "title": "Ciclo 21 — RITMO NORMAL",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
-            "id": 273,
-            "discipline": "DIREITO CIVIL",
-            "title": "Estudo do Direito de Vizinhança, subcapítulo 24; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos o Direito de Vizinhança. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões dos seguintes cadernos do SQ:"
+            "id": 170,
+            "discipline": "SIMULADO",
+            "title": "Simulado 03 — 100 questões cronometrado",
+            "link": "",
+            "description": "Performance geral, identificar weak spots, timing management"
           },
           {
-            "id": 274,
-            "discipline": "Direito Civil",
-            "title": "Estudo do Condomínio, subcapítulo 25; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos o Condomínio. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões dos seguintes cadernos do SQ: Leia a correção daquelas que errar ou ficar em dúvida. Marque os principais exercícios, aqueles difíceis ou"
+            "id": 171,
+            "discipline": "REVISÃO / ANÁLISE DE ERROS",
+            "title": "Análise Detalhada Simulado 03 — Engenharia Reversa de Erros",
+            "link": "",
+            "description": "Por que errou? Qual conceito falta? Qual foi a armadilha FGV? Como não errar de novo?"
           }
         ]
       },
@@ -2793,18 +1793,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 02",
         "tasks": [
           {
-            "id": 275,
-            "discipline": "DIREITO ADMINISTRATIVO",
-            "title": "Estudo do capítulo 15 – Processo Administrativo Federal.",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Direito Administrativo Vamos estudar a partir de agora o Processo Administrativo Federal, através da Lei 9.784/99! De início, veja que a aplicação da Lei 9.784/99 é no âmbito federal, em todas as esferas. Atenção para as"
+            "id": 172,
+            "discipline": "Direito Processual Civil",
+            "title": "Microdose — Competência e Foro (Arts. 43-63 CPC)",
+            "link": "",
+            "description": "Competência absoluta vs. relativa, foro competente para ações registrárias. Armadilha FGV: Confundir competência processual com competência de jurisdição notarial."
           },
           {
-            "id": 276,
-            "discipline": "Direito Administrativo",
-            "title": "Estudo do capítulo 16 completo.",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "O tema Bens Públicos aparece pouco em questões de Direito Administrativo quando comparado com outras matérias. Por esse motivo, você o estudará em apenas uma tarefa, para, em seguida, resolver uma boa quantidade de questões a fim de consolidar o conhecimento."
+            "id": 173,
+            "discipline": "Direito Penal",
+            "title": "Microdose — Falso Testemunho e Fraude Documental (Arts. 342-345, 298-302 CP)",
+            "link": "",
+            "description": "Falsidade de documento (público e privado), falsidade em ata/autenticação notarial, elementos do crime. Armadilha FGV: Autenticação falsa é falsidade de documento público — responsabilidade penal do notário."
           }
         ]
       },
@@ -2812,18 +1812,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 03",
         "tasks": [
           {
-            "id": 277,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo dos Precedentes e o CPC/15, da Ordem dos Processos nos Tribunais e do",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-enac-2026-1",
-            "description": "Direito Processual Civil Incidente de Resolução de Demandas Repetitivas, capítulos 42, 43 e 44 do Direto Nesta tarefa, estudaremos os Precedentes e o CPC/15, a Ordem dos Processos nos"
+            "id": 174,
+            "discipline": "Direito Processual Penal",
+            "title": "Microdose — Competência Penal (Arts. 69-91 CPP)",
+            "link": "",
+            "description": "Foro competente para crimes praticados por notários (Justiça Estadual ou Federal?), prevenção. Armadilha FGV: Notário federal (TRF) vs. tabelião estadual — competência diferente."
           },
           {
-            "id": 278,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo dos Incidente de Assunção de Competência, Incidente de Arguição de",
-            "link": "https://cj.estrategia.com/ldi/direito-processual-civil-ii-enac/?topic=45",
-            "description": "Inconstitucionalidade e Homologação de Decisão Estrangeira, capítulos 45, 46 e 47 do Direto ao Ponto. Capítulo 45: https://cj.estrategia.com/ldi/direito-processual-civil-ii-enac/?topic=45"
+            "id": 175,
+            "discipline": "Direito Tributário",
+            "title": "Microdose — ITBI e Impostos Sobre Imóveis (Arts. 156 CF88, Lei 6.015/73)",
+            "link": "",
+            "description": "ITBI (imposto de transmissão imobiliária), alíquotas, isenções, rol de documentos isentos. Armadilha FGV: Confundir ITBI com registro — registro é efeito da transmissão, ITBI é imposto."
           }
         ]
       },
@@ -2831,18 +1831,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 04",
         "tasks": [
           {
-            "id": 279,
-            "discipline": "REGISTRO DE TÍTULOS E DOCUMENTOS E CIVIL DE",
-            "title": "Estudo do tópico “Natureza jurídica do Registro e Órgãos Registrais”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos Quando falamos sobre a qualidade de empresário, o registro, via de regra, tem caráter declaratório. Isso significa que a pessoa já é considerada empresário a partir do momento em que exerce, de forma profissional"
+            "id": 176,
+            "discipline": "Direito Administrativo",
+            "title": "Microdose — Licitação e Contratação Pública (Lei 14.133/21)",
+            "link": "",
+            "description": "Cartórios como serviço público delegado, obrigações de transparência, contratações (se houver). Armadilha FGV: Confundir lei de licitação com organização de cartório — cartório é serviço delegado, não Administração direta."
           },
           {
-            "id": 280,
-            "discipline": "Registro Civil de Pessoas Jurídicas, Títulos e Documentos",
-            "title": "Estudo do tópico “Matrícula das Pessoas Jurídicas”",
-            "link": "https://cj.estrategia.com/ldi/registro-civil-de-pessoas-juridicas-titulos-e-documentos-enac-2026-1",
-            "description": "Outra função do RCPJ é realizar as matrículas de veículos de comunicação. Esta afirmação pode parecer um tanto estranha, dado que o título do capítulo da Lei dos Registros Públicos – 6.015/1973 é \"Do Registro de Jornais, Oficinas Impressoras, Empresas de Radiodifusão e Agências de"
+            "id": 177,
+            "discipline": "Lavagem de Dinheiro",
+            "title": "Microdose — Lei 9.613/98 + Obrigações Notariais",
+            "link": "",
+            "description": "Notários como obrigados a reportar operações suspeitas (PLD), limites de valor, sigilo quebrado. Armadilha FGV: Confundir sigilo profissional com dever de reportagem — PLD quebra sigilo notarial."
           }
         ]
       },
@@ -2850,37 +1850,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 05",
         "tasks": [
           {
-            "id": 281,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo do tópico: “Contrato de Doação”; “Contrato de Permuta”; “Contrato de",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "Registro de Imóveis Atente-se às regras dos contratos, voltando à disciplina de Direito de Civil, se necessário."
+            "id": 178,
+            "discipline": "Proteção de Dados Pessoais",
+            "title": "Microdose — Lei Geral de Proteção de Dados (LGPD)",
+            "link": "",
+            "description": "Cartório como controlador de dados, direitos de titular, bases legais, sigilo vs. LGPD. Armadilha FGV: Confundir sigilo profissional com LGPD — LGPD amplia direitos, sigilo não anula."
           },
           {
-            "id": 282,
-            "discipline": "Registro de Imóveis",
-            "title": "Estudo do tópico: “SREI/ONR”, “Central de Indisponibilidade de Bens”",
-            "link": "https://cj.estrategia.com/ldi/registro-de-imoveis-enac-2026-1",
-            "description": "Será instituído o direito real de laje no espaço aéreo ou no subsolo de terrenos públicos ou privados, tomados em projeção vertical, como unidade imobiliária autônoma. Recaindo sobre parte da construção-base, o título deverá descrever a área total da laje e a área cedida."
-          }
-        ]
-      },
-      {
-        "dayLabel": "Dia 06",
-        "tasks": [
-          {
-            "id": 283,
-            "discipline": "TABELIONATO DE NOTAS",
-            "title": "Estudo do tópico: Escrituras de Inventário e Partilha Extrajudicial",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "Tabelionato de Notas Historicamente judicial, com as alterações promovidas no então CPC vigente, a Lei 11.441/2007 possibilitou a lavratura de atos notariais de separação, divórcio, inventário e partilha extrajudicial."
-          },
-          {
-            "id": 283,
-            "discipline": "Tabelionato de Notas",
-            "title": "Estudo do tópico: Testamento Público",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "A título introdutório devemos lembrar que os testamentos podem ser: ORDINÁRIOS/COMUNS ou O testamento é, portanto, o ato de disposição de última vontade previsto no art. 1.786, do Código Civil, que viabiliza a sucessão testamentária. Como se vê, o testamento, de cujo conceito estamos aqui tratando n"
+            "id": 179,
+            "discipline": "REVISÃO",
+            "title": "Consolidação Microdoses Semana 21",
+            "link": "",
+            "description": "Validar aprendizado Class D, conectar com matérias principais"
           }
         ]
       }
@@ -2888,24 +1869,24 @@ export const TRILHAS: Trilha[] = [
   },
   {
     "id": "22",
-    "title": "Trilha 22",
+    "title": "Ciclo 22 — RITMO NORMAL",
     "days": [
       {
         "dayLabel": "Dia 01",
         "tasks": [
           {
-            "id": 284,
-            "discipline": "DIREITO CIVIL",
-            "title": "Revisão dos Direitos Reais sobre Coisa Alheia, subcapítulo 26; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Direito Civil Nesta tarefa veremos a teoria sobre Direitos Reais sobre Coisa Alheia. Faça as marcações e anotações utilizando o LDI."
+            "id": 180,
+            "discipline": "SIMULADO",
+            "title": "Simulado 04 — 100 questões cronometrado",
+            "link": "",
+            "description": "Validar progresso após Classe D microdoses, consolidar velocidade"
           },
           {
-            "id": 285,
-            "discipline": "Direito Civil",
-            "title": "Revisão dos Direitos reais de Garantia, subcapítulo 27; e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direito-civil-enac-2026-1/",
-            "description": "Nesta tarefa veremos a teoria sobre direitos reais limitados, estudando os subcapítulos 6.7 e 6.8, inclusive. Faça as marcações e anotações utilizando o LDI. Após o estudo, resolva as questões do seguinte caderno do SQ: http://questo.es/puv02i"
+            "id": 181,
+            "discipline": "REVISÃO / ANÁLISE DE ERROS",
+            "title": "Análise Comparativa Simulados 01-04 — Padrões de Erro",
+            "link": "",
+            "description": "Quais temas repetem erros? Qual é o padrão? Qual armadilha FGV volta sempre?"
           }
         ]
       },
@@ -2913,18 +1894,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 02",
         "tasks": [
           {
-            "id": 286,
-            "discipline": "DIREITO ADMINISTRATIVO",
-            "title": "Estudo do conteúdo do capítulo 17 e 18 – Intervenção do Estado na Propriedade e",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Direito Administrativo LGPD e Administração Pública Chegou a hora de estudar os assuntos relativos ao capítulo 17, relativa à Intervenção do Estado na"
+            "id": 182,
+            "discipline": "Notarial e Registral",
+            "title": "Revisão Densa — Provimento 149 + Lei 8.935/94 (Áreas de confusão)",
+            "link": "",
+            "description": "Confusões recorrentes — protesto vs. RI, RCPN vs. RCPJ, autenticação vs. certificação, reconhecimento vs. assinatura digital"
           },
           {
-            "id": 287,
-            "discipline": "DIREITO PROCESSUAL CIVIL",
-            "title": "Estudo da Ação Rescisória, capítulo 48 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Direito Processual Civil Nesta tarefa, estudaremos o Ação Rescisória. Faça as marcações e anotações utilizando o LDI. Inicialmente, saiba as hipóteses em que a coisa julgada pode ser superada, dentre elas a ação rescisória, que"
+            "id": 183,
+            "discipline": "Direito Civil",
+            "title": "Revisão Densa — Lei 8.078/90 (Código de Defesa do Consumidor) + Relação Notário-Usuário",
+            "link": "",
+            "description": "Notário como fornecedor de serviço, obrigações de transparência, responsabilidade por atos ilícitos, vedações. Armadilha FGV: Confundir responsabilidade notarial com CDC — CDC protege consumidor contra abusos."
           }
         ]
       },
@@ -2932,18 +1913,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 03",
         "tasks": [
           {
-            "id": 288,
-            "discipline": "Direito Processual Civil",
-            "title": "Estudo da Reclamação, capítulo 49 do Direto ao Ponto.",
-            "link": "https://cj.estrategia.com/ldi/direito-administrativo-enac-2026-1",
-            "description": "Nesta tarefa, estudaremos o Reclamação. Faça as marcações e anotações utilizando o LDI. Guarde que ela é cabível para: a) preservar a competência do tribunal;"
+            "id": 184,
+            "discipline": "Direito Civil",
+            "title": "Revisão Densa — Capacidade (Arts. 1-6 CC) + Poderes de Representação (Arts. 115-133 CC)",
+            "link": "",
+            "description": "Quem pode ser parte em ato notarial? Menores, incapazes, representação legal vs. voluntária. Armadilha FGV: Confundir capacidade jurídica com capacidade de exercício — notário deve verificar."
           },
           {
-            "id": 289,
-            "discipline": "DIREITO URBANÍSTICO",
-            "title": "Estudo do capítulo 2, do início ao tópico “2.6 Política Agrícola”, inclusive.",
-            "link": "https://cj.estrategia.com/ldi/cartorios-direito-urbanistico",
-            "description": "Antes de mais nada, tenha atenção sempre que o professor colocar quadros do seguinte tipo: “Preste atenção”, “Esta cai na prova”, “Resumindo”, “Atenção decore”, “Tome nota” e “Despenca na prova”. Nessas situações o professor já está chamando sua atenção para algo importante na disciplina."
+            "id": 185,
+            "discipline": "Organização Digital e Sistemas",
+            "title": "Revisão — Lei 13.774/18 + Provimento 149 (Seção Digital)",
+            "link": "",
+            "description": "Assinatura eletrônica, notarização digital, certificados ICP-Brasil, segurança. Armadilha FGV: Confundir assinatura eletrônica com reconhecimento de assinatura — efeitos diferentes."
           }
         ]
       },
@@ -2951,18 +1932,18 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 04",
         "tasks": [
           {
-            "id": 290,
-            "discipline": "DIREITO URBANÍSTICO",
-            "title": "Estudo do capítulo 2, do tópico “2.7 Direito Urbanístico e Direito à Cidade” ao final da aula.",
-            "link": "https://cj.estrategia.com/ldi/cartorios-direito-urbanistico",
-            "description": "Leia com atenção o tópico Direito Urbanístico e Direito à Cidade, concluindo esta tarefa quando tiver visto o item Justa distribuição dos benefícios e ônus decorrentes do processo de urbanização."
+            "id": 186,
+            "discipline": "Direito Imobiliário (Registro + Civil)",
+            "title": "Revisão Densa — Posse, Propriedade, Usucapião (Arts. 1196-1333 CC)",
+            "link": "",
+            "description": "Posse (conceito, efeitos), propriedade (aquisição), usucapião (requisitos, prazos), registro. Armadilha FGV: Confundir posse com propriedade — posse é fato, propriedade é direito; registro presume propriedade de possuidor registrado."
           },
           {
-            "id": 291,
-            "discipline": "DIREITOS HUMANOS",
-            "title": "Estudo do capítulo 02 e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direitos-humanos-enac-2026-1/",
-            "description": "Direitos Humanos Este capítulo versa, em suma, sobre a Teoria Geral dos Direitos Humanos. Entendam o conceito de Direitos Humanos:"
+            "id": 187,
+            "discipline": "Sucessões",
+            "title": "Revisão — Lei de Sucessões (Arts. 1784-1856 CC)",
+            "link": "",
+            "description": "Sucessão testamentária vs. legítima, ordem de vocação, testamento (requisitos), inventário extrajudicial (cartório). Armadilha FGV: Confundir testamento notarial com testamento cerrado — competências e requisitos distintos."
           }
         ]
       },
@@ -2970,30 +1951,201 @@ export const TRILHAS: Trilha[] = [
         "dayLabel": "Dia 05",
         "tasks": [
           {
-            "id": 292,
-            "discipline": "Direitos Humanos",
-            "title": "Estudo dos capítulos 03 a 05 e resolução de questões.",
-            "link": "https://cj.estrategia.com/ldi/direitos-humanos-enac-2026-1/",
-            "description": "Estes capítulos versam, em suma, sobre Características, Dimensões e Afirmação Histórica dos Direitos Humanos. Iniciaremos pelas características, sendo muitas delas intuitivas. Tenha atenção ao destacado abaixo!"
+            "id": 188,
+            "discipline": "Pessoa Jurídica + Associações",
+            "title": "Revisão — Constituição de PJ (Arts. 40-88 CC)",
+            "link": "",
+            "description": "Categorias de PJ, registro na Junta Comercial, cartório (atas de PJ não comercial), ato constitutivo. Armadilha FGV: Confundir registro em cartório com registro em Junta — competências diferentes."
           },
           {
-            "id": 293,
-            "discipline": "REGISTRO DE IMÓVEIS",
-            "title": "Estudo do tópico: Central Nacional de Indisponibilidade de Bens (CNIB)",
-            "link": "https://cj.estrategia.com/ldi/direitos-humanos-enac-2026-1/",
-            "description": "Registro de Imóveis Central de Indisponibilidade de Bens A Central Nacional de Indisponibilidade de Bens está atualmente regulamentada no Código Nacional de"
+            "id": 189,
+            "discipline": "REVISÃO",
+            "title": "Consolidação Semana 22 — Resumo de Revisões Densas",
+            "link": "",
+            "description": "Validar consolidação, identificar últimas lacunas"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "title": "Ciclo 23 — INTENSIVO",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 190,
+            "discipline": "SIMULADO",
+            "title": "Simulado 05 — 100 questões cronometrado (foco velocidade)",
+            "link": "",
+            "description": "Velocidade máxima, eliminar hesitações, automatizar padrão de resposta"
+          },
+          {
+            "id": 191,
+            "discipline": "SIMULADO",
+            "title": "Simulado 06 — 100 questões cronometrado (foco pressão psicológica)",
+            "link": "",
+            "description": "Manter concentração com fadiga, lidar com pressão, não desistir em questões difíceis"
           }
         ]
       },
       {
-        "dayLabel": "Dia 06",
+        "dayLabel": "Dia 02",
         "tasks": [
           {
-            "id": 294,
-            "discipline": "TABELIONATO DE NOTAS",
-            "title": "Estudo do tópico: “Ato notarial”",
-            "link": "https://cj.estrategia.com/ldi/tabelionato-de-notas-enac-2026-1",
-            "description": "Tabelionato de Notas Nessa aula, veremos as atas notariais, inclusive as atas de usucapião. Logo no início da aula, saiba o conceito dela:"
+            "id": 192,
+            "discipline": "SIMULADO",
+            "title": "Simulado 07 — 100 questões cronometrado (foco visão periférica de padrões)",
+            "link": "",
+            "description": "Reconhecer padrões FGV em tempo real, evitar pegadinhas comuns"
+          },
+          {
+            "id": 193,
+            "discipline": "REVISÃO / ANÁLISE DE ERROS",
+            "title": "Engenharia Reversa Simulados 05-07 — Por Que Errou?",
+            "link": "",
+            "description": "Cada erro = aprendizado. Quebra cada questão: conceito fundamental? Armadilha FGV? Leitura de lei errada? Negligência?"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 194,
+            "discipline": "Notarial e Registral",
+            "title": "Top 20 Artigos Mais Errados — Provimento 149 + Lei 8.935/94",
+            "link": "",
+            "description": "Os 20 artigos/temas que mais geram erro. Memorizar casos limite, exceções, detalhes."
+          },
+          {
+            "id": 195,
+            "discipline": "Direito Civil",
+            "title": "Top 20 Artigos Mais Errados — Código Civil",
+            "link": "",
+            "description": "Artigos do CC que causam confusão (capacidade, posse, propriedade, sucessão)"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 196,
+            "discipline": "Direito Constitucional / Administrativo",
+            "title": "Top 20 Temas Mais Errados — CF88, Lei 8.935/94, Princípios",
+            "link": "",
+            "description": "Competências, princípios, responsabilidade (tema que se repete com erro)"
+          },
+          {
+            "id": 197,
+            "discipline": "Classe D (Processo Civil, Penal, Tributário, PLD)",
+            "title": "Top 15 Temas Mais Errados — Microdoses Recorrentes",
+            "link": "",
+            "description": "Temas Classe D que aparecem em questões e geram erro"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 05",
+        "tasks": [
+          {
+            "id": 198,
+            "discipline": "REVISÃO / VELOCIDADE",
+            "title": "Rapid Fire — 50 questões em 1h (máxima velocidade, sem profundidade)",
+            "link": "",
+            "description": "Treinar reflexo, eliminar pensamento lento, respostas por intuição consolidada"
+          },
+          {
+            "id": 199,
+            "discipline": "REVISÃO",
+            "title": "Consolidação Semana 23 — Simulados + Top 20 Artigos",
+            "link": "",
+            "description": "Estar 90%+ confiante nos simulados"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "title": "Ciclo 24 — PRÉ-PROVA",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 200,
+            "discipline": "SIMULADO",
+            "title": "Simulado 08 — 100 questões cronometrado (simulação final de prova)",
+            "link": "",
+            "description": "Prova real — mesmo ambiente, mesma pressão, mesma duração. Medir desempenho final."
+          },
+          {
+            "id": 201,
+            "discipline": "SIMULADO",
+            "title": "Simulado 09 — 100 questões cronometrado (teste de resistência)",
+            "link": "",
+            "description": "Manter desempenho após fadiga, testar resistência mental antes da prova"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 202,
+            "discipline": "REVISÃO / ANÁLISE DE ERROS",
+            "title": "Análise Final Simulados 08-09 — Últimos Ajustes",
+            "link": "",
+            "description": "Últimos pontos cegos. Não é aprendizado novo — é consolidação final."
+          },
+          {
+            "id": 203,
+            "discipline": "Notarial e Registral",
+            "title": "Revisão Leve — Provimento 149 (Leitura Rápida dos Pontos Críticos)",
+            "link": "",
+            "description": "Repassar rapidamente os temas que causaram mais erro na semana 23. Não é aprendizado novo."
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 204,
+            "discipline": "Direito Civil + Constitucional",
+            "title": "Revisão Leve — Temas Críticos CC + CF88",
+            "link": "",
+            "description": "Rápida passada nos temas que mais errou. Não é novo aprendizado."
+          },
+          {
+            "id": 205,
+            "discipline": "REVISÃO",
+            "title": "Relaxamento Estratégico — Leitura Leve + Visualização",
+            "link": "",
+            "description": "Manter confiança, evitar ansiedade, relaxar mente antes da prova. Não é aprendizado."
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 206,
+            "discipline": "DESCANSO ATIVO",
+            "title": "Análise Final de Padrão — Qual Era Meu Erro Mais Comum?",
+            "link": "",
+            "description": "Identificar o único erro que se repetiu mais. Treinar aquele específico. Ganhar confiança."
+          },
+          {
+            "id": 207,
+            "discipline": "DESCANSO PRÉ-PROVA",
+            "title": "Repouso Total + Preparação Emocional",
+            "link": "",
+            "description": "Descansar. Dormir bem. Confiar no aprendizado acumulado. Mentalização positiva."
           }
         ]
       }
