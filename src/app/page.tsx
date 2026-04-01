@@ -625,6 +625,7 @@ function SimModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
 /* ─── TRILHAS TAB ─── */
 function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
   const [selectedTrilha, setSelectedTrilha] = useState(0);
+  const [expandedTasks, setExpandedTasks] = useState<Record<number, boolean>>({});
   const trilha = TRILHAS[selectedTrilha];
 
   const completedCount = useMemo(() => {
@@ -688,14 +689,15 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
           <div style={{ display: "grid", gap: 6 }}>
             {day.tasks.map((task) => {
               const isDone = !!data.completed_tasks[`${trilha.id}:${task.id}`];
+              const isExpanded = !!expandedTasks[task.id];
               return (
-                <div key={task.id} style={{
+                <div key={task.id} onClick={() => setExpandedTasks(prev => ({ ...prev, [task.id]: !prev[task.id] }))} style={{
                   background: isDone ? "#f0fdf4" : "white", border: `1px solid ${isDone ? "#bbf7d0" : "#e2e8f0"}`,
                   borderRadius: 10, padding: "12px 16px", boxShadow: "0 1px 2px rgba(0,0,0,0.03)",
-                  opacity: isDone ? 0.7 : 1, transition: "all 0.2s",
+                  opacity: isDone ? 0.7 : 1, transition: "all 0.2s", cursor: "pointer",
                 }}>
                   <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                    <button onClick={() => toggleTask(task.id)} style={{
+                    <button onClick={(e) => { e.stopPropagation(); toggleTask(task.id); }} style={{
                       width: 22, height: 22, borderRadius: 6, border: isDone ? "none" : "2px solid #cbd5e1",
                       background: isDone ? "#059669" : "white", cursor: "pointer", display: "flex",
                       alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2,
@@ -705,10 +707,15 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
                       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 2 }}>
                         <span style={{ fontSize: 10, padding: "1px 6px", borderRadius: 4, background: "rgba(99,102,241,0.1)", color: "#4338ca", fontWeight: 600, fontFamily: "'JetBrains Mono', monospace" }}>T{String(task.id).padStart(2, '0')}</span>
                         <span style={{ fontSize: 11, color: "#6366f1", fontWeight: 600 }}>{task.discipline}</span>
+                        <span style={{ fontSize: 10, color: "#94a3b8", marginLeft: "auto" }}>{isExpanded ? "▲" : "▼"}</span>
                       </div>
                       <div style={{ fontSize: 13, fontWeight: 500, color: "#334155", textDecoration: isDone ? "line-through" : "none" }}>{task.title}</div>
-                      {task.description && <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4, lineHeight: 1.4 }}>{task.description.substring(0, 150)}{task.description.length > 150 ? "..." : ""}</div>}
-                      {task.link && <a href={task.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: 11, color: "#6366f1", textDecoration: "none", marginTop: 4, display: "inline-block" }}>Abrir no LDI &#8599;</a>}
+                      {task.description && (
+                        <div style={{ fontSize: 12, color: "#64748b", marginTop: 6, lineHeight: 1.6, whiteSpace: "pre-wrap" }}>
+                          {isExpanded ? task.description : `${task.description.substring(0, 100)}${task.description.length > 100 ? "..." : ""}`}
+                        </div>
+                      )}
+                      {task.link && <a href={task.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ fontSize: 11, color: "#6366f1", textDecoration: "none", marginTop: 4, display: "inline-block" }}>Abrir no LDI &#8599;</a>}
                     </div>
                   </div>
                 </div>
