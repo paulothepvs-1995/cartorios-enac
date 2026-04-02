@@ -8,6 +8,14 @@ export interface QuestionEntry {
   correct: number;
 }
 
+// 👇 1. NOVA INTERFACE PARA O HISTÓRICO DE ESTUDOS
+export interface StudyEntry {
+  id: string;
+  date: string;
+  discipline: string;
+  minutes: number;
+}
+
 export interface StudyData {
   id?: string;
   discipline_hours: Record<string, number>;
@@ -17,6 +25,8 @@ export interface StudyData {
   simulados: Simulado[];
   legislation_progress: Record<string, number>;
   completed_tasks: Record<string, boolean>; // "trilha_id:task_id" -> true
+  // 👇 2. ADICIONADO AO SEU TIPO PRINCIPAL
+  study_entries: StudyEntry[];
   updated_at?: string;
 }
 
@@ -45,6 +55,8 @@ export async function loadData(): Promise<StudyData | null> {
     simulados: data.simulados || [],
     legislation_progress: data.legislation_progress || {},
     completed_tasks: data.completed_tasks || {},
+    // 👇 3. GARANTINDO QUE ELE CARREGUE OS DADOS DO BANCO
+    study_entries: data.study_entries || [],
     updated_at: data.updated_at,
   };
 }
@@ -61,6 +73,8 @@ export async function saveData(studyData: StudyData): Promise<void> {
       simulados: studyData.simulados,
       legislation_progress: studyData.legislation_progress,
       completed_tasks: studyData.completed_tasks,
+      // 👇 4. GARANTINDO QUE ELE SALVE OS DADOS NO BANCO
+      study_entries: studyData.study_entries,
       updated_at: new Date().toISOString(),
     });
 
