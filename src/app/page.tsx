@@ -14,6 +14,7 @@ const defaultData = (): StudyData => ({
   simulados: [],
   legislation_progress: {},
   completed_tasks: {},
+  study_entries: [], // <- ESSA É A LINHA NOVA
 });
 
 export default function App() {
