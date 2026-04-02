@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWeekStartDate } from "@/lib/plan";
-import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry } from "@/lib/supabase";import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
+import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry } from "@/lib/supabase";
+import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
 import { TRILHAS, type Trilha } from "@/lib/trilhas";
 
 const defaultData = (): StudyData => ({
@@ -13,7 +14,7 @@ const defaultData = (): StudyData => ({
   simulados: [],
   legislation_progress: {},
   completed_tasks: {},
-  study_entries: [], // <- ESSA É A LINHA NOVA
+  study_entries: [], // <- LINHA NOVA AQUI
 });
 
 export default function App() {
@@ -509,9 +510,8 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
     const currentWeekHours = { ...(data.weekly_hours[weekKey] || {}) };
     currentWeekHours[disc] = (currentWeekHours[disc] || 0) + h;
 
-    // NOVO: Criando o registro pro seu histórico
     const newEntry: StudyEntry = {
-      id: Date.now().toString(), // Cria um ID único baseado no relógio
+      id: Date.now().toString(),
       date: new Date().toISOString().slice(0, 10),
       discipline: disc,
       minutes: m
@@ -521,7 +521,7 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
       ...data,
       discipline_hours: { ...data.discipline_hours, [disc]: (data.discipline_hours[disc] || 0) + h },
       weekly_hours: { ...data.weekly_hours, [weekKey]: currentWeekHours },
-      study_entries: [...(data.study_entries || []), newEntry] // Salva no histórico!
+      study_entries: [...(data.study_entries || []), newEntry]
     });
     onClose();
   };
@@ -532,34 +532,12 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
     <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 16, backdropFilter: "blur(4px)" }} onClick={onClose}>
       <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28, width: "100%", maxWidth: 400, boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }} onClick={(e) => e.stopPropagation()}>
         <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Registrar estudo</h3>
-        <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Disciplina</label>
-        <select value={disc} onChange={(e) => setDisc(e.target.value)} style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 14, marginBottom: 16, outline: "none", background: "#f8fafc" }}>
-          {PLAN.disciplines.map((d) => (<option key={d.id} value={d.id}>{d.name}</option>))}
-        </select>
-        <label style={{ fontSize: 11, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Tempo (em minutos)</label>
-        <input type="number" step="1" value={minutes} onChange={(e) => setMinutes(e.target.value)} placeholder="Ex: 30" style={inputStyle} />
-        <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
-          <button onClick={onClose} style={{ flex: 1, padding: "10px", background: "#f1f5f9", border: "1px solid #e2e8f0", borderRadius: 8, color: "#64748b", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Cancelar</button>
-          <button onClick={handleSave} style={{ flex: 1, padding: "10px", background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 8, color: "white", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Salvar</button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-  const inputStyle = { width: "100%", padding: "10px 10px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 16, fontWeight: 600 as const, textAlign: "center" as const, outline: "none", fontFamily: "'JetBrains Mono', monospace", boxSizing: "border-box" as const, background: "#f8fafc" };
-
-  return (
-    <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 16, backdropFilter: "blur(4px)" }} onClick={onClose}>
-      <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28, width: "100%", maxWidth: 400, boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }} onClick={(e) => e.stopPropagation()}>
-        <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Registrar estudo</h3>
         
         <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Disciplina</label>
         <select value={disc} onChange={(e) => setDisc(e.target.value)} style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 14, marginBottom: 16, outline: "none", background: "#f8fafc" }}>
           {PLAN.disciplines.map((d) => (<option key={d.id} value={d.id}>{d.name}</option>))}
         </select>
         
-        {/* Alterado para pedir Minutos em vez de Horas */}
         <label style={{ fontSize: 11, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Tempo (em minutos)</label>
         <input type="number" step="1" value={minutes} onChange={(e) => setMinutes(e.target.value)} placeholder="Ex: 30" style={inputStyle} />
         
@@ -764,6 +742,7 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
     </div>
   );
 }
+
 /* ─── HISTÓRICO ─── */
 function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
   const handleDelete = async (entry: StudyEntry) => {
@@ -784,7 +763,6 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
     });
   };
 
-  // Inverte a lista para o mais recente aparecer no topo
   const entries = [...(data.study_entries || [])].reverse();
 
   if (entries.length === 0) {
