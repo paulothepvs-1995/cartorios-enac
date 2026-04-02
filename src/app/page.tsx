@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWeekStartDate } from "@/lib/plan";
-import { loadData, saveData, type StudyData, type QuestionEntry } from "@/lib/supabase";
-import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
+import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry } from "@/lib/supabase";import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
 import { TRILHAS, type Trilha } from "@/lib/trilhas";
 
 const defaultData = (): StudyData => ({
@@ -105,7 +104,7 @@ export default function App() {
       {/* TABS */}
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
         <div style={{ display: "flex", gap: 4, padding: "16px 0 0", borderBottom: "1px solid #e2e8f0", overflowX: "auto" }}>
-          {["dashboard", "disciplinas", "questões", "legislação", "simulados", "trilhas"].map((t) => (
+          {["dashboard", "disciplinas", "questões", "legislação", "simulados", "trilhas", "histórico"].map((t) => (
             <button key={t} onClick={() => setTab(t)} style={{
               padding: "10px 16px", background: tab === t ? "rgba(99,102,241,0.1)" : "transparent", border: "none",
               borderBottom: tab === t ? "2px solid #6366f1" : "2px solid transparent",
@@ -123,6 +122,7 @@ export default function App() {
         {tab === "legislação" && <Legislacao data={data} save={save} />}
         {tab === "simulados" && <Simulados data={data} onLogSimulado={() => setSimModal(true)} />}
         {tab === "trilhas" && <TrilhasTab data={data} save={save} />}
+        {tab === "histórico" && <HistoricoTab data={data} save={save} />}
       </div>
 
       {logModal && <LogModal data={data} save={save} onClose={() => setLogModal(false)} />}
@@ -501,24 +501,51 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
   const [minutes, setMinutes] = useState("");
 
   const handleSave = async () => {
-    // Captura o input como minutos inteiros
     const m = parseInt(minutes) || 0;
     if (m <= 0) return;
-    
-    // Converte os minutos para a fração decimal de horas que o sistema já utiliza
     const h = m / 60; 
 
     const weekKey = getWeekKey(new Date(), PLAN.startDate);
     const currentWeekHours = { ...(data.weekly_hours[weekKey] || {}) };
     currentWeekHours[disc] = (currentWeekHours[disc] || 0) + h;
 
+    // NOVO: Criando o registro pro seu histórico
+    const newEntry: StudyEntry = {
+      id: Date.now().toString(), // Cria um ID único baseado no relógio
+      date: new Date().toISOString().slice(0, 10),
+      discipline: disc,
+      minutes: m
+    };
+
     await save({
       ...data,
       discipline_hours: { ...data.discipline_hours, [disc]: (data.discipline_hours[disc] || 0) + h },
       weekly_hours: { ...data.weekly_hours, [weekKey]: currentWeekHours },
+      study_entries: [...(data.study_entries || []), newEntry] // Salva no histórico!
     });
     onClose();
   };
+
+  const inputStyle = { width: "100%", padding: "10px 10px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 16, fontWeight: 600 as const, textAlign: "center" as const, outline: "none", fontFamily: "'JetBrains Mono', monospace", boxSizing: "border-box" as const, background: "#f8fafc" };
+
+  return (
+    <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 16, backdropFilter: "blur(4px)" }} onClick={onClose}>
+      <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28, width: "100%", maxWidth: 400, boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }} onClick={(e) => e.stopPropagation()}>
+        <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Registrar estudo</h3>
+        <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Disciplina</label>
+        <select value={disc} onChange={(e) => setDisc(e.target.value)} style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 14, marginBottom: 16, outline: "none", background: "#f8fafc" }}>
+          {PLAN.disciplines.map((d) => (<option key={d.id} value={d.id}>{d.name}</option>))}
+        </select>
+        <label style={{ fontSize: 11, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Tempo (em minutos)</label>
+        <input type="number" step="1" value={minutes} onChange={(e) => setMinutes(e.target.value)} placeholder="Ex: 30" style={inputStyle} />
+        <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
+          <button onClick={onClose} style={{ flex: 1, padding: "10px", background: "#f1f5f9", border: "1px solid #e2e8f0", borderRadius: 8, color: "#64748b", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Cancelar</button>
+          <button onClick={handleSave} style={{ flex: 1, padding: "10px", background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 8, color: "white", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Salvar</button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
   const inputStyle = { width: "100%", padding: "10px 10px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 16, fontWeight: 600 as const, textAlign: "center" as const, outline: "none", fontFamily: "'JetBrains Mono', monospace", boxSizing: "border-box" as const, background: "#f8fafc" };
 
@@ -734,6 +761,58 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+/* ─── HISTÓRICO ─── */
+function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
+  const handleDelete = async (entry: StudyEntry) => {
+    if (!window.confirm(`Tem certeza que deseja excluir o registro de ${entry.minutes} minutos?`)) return;
+
+    // Filtra para manter todos os itens, MENOS o que você mandou excluir
+    const newEntries = (data.study_entries || []).filter(e => e.id !== entry.id);
+
+    // Remove as horas da contagem total para não bugar o progresso
+    const h = entry.minutes / 60;
+    const newDiscHours = { ...data.discipline_hours };
+    newDiscHours[entry.discipline] = Math.max(0, (newDiscHours[entry.discipline] || 0) - h);
+
+    await save({
+      ...data,
+      study_entries: newEntries,
+      discipline_hours: newDiscHours
+    });
+  };
+
+  // Inverte a lista para o mais recente aparecer no topo
+  const entries = [...(data.study_entries || [])].reverse();
+
+  if (entries.length === 0) {
+    return (
+      <div style={{ textAlign: "center", padding: 60, color: "#94a3b8" }}>
+        <div style={{ fontSize: 40, marginBottom: 12 }}>🕒</div>
+        <div>Nenhum estudo registrado ainda. Vá no Dashboard e adicione um!</div>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ display: "grid", gap: 10 }}>
+      {entries.map(entry => {
+        const discName = PLAN.disciplines.find(d => d.id === entry.discipline)?.name || entry.discipline;
+        return (
+          <div key={entry.id} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+            <div>
+              <div style={{ fontSize: 14, fontWeight: 600, color: "#334155" }}>{discName}</div>
+              <div style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>Data: {entry.date}</div>
+            </div>
+            <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+              <div style={{ fontSize: 16, fontWeight: 700, color: "#4f46e5", fontFamily: "'Space Grotesk', sans-serif" }}>{entry.minutes} min</div>
+              <button onClick={() => handleDelete(entry)} style={{ background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", borderRadius: 6, padding: "6px 12px", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>Excluir</button>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
