@@ -749,7 +749,8 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
     if (!window.confirm(`Tem certeza que deseja excluir o registro de ${entry.minutes} minutos?`)) return;
 
     // Filtra para manter todos os itens, MENOS o que você mandou excluir
-    const newEntries = (data.study_entries || []).filter(e => e.id !== entry.id);
+    const currentEntries: StudyEntry[] = data.study_entries || [];
+    const newEntries = currentEntries.filter(e => e.id !== entry.id);
 
     // Remove as horas da contagem total para não bugar o progresso
     const h = entry.minutes / 60;
@@ -763,14 +764,15 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
     });
   };
 
-  // NOVA FUNÇÃO: Sincroniza e limpa as horas fantasmas do passado
+  // Sincroniza e limpa as horas fantasmas do passado
   const handleSync = async () => {
     if (!window.confirm("Isso vai apagar todas as horas antigas que NÃO estão listadas aqui no histórico. Deseja continuar?")) return;
 
     const newDiscHours: Record<string, number> = {};
     const newWeeklyHours: Record<string, Record<string, number>> = {};
+    const currentEntries: StudyEntry[] = data.study_entries || [];
 
-    (data.study_entries || []).forEach(entry => {
+    currentEntries.forEach((entry: StudyEntry) => {
       const h = entry.minutes / 60;
       newDiscHours[entry.discipline] = (newDiscHours[entry.discipline] || 0) + h;
       
@@ -788,7 +790,8 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
     });
   };
 
-  const entries = [...(data.study_entries || [])].reverse();
+  const currentEntries: StudyEntry[] = data.study_entries || [];
+  const entries = [...currentEntries].reverse();
 
   return (
     <div>
