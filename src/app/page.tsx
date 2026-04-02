@@ -763,34 +763,67 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
     });
   };
 
+  // NOVA FUNÇÃO: Sincroniza e limpa as horas fantasmas do passado
+  const handleSync = async () => {
+    if (!window.confirm("Isso vai apagar todas as horas antigas que NÃO estão listadas aqui no histórico. Deseja continuar?")) return;
+
+    const newDiscHours: Record<string, number> = {};
+    const newWeeklyHours: Record<string, Record<string, number>> = {};
+
+    (data.study_entries || []).forEach(entry => {
+      const h = entry.minutes / 60;
+      newDiscHours[entry.discipline] = (newDiscHours[entry.discipline] || 0) + h;
+      
+      const dateObj = new Date(entry.date + "T12:00:00");
+      const weekKey = getWeekKey(dateObj, PLAN.startDate);
+      
+      if (!newWeeklyHours[weekKey]) newWeeklyHours[weekKey] = {};
+      newWeeklyHours[weekKey][entry.discipline] = (newWeeklyHours[weekKey][entry.discipline] || 0) + h;
+    });
+
+    await save({
+      ...data,
+      discipline_hours: newDiscHours,
+      weekly_hours: newWeeklyHours
+    });
+  };
+
   const entries = [...(data.study_entries || [])].reverse();
 
-  if (entries.length === 0) {
-    return (
-      <div style={{ textAlign: "center", padding: 60, color: "#94a3b8" }}>
-        <div style={{ fontSize: 40, marginBottom: 12 }}>🕒</div>
-        <div>Nenhum estudo registrado ainda. Vá no Dashboard e adicione um!</div>
-      </div>
-    );
-  }
-
   return (
-    <div style={{ display: "grid", gap: 10 }}>
-      {entries.map(entry => {
-        const discName = PLAN.disciplines.find(d => d.id === entry.discipline)?.name || entry.discipline;
-        return (
-          <div key={entry.id} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-            <div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: "#334155" }}>{discName}</div>
-              <div style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>Data: {entry.date}</div>
-            </div>
-            <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-              <div style={{ fontSize: 16, fontWeight: 700, color: "#4f46e5", fontFamily: "'Space Grotesk', sans-serif" }}>{entry.minutes} min</div>
-              <button onClick={() => handleDelete(entry)} style={{ background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", borderRadius: 6, padding: "6px 12px", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>Excluir</button>
-            </div>
-          </div>
-        );
-      })}
+    <div>
+      {/* CABEÇALHO DO HISTÓRICO COM O NOVO BOTÃO */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, flexWrap: "wrap", gap: 10 }}>
+        <h3 style={{ fontSize: 16, fontWeight: 700, color: "#334155", margin: 0, fontFamily: "'Space Grotesk', sans-serif" }}>Meus Estudos</h3>
+        <button onClick={handleSync} style={{ background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", borderRadius: 8, padding: "8px 12px", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>
+          🗑️ Limpar horas fantasmas antigas
+        </button>
+      </div>
+      
+      {entries.length === 0 ? (
+        <div style={{ textAlign: "center", padding: 60, color: "#94a3b8", background: "white", borderRadius: 12, border: "1px solid #e2e8f0" }}>
+          <div style={{ fontSize: 40, marginBottom: 12 }}>🕒</div>
+          <div>Nenhum estudo registrado ainda. Vá no Dashboard e adicione um!</div>
+        </div>
+      ) : (
+        <div style={{ display: "grid", gap: 10 }}>
+          {entries.map(entry => {
+            const discName = PLAN.disciplines.find(d => d.id === entry.discipline)?.name || entry.discipline;
+            return (
+              <div key={entry.id} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.05)", flexWrap: "wrap", gap: 10 }}>
+                <div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "#334155" }}>{discName}</div>
+                  <div style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>Data: {entry.date}</div>
+                </div>
+                <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: "#4f46e5", fontFamily: "'Space Grotesk', sans-serif" }}>{entry.minutes} min</div>
+                  <button onClick={() => handleDelete(entry)} style={{ background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", borderRadius: 6, padding: "6px 12px", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>Excluir</button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
