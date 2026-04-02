@@ -497,11 +497,16 @@ function Simulados({ data, onLogSimulado }: { data: StudyData; onLogSimulado: ()
 /* ─── LOG MODAL ─── */
 function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyData) => Promise<void>; onClose: () => void }) {
   const [disc, setDisc] = useState("notarial");
-  const [hours, setHours] = useState("");
+  const [minutes, setMinutes] = useState("");
 
   const handleSave = async () => {
-    const h = parseFloat(hours) || 0;
-    if (h <= 0) return;
+    // Captura o input como minutos inteiros
+    const m = parseInt(minutes) || 0;
+    if (m <= 0) return;
+    
+    // Converte os minutos para a fração decimal de horas que o sistema já utiliza
+    const h = m / 60; 
+
     const weekKey = getWeekKey(new Date(), PLAN.startDate);
     const currentWeekHours = { ...(data.weekly_hours[weekKey] || {}) };
     currentWeekHours[disc] = (currentWeekHours[disc] || 0) + h;
@@ -520,12 +525,16 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
     <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 16, backdropFilter: "blur(4px)" }} onClick={onClose}>
       <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28, width: "100%", maxWidth: 400, boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }} onClick={(e) => e.stopPropagation()}>
         <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Registrar estudo</h3>
+        
         <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Disciplina</label>
         <select value={disc} onChange={(e) => setDisc(e.target.value)} style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 14, marginBottom: 16, outline: "none", background: "#f8fafc" }}>
           {PLAN.disciplines.map((d) => (<option key={d.id} value={d.id}>{d.name}</option>))}
         </select>
-        <label style={{ fontSize: 11, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Horas</label>
-        <input type="number" step="0.5" value={hours} onChange={(e) => setHours(e.target.value)} placeholder="0.0" style={inputStyle} />
+        
+        {/* Alterado para pedir Minutos em vez de Horas */}
+        <label style={{ fontSize: 11, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Tempo (em minutos)</label>
+        <input type="number" step="1" value={minutes} onChange={(e) => setMinutes(e.target.value)} placeholder="Ex: 30" style={inputStyle} />
+        
         <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
           <button onClick={onClose} style={{ flex: 1, padding: "10px", background: "#f1f5f9", border: "1px solid #e2e8f0", borderRadius: 8, color: "#64748b", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Cancelar</button>
           <button onClick={handleSave} style={{ flex: 1, padding: "10px", background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 8, color: "white", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Salvar</button>
