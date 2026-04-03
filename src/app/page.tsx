@@ -14,7 +14,7 @@ const defaultData = (): StudyData => ({
   simulados: [],
   legislation_progress: {},
   completed_tasks: {},
-  study_entries: [], // <- LINHA NOVA AQUI
+  study_entries: [],
 });
 
 export default function App() {
@@ -562,6 +562,7 @@ function QuestionModal({ data, save, onClose }: { data: StudyData; save: (d: Stu
     if (t <= 0) return;
 
     const entry: QuestionEntry = {
+      id: Date.now().toString(), // <- ID gerado aqui para poder excluir depois
       date: new Date().toISOString().slice(0, 10),
       discipline: disc,
       total: t,
@@ -570,7 +571,7 @@ function QuestionModal({ data, save, onClose }: { data: StudyData; save: (d: Stu
 
     await save({
       ...data,
-      questions_resolved: data.questions_resolved + t,
+      questions_resolved: (data.questions_resolved || 0) + t,
       question_entries: [...(data.question_entries || []), entry],
     });
     onClose();
@@ -753,36 +754,40 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
   );
 }
 
-/* ─── HISTÓRICO ─── */
+/* ─── HISTÓRICO UNIFICADO ─── */
 function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
-  const handleDelete = async (entry: StudyEntry) => {
-    if (!window.confirm(`Tem certeza que deseja excluir o registro de ${entry.minutes} minutos?`)) return;
-
-    // Filtra para manter todos os itens, MENOS o que você mandou excluir
-    const currentEntries: StudyEntry[] = data.study_entries || [];
-    const newEntries = currentEntries.filter(e => e.id !== entry.id);
-
-    // Remove as horas da contagem total para não bugar o progresso
+  // Função para excluir Horas
+  const handleDeleteStudy = async (entry: StudyEntry) => {
+    if (!window.confirm(`Excluir registro de ${entry.minutes} min?`)) return;
+    const newEntries = (data.study_entries || []).filter(e => e.id !== entry.id);
     const h = entry.minutes / 60;
     const newDiscHours = { ...data.discipline_hours };
     newDiscHours[entry.discipline] = Math.max(0, (newDiscHours[entry.discipline] || 0) - h);
 
+    await save({ ...data, study_entries: newEntries, discipline_hours: newDiscHours });
+  };
+
+  // Função para excluir Questões
+  const handleDeleteQuestion = async (entry: QuestionEntry) => {
+    if (!window.confirm(`Excluir registro de ${entry.total} questões?`)) return;
+    const newEntries = (data.question_entries || []).filter(e => e.id !== entry.id);
+
     await save({
       ...data,
-      study_entries: newEntries,
-      discipline_hours: newDiscHours
+      questions_resolved: Math.max(0, (data.questions_resolved || 0) - entry.total),
+      question_entries: newEntries
     });
   };
 
-  // Sincroniza e limpa as horas fantasmas do passado
+  // Sincroniza e limpa as horas e questões fantasmas do passado
   const handleSync = async () => {
-    if (!window.confirm("Isso vai apagar todas as horas antigas que NÃO estão listadas aqui no histórico. Deseja continuar?")) return;
+    if (!window.confirm("Isso vai apagar todas as horas e questões antigas que NÃO estão listadas aqui no histórico. Deseja continuar?")) return;
 
     const newDiscHours: Record<string, number> = {};
     const newWeeklyHours: Record<string, Record<string, number>> = {};
-    const currentEntries: StudyEntry[] = data.study_entries || [];
+    const currentStudyEntries: StudyEntry[] = data.study_entries || [];
 
-    currentEntries.forEach((entry: StudyEntry) => {
+    currentStudyEntries.forEach((entry: StudyEntry) => {
       const h = entry.minutes / 60;
       newDiscHours[entry.discipline] = (newDiscHours[entry.discipline] || 0) + h;
       
@@ -793,44 +798,80 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
       newWeeklyHours[weekKey][entry.discipline] = (newWeeklyHours[weekKey][entry.discipline] || 0) + h;
     });
 
+    const currentQEntries = data.question_entries || [];
+    const newTotalQ = currentQEntries.reduce((acc, curr) => acc + curr.total, 0);
+
     await save({
       ...data,
       discipline_hours: newDiscHours,
-      weekly_hours: newWeeklyHours
+      weekly_hours: newWeeklyHours,
+      questions_resolved: newTotalQ
     });
   };
 
-  const currentEntries: StudyEntry[] = data.study_entries || [];
-  const entries = [...currentEntries].reverse();
+  // Criamos uma lista única misturando horas e questões
+  const combinedEntries = [
+    ...(data.study_entries || []).map(e => ({ ...e, type: 'study' as const })),
+    ...(data.question_entries || []).map(e => ({ ...e, type: 'question' as const }))
+  ].sort((a, b) => {
+      const idA = a.id || '0';
+      const idB = b.id || '0';
+      return idB.localeCompare(idA);
+  });
 
   return (
     <div>
-      {/* CABEÇALHO DO HISTÓRICO COM O NOVO BOTÃO */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, flexWrap: "wrap", gap: 10 }}>
-        <h3 style={{ fontSize: 16, fontWeight: 700, color: "#334155", margin: 0, fontFamily: "'Space Grotesk', sans-serif" }}>Meus Estudos</h3>
+        <h3 style={{ fontSize: 16, fontWeight: 700, color: "#334155", margin: 0, fontFamily: "'Space Grotesk', sans-serif" }}>Linha do Tempo</h3>
         <button onClick={handleSync} style={{ background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", borderRadius: 8, padding: "8px 12px", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>
-          🗑️ Limpar horas fantasmas antigas
+          🗑️ Limpar fantasmas antigos
         </button>
       </div>
       
-      {entries.length === 0 ? (
+      {combinedEntries.length === 0 ? (
         <div style={{ textAlign: "center", padding: 60, color: "#94a3b8", background: "white", borderRadius: 12, border: "1px solid #e2e8f0" }}>
-          <div style={{ fontSize: 40, marginBottom: 12 }}>🕒</div>
-          <div>Nenhum estudo registrado ainda. Vá no Dashboard e adicione um!</div>
+          <div>Nenhum registro encontrado.</div>
         </div>
       ) : (
         <div style={{ display: "grid", gap: 10 }}>
-          {entries.map(entry => {
+          {combinedEntries.map(entry => {
             const discName = PLAN.disciplines.find(d => d.id === entry.discipline)?.name || entry.discipline;
+            const isStudy = entry.type === 'study';
+
             return (
-              <div key={entry.id} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.05)", flexWrap: "wrap", gap: 10 }}>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: "#334155" }}>{discName}</div>
-                  <div style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>Data: {entry.date}</div>
+              <div key={entry.id || Math.random().toString()} style={{ 
+                background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "14px 16px", 
+                display: "flex", justifyContent: "space-between", alignItems: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+                flexWrap: "wrap", gap: 10
+              }}>
+                <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                  <div style={{ 
+                    width: 36, height: 36, borderRadius: "50%", 
+                    background: isStudy ? "rgba(99,102,241,0.1)" : "rgba(5,150,105,0.1)",
+                    display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0
+                  }}>
+                    {isStudy ? "🕒" : "✅"}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: "#334155" }}>{discName}</div>
+                    <div style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>{entry.date} • {isStudy ? "Estudo" : "Questões"}</div>
+                  </div>
                 </div>
+
                 <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: "#4f46e5", fontFamily: "'Space Grotesk', sans-serif" }}>{entry.minutes} min</div>
-                  <button onClick={() => handleDelete(entry)} style={{ background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", borderRadius: 6, padding: "6px 12px", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>Excluir</button>
+                  <div style={{ textAlign: "right" }}>
+                    {isStudy ? (
+                      <div style={{ fontSize: 16, fontWeight: 700, color: "#4f46e5", fontFamily: "'Space Grotesk', sans-serif" }}>{(entry as any).minutes} min</div>
+                    ) : (
+                      <div style={{ fontSize: 16, fontWeight: 700, color: "#059669", fontFamily: "'Space Grotesk', sans-serif" }}>{(entry as any).correct}/{(entry as any).total} <span style={{fontSize: 10, color: "#94a3b8"}}>acertos</span></div>
+                    )}
+                  </div>
+                  <button 
+                    onClick={() => isStudy ? handleDeleteStudy(entry as any) : handleDeleteQuestion(entry as any)} 
+                    style={{ background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", borderRadius: 6, padding: "6px 12px", cursor: "pointer", fontSize: 12, fontWeight: 600 }}
+                  >
+                    Excluir
+                  </button>
                 </div>
               </div>
             );
