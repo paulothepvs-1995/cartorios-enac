@@ -17,6 +17,25 @@ const defaultData = (): StudyData => ({
   study_entries: [],
 });
 
+/* ─── HELPER DE FORMATAÇÃO DE TEMPO ─── */
+function formatDecimalHours(decimalHours: number) {
+  if (!decimalHours || decimalHours <= 0) return "0m";
+  const h = Math.floor(decimalHours);
+  const m = Math.round((decimalHours - h) * 60);
+  if (h === 0) return `${m}m`;
+  if (m === 0) return `${h}h`;
+  return `${h}h ${m}m`;
+}
+
+function formatMinutes(totalMins: number) {
+  if (!totalMins || totalMins <= 0) return "0m";
+  const h = Math.floor(totalMins / 60);
+  const m = Math.round(totalMins % 60);
+  if (h === 0) return `${m}m`;
+  if (m === 0) return `${h}h`;
+  return `${h}h ${m}m`;
+}
+
 export default function App() {
   const [authed, setAuthed] = useState<boolean | null>(null);
   const [data, setData] = useState<StudyData>(defaultData());
@@ -177,6 +196,8 @@ function WeeklyPacingRing({ current, target }: { current: number; target: number
   const strokeDashoffset = circumference - (pct / 100) * circumference;
   const color = pct >= 100 ? "#059669" : pct >= 70 ? "#6366f1" : pct >= 40 ? "#d97706" : "#dc2626";
 
+  const formattedTime = formatDecimalHours(current);
+
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 20, background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
       <div style={{ position: "relative", width: 130, height: 130, flexShrink: 0 }}>
@@ -187,8 +208,8 @@ function WeeklyPacingRing({ current, target }: { current: number; target: number
             transform="rotate(-90 65 65)" style={{ transition: "stroke-dashoffset 0.5s ease" }} />
         </svg>
         <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ fontSize: 26, fontWeight: 700, color, fontFamily: "'Space Grotesk', sans-serif", lineHeight: 1 }}>{current.toFixed(1)}</div>
-          <div style={{ fontSize: 10, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>de {target}h</div>
+          <div style={{ fontSize: formattedTime.length > 5 ? 20 : 26, fontWeight: 700, color, fontFamily: "'Space Grotesk', sans-serif", lineHeight: 1 }}>{formattedTime}</div>
+          <div style={{ fontSize: 10, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace", marginTop: 2 }}>de {target}h</div>
         </div>
       </div>
       <div>
@@ -196,7 +217,7 @@ function WeeklyPacingRing({ current, target }: { current: number; target: number
         <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Meta: {target}h por semana</div>
         <div style={{ fontSize: 24, fontWeight: 700, color, fontFamily: "'Space Grotesk', sans-serif" }}>{pct.toFixed(0)}%</div>
         <div style={{ fontSize: 11, color: "#94a3b8" }}>
-          {pct >= 100 ? "Meta atingida!" : `Faltam ${(target - current).toFixed(1)}h`}
+          {pct >= 100 ? "Meta atingida!" : `Faltam ${formatDecimalHours(target - current)}`}
         </div>
       </div>
     </div>
@@ -308,15 +329,15 @@ function Dashboard({ data, totalHoursLogged, pctComplete, currentWeek, weeklyHou
       {/* KPIs */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 20 }}>
         {[
-          { label: "Horas totais", value: totalHoursLogged.toFixed(1), sub: `de 900h (${pctComplete}%)`, accent: "#6366f1" },
+          { label: "Horas totais", value: formatDecimalHours(totalHoursLogged), sub: `de 900h (${pctComplete}%)`, accent: "#6366f1" },
           { label: "Questões", value: data.questions_resolved, sub: "resolvidas", accent: "#059669" },
           { label: "Simulados", value: data.simulados.length, sub: data.simulados.length > 0 ? `média: ${(data.simulados.reduce((a, b) => a + b.score, 0) / data.simulados.length).toFixed(0)}/100` : "nenhum ainda", accent: "#db2777" },
         ].map((kpi, i) => (
           <div key={i} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: "18px 16px", position: "relative", overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
             <div style={{ position: "absolute", top: 0, left: 0, width: 3, height: "100%", background: kpi.accent }} />
             <div style={{ fontSize: 11, color: "#94a3b8", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px", fontFamily: "'JetBrains Mono', monospace" }}>{kpi.label}</div>
-            <div style={{ fontSize: 32, fontWeight: 700, color: kpi.accent, fontFamily: "'Space Grotesk', sans-serif", lineHeight: 1.1, marginTop: 4 }}>{kpi.value}</div>
-            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 2 }}>{kpi.sub}</div>
+            <div style={{ fontSize: 26, fontWeight: 700, color: kpi.accent, fontFamily: "'Space Grotesk', sans-serif", lineHeight: 1.1, marginTop: 6 }}>{kpi.value}</div>
+            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4 }}>{kpi.sub}</div>
           </div>
         ))}
       </div>
@@ -331,7 +352,7 @@ function Dashboard({ data, totalHoursLogged, pctComplete, currentWeek, weeklyHou
       <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, marginBottom: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
           <span style={{ fontSize: 13, fontWeight: 600, color: "#334155" }}>Progresso geral</span>
-          <span style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>{totalHoursLogged.toFixed(0)}h / 900h</span>
+          <span style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>{formatDecimalHours(totalHoursLogged)} / 900h</span>
         </div>
         <div style={{ height: 8, background: "#e2e8f0", borderRadius: 4, overflow: "hidden" }}>
           <div style={{ height: "100%", width: `${pctComplete}%`, background: "linear-gradient(90deg, #6366f1, #a78bfa)", borderRadius: 4, transition: "width 0.5s" }} />
@@ -399,7 +420,7 @@ function Disciplinas({ data }: { data: StudyData }) {
                 <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 2 }}>{d.method}</div>
               </div>
               <div style={{ textAlign: "right" }}>
-                <div style={{ fontSize: 20, fontWeight: 700, color: d.color, fontFamily: "'Space Grotesk', sans-serif" }}>{logged.toFixed(1)}h</div>
+                <div style={{ fontSize: 18, fontWeight: 700, color: d.color, fontFamily: "'Space Grotesk', sans-serif" }}>{formatDecimalHours(logged)}</div>
                 <div style={{ fontSize: 10, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>de {d.targetHours}h</div>
               </div>
             </div>
@@ -496,30 +517,35 @@ function Simulados({ data, onLogSimulado }: { data: StudyData; onLogSimulado: ()
   );
 }
 
-/* ─── LOG MODAL ─── */
+/* ─── LOG MODAL (AGORA COM HORAS E MINUTOS) ─── */
 function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyData) => Promise<void>; onClose: () => void }) {
   const [disc, setDisc] = useState("notarial");
+  const [hours, setHours] = useState("");
   const [minutes, setMinutes] = useState("");
 
   const handleSave = async () => {
-    const m = parseInt(minutes) || 0;
-    if (m <= 0) return;
-    const h = m / 60; 
+    const hVal = parseInt(hours) || 0;
+    const mVal = parseInt(minutes) || 0;
+    const totalMins = (hVal * 60) + mVal;
+    
+    if (totalMins <= 0) return;
+    
+    const hDecimal = totalMins / 60; 
 
     const weekKey = getWeekKey(new Date(), PLAN.startDate);
     const currentWeekHours = { ...(data.weekly_hours[weekKey] || {}) };
-    currentWeekHours[disc] = (currentWeekHours[disc] || 0) + h;
+    currentWeekHours[disc] = (currentWeekHours[disc] || 0) + hDecimal;
 
     const newEntry: StudyEntry = {
       id: Date.now().toString(),
       date: new Date().toISOString().slice(0, 10),
       discipline: disc,
-      minutes: m
+      minutes: totalMins
     };
 
     await save({
       ...data,
-      discipline_hours: { ...data.discipline_hours, [disc]: (data.discipline_hours[disc] || 0) + h },
+      discipline_hours: { ...data.discipline_hours, [disc]: (data.discipline_hours[disc] || 0) + hDecimal },
       weekly_hours: { ...data.weekly_hours, [weekKey]: currentWeekHours },
       study_entries: [...(data.study_entries || []), newEntry]
     });
@@ -538,10 +564,18 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
           {PLAN.disciplines.map((d) => (<option key={d.id} value={d.id}>{d.name}</option>))}
         </select>
         
-        <label style={{ fontSize: 11, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Tempo (em minutos)</label>
-        <input type="number" step="1" value={minutes} onChange={(e) => setMinutes(e.target.value)} placeholder="Ex: 30" style={inputStyle} />
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
+          <div>
+            <label style={{ fontSize: 11, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Horas</label>
+            <input type="number" min="0" step="1" value={hours} onChange={(e) => setHours(e.target.value)} placeholder="0" style={inputStyle} />
+          </div>
+          <div>
+            <label style={{ fontSize: 11, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Minutos</label>
+            <input type="number" min="0" max="59" step="1" value={minutes} onChange={(e) => setMinutes(e.target.value)} placeholder="0" style={inputStyle} />
+          </div>
+        </div>
         
-        <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
+        <div style={{ display: "flex", gap: 10 }}>
           <button onClick={onClose} style={{ flex: 1, padding: "10px", background: "#f1f5f9", border: "1px solid #e2e8f0", borderRadius: 8, color: "#64748b", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Cancelar</button>
           <button onClick={handleSave} style={{ flex: 1, padding: "10px", background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 8, color: "white", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Salvar</button>
         </div>
@@ -562,7 +596,7 @@ function QuestionModal({ data, save, onClose }: { data: StudyData; save: (d: Stu
     if (t <= 0) return;
 
     const entry: QuestionEntry = {
-      id: Date.now().toString(), // <- ID gerado aqui para poder excluir depois
+      id: Date.now().toString(),
       date: new Date().toISOString().slice(0, 10),
       discipline: disc,
       total: t,
@@ -758,7 +792,7 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
 function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
   // Função para excluir Horas
   const handleDeleteStudy = async (entry: StudyEntry) => {
-    if (!window.confirm(`Excluir registro de ${entry.minutes} min?`)) return;
+    if (!window.confirm(`Excluir registro de ${formatMinutes(entry.minutes)}?`)) return;
     const newEntries = (data.study_entries || []).filter(e => e.id !== entry.id);
     const h = entry.minutes / 60;
     const newDiscHours = { ...data.discipline_hours };
@@ -861,7 +895,7 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
                 <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
                   <div style={{ textAlign: "right" }}>
                     {isStudy ? (
-                      <div style={{ fontSize: 16, fontWeight: 700, color: "#4f46e5", fontFamily: "'Space Grotesk', sans-serif" }}>{(entry as any).minutes} min</div>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: "#4f46e5", fontFamily: "'Space Grotesk', sans-serif" }}>{formatMinutes((entry as any).minutes)}</div>
                     ) : (
                       <div style={{ fontSize: 16, fontWeight: 700, color: "#059669", fontFamily: "'Space Grotesk', sans-serif" }}>{(entry as any).correct}/{(entry as any).total} <span style={{fontSize: 10, color: "#94a3b8"}}>acertos</span></div>
                     )}
