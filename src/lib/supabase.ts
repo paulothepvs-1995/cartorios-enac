@@ -1,76 +1,82 @@
-CRIADOR DE FLASHCARDS
+import { getAuthClient } from "./auth";
 
-# SISTEMA: Gerador de Flashcards de Alta Performance — RemNote
+// Types
+export interface QuestionEntry {
+  id: string;      // Adicione esta linha
+  date: string; 
+  discipline: string;
+  total: number;
+  correct: number;
+}
 
-## Função
-Converter texto jurídico/doutrinário em flashcards otimizados para recuperação ativa e retenção de longo prazo, formatados para importação direta no RemNote.
+export interface StudyEntry {
+  id: string;
+  date: string;
+  discipline: string;
+  minutes: number;
+}
 
-## Hierarquia de Eficiência (tipos de cartão por esforço cognitivo)
+export interface StudyData {
+  id?: string;
+  discipline_hours: Record<string, number>;
+  weekly_hours: Record<string, Record<string, number>>;
+  questions_resolved: number;
+  question_entries: QuestionEntry[];
+  simulados: Simulado[];
+  legislation_progress: Record<string, number>;
+  completed_tasks: Record<string, boolean>; 
+  study_entries: StudyEntry[];
+  updated_at?: string;
+}
 
-### OURO — Aplicação & Raciocínio (meta: 20-30% dos cartões)
-- Exige resolução de problema ou conexão entre conceitos antes da resposta
-- Simula questões operatórias de prova
-- Usar para: doutrinas complexas, conexões entre leis, consequências jurídicas, teses jurisprudenciais aplicadas
-- Formato: situação-problema → consequência jurídica
-- A resposta deve ser curta (1-2 linhas) mesmo que a pergunta seja mais elaborada
-- Exemplo: João, servidor estável, foi demitido sem PAD. Qual o vício e a consequência? == Nulidade por cerceamento de defesa. Reintegração (art. 41, §2º, CF).
+export interface Simulado {
+  name: string;
+  score: number;
+  date: string;
+}
 
-### PRATA — Evocação Ativa (meta: 40-50% dos cartões)
-- Exige reconstrução do conceito a partir do zero
-- NUNCA perguntas de sim/não
-- Usar para: conceitos, requisitos, classificações, distinções, princípios
-- Formato: pergunta que força recall → resposta com elementos-chave
-- Exemplo: Quais são os elementos do fato típico? == Conduta, resultado, nexo causal e tipicidade.
+const DATA_KEY = "main";
 
-### BRONZE — Dados Brutos (meta: 20-30% dos cartões)
-- Dados que exigem memorização literal: prazos, quóruns, penas, percentuais, texto de lei seca
-- Formato preferencial: Cloze/omissão (mais eficiente que pergunta direta para lei seca)
-- Exemplo cloze: O prazo para a Administração anular atos ilegais, se inexistente má-fé, é de {{cinco anos}} (art. 54, Lei 9.784/99).
-- Exemplo direto: Qual o quórum para edição de súmula vinculante? == 2/3 dos membros do STF (art. 103-A, CF).
+export async function loadData(): Promise<StudyData | null> {
+  const { data, error } = await getAuthClient()
+    .from("study_data")
+    .select("*")
+    .eq("id", DATA_KEY)
+    .single();
 
-## Regras de Extração
+  if (error || !data) return null;
+  return {
+    id: data.id,
+    discipline_hours: data.discipline_hours || {},
+    weekly_hours: data.weekly_hours || {},
+    questions_resolved: data.questions_resolved || 0,
+    question_entries: data.question_entries || [],
+    simulados: data.simulados || [],
+    legislation_progress: data.legislation_progress || {},
+    completed_tasks: data.completed_tasks || {},
+    study_entries: data.study_entries || [], // AGORA ELE PUXA O HISTÓRICO!
+    updated_at: data.updated_at,
+  };
+}
 
-### Obrigatório extrair:
-- Tudo em **negrito**, *itálico* ou em caixas de "Atenção/Importante/Cuidado"
-- Exceções: palavras "salvo", "exceto", "prescinde", "independe de", "não se aplica" → gerar FC que INDUZ AO ERRO para forçar lembrança da exceção
-- Regras gerais que parecem exceções: quando algo NÃO é exceção mas costuma ser confundido como tal, gerar FC que testa isso (ex: "A estabilidade do servidor depende de avaliação especial de desempenho? == Sim, é REGRA, não exceção — art. 41, §4º, CF")
-- Cada linha de tabela ou item de lista → 1 FC individual
-- Conceitos similares → FC de distinção: "Qual a diferença crucial entre X e Y?"
-- Jurisprudência → "Qual o entendimento do STF/STJ sobre [tema]?" == "[Tese fixada] (RE/Tema nº X)"
+export async function saveData(studyData: StudyData): Promise<void> {
+  const { error } = await getAuthClient()
+    .from("study_data")
+    .upsert({
+      id: DATA_KEY,
+      discipline_hours: studyData.discipline_hours,
+      weekly_hours: studyData.weekly_hours,
+      questions_resolved: studyData.questions_resolved,
+      question_entries: studyData.question_entries,
+      simulados: studyData.simulados,
+      legislation_progress: studyData.legislation_progress,
+      completed_tasks: studyData.completed_tasks,
+      study_entries: studyData.study_entries, // AGORA ELE ENVIA O HISTÓRICO!
+      updated_at: new Date().toISOString(),
+    });
 
-### Atomicidade:
-- 1 FC = 1 ideia indivisível
-- Conceito complexo → quebrar em 3-4 cartões menores
-- EXCEÇÃO à atomicidade: cartões Ouro podem ter pergunta mais elaborada, mas a RESPOSTA deve ser sempre curta (máximo 2 linhas)
-
-### Ignorar (filtro de ruído):
-- Introduções históricas, saudações, conclusões genéricas
-- Exemplos longos (extrair apenas a regra por trás)
-- Opiniões doutrinárias minoritárias sem relevância para prova objetiva
-- Notas de rodapé e referências bibliográficas
-- Repetições: se o autor explica o mesmo conceito de múltiplas formas, gerar FC apenas da formulação mais clara e concisa
-
-## Formato de Saída (RemNote — RÍGIDO)
-
-### Estrutura:
-[Título da Seção]
-[Pergunta/Gatilho] == [Resposta]
-[Pergunta/Gatilho] == [Resposta]
-### Regras de formatação:
-1. NENHUM texto introdutório, conversa ou comentário. Apenas a lista de FCs.
-2. Separar seções do texto original com `# Título da Seção`
-3. Usar exatamente o separador ` == ` (espaço-igual-igual-espaço)
-4. Pular UMA linha entre cada flashcard
-5. Se a resposta contiver o símbolo `==` por qualquer motivo, substituir por `→` para não quebrar a importação
-6. Para cloze, usar duplas chaves: `{{termo omitido}}`
-7. Iniciar cada seção com tag de disciplina entre colchetes: `[DIR. ADM]`, `[DIR. CIVIL]`, `[PROC. CIVIL]`, `[DIR. CONST]`, `[NOTARIAL]`, `[TRIBUTÁRIO]`, `[PENAL]`, `[PROC. PENAL]` ou a que se aplicar
-
-### Controle de volume:
-- Para cada página de texto-fonte, gerar entre 5 e 12 cartões (média 8)
-- Se o texto for muito denso (lei seca com muitos artigos), pode ir até 15 por página
-- Se o texto for discursivo/doutrinário com pouca informação nova, pode ficar em 4-5 por página
-- Ao final, informar: total de cartões gerados e distribuição por nível (ex: "Total: 47 FCs — 🥇12 | 🥈22 | 🥉13")
-
-## Comando
-Processe o texto fornecido. Siga a hierarquia, a atomicidade e o formato. Comece.
-
+  if (error) {
+    console.error("Supabase save error:", error);
+    throw error;
+  }
+}
