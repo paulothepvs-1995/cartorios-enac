@@ -646,14 +646,14 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
   const completedCount = useMemo(() => {
     if (!trilha) return 0;
     return trilha.days.reduce((acc, day) =>
-      acc + day.tasks.filter(t => data.completed_tasks[`${trilha.id}:${t.id}`]).length, 0);
+      acc + day.tasks.filter(t => data.completed_tasks && data.completed_tasks[`${trilha.id}:${t.id}`]).length, 0);
   }, [trilha, data.completed_tasks]);
 
   const totalTasks = trilha ? trilha.days.reduce((a, d) => a + d.tasks.length, 0) : 0;
 
   const toggleTask = async (taskId: number) => {
     const key = `${trilha.id}:${taskId}`;
-    const newCompleted = { ...data.completed_tasks };
+    const newCompleted = { ...(data.completed_tasks || {}) };
     if (newCompleted[key]) {
       delete newCompleted[key];
     } else {
@@ -670,7 +670,7 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
       <div style={{ display: "flex", gap: 6, marginBottom: 16, overflowX: "auto", paddingBottom: 4 }}>
         {TRILHAS.map((t, i) => {
           const tTotal = t.days.reduce((a, d) => a + d.tasks.length, 0);
-          const tDone = t.days.reduce((a, d) => a + d.tasks.filter(tk => data.completed_tasks[`${t.id}:${tk.id}`]).length, 0);
+          const tDone = t.days.reduce((a, d) => a + d.tasks.filter(tk => data.completed_tasks && data.completed_tasks[`${t.id}:${tk.id}`]).length, 0);
           const isDone = tDone === tTotal;
           return (
             <button key={t.id} onClick={() => setSelectedTrilha(i)} style={{
@@ -703,7 +703,7 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
           <h4 style={{ fontSize: 12, fontWeight: 700, color: "#4338ca", textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'JetBrains Mono', monospace", marginBottom: 8 }}>{day.dayLabel}</h4>
           <div style={{ display: "grid", gap: 6 }}>
             {day.tasks.map((task) => {
-              const isDone = !!data.completed_tasks[`${trilha.id}:${task.id}`];
+              const isDone = !!(data.completed_tasks && data.completed_tasks[`${trilha.id}:${task.id}`]);
               const isExpanded = !!expandedTasks[task.id];
               return (
                 <div key={task.id} onClick={() => setExpandedTasks(prev => ({ ...prev, [task.id]: !prev[task.id] }))} style={{
@@ -722,15 +722,25 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
                       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 2 }}>
                         <span style={{ fontSize: 10, padding: "1px 6px", borderRadius: 4, background: "rgba(99,102,241,0.1)", color: "#4338ca", fontWeight: 600, fontFamily: "'JetBrains Mono', monospace" }}>T{String(task.id).padStart(2, '0')}</span>
                         <span style={{ fontSize: 11, color: "#6366f1", fontWeight: 600 }}>{task.discipline}</span>
-                        <span style={{ fontSize: 10, color: "#94a3b8", marginLeft: "auto" }}>{isExpanded ? "▲" : "▼"}</span>
+                        <span style={{ fontSize: 10, color: "#94a3b8", marginLeft: "auto" }}>{isExpanded ? "▲ Esconder" : "▼ Ler mais"}</span>
                       </div>
-                      <div style={{ fontSize: 13, fontWeight: 500, color: "#334155", textDecoration: isDone ? "line-through" : "none" }}>{task.title}</div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: "#1e293b", textDecoration: isDone ? "line-through" : "none" }}>{task.title}</div>
                       {task.description && (
-                        <div style={{ fontSize: 12, color: "#64748b", marginTop: 6, lineHeight: 1.6, whiteSpace: "pre-wrap" }}>
-                          {isExpanded ? task.description : `${task.description.substring(0, 100)}${task.description.length > 100 ? "..." : ""}`}
+                        <div style={{ 
+                          fontSize: isExpanded ? 15 : 13, 
+                          color: isExpanded ? "#334155" : "#64748b", 
+                          marginTop: 8, 
+                          lineHeight: 1.6, 
+                          whiteSpace: "pre-wrap",
+                          background: isExpanded ? "#f8fafc" : "transparent",
+                          padding: isExpanded ? "12px" : "0",
+                          borderRadius: 8,
+                          border: isExpanded ? "1px solid #e2e8f0" : "none"
+                        }}>
+                          {isExpanded ? task.description : `${task.description.substring(0, 120)}${task.description.length > 120 ? "..." : ""}`}
                         </div>
                       )}
-                      {task.link && <a href={task.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ fontSize: 11, color: "#6366f1", textDecoration: "none", marginTop: 4, display: "inline-block" }}>Abrir no LDI &#8599;</a>}
+                      {task.link && <a href={task.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ fontSize: 12, color: "#4f46e5", textDecoration: "none", fontWeight: 600, marginTop: 8, display: "inline-block" }}>Abrir no LDI &#8599;</a>}
                     </div>
                   </div>
                 </div>
