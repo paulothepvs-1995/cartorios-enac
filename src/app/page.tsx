@@ -761,18 +761,22 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
                       </div>
                       <div style={{ fontSize: 14, fontWeight: 600, color: "#1e293b", textDecoration: isDone ? "line-through" : "none" }}>{task.title}</div>
                       {task.description && (
-                        <div style={{ 
-                          fontSize: isExpanded ? 15 : 13, 
-                          color: isExpanded ? "#334155" : "#64748b", 
-                          marginTop: 8, 
-                          lineHeight: 1.6, 
+                        <div style={{
+                          fontSize: isExpanded ? 15 : 13,
+                          color: isExpanded ? "#334155" : "#64748b",
+                          marginTop: 8,
+                          lineHeight: 1.6,
                           whiteSpace: "pre-wrap",
                           background: isExpanded ? "#f8fafc" : "transparent",
                           padding: isExpanded ? "12px" : "0",
                           borderRadius: 8,
                           border: isExpanded ? "1px solid #e2e8f0" : "none"
                         }}>
-                          {isExpanded ? task.description : `${task.description.substring(0, 120)}${task.description.length > 120 ? "..." : ""}`}
+                          {isExpanded ? (
+                            <span dangerouslySetInnerHTML={{ __html: task.description.replace(/\*\*(.+?)\*\*/g, '<strong style="color:#1e293b">$1</strong>') }} />
+                          ) : (
+                            task.description.replace(/\*\*/g, "").substring(0, 120) + (task.description.length > 120 ? "..." : "")
+                          )}
                         </div>
                       )}
                       {task.link && <a href={task.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ fontSize: 12, color: "#4f46e5", textDecoration: "none", fontWeight: 600, marginTop: 8, display: "inline-block" }}>Abrir no LDI &#8599;</a>}

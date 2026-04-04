@@ -30,14 +30,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Introdução ao Direito Notarial e Registral — Natureza Jurídica da Atividade",
             "link": "",
-            "description": "Natureza jurídica da atividade (delegação estatal a particulares — função pública exercida em caráter privado). Memorizar: Art. 236 CF é o fundamento constitucional. Armadilha FGV: a atividade é estatal (poder delegante é a União), mas a outorga é pelo TJ do estado. Distinção entre titular e delegatário."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/1. Apresentação do Curso.pdf + 2. Direito Notarial e Registral.pdf\n\n**Lei Seca Obrigatória:** CF/88 Art. 236 e §§1º-3º; Lei 8.935/94, Arts. 1º-2º\n\n**Foco:** Natureza jurídica da atividade (delegação estatal a particulares — função pública exercida em caráter privado). Memorizar: Art. 236 CF é o fundamento constitucional. Armadilha FGV: a atividade é estatal (poder delegante é a União), mas a outorga é pelo TJ do estado. Distinção entre titular e delegatário.\n\n**Flashcards:** Criar 8 clozes — Art. 236 caput, §§1º-3º, natureza jurídica (delegação vs. concessão), titularidade da fé pública, duplo regime jurídico (público + privado) | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 2,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Dos Serviços Notariais e de Registros — Espécies e Atribuições",
             "link": "",
-            "description": "Art. 5º — tabeliães de notas; Art. 6º — tabeliães e oficiais de protestos; Art. 7º — oficiais de registro de imóveis; Art. 8º — oficiais de RCPN; Art. 9º — oficiais de RTD; Art. 10 — oficiais de RCPJ. Armadilha FGV: confundir atribuições entre serventias (ex: certidão de nascimento é RCPN, não RI). Art. 12 — acumulação de atribuições (quando pode/não pode)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/3. Dos Serviços Notariais e de Registros.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 3º-13 (DECORAR a distinção entre cada serventia)\n\n**Foco:** Art. 5º — tabeliães de notas; Art. 6º — tabeliães e oficiais de protestos; Art. 7º — oficiais de registro de imóveis; Art. 8º — oficiais de RCPN; Art. 9º — oficiais de RTD; Art. 10 — oficiais de RCPJ. Armadilha FGV: confundir atribuições entre serventias (ex: certidão de nascimento é RCPN, não RI). Art. 12 — acumulação de atribuições (quando pode/não pode).\n\n**Flashcards:** Criar 10 clozes — mapear cada artigo (5-13) à serventia correspondente, regra de acumulação | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -49,14 +49,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Ingresso na Atividade — Concurso, Requisitos e Vacância",
             "link": "",
-            "description": "Requisitos para ingresso (Art. 14 — não ter condenação criminal, aptidão física e mental, habilitação em concurso). Art. 15 — concurso público de provas e títulos. Art. 16 — prazo para preenchimento de vaga (6 meses). Armadilha FGV: Art. 14, §1º — nacionalidade brasileira exigida (nato ou naturalizado). Art. 16 — vacância declarada pelo juízo competente."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/4. Ingresso na Atividade Notarial e de Registro.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 14-19; CF Art. 236, §3º; Resolução CNJ 81/2009\n\n**Foco:** Requisitos para ingresso (Art. 14 — não ter condenação criminal, aptidão física e mental, habilitação em concurso). Art. 15 — concurso público de provas e títulos. Art. 16 — prazo para preenchimento de vaga (6 meses). Armadilha FGV: Art. 14, §1º — nacionalidade brasileira exigida (nato ou naturalizado). Art. 16 — vacância declarada pelo juízo competente.\n\n**Flashcards:** Criar 8 clozes — requisitos do art. 14, prazo do art. 16, competência para concurso (TJ), papel do ENAC (Res. 81 CNJ) | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 4,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Prepostos — Escreventes e Substitutos",
             "link": "",
-            "description": "Art. 20 — os notários e oficiais de registro podem contratar escreventes e auxiliares. Art. 21 — o gerenciamento administrativo e financeiro é de responsabilidade exclusiva do titular. Distinção preposto vs. substituto (quem pratica atos vs. quem substitui o titular). Armadilha FGV: responsabilidade do titular pelos atos dos prepostos (objetiva? subjetiva?)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/5. Prepostos.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 20-21; Provimento 149/2023 CNJ, artigos sobre prepostos\n\n**Foco:** Art. 20 — os notários e oficiais de registro podem contratar escreventes e auxiliares. Art. 21 — o gerenciamento administrativo e financeiro é de responsabilidade exclusiva do titular. Distinção preposto vs. substituto (quem pratica atos vs. quem substitui o titular). Armadilha FGV: responsabilidade do titular pelos atos dos prepostos (objetiva? subjetiva?).\n\n**Flashcards:** Criar 5 clozes — art. 20, 21, responsabilidade do titular, distinção escrevente/substituto | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       },
@@ -68,14 +68,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Responsabilidade Civil e Criminal dos Notários e Registradores",
             "link": "",
-            "description": "Art. 22 — notários e registradores responderão pelos danos que praticarem. §1º — prescrição (3 anos, art. 206, §3º, V do CC). Art. 23 — responsabilidade do substituto. Art. 24 — responsabilidade civil independe da criminal. Armadilha FGV: natureza da responsabilidade — objetiva ou subjetiva? (STF: subjetiva, com culpa; mas há divergência doutrinária). Direito de regresso contra preposto."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/6. Responsabilidade Civil e Criminal.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 22-24; CC Art. 927 e 186-187; Art. 236, §1º CF\n\n**Foco:** Art. 22 — notários e registradores responderão pelos danos que praticarem. §1º — prescrição (3 anos, art. 206, §3º, V do CC). Art. 23 — responsabilidade do substituto. Art. 24 — responsabilidade civil independe da criminal. Armadilha FGV: natureza da responsabilidade — objetiva ou subjetiva? (STF: subjetiva, com culpa; mas há divergência doutrinária). Direito de regresso contra preposto.\n\n**Flashcards:** Criar 8 clozes — arts. 22-24, prazo prescricional, natureza da responsabilidade, direito de regresso | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 6,
             "discipline": "DIREITO CIVIL",
             "title": "LINDB e Parte Geral do CC — Pessoas Naturais e Capacidade",
             "link": "",
-            "description": "Vigência da lei (art. 1º LINDB — 45 dias, salvo disposição contrária). Capacidade civil — absolutamente incapaz (art. 3º CC: menores de 16) vs. relativamente incapaz (art. 4º CC). Emancipação (art. 5º CC). Armadilha FGV: A Lei 13.146/2015 (Estatuto da Pessoa com Deficiência) alterou os arts. 3º e 4º do CC — deficientes NÃO são mais absolutamente incapazes. Isso é extremamente cobrado."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (capítulos iniciais); Vade Mecum: Códigos Cartório 2026.1.pdf\n\n**Lei Seca Obrigatória:** LINDB (DL 4.657/42), Arts. 1º-6º, 13-17; CC Arts. 1º-10, Arts. 3º-5º\n\n**Foco:** Vigência da lei (art. 1º LINDB — 45 dias, salvo disposição contrária). Capacidade civil — absolutamente incapaz (art. 3º CC: menores de 16) vs. relativamente incapaz (art. 4º CC). Emancipação (art. 5º CC). Armadilha FGV: A Lei 13.146/2015 (Estatuto da Pessoa com Deficiência) alterou os arts. 3º e 4º do CC — deficientes NÃO são mais absolutamente incapazes. Isso é extremamente cobrado.\n\n**Flashcards:** Criar 8 clozes — arts. 1º e 2º LINDB, arts. 3º-5º CC (capacidade), emancipação, efeitos da Lei 13.146 | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -87,14 +87,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CONSTITUCIONAL",
             "title": "Art. 236 CF + Organização do Estado aplicada à atividade notarial",
             "link": "",
-            "description": "Art. 236 é o fundamento constitucional de toda a atividade — DECORAR literalmente cada parágrafo. Art. 22, XXV — competência privativa da União para legislar sobre registros públicos. Armadilha FGV: a lei que regulamenta é federal (Lei 8.935/94), mas a fiscalização é estadual (TJ). Art. 37 se aplica por analogia (regime híbrido)."
+            "description": "**Material:** Direto ao Ponto/9. Direito Constitucional.pdf; Vade Mecum: Constituição para Cartórios 2026.1.pdf\n\n**Lei Seca Obrigatória:** CF Art. 236 e §§; Art. 22, XXV; Art. 24, I; Art. 37; Art. 93, I\n\n**Foco:** Art. 236 é o fundamento constitucional de toda a atividade — DECORAR literalmente cada parágrafo. Art. 22, XXV — competência privativa da União para legislar sobre registros públicos. Armadilha FGV: a lei que regulamenta é federal (Lei 8.935/94), mas a fiscalização é estadual (TJ). Art. 37 se aplica por analogia (regime híbrido).\n\n**Flashcards:** Criar 6 clozes — Art. 236 completo, Art. 22 XXV, competência legislativa vs. fiscalização | **Questões:** 8 | **Tempo:** 1h15min"
           },
           {
             "id": 8,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Incompatibilidades e Impedimentos",
             "link": "",
-            "description": "Art. 25 — impedimentos para exercício (situações pessoais que impedem a prática de atos específicos, ex: parentesco). Art. 26 — incompatibilidades (atividades que não podem ser acumuladas com a função notarial/registral). Art. 27 — vedações. Armadilha FGV: distinção entre impedimento (caso específico) e incompatibilidade (vedação geral). Advocacia é incompatível (Art. 28, IV, EAOAB — Paulo conhece bem essa regra!)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/7. Incompatibilidades e Impedimentos.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 25-27\n\n**Foco:** Art. 25 — impedimentos para exercício (situações pessoais que impedem a prática de atos específicos, ex: parentesco). Art. 26 — incompatibilidades (atividades que não podem ser acumuladas com a função notarial/registral). Art. 27 — vedações. Armadilha FGV: distinção entre impedimento (caso específico) e incompatibilidade (vedação geral). Advocacia é incompatível (Art. 28, IV, EAOAB).\n\n**Flashcards:** Criar 6 clozes — arts. 25-27, impedimento vs. incompatibilidade, vedações | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       },
@@ -106,14 +106,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Princípios do Direito Notarial e Registral",
             "link": "",
-            "description": "DECORAR todos os princípios e suas definições: publicidade (art. 1º Lei 6.015), autenticidade, segurança jurídica, eficácia (art. 1º Lei 8.935). Princípios registrais específicos: inscrição, prioridade (art. 186 LRP), especialidade (objetiva e subjetiva), legalidade/qualificação, continuidade (art. 195 LRP), instância/rogação, tipicidade. Armadilha FGV: confundir publicidade material (RI) com formal (RTD), ou prioridade (art. 186 — quem primeiro protocola) com preferência."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/8. Princípios de Direito Notarial e Registral.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Art. 1º; Lei 6.015/73, Arts. 1º-11; Provimento 149/2023 CNJ\n\n**Foco:** DECORAR todos os princípios e suas definições: publicidade (art. 1º Lei 6.015), autenticidade, segurança jurídica, eficácia (art. 1º Lei 8.935). Princípios registrais específicos: inscrição, prioridade (art. 186 LRP), especialidade (objetiva e subjetiva), legalidade/qualificação, continuidade (art. 195 LRP), instância/rogação, tipicidade. Armadilha FGV: confundir publicidade material (RI) com formal (RTD), ou prioridade (art. 186) com preferência.\n\n**Flashcards:** Criar 12 clozes — um para cada princípio com artigo de lei correspondente | **Questões:** 15 | **Tempo:** 2h00min"
           },
           {
             "id": 10,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Direitos e Deveres dos Notários e Registradores",
             "link": "",
-            "description": "Deveres: independência no exercício, sigilo, manutenção do arquivo, atendimento prioritário (idosos, deficientes, gestantes), conservação de livros. Direitos: exercer a delegação (art. 28), auferir emolumentos, organizar o trabalho. Armadilha FGV: o dever de sigilo não é absoluto (ex: requisição judicial), e a independência funcional não significa ausência de fiscalização."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/9. Direito e Deveres dos Notários.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 28-31 (deveres); Arts. 28-30 (direitos)\n\n**Foco:** Deveres: independência no exercício, sigilo, manutenção do arquivo, atendimento prioritário, conservação de livros. Direitos: exercer a delegação (art. 28), auferir emolumentos, organizar o trabalho. Armadilha FGV: o dever de sigilo não é absoluto (ex: requisição judicial), e a independência funcional não significa ausência de fiscalização.\n\n**Flashcards:** Criar 6 clozes — deveres (art. 30) e direitos, exceções ao sigilo | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       },
@@ -125,7 +125,7 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Pessoas Jurídicas e Negócio Jurídico — Visão Registral",
             "link": "",
-            "description": "Classificação das PJs (direito público vs. privado — art. 40-44). Constituição de PJ: registro (art. 45 — começo da existência legal). DECORAR art. 104 (requisitos de validade do NJ: agente capaz, objeto lícito, forma prescrita). Art. 108 — escritura pública obrigatória para imóveis acima de 30 salários mínimos. Armadilha FGV: Art. 108 — a escritura pública é da essência do ato (ad solemnitatem), não mera prova (ad probationem)."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (Pessoas Jurídicas + Negócio Jurídico)\n\n**Lei Seca Obrigatória:** CC Arts. 40-69, Arts. 104-114\n\n**Foco:** Classificação das PJs (direito público vs. privado). Constituição de PJ: registro (art. 45). DECORAR art. 104 (requisitos de validade). Art. 108 — escritura pública obrigatória para imóveis acima de 30 salários mínimos. Armadilha FGV: Art. 108 — a escritura pública é da essência do ato (ad solemnitatem), não mera prova.\n\n**Flashcards:** Criar 8 clozes — arts. 40-44, art. 45, art. 104, art. 108 | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       }
@@ -143,14 +143,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Infrações Disciplinares e Penalidades",
             "link": "",
-            "description": "Art. 31 — infrações sujeitas a penalidades: negligência, conduta atentatória. Art. 32 — penalidades: repreensão, multa, suspensão (90 dias), perda da delegação. Art. 34 — processo disciplinar (devido processo legal). Art. 35 — competência do Poder Judiciário para aplicar penalidades. Armadilha FGV: a perda da delegação exige sentença judicial transitada em julgado (art. 35, §2º)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/10. Infrações Disciplinares e Penalidades.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 31-36; Lei 6.015/73, Art. 32\n\n**Foco:** Art. 31 — infrações. Art. 32 — penalidades: repreensão, multa, suspensão (90 dias), perda da delegação. Art. 34 — processo disciplinar. Art. 35 — competência do Poder Judiciário. Armadilha FGV: a perda da delegação exige sentença judicial transitada em julgado (art. 35, §2º).\n\n**Flashcards:** Criar 8 clozes — escala de penalidades, competência, requisito para perda | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 13,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Fiscalização pelo Poder Judiciário",
             "link": "",
-            "description": "§1º do Art. 236 CF — a fiscalização é exercida pelo Poder Judiciário (TJ). Art. 37 — a corregedoria é o órgão fiscalizador. Art. 38 — competência do CNJ e da Corregedoria Nacional de Justiça. Armadilha FGV: quem fiscaliza é o TJ estadual (corregedoria), mas o CNJ tem competência supletiva/subsidiária (e em questões recentes, tem sido cada vez mais atuante via provimentos)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/11. Fiscalização pelo Poder Judiciário.pdf\n\n**Lei Seca Obrigatória:** CF Art. 236, §1º; Lei 8.935/94, Art. 37-38; Provimento 149/2023 CNJ\n\n**Foco:** §1º do Art. 236 CF — a fiscalização é exercida pelo Poder Judiciário (TJ). Art. 37 — a corregedoria é o órgão fiscalizador. Art. 38 — competência do CNJ. Armadilha FGV: quem fiscaliza é o TJ estadual, mas o CNJ tem competência supletiva/subsidiária.\n\n**Flashcards:** Criar 6 clozes — competência do TJ, papel do CNJ, corregedoria | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       },
@@ -162,14 +162,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Extinção da Delegação",
             "link": "",
-            "description": "Causas de extinção: morte, aposentadoria, renúncia, perda (sentença judicial), descumprimento de requisitos. Art. 39 — a delegação é personalíssima (intransferível e incomunicável). Armadilha FGV: serventia NÃO se herda (personalíssima). A aposentadoria é compulsória aos 75 anos (EC 88/2015 + LC 152/2015)?"
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/12. Extinção da Delegação.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 35, 39; CF Art. 236, §3º\n\n**Foco:** Causas de extinção: morte, aposentadoria, renúncia, perda, descumprimento de requisitos. Art. 39 — a delegação é personalíssima. Armadilha FGV: serventia NÃO se herda. A aposentadoria é compulsória aos 75 anos.\n\n**Flashcards:** Criar 6 clozes — causas de extinção, personalíssima, aposentadoria | **Questões:** 8 | **Tempo:** 1h15min"
           },
           {
             "id": 15,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Lei 6.015/73 — Disposições Gerais (Título I)",
             "link": "",
-            "description": "Art. 1º — os serviços concernentes aos Registros Públicos são os seguintes: (I) RCPN, (II) RCPJ, (III) RTD, (IV) RI. Art. 9º — sede, horário. Art. 10 — qualquer pessoa pode requerer certidão. Art. 13 — livros obrigatórios. Art. 16 — os oficiais e substitutos são civilmente responsáveis. Art. 198 — dúvida registral (procedimento). Armadilha FGV: Art. 10 — a publicidade é princípio fundamental, qualquer pessoa pode requerer certidão SEM informar motivo."
+            "description": "**Material:** Notarial e Registral - Estudo regular/6. Registro de Imóveis/1. Apresentação do Curso.pdf + Lei 6.015\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 1º-28 (LEITURA INTEGRAL)\n\n**Foco:** Art. 1º — os serviços concernentes. Art. 9º — sede, horário. Art. 10 — qualquer pessoa pode requerer certidão. Art. 13 — livros obrigatórios. Art. 198 — dúvida registral. Armadilha FGV: Art. 10 — a publicidade é princípio fundamental, qualquer pessoa pode requerer certidão SEM informar motivo.\n\n**Flashcards:** Criar 10 clozes — arts. 1º, 9º, 10, 13, 16-17 | **Questões:** 15 | **Tempo:** 2h00min"
           }
         ]
       },
@@ -181,14 +181,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Competência Material e Territorial — Serventias",
             "link": "",
-            "description": "Competência material — qual serventia pratica qual ato (tabelião de notas ≠ oficial de RI ≠ oficial de RCPN). Competência territorial — circunscrição. No RI: Art. 169 LRP — o registro deve ser feito no cartório da situação do imóvel (forum rei sitae). No RCPN: nascimento no local do parto ou da residência. Armadilha FGV: exceções à competência territorial (ex: escritura pública pode ser lavrada em qualquer tabelionato do país, mas o REGISTRO é no RI da situação do imóvel)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/13. Competência Material.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 5º-12; Lei 6.015/73, Arts. 169-171; Provimento 149/2023\n\n**Foco:** Competência material. Competência territorial. No RI: Art. 169 LRP — o registro deve ser feito no cartório da situação do imóvel (forum rei sitae). Armadilha FGV: exceções à competência territorial (ex: escritura pública pode ser lavrada em qualquer tabelionato, mas o REGISTRO é no RI da situação).\n\n**Flashcards:** Criar 8 clozes — competência por serventia, forum rei sitae, exceções | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 17,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Interinidade e Provimento 149/2023 — Aspectos Gerais",
             "link": "",
-            "description": "O Provimento 149/2023 é o Código Nacional de Normas do Foro Extrajudicial. Estrutura: Parte Geral + Parte Especial. Interinidade — quem responde pela serventia quando o titular se afasta (substituto legal, interino designado pelo juiz). Armadilha FGV: interino NÃO é titular, é designado pelo juízo competente; exerce a função em caráter precário e temporário."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/14. Interinidade.pdf + 7. Código Nacional de Normas...\n\n**Lei Seca Obrigatória:** Provimento 149/2023 CNJ — Parte Geral\n\n**Foco:** O Provimento 149/2023 é o Código Nacional de Normas do Foro Extrajudicial. Interinidade — quem responde pela serventia quando o titular se afasta. Armadilha FGV: interino NÃO é titular, exerce a função em caráter precário e temporário.\n\n**Flashcards:** Criar 8 clozes — estrutura do Prov. 149, interinidade | **Questões:** 8 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -200,14 +200,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Prescrição e Decadência — Foco Registral",
             "link": "",
-            "description": "Distinção prescrição (pretensão, patrimonial, renunciável) vs. decadência (direito potestativo, pode ser legal ou convencional). DECORAR prazos: 3 anos para reparação civil (art. 206, §3º, V) — aplica-se à responsabilidade do notário. 10 anos para ação fundada em direito pessoal (art. 205). Armadilha FGV: prescrição NÃO corre contra absolutamente incapazes (art. 198, I); decadência legal NÃO pode ser renunciada (art. 209)."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (Prescrição e Decadência)\n\n**Lei Seca Obrigatória:** CC Arts. 189-211, 207-211; Art. 206, §3º, V\n\n**Foco:** Distinção prescrição vs. decadência. DECORAR prazos: 3 anos para reparação civil (art. 206) — aplica-se à responsabilidade do notário. Armadilha FGV: prescrição NÃO corre contra absolutamente incapazes; decadência legal NÃO pode ser renunciada.\n\n**Flashcards:** Criar 8 clozes — prazos prescricionais registrais, distinção | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 19,
             "discipline": "DIREITO ADMINISTRATIVO",
             "title": "Agentes Públicos — Notários e Registradores como Agentes Delegados",
             "link": "",
-            "description": "Notários e registradores são agentes públicos? SIM — são particulares em colaboração com o Estado (agentes delegados). Consequência: se submetem à LIA (Art. 2º — todo aquele que exerce função pública). Princípios do art. 37 CF se aplicam por analogia. Armadilha FGV: notários NÃO são servidores públicos (não têm regime estatutário), mas SÃO agentes públicos (para fins de responsabilidade)."
+            "description": "**Material:** Direto ao Ponto/8. Direito Administrativo.pdf\n\n**Lei Seca Obrigatória:** CF Art. 37; Art. 236; Lei 8.935/94, Art. 3º; Lei 8.429/92, Art. 2º\n\n**Foco:** Notários e registradores são agentes delegados. Consequência: se submetem à LIA. Armadilha FGV: notários NÃO são servidores públicos (não estatutários), mas SÃO agentes públicos.\n\n**Flashcards:** Criar 6 clozes — classificação do notário, LIA, princípios do art. 37 | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       }
@@ -225,14 +225,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Seguridade Social dos Notários e Registradores",
             "link": "",
-            "description": "Notários e registradores são segurados obrigatórios do RGPS (Regime Geral) como contribuintes individuais, NÃO do RPPS. Armadilha FGV: notário não tem aposentadoria por tempo de serviço pelo regime estatutário."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/15. Seguridade Social.pdf\n\n**Lei Seca Obrigatória:** CF Art. 40; Lei 8.935/94, Art. 40; Lei 10.666/2003\n\n**Foco:** Notários e registradores são segurados obrigatórios do RGPS como contribuintes individuais, NÃO do RPPS.\n\n**Flashcards:** Criar 4 clozes — regime previdenciário, RGPS vs. RPPS | **Questões:** 6 | **Tempo:** 1h00min"
           },
           {
             "id": 21,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Emolumentos — Lei 10.169/2000 + Natureza Jurídica",
             "link": "",
-            "description": "Natureza jurídica dos emolumentos — taxa sui generis (ADI 1.378-5). Art. 1º — emolumentos são fixados por lei estadual. Art. 2º — para fixação, observar natureza pública e caráter social. Art. 3º — gratuidade (Lei 9.534/97 — registros de nascimento e óbito são gratuitos). Armadilha FGV: emolumentos TÊM natureza de taxa (tributária), se sujeitam a princípios tributários (legalidade, anterioridade)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/17. Emolumentos.pdf\n\n**Lei Seca Obrigatória:** Lei 10.169/2000 (COMPLETA); CF Art. 236, §2º; ADI 1.378-5/ES\n\n**Foco:** Natureza jurídica dos emolumentos — taxa sui generis. Art. 1º — fixados por lei estadual. Art. 3º — gratuidade (Lei 9.534/97). Armadilha FGV: emolumentos TÊM natureza de taxa (tributária).\n\n**Flashcards:** Criar 8 clozes — natureza jurídica, arts. 1º-7º, gratuidade | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -244,14 +244,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Acervo das Serventias + Organização Digital",
             "link": "",
-            "description": "O acervo pertence ao Estado (art. 46 Lei 8.935). O titular é depositário. Na vacância, o acervo deve ser entregue ao substituto/interino. Organização digital: e-Notariado, SREI, SERP. Armadilha FGV: o notário NÃO é dono do acervo; é fiel depositário. Destruição de acervo = crime."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/16. Acervo das Serventias.pdf + 24. Organização Digital dos Serviços.pdf\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Art. 46; Provimento 149/2023; Lei 6.015/73, Art. 3º\n\n**Foco:** O acervo pertence ao Estado (art. 46). O titular é depositário. Na vacância, o acervo deve ser entregue ao interino. Organização digital: e-Notariado, SREI, SERP. Armadilha FGV: o notário NÃO é dono do acervo; é fiel depositário.\n\n**Flashcards:** Criar 6 clozes — acervo como propriedade estatal, depositário | **Questões:** 8 | **Tempo:** 1h15min"
           },
           {
             "id": 23,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Atribuições e Competências dos Oficiais de Registros",
             "link": "",
-            "description": "Revisão consolidada de todas as atribuições por serventia. Art. 12 LRP — serviço de registro é atividade exercida por oficiais privativos. Armadilha FGV: competência para certidão é do próprio oficial (qualquer pessoa pode requerer); não precisa de autorização judicial."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/18. Das Atribuições...pdf\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 12-17; Lei 8.935/94, Arts. 6º-12\n\n**Foco:** Revisão consolidada de todas as atribuições por serventia. Art. 12 LRP — serviço exercido por oficiais privativos.\n\n**Flashcards:** Criar 6 clozes — consolidação de atribuições | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       },
@@ -263,14 +263,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Obrigações — Modalidades e Transmissão",
             "link": "",
-            "description": "Obrigações de dar coisa certa (art. 233-242) — relevância registral: tradição de imóvel se faz pelo registro (art. 1.245 CC). Cessão de crédito (art. 286-298) — registro no RTD para efeito contra terceiros. Armadilha FGV: distinção entre tradição (móvel) e registro (imóvel) como modo de aquisição."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (Obrigações)\n\n**Lei Seca Obrigatória:** CC Arts. 233-285, 286-303\n\n**Foco:** Obrigações de dar coisa certa. Relevância registral: tradição de imóvel se faz pelo registro (art. 1.245 CC). Cessão de crédito — registro no RTD. Armadilha FGV: distinção entre tradição (móvel) e registro (imóvel).\n\n**Flashcards:** Criar 6 clozes — tradição vs. registro, cessão de crédito | **Questões:** 8 | **Tempo:** 1h15min"
           },
           {
             "id": 25,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Apostilamento e Legalização de Documentos",
             "link": "",
-            "description": "O que é apostilamento: certificação de autenticidade de documentos para uso internacional. Quem apostila no Brasil: cartórios de registro civil, de notas e de RTD. Armadilha FGV: apostilamento ≠ tradução juramentada. A apostila substitui a legalização consular."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/19. Apostilamento.pdf\n\n**Lei Seca Obrigatória:** Convenção de Haia de 1961; Decreto 8.660/2016; Resolução CNJ 228/2016; Provimento 149/2023\n\n**Foco:** O que é apostilamento: certificação de autenticidade para uso internacional. Quem apostila no Brasil: RCPN, Notas e RTD. Armadilha FGV: apostilamento NÃO é tradução juramentada. A apostila substitui a legalização consular.\n\n**Flashcards:** Criar 5 clozes — quem apostila, Haia, diferença apostila vs. legalização | **Questões:** 6 | **Tempo:** 1h00min"
           }
         ]
       },
@@ -282,14 +282,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CONSTITUCIONAL",
             "title": "Direitos Fundamentais aplicados à atividade notarial — Art. 5º CF",
             "link": "",
-            "description": "Art. 5º, LXXVI — gratuidade de registro de nascimento e certidão de óbito para os reconhecidamente pobres. Conexão direta com emolumentos e gratuidade nos cartórios. Art. 5º, XXXIII — direito de informação/publicidade registral. Armadilha FGV: a gratuidade do LXXVI é para reconhecidamente pobres; a Lei 9.534/97 ampliou para TODOS (1º registro de nascimento e 1ª certidão de óbito)."
+            "description": "**Material:** Direto ao Ponto/9. Direito Constitucional.pdf\n\n**Lei Seca Obrigatória:** CF Art. 5º, incisos X, XI, XII, XXII, XXX, XXXIII, XXXV, LIV, LXXIII, LXXVI\n\n**Foco:** Art. 5º, LXXVI — gratuidade de nascimento e óbito para pobres. Conexão direta com gratuidade nos cartórios. Armadilha FGV: a gratuidade do LXXVI é para pobres; a Lei 9.534/97 ampliou para TODOS (1º registro e 1ª certidão).\n\n**Flashcards:** Criar 6 clozes — incisos do art. 5º com aplicação registral | **Questões:** 8 | **Tempo:** 1h15min"
           },
           {
             "id": 27,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Conciliação, Mediação e LGPD nos Cartórios",
             "link": "",
-            "description": "Cartórios podem realizar conciliação e mediação extrajudiciais (Provimento CNJ). LGPD: cartórios tratam dados pessoais → devem observar princípios (finalidade, necessidade, adequação). Art. 23 LGPD — tratamento pelo poder público. Armadilha FGV: a publicidade registral CONVIVE com a LGPD — há tensão entre publicidade e proteção de dados, resolvida pela proporcionalidade."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/20. Conciliação e Mediação.pdf + 21. Proteção de Dados...\n\n**Lei Seca Obrigatória:** Provimento 149/2023 CNJ; LGPD (Lei 13.709/2018), Arts. 1º-7º + Art. 23\n\n**Foco:** Cartórios podem realizar conciliação e mediação. LGPD: cartórios tratam dados pessoais — observar princípios. Armadilha FGV: a publicidade registral CONVIVE com a LGPD (resolvida pela proporcionalidade).\n\n**Flashcards:** Criar 6 clozes — LGPD aplicada a cartórios, conciliação | **Questões:** 8 | **Tempo:** 1h30min"
           }
         ]
       }
@@ -307,14 +307,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Tabelionato de Notas — Serviço Notarial e Princípios",
             "link": "",
-            "description": "Princípios expressos: fé pública, imparcialidade, legalidade, publicidade. Princípios implícitos: imediatidade, personalidade, rogação. O tabelião de notas é responsável pela lavratura de escrituras públicas, procurações, testamentos públicos, atas notariais. Armadilha FGV: a fé pública do tabelião é juris tantum (admite prova em contrário), não juris et de jure."
+            "description": "**Material:** Notarial e Registral - Estudo regular/2. Tabelionato de Notas/2. Serviço Notarial.pdf + Princípios\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 6º-7º; Lei 7.433/85; Provimento 149/2023\n\n**Foco:** Princípios expressos (fé pública, imparcialidade) e implícitos (imediatidade, personalidade, rogação). O tabelião lavra escrituras, procurações, testamentos, atas. Armadilha FGV: a fé pública é juris tantum, não absoluta.\n\n**Flashcards:** Criar 8 clozes — princípios, atribuições | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 29,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Ato Notarial — Requisitos e Classificação",
             "link": "",
-            "description": "Classificação: atos protocolares (lavrados em livros — escrituras, testamentos, atas) vs. extraprotocolares (autenticações, reconhecimento de firma). Requisitos de validade: capacidade das partes, objeto lícito, forma legal. Armadilha FGV: autenticação e reconhecimento de firma NÃO são atos protocolares (não vão no livro de notas)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/2. Tabelionato de Notas/5. Ato Notarial.pdf\n\n**Lei Seca Obrigatória:** Lei 7.433/85, Arts. 1º-3º; Provimento 149/2023\n\n**Foco:** Classificação: protocolares (lavrados em livros) vs. extraprotocolares (autenticações). Requisitos: capacidade, objeto lícito, forma. Armadilha FGV: autenticação e reconhecimento de firma NÃO são atos protocolares.\n\n**Flashcards:** Criar 8 clozes — protocolar vs. extraprotocolar | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -326,14 +326,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Escritura Pública — Requisitos e Formalidades",
             "link": "",
-            "description": "Art. 215 CC — DECORAR todos os requisitos da escritura pública: (I) data e local, (II) nome e qualificação das partes, (III) manifestação de vontade, (IV) referência ao título, (V) valor do bem. Art. 108 — obrigatória para imóveis >30 salários mínimos. Lei 7.433, art. 1º — documentos necessários (RG, CPF, certidão do RI, CND municipal). Armadilha FGV: Art. 215 é rol exemplificativo ou taxativo?"
+            "description": "**Material:** Notarial e Registral - Estudo regular/2. Tabelionato de Notas/7. Escritura Pública.pdf\n\n**Lei Seca Obrigatória:** CC Art. 108, Art. 215; Lei 7.433/85, Art. 1º; Provimento 149/2023\n\n**Foco:** Art. 215 CC — DECORAR todos os requisitos (data/local, qualificação, manifestação, referência ao título, valor). Art. 108 — obrigatória para imóveis >30 SM. Armadilha FGV: Art. 215 é rol exemplificativo ou taxativo?\n\n**Flashcards:** Criar 10 clozes — art. 215, art. 108 | **Questões:** 12 | **Tempo:** 2h00min"
           },
           {
             "id": 31,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Escritura Pública de Compra e Venda",
             "link": "",
-            "description": "Art. 481 — obrigações das partes. Art. 489 — nulo o contrato de compra e venda cujo preço é arbitrado por uma das partes. Art. 496 — anulável a venda de ascendente a descendente sem consentimento dos demais descendentes e do cônjuge. Art. 1.245 — a propriedade imobiliária se transfere pelo REGISTRO no RI. Armadilha FGV: a escritura NÃO transfere propriedade — apenas o registro no RI transfere (sistema registral brasileiro)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/2. Tabelionato de Notas/8. Escritura Pública de Compra e Venda.pdf\n\n**Lei Seca Obrigatória:** CC Arts. 481-504; Art. 1.245; Lei 7.433/85\n\n**Foco:** Art. 489 — nulo o contrato com preço arbitrado por uma das partes. Art. 496 — anulável venda de ascendente a descendente sem consentimento. Art. 1.245 — propriedade se transfere pelo REGISTRO. Armadilha FGV: a escritura NÃO transfere propriedade — apenas o registro no RI transfere.\n\n**Flashcards:** Criar 8 clozes — arts. 481, 489, 496, 1.245 | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -345,14 +345,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Doação por Escritura Pública + Permuta",
             "link": "",
-            "description": "Art. 541 — a doação de imóvel se faz por escritura pública (obrigatória, independente do valor). Art. 544 — doação de ascendente a descendente = antecipação de herança. Art. 548 — nula a doação de todos os bens. Art. 549 — nula se exceder legítima. Permuta: art. 533 — aplicam-se as regras da compra e venda. Armadilha FGV: art. 541 — toda doação de imóvel exige escritura pública, DIFERENTE da compra e venda (art. 108 — só acima de 30 SM)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/2. Tabelionato de Notas/10. Doação.pdf + 9. Troca ou Permuta.pdf\n\n**Lei Seca Obrigatória:** CC Arts. 538-564, 533, 541\n\n**Foco:** Art. 541 — doação de imóvel exige escritura pública (independente do valor). Art. 548 — nula doação de todos os bens. Art. 549 — nula se exceder legítima. Armadilha FGV: art. 541 — toda doação de imóvel exige escritura, DIFERENTE da compra e venda (que é só acima de 30 SM).\n\n**Flashcards:** Criar 8 clozes — arts. 541, 544, 548, 549 | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 33,
             "discipline": "DIREITO CIVIL",
             "title": "Direito das Obrigações — Adimplemento e Inadimplemento",
             "link": "",
-            "description": "Pagamento (arts. 304-333) — quem paga, a quem se paga, objeto, prova, lugar, tempo. Consignação em pagamento (arts. 334-345). Novação (arts. 360-367). Compensação (arts. 368-380). Mora (arts. 394-401) — DECORAR art. 394 (mora do devedor) e art. 395 (efeitos). Armadilha FGV: consignação extrajudicial em estabelecimento bancário (art. 334 CPC + CC)."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (Adimplemento/Inadimplemento)\n\n**Lei Seca Obrigatória:** CC Arts. 304-420\n\n**Foco:** Pagamento, consignação, novação, compensação. Mora (arts. 394-401). Armadilha FGV: consignação extrajudicial em estabelecimento bancário.\n\n**Flashcards:** Criar 6 clozes — formas de pagamento, mora | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       },
@@ -364,7 +364,7 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO ADMINISTRATIVO",
             "title": "Improbidade Administrativa aplicada a Notários — Lei 8.429/92",
             "link": "",
-            "description": "Art. 2º — notários e registradores se enquadram como agentes públicos para fins de LIA. Atos de improbidade: enriquecimento ilícito (art. 9), prejuízo ao erário (art. 10), violação de princípios (art. 11). A Lei 14.230/2021 eliminou a modalidade culposa (tudo agora é doloso). Armadilha FGV: após a Lei 14.230/2021, NÃO existe mais improbidade culposa."
+            "description": "**Material:** Direto ao Ponto/8. Direito Administrativo.pdf (Improbidade)\n\n**Lei Seca Obrigatória:** Lei 8.429/92, Arts. 1º-2º, 9-11, 12; Lei 14.230/2021\n\n**Foco:** Notários são agentes públicos (LIA). Atos de improbidade (arts. 9-11). Armadilha FGV: após a Lei 14.230/2021, NÃO existe mais improbidade culposa (tudo exige dolo).\n\n**Flashcards:** Criar 6 clozes — aplicação LIA a notários, dolo obrigatório | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       }
@@ -382,14 +382,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Escrituras de Separação, Divórcio e Inventário Extrajudiciais",
             "link": "",
-            "description": "Requisitos para divórcio em cartório: consensual, sem filhos menores ou incapazes, assistência de advogado. Inventário extrajudicial: consenso, maiores e capazes, advogado. DECORAR: Lei 11.441/2007 autorizou. Res. CNJ 35/2007 regulamentou. Armadilha FGV: se houver testamento, pode ou não fazer inventário em cartório? (Divergência — Provimento 149/2023 permite em certos casos)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/2. Tabelionato de Notas/11. Escrituras... Divórcio.pdf + 12. Inventário.pdf\n\n**Lei Seca Obrigatória:** CPC Art. 733; Art. 610, §1º; Lei 11.441/2007; Resolução CNJ 35/2007; Provimento 149/2023\n\n**Foco:** Requisitos: consensual, sem incapazes, assistência de advogado. Armadilha FGV: divergências sobre inventário em cartório quando há testamento (Provimento 149/2023 permite em certos casos).\n\n**Flashcards:** Criar 10 clozes — requisitos | **Questões:** 12 | **Tempo:** 2h00min"
           },
           {
             "id": 36,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Testamentos Públicos em Cartório",
             "link": "",
-            "description": "Art. 1.864 — testamento público: ditado pelo testador ao tabelião, na presença de 2 testemunhas. Art. 1.865 — testador não pode assinar: a rogo, indicando quem assina. Art. 1.867 — pode ser lavrado em qualquer tabelionato. Armadilha FGV: testamento público exige 2 testemunhas (art. 1.864, II); a ausência de testemunha é vício de nulidade (art. 1.868)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/2. Tabelionato de Notas/13. Escrituras Públicas de Testamento.pdf\n\n**Lei Seca Obrigatória:** CC Arts. 1.857-1.867\n\n**Foco:** Art. 1.864 — testamento público: ditado, presença de 2 testemunhas. Armadilha FGV: testamento público exige 2 testemunhas; ausência é vício de nulidade.\n\n**Flashcards:** Criar 8 clozes — arts. 1.864-1.867, requisitos | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -401,14 +401,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Atas Notariais e Procurações Públicas",
             "link": "",
-            "description": "Ata notarial — art. 384 CPC: a existência e o modo de existir de algum fato pode ser atestada por ata lavrada por tabelião. Serve como prova pré-constituída. Procuração pública: obrigatória quando a lei exigir (art. 657 CC). Armadilha FGV: ata notarial NÃO é declaração de vontade (como escritura), é CONSTATAÇÃO de fato. Procuração em causa própria (art. 685 CC) — irrevogável."
+            "description": "**Material:** Notarial e Registral - Estudo regular/2. Tabelionato de Notas/14. Atas Notariais.pdf + Procuração\n\n**Lei Seca Obrigatória:** CPC Art. 384; CC Arts. 653-692; Lei 8.935/94, Art. 7º, III\n\n**Foco:** Ata notarial (art. 384 CPC) atesta fatos. Armadilha FGV: ata notarial NÃO é declaração de vontade, é CONSTATAÇÃO de fato. Procuração em causa própria é irrevogável.\n\n**Flashcards:** Criar 8 clozes — ata vs. escritura, procuração | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 38,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Carta de Sentença Notarial",
             "link": "",
-            "description": "Instrumento pelo qual o tabelião certifica o teor de decisão judicial para fins de registro. Quando é utilizada e como se relaciona com o mandado judicial."
+            "description": "**Material:** Notarial e Registral - Estudo regular/2. Tabelionato de Notas/16. Carta de Sentença Notarial.pdf\n\n**Lei Seca Obrigatória:** Provimento 149/2023\n\n**Foco:** Instrumento pelo qual o tabelião certifica o teor de decisão judicial para fins de registro.\n\n**Flashcards:** Criar 4 clozes | **Questões:** 6 | **Tempo:** 1h00min"
           }
         ]
       },
@@ -420,14 +420,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Teoria Geral dos Contratos — Foco Registral",
             "link": "",
-            "description": "Art. 421 — função social do contrato. Art. 421-A (Lei 13.874) — contratos paritários. Art. 422 — boa-fé objetiva. Art. 462 — contrato preliminar (compromisso de compra e venda — altíssima relevância registral). Art. 463 — obrigação de celebrar contrato definitivo. Armadilha FGV: compromisso de compra e venda registrado no RI gera direito real (art. 1.417 CC) — sem registro, é mero direito pessoal."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (Contratos em Geral)\n\n**Lei Seca Obrigatória:** CC Arts. 421-480; Lei 13.874/2019\n\n**Foco:** Art. 421-A — contratos paritários. Art. 462 — contrato preliminar (compromisso de compra e venda). Armadilha FGV: compromisso de compra e venda registrado no RI gera direito real (art. 1.417 CC) — sem registro, é mero direito pessoal.\n\n**Flashcards:** Criar 8 clozes — arts. 421, 462, 1.417 | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 40,
             "discipline": "DIREITO CIVIL",
             "title": "Contratos em Espécie com relevância registral",
             "link": "",
-            "description": "Locação registrada no RI — efeito de direito real (oponível a terceiros, art. 576 CC + art. 8º Lei 8.245/91). Compromisso de compra e venda — registrado = direito real de aquisição (art. 1.417-1.418). Armadilha FGV: locação SÓ vincula terceiros se registrada no RI (art. 576 CC)."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (Espécies de Contratos)\n\n**Lei Seca Obrigatória:** CC Arts. 481-504, 533, 538-564, 565-578, 1.417-1.418\n\n**Foco:** Locação registrada no RI tem efeito erga omnes. Armadilha FGV: locação SÓ vincula terceiros adquirentes se registrada no RI (art. 576 CC).\n\n**Flashcards:** Criar 6 clozes — efeitos do registro | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       },
@@ -439,7 +439,7 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CONSTITUCIONAL",
             "title": "Poder Judiciário e Serventias — Art. 92-126 CF",
             "link": "",
-            "description": "CNJ — composição (art. 103-B), competência para fiscalizar serventias (art. 103-B, §4º, III — receber reclamações contra serventias). STF — decisões sobre natureza jurídica da atividade notarial (ADI 3.643, ADI 1.378). Armadilha FGV: o CNJ NÃO exerce jurisdição — é órgão administrativo. Não pode anular ato notarial, apenas ato administrativo do tribunal."
+            "description": "**Material:** Direto ao Ponto/9. Direito Constitucional.pdf\n\n**Lei Seca Obrigatória:** CF Arts. 92-103, Art. 103-B, Art. 236\n\n**Foco:** CNJ — competência para fiscalizar serventias (art. 103-B). Armadilha FGV: o CNJ NÃO exerce jurisdição — é órgão administrativo. Não anula ato notarial, apenas ato administrativo.\n\n**Flashcards:** Criar 6 clozes — CNJ, competência | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       }
@@ -457,14 +457,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Protesto Notarial — Conceito, Princípios e Função",
             "link": "",
-            "description": "Art. 1º Lei 9.492 — protesto é o ato formal e solene pelo qual se prova a inadimplência e o descumprimento de obrigação. Art. 3º — competência do tabelião de protesto. Princípios: territorialidade, temporariedade, unicidade, legalidade. Armadilha FGV: protesto NÃO é executivo — é ato de prova, tem função declaratória."
+            "description": "**Material:** Notarial e Registral - Estudo regular/3. Tabelionato de Protestos/2. Protesto Notarial.pdf + Princípios\n\n**Lei Seca Obrigatória:** Lei 9.492/97, Arts. 1º-3º; Lei 8.935/94, Art. 11\n\n**Foco:** Art. 1º Lei 9.492 — prova a inadimplência. Princípios: territorialidade, temporariedade, unicidade, legalidade. Armadilha FGV: protesto NÃO é executivo — é ato de prova (declaratório).\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 43,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Protesto — Procedimento (Apresentação, Intimação, Lavratura)",
             "link": "",
-            "description": "Art. 5º — apresentação do título. Art. 9º — prazo de 3 dias úteis para pagamento ou manifestação. Art. 12 — protocolo. Art. 14 — intimação. Art. 19 — pagamento e efeitos. Art. 20 — lavratura e registro. Armadilha FGV: prazo de 3 dias para pagamento é ÚTIL (art. 9º), não corrido. Protesto de CDA (certidão de dívida ativa) é cabível — Lei 12.767/2012."
+            "description": "**Material:** Notarial e Registral - Estudo regular/3. Tabelionato de Protestos/6. Apresentação.pdf + Procedimento\n\n**Lei Seca Obrigatória:** Lei 9.492/97, Arts. 4º-22\n\n**Foco:** Art. 9º — prazo de 3 dias úteis para pagamento. Armadilha FGV: prazo de 3 dias é ÚTIL. Protesto de CDA é cabível (Lei 12.767/2012).\n\n**Flashcards:** Criar 10 clozes — prazos, CDA | **Questões:** 12 | **Tempo:** 2h00min"
           }
         ]
       },
@@ -476,14 +476,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Protesto — Cancelamento, Sustação e Desistência",
             "link": "",
-            "description": "Art. 26 — cancelamento mediante apresentação de documento de quitação ou autorização judicial. Art. 27 — prazo de 5 anos para retirada do protesto dos índices. Sustação judicial: medida cautelar que impede a lavratura. Desistência: o credor pode desistir antes da lavratura. Armadilha FGV: cancelamento ≠ sustação (cancelamento é posterior, sustação é preventiva)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/3. Tabelionato de Protestos/11. Averbações.pdf\n\n**Lei Seca Obrigatória:** Lei 9.492/97, Arts. 26-27; CPC Art. 300\n\n**Foco:** Cancelamento vs. sustação judicial. Desistência (credor desiste antes da lavratura). Armadilha FGV: cancelamento é posterior, sustação é preventiva.\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 45,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Protesto — Qualificação, Competência e CENPROT",
             "link": "",
-            "description": "Competência territorial: protesto no domicílio do devedor (regra). Qualificação: o tabelião examina a regularidade formal do título. CENPROT — Central Nacional de Protestos: base de dados eletrônica que unifica informações."
+            "description": "**Material:** Notarial e Registral - Estudo regular/3. Tabelionato de Protestos/7. Competência.pdf + CENPROT\n\n**Lei Seca Obrigatória:** Lei 9.492/97, Arts. 6º-11\n\n**Foco:** Competência territorial: domicílio do devedor (regra). Qualificação: exame da regularidade formal. CENPROT: unifica informações.\n\n**Flashcards:** Criar 6 clozes | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       },
@@ -495,14 +495,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO TRIBUTÁRIO",
             "title": "ITBI — Imposto sobre Transmissão de Bens Imóveis",
             "link": "",
-            "description": "ITBI — competência do município da situação do imóvel. Fato gerador: transmissão inter vivos de bens imóveis (art. 35 CTN). Base de cálculo: valor venal. IMUNIDADE: art. 156, §2º, I CF — não incide na incorporação ao patrimônio de PJ (salvo se atividade preponderante for compra/venda de imóveis). Tema 1124 STF (2022): base de cálculo é o valor da TRANSAÇÃO, não o valor venal de referência do município."
+            "description": "**Material:** Direto ao Ponto/incidental/16. Direito Tributário.pdf\n\n**Lei Seca Obrigatória:** CF Art. 156, II; CTN Arts. 35-42; Tema 1124 STF\n\n**Foco:** Competência municipal. Tema 1124 STF: base de cálculo é o valor da TRANSAÇÃO, não o valor venal de IPTU.\n\n**Flashcards:** Criar 8 clozes — competência, Tema 1124, imunidades | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 47,
             "discipline": "DIREITO TRIBUTÁRIO",
             "title": "ITCMD + ISS Notarial + Emolumentos como Taxa",
             "link": "",
-            "description": "ITCMD — causa mortis e doação (competência estadual). ISS — incide sobre serviços notariais? Sim, lista anexa da LC 116/2003 inclui. Emolumentos como taxa — ADI 1.378 (natureza tributária). Armadilha FGV: ITBI é municipal (inter vivos), ITCMD é estadual (mortis causa/doação). O oficial de RI não pode recusar registro por falta de pagamento de imposto — deve qualificar e exigir comprovação."
+            "description": "**Material:** Direto ao Ponto/incidental/16. Direito Tributário.pdf\n\n**Lei Seca Obrigatória:** CF Art. 155, I; CTN Arts. 35-42; CF Art. 156, III; ADI 1.378-5\n\n**Foco:** ITCMD (estadual). ISS incide sobre cartórios. Emolumentos = taxa. Armadilha FGV: O oficial de RI não pode recusar registro por falta de pagamento; deve qualificar e exigir comprovação.\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -514,7 +514,7 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Direitos Reais — Posse e Propriedade (Introdução)",
             "link": "",
-            "description": "Distinção posse vs. propriedade (posse é fato, propriedade é direito). Art. 1.245 — propriedade imobiliária se adquire pelo REGISTRO. Art. 1.227 — direitos reais sobre imóveis constituídos ou transmitidos por atos entre vivos SÓ se adquirem com o registro no RI. Armadilha FGV: posse NÃO é direito real (não está no art. 1.225), mas é protegida por ações possessórias."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf\n\n**Lei Seca Obrigatória:** CC Arts. 1.196-1.232, Art. 1.245\n\n**Foco:** Art. 1.245 — propriedade imobiliária se adquire pelo REGISTRO. Armadilha FGV: posse NÃO é direito real (não está no art. 1.225).\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       }
@@ -532,14 +532,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RCPN — Organização, Livros e Atos",
             "link": "",
-            "description": "Art. 29 — atos obrigatórios: nascimento, casamento, óbito. Art. 33 — livros obrigatórios: A (nascimento), B (casamento), B-Auxiliar (casamento religioso), C (óbito), C-Auxiliar (natimorto), D (proclamas), E (demais atos). DECORAR: cada livro e seu objeto."
+            "description": "**Material:** Notarial e Registral - Estudo regular/4. RCPN/2. Da Atividade.pdf + Livros\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 29-38\n\n**Foco:** Art. 29 — atos obrigatórios. Art. 33 — livros obrigatórios: A (nascimento), B (casamento), B-Auxiliar, C (óbito), C-Auxiliar (natimorto). DECORAR.\n\n**Flashcards:** Criar 10 clozes | **Questões:** 12 | **Tempo:** 2h00min"
           },
           {
             "id": 50,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RCPN — Registro de Nascimento e Filiação",
             "link": "",
-            "description": "Art. 50 — declaração de nascimento (prazo de 15 dias para o pai, 45 para a mãe). Art. 52 — elementos do registro (nome, filiação, naturalidade). Art. 1.597 CC — presunção de paternidade. Art. 1.609 — reconhecimento voluntário. Armadilha FGV: registro de nascimento é GRATUITO para todos (Lei 9.534/97), não apenas para os pobres."
+            "description": "**Material:** Notarial e Registral - Estudo regular/4. RCPN/9. Filiação.pdf\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 50-66; CC Arts. 1.596-1.606\n\n**Foco:** Prazos de declaração (art. 50). Presunção de paternidade. Armadilha FGV: registro de nascimento é GRATUITO para todos (Lei 9.534/97).\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -551,14 +551,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RCPN — Casamento e Habilitação",
             "link": "",
-            "description": "Habilitação para casamento — art. 1.525 CC (requerimento ao oficial de RCPN). Proclamas — art. 1.527. Impedimentos — art. 1.521 (DECORAR). Causas suspensivas — art. 1.523. Casamento religioso com efeitos civis — art. 1.515. Armadilha FGV: impedimento (art. 1.521) gera NULIDADE, causa suspensiva (art. 1.523) gera apenas regime de separação obrigatória."
+            "description": "**Material:** Notarial e Registral - Estudo regular/4. RCPN/6. Casamentos.pdf\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 67-76; CC Arts. 1.511-1.532\n\n**Foco:** Impedimentos (art. 1.521). Causas suspensivas (art. 1.523). Armadilha FGV: impedimento gera NULIDADE, causa suspensiva gera separação obrigatória.\n\n**Flashcards:** Criar 10 clozes | **Questões:** 12 | **Tempo:** 2h00min"
           },
           {
             "id": 52,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RCPN — Registro de Óbito",
             "link": "",
-            "description": "Art. 77 — declaração de óbito (24h). Art. 78 — quem é obrigado a declarar. Art. 79 — elementos do registro. Art. 80 — óbito sem cadáver (morte presumida — art. 7º CC: sem decretação de ausência, após esgotados meios). Art. 88 — certidão de óbito gratuita (Lei 9.534/97). Armadilha FGV: natimorto se registra no Livro C-Auxiliar, NÃO no Livro C (óbito) nem no Livro A (nascimento)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/4. RCPN/7. Óbitos.pdf\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 77-88; CC Arts. 6-9\n\n**Foco:** Declaração (24h). Óbito sem cadáver (morte presumida). Armadilha FGV: natimorto se registra no Livro C-Auxiliar, NÃO no Livro C.\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -570,14 +570,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Direito de Família — Casamento, Regimes de Bens",
             "link": "",
-            "description": "Regimes de bens — DECORAR: comunhão parcial (art. 1.658-1.666, regime legal), comunhão universal (art. 1.667-1.671), separação obrigatória (art. 1.641 — maiores de 70 anos), participação final nos aquestos, separação convencional. Pacto antenupcial — art. 1.640, §único (escritura pública) + art. 1.657 (eficácia depende de registro no RI). Armadilha FGV: pacto antenupcial sem registro no RI é INEFICAZ perante terceiros (art. 1.657)."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (Família)\n\n**Lei Seca Obrigatória:** CC Arts. 1.511-1.570, 1.639-1.688\n\n**Foco:** Regimes de bens: separação obrigatória (art. 1.641). Pacto antenupcial (art. 1.657 — eficácia depende de registro no RI). Armadilha FGV: pacto sem registro no RI é INEFICAZ perante terceiros.\n\n**Flashcards:** Criar 10 clozes | **Questões:** 12 | **Tempo:** 2h00min"
           },
           {
             "id": 54,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RCPN — Nome, Retificação e Alterações",
             "link": "",
-            "description": "Princípios do nome: imutabilidade relativa, indisponibilidade. Exceções: art. 56 (1 ano após maioridade), art. 57 (exceção judicial), art. 58 (prenome definitivo, exceto coisa ridícula). Lei 14.382/2022 — facilitou retificação administrativa (sem necessidade de ação judicial em muitos casos). Armadilha FGV: após a Lei 14.382/2022, muitas retificações podem ser feitas diretamente no cartório (ex: alteração de prenome, acréscimo de sobrenome familiar)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/4. RCPN/10. Do Nome.pdf + Retificações\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 54-55, 109-113; Lei 14.382/2022\n\n**Foco:** Princípios do nome. Lei 14.382/2022 facilitou retificação administrativa. Armadilha FGV: alteração de prenome no cartório (diretamente após 2022).\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -589,7 +589,7 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RCPN — Averbação de Registro de Pessoa Transgênero",
             "link": "",
-            "description": "STF autorizou alteração de nome e sexo diretamente no RCPN, sem cirurgia ou laudos. Provimento 73/2018 CNJ regulamentou. Procedimento: averbação no registro original. Armadilha FGV: NÃO exige cirurgia, NÃO exige laudo psicológico, NÃO exige autorização judicial (desde 2018)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/4. RCPN/12. Averbação... Transgênero.pdf\n\n**Lei Seca Obrigatória:** Provimento 73/2018 CNJ; ADI 4275 STF\n\n**Foco:** STF autorizou alteração sem cirurgia/laudos. Armadilha FGV: NÃO exige cirurgia, NÃO exige laudo, NÃO exige autorização judicial.\n\n**Flashcards:** Criar 5 clozes | **Questões:** 6 | **Tempo:** 1h00min"
           }
         ]
       }
@@ -607,14 +607,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RTD — Registro de Títulos e Documentos",
             "link": "",
-            "description": "Art. 127 — atos sujeitos a registro facultativo (para conservação). Art. 129 — atos sujeitos a registro obrigatório (para validade contra terceiros): contratos de locação, cessão de crédito, penhor. Art. 130 — registro para mera publicidade. Armadilha FGV: registro no RTD é para OPONIBILIDADE a terceiros (eficácia erga omnes), não para validade entre as partes."
+            "description": "**Material:** Notarial e Registral - Estudo regular/5. RCPJ e RTD/...\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 127-141; Lei 8.935/94, Art. 12\n\n**Foco:** Registro obrigatório (art. 129) vs. facultativo (art. 127). Armadilha FGV: registro no RTD é para OPONIBILIDADE a terceiros (eficácia erga omnes).\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 57,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RCPJ — Registro Civil de Pessoas Jurídicas",
             "link": "",
-            "description": "Art. 114 — atos que devem ser registrados: (I) contrato social, (II) atas de sociedades civis, (III) estatutos de fundações. Art. 119 — registro de jornais, revistas e periódicos. Art. 45 CC — começo da existência legal da PJ com o registro. Armadilha FGV: PJ de direito privado começa com registro no RCPJ (art. 45 CC), EXCETO sociedades empresárias (registro na Junta Comercial — art. 1.150 CC)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/5. RCPJ e RTD/14. Das Pessoas Jurídicas.pdf\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 114-126; CC Arts. 45-69\n\n**Foco:** Art. 114 — atos registrados: contrato social, atas. Armadilha FGV: PJ de direito privado começa no RCPJ, EXCETO sociedades empresárias (Junta Comercial).\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -626,14 +626,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Direito das Sucessões — Sucessão Legítima",
             "link": "",
-            "description": "Art. 1.784 — princípio da saisine (transmissão automática no momento da morte). Art. 1.829 — DECORAR ordem de vocação: (I) descendentes em concorrência com cônjuge, (II) ascendentes em concorrência com cônjuge, (III) cônjuge sobrevivente, (IV) colaterais até 4º grau. Armadilha FGV: cônjuge em separação obrigatória NÃO concorre com descendentes (STJ); em comunhão universal, concorre apenas se não houver meação."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (Sucessões)\n\n**Lei Seca Obrigatória:** CC Arts. 1.784-1.856, 1.829\n\n**Foco:** Princípio da saisine (art. 1.784). Ordem de vocação (art. 1.829). Armadilha FGV: cônjuge em separação obrigatória NÃO concorre com descendentes.\n\n**Flashcards:** Criar 10 clozes | **Questões:** 12 | **Tempo:** 2h00min"
           },
           {
             "id": 59,
             "discipline": "DIREITO CIVIL",
             "title": "Direito das Sucessões — Testamento e Inventário Extrajudicial",
             "link": "",
-            "description": "Espécies de testamento: público (art. 1.864 — revisão), cerrado (art. 1.868), particular (art. 1.876). Legítima — 50% do patrimônio é reservado aos herdeiros necessários (art. 1.846). Inventário extrajudicial: requisitos (partes maiores e capazes, consenso, advogado). Armadilha FGV: testamento não pode dispor de mais de 50% do patrimônio se houver herdeiros necessários."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf (Sucessão Testamentária)\n\n**Lei Seca Obrigatória:** CC Arts. 1.857-1.990; CPC Art. 610, §1º\n\n**Foco:** Espécies de testamento. Legítima (art. 1.846). Inventário extrajudicial.\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -645,14 +645,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO EMPRESARIAL",
             "title": "Teoria Geral do Direito Societário — Foco Registral",
             "link": "",
-            "description": "Art. 966 — conceito de empresário. Art. 1.150 — empresário se registra na Junta Comercial; sociedade simples no RCPJ. Art. 985 — sociedade não registrada = sociedade em comum (sem personalidade). Armadilha FGV: sociedade simples se registra no RCPJ; sociedade empresária na Junta Comercial; sociedade de advogados na OAB."
+            "description": "**Material:** Direto ao Ponto/12. Direito Empresarial.pdf\n\n**Lei Seca Obrigatória:** CC Arts. 966-980, 1.150-1.154\n\n**Foco:** Empresário vs. Sociedade. Armadilha FGV: sociedade simples se registra no RCPJ; empresária na Junta Comercial; advocacia na OAB.\n\n**Flashcards:** Criar 6 clozes | **Questões:** 8 | **Tempo:** 1h15min"
           },
           {
             "id": 61,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "Interação Interinstitucional e com Órgãos Públicos",
             "link": "",
-            "description": "Comunicações obrigatórias dos cartórios: RCPN comunica nascimentos/óbitos à Receita, INSS. RI comunica alienações à Receita (DOI — Declaração de Operações Imobiliárias). Protestos comunicam ao SPC/Serasa."
+            "description": "**Material:** Notarial e Registral - Estudo regular/1. Teoria Geral/22. Interação Interinstitucional.pdf\n\n**Lei Seca Obrigatória:** Provimento 149/2023\n\n**Foco:** Comunicações obrigatórias (DOI para Receita, RCPN para INSS).\n\n**Flashcards:** Criar 5 clozes | **Questões:** 6 | **Tempo:** 1h00min"
           }
         ]
       }
@@ -670,14 +670,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Introdução, Propriedade Imobiliária e Sistemas de Transmissão",
             "link": "",
-            "description": "Sistema de transmissão brasileiro: título + modo (escritura + registro). Art. 1.245 — transferência inter vivos pelo registro. Art. 1.246 — registro eficaz DESDE A PRENOTAÇÃO. Art. 1.247 — retificação se o registro não corresponder à realidade. Art. 167 LRP — DECORAR os incisos I (atos de registro) e II (atos de averbação)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/6. Registro de Imóveis/2. Introdução...pdf\n\n**Lei Seca Obrigatória:** CC Art. 1.227, 1.245-1.247; Lei 6.015/73, Art. 167\n\n**Foco:** Sistema brasileiro: título + modo (escritura + registro). Art. 1.246 — registro eficaz DESDE A PRENOTAÇÃO.\n\n**Flashcards:** Criar 10 clozes | **Questões:** 15 | **Tempo:** 2h00min"
           },
           {
             "id": 63,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Princípios do Registro de Imóveis (aprofundamento)",
             "link": "",
-            "description": "APROFUNDAR princípios: (1) Inscrição — art. 167; (2) Prioridade — art. 186 (prenotação); (3) Especialidade objetiva (descrição do imóvel) e subjetiva (qualificação das partes); (4) Continuidade — art. 195 (encadeamento de registros); (5) Legalidade/Qualificação — o registrador examina a legalidade do título; (6) Fé pública registral (presunção relativa); (7) Instância/Rogação. Armadilha FGV: o princípio da fé pública no Brasil é relativo (juris tantum), diferente de sistemas como o alemão (absoluto)."
+            "description": "**Material:** Notarial e Registral - Estudo regular/6. Registro de Imóveis/6. Princípios do RI.pdf\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 167-171, 182, 195, 198\n\n**Foco:** Prioridade (prenotação), Especialidade, Continuidade, Fé pública registral. Armadilha FGV: o princípio da fé pública no Brasil é relativo (juris tantum).\n\n**Flashcards:** Criar 12 clozes | **Questões:** 15 | **Tempo:** 2h00min"
           }
         ]
       },
@@ -689,14 +689,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Matrícula, Registro e Averbação",
             "link": "",
-            "description": "DISTINÇÃO FUNDAMENTAL: matrícula ≠ registro ≠ averbação. Matrícula (art. 176): individualização do imóvel, atribuição de número próprio. Registro (art. 167, I): constituição, transferência, modificação de direitos reais. Averbação (art. 167, II): alterações posteriores (construção, demolição, mudança de nome, penhora). DECORAR: quais atos são de registro e quais de averbação."
+            "description": "**Material:** Notarial e Registral - Estudo regular/6. Registro de Imóveis/9. Do registro. Das averbações.pdf\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 176-181, 167 I e II\n\n**Foco:** Matrícula (individualização) vs. Registro (constituição/transferência) vs. Averbação (alterações). DECORAR art. 167.\n\n**Flashcards:** Criar 15 clozes | **Questões:** 15 | **Tempo:** 2h00min"
           },
           {
             "id": 65,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Livros e Processamento Registral",
             "link": "",
-            "description": "Art. 173 — livros obrigatórios: 1 (Protocolo), 2 (Registro Geral), 3 (Auxiliar), 4 (Indicador Real), 5 (Indicador Pessoal). Protocolo: diário de prenotação (art. 174) — gera a PRIORIDADE. Registro Geral: matrículas e registros propriamente ditos."
+            "description": "**Material:** Notarial e Registral - Estudo regular/6. Registro de Imóveis/11. Dos Livros.pdf\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 173-175\n\n**Foco:** Livros: 1 (Protocolo), 2 (Registro Geral), 3 (Auxiliar), 4 e 5 (Indicadores). Protocolo = PRIORIDADE.\n\n**Flashcards:** Criar 8 clozes | **Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -708,14 +708,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Qualificação Registral e Dúvida",
             "link": "",
-            "description": "Qualificação: exame de legalidade do título pelo registrador. Dúvida registral (art. 198): procedimento administrativo quando o registrador se recusa a praticar o ato. Art. 198 — quem suscita a dúvida é o OFICIAL (não a parte); a parte REQUER a suscitação. Armadilha FGV: a dúvida é suscitada pelo oficial, NÃO pela parte. A parte pode impugnar a dúvida. Competência: juiz corregedor."
+            "description": "**Material:** Notarial e Registral - Estudo regular/6. Registro de Imóveis/13. Da Qualificação.pdf\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 198-207; Art. 13\n\n**Foco:** Qualificação e Suscitação de Dúvida (art. 198). Armadilha FGV: quem suscita a dúvida é o OFICIAL, a parte apenas requer.\n\n**Flashcards:** Criar 10 clozes | **Questões:** 12 | **Tempo:** 2h00min"
           },
           {
             "id": 67,
             "discipline": "DIREITO CIVIL",
             "title": "Direitos Reais — Propriedade e Usucapião",
             "link": "",
-            "description": "Espécies de usucapião: extraordinária (art. 1.238 — 15 ou 10 anos), ordinária (art. 1.242 — 10 ou 5 anos + justo título + boa-fé), especial urbana (art. 1.240 — 5 anos, até 250m²), especial rural (art. 1.239 — 5 anos, até 50ha). Usucapião extrajudicial — Art. 216-A LRP (IMPORTANTÍSSIMO). Armadilha FGV: usucapião tabular (art. 1.242, §único — registro cancelado com base em sentença transitada em julgado)."
+            "description": "**Material:** Direto ao Ponto/10. Direito Civil.pdf\n\n**Lei Seca Obrigatória:** CC Arts. 1.238-1.244, 1.228-1.232; CF Art. 183\n\n**Foco:** Usucapião extraordinária, ordinária, especial. Usucapião extrajudicial (Art. 216-A LRP).\n\n**Flashcards:** Criar 10 clozes | **Questões:** 12 | **Tempo:** 2h00min"
           }
         ]
       },
@@ -727,7 +727,7 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CONSTITUCIONAL",
             "title": "Ordem Econômica, Política Urbana e Função Social — Foco Registral",
             "link": "",
-            "description": "Art. 182 — política urbana (Estatuto da Cidade). Art. 183 — usucapião especial urbano constitucional (5 anos, 250m²). Art. 170 — princípios da ordem econômica (função social da propriedade). Art. 5º, XXII — direito de propriedade; XXIII — função social."
+            "description": "**Material:** Direto ao Ponto/9. Direito Constitucional.pdf\n\n**Lei Seca Obrigatória:** CF Arts. 170-181, 182-183, Art. 5º XXII-XXIII\n\n**Foco:** Função social da propriedade e usucapião constitucional.\n\n**Flashcards:** Criar 6 clozes | **Questões:** 8 | **Tempo:** 1h15min"
           }
         ]
       }
@@ -745,14 +745,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Retificação de Registro (Administrativa e Judicial)",
             "link": "",
-            "description": "Art. 212 — retificação pode ser administrativa (pelo oficial) ou judicial. Art. 213 — retificação administrativa: (I) erro evidente na transcrição/inscrição, (II) inserção/alteração de medidas com anuência dos confrontantes, (III) área objeto de mensuração/georreferenciamento. Art. 214 — nulidades (registro nulo pode ser declarado judicialmente). Lei 14.382/2022 ampliou retificação administrativa (cabe acréscimo de área até 5%). Armadilha FGV: após Lei 14.382/2022, não há mais necessidade de ação judicial para retificação administrativa de erros evidentes. Diferenciar retificação (correção) de cancelamento (eliminação). Art. 213, I x II — erro evidente vs. consenso para alteração de medidas."
+            "description": "**Lei Seca:** Lei 6.015/73, Arts. 212-214; Lei 14.382/2022\n\n**Foco:** Retificação administrativa vs judicial (ampliação com a Lei 14.382/2022).\n\n**Questões:** 12 | **Tempo:** 1h30min"
           },
           {
             "id": 70,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Parcelamento do Solo e Registro (Lei 6.766/79)",
             "link": "",
-            "description": "Art. 2º — parcelamento é a divisão de lote em frações (loteamento) ou transformação de propriedade em condomínio. Art. 3º — exigências (licença municipal, aprovação, escritura, registro). Art. 4º — vedações (não-loteável menor que 125m², declividade >30%, inundável). Art. 18 — registro: compete ao RI manter registro especial do parcelamento. Art. 19 — documentação obrigatória. Armadilha FGV: loteamento ≠ condomínio. Loteamento tem ruas, áreas comuns, é imóvel registrado em matrícula única inicial. Condomínio tem unidades autônomas com matrículas individuais. Registro do parcelamento é CONDIÇÃO DE VALIDADE (não é apenas constitutivo). Art. 22 — após registro, transferências do lote seguem regime normal."
+            "description": "**Lei Seca:** Lei 6.766/79, Arts. 2º-4º, 18-22\n\n**Foco:** Loteamento vs. condomínio. O registro é CONDIÇÃO DE VALIDADE.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -764,14 +764,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Direito de Vizinhança — Vedações, Passagem, Limites e Responsabilidade",
             "link": "",
-            "description": "Art. 1.277 — vedação a atividades potencialmente danosas aos vizinhos (fumaça, poeira, barulho, radiação). Art. 1.279 — exceção: atividades normais de propriedade (direito de propriedade não é absoluto — função social). Art. 1.284 — direito de passagem (acesso necessário ao imóvel sem saída para via pública). Art. 1.285 — indenização por passagem. Art. 1.297 — árvores/raízes que invadem propriedade vizinha — direito de corte (não precisa de ação). Art. 1.286 — limites de propriedade (direito a marco/septo). Armadilha FGV: Art. 1.279 — nem toda atividade que causa incômodo é vedada, apenas as potencialmente danosas. Poluição sonora ≠ som normal de festa. Art. 1.284 — passagem é DIREITO, não privilégio (onera propriedade serviente)."
+            "description": "**Lei Seca:** CC Arts. 1.277-1.313\n\n**Foco:** Vedações, passagem, limites. Armadilha FGV: passagem é DIREITO, onera propriedade serviente.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 72,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Condomínio em Edifício (Unidades Autônomas e Áreas Comuns)",
             "link": "",
-            "description": "Lei 4.591/64, Art. 2º — incorporação é atividade de promover a construção de edifício (fracionamento). Art. 8º — condomínio em edifício: cada unidade tem matrícula individual; áreas comuns são registradas em matrícula única. CC Art. 1.331 — direitos e deveres dos condôminos. Art. 1.335 — convenção de condomínio obrigatória (deve ser registrada no RI). Art. 1.336 — responsabilidade do condômino por débito de taxas. Art. 1.337 — vedações (moradia temporária, atividade comercial sem autorização). Armadilha FGV: FRAÇÃO IDEAL (participação em áreas comuns) ≠ QUOTA DE CONDOMÍNIO (contribuição para despesas). Fracionamento em Lei 4.591/64. Matrícula da fração ≠ matrícula das áreas comuns. Art. 1.339 — maioria qualificada para alterações na convenção."
+            "description": "**Lei Seca:** Lei 4.591/64, Arts. 1º-9º; CC Arts. 1.331-1.358\n\n**Foco:** Unidades autônomas e áreas comuns (matrículas individuais vs. única).\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -783,14 +783,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Condomínio — Deliberações, Assembleia e Dissolução",
             "link": "",
-            "description": "Art. 1.345 — assembleia geral delibera sobre assuntos do condomínio. Art. 1.346 — convenção define modo de convocação e deliberação. Art. 1.352 — renovação de síndico (máx. 2 anos). Art. 1.354 — destituição de síndico por deliberação da assembleia. Art. 1.356 — dissolução: por consenso unânime (encerramento de condomínio) ou pela idade do edifício (Art. 1.357 — maioria pode demolir edifício). Lei 4.591/64, Art. 25 — assembleia de proprietários. Art. 27 — secretário eleito. Art. 29 — quórum (1/4 dos proprietários em primeira convocação). Armadilha FGV: Art. 1.352 — síndico pode ser renovado indefinidamente (máximo 2 anos por mandato, não proibição de renovação). Art. 1.356 — maioria apenas para decisões; unanimidade é APENAS para dissolução consensual. Penhora de quota condominial (CC Art. 1.349)."
+            "description": "**Lei Seca:** CC Arts. 1.345-1.358\n\n**Foco:** Síndico, renovação (2 anos), quóruns. Armadilha FGV: unanimidade exigida apenas para dissolução consensual.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 74,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Incorporação Imobiliária (Lei 4.591/64)",
             "link": "",
-            "description": "Art. 1º — incorporação é atividade de transformação de terreno em frações autônomas (edifício). Art. 2º — incorporador é pessoa física/jurídica. Art. 3º — memorial descritivo e convenção obrigatórios (devem ser registrados no RI ANTES da comercialização). Art. 8º — registro provisório na incorporação (matrícula única até conclusão). Art. 37 — alienação de fração anterior ao arquivamento de prédio (comprador tem direitos do incorporador contra incorporador). Armadilha FGV: Lei 4.591/64 protege COMPRADORES (não incorporador). Art. 31 — fundo de comissão obrigatório (conta escrow — bloqueio de valores). Art. 44 — transferência de responsabilidades ao condomínio após conclusão. Inadimplemento de taxa: direito real de laje (Lei 13.465/2017, Art. 1.510-A CC) pode ser constituído para garantir cobrança."
+            "description": "**Lei Seca:** Lei 4.591/64, Arts. 28-44\n\n**Foco:** Memorial descritivo obrigatório ANTES da comercialização. Proteção aos compradores.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -802,14 +802,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO ADMINISTRATIVO",
             "title": "Fiscalização e Disciplina dos Notários e Registradores — Responsabilidade e Sanções",
             "link": "",
-            "description": "Art. 28 — fiscalização é competência do Tribunal de Justiça (visitas periódicas). Art. 29 — responsabilidade civil e criminal. Art. 30 — suspensão temporária (até 30 dias) para violações. Art. 31 — cassação da delegação (perda do exercício da atividade). Art. 32 — multa. Art. 33 — suspensão de recebimento de emolumentos. Lei 8.429/92, Art. 2º — notários/registradores são agentes públicos para fins de LIA (improbidade administrativa é possível). Armadilha FGV: Cassação é ATO DO TJ (não é demissão, é cassação de delegação). Suspensão é SANÇÃO, cassação é SANÇÃO MÁXIMA. Art. 30 — suspensão temporária (máx. 30 dias por vez), pode ser reiterada. Procedimento: Lei Complementar 75/93 (MPBSP investiga e promove ação)."
+            "description": "**Lei Seca:** Lei 8.935/94, Arts. 28-33; Lei 8.429/92\n\n**Foco:** Sanções (suspensão temporária, cassação, multa).\n\n**Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 76,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Garantias da Propriedade e Ordem Econômica (CF/88 + Lei 14.382/2022)",
             "link": "",
-            "description": "Art. 5º XXII — garantia do direito de propriedade (direito fundamental). Art. 5º XXIII — propriedade atenderá função social. Tensão fundamental: propriedade ≠ irrestrita. Lei 14.382/2022 reafirma publicidade registral como GARANTIA (segurança jurídica). Art. 170, II — livre iniciativa + função social. Art. 170, III — propriedade privada. Armadilha FGV: função social ≠ socialismo. Propriedade privada é direito, mas com limitações (IPTU, regulações urbanas, reforma agrária). Registrador é GUARDIÃO da segurança jurídica (Art. 37 Lei 14.382/2022 — qualificação registral obrigatória). Publicidade = FORÇA DA PRESUNÇÃO REGISTRAL (Art. 1º Lei 6.015/73 — presume-se registrado)."
+            "description": "**Lei Seca:** CF/88, Art. 5º XXII-XXIII; Art. 170\n\n**Foco:** Propriedade, função social, segurança jurídica através do registro (Lei 14.382/2022).\n\n**Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -821,14 +821,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Direitos Reais sobre Coisa Alheia — Servidões, Enfiteuse, Superfície",
             "link": "",
-            "description": "Art. 1.378 — servidão é direito real que permite ao proprietário de um imóvel (dominante) usar imóvel alheio (serviente). Art. 1.380 — pode ser perpétua ou temporal. Art. 1.383 — não há direito de uso privativo de servidão (ambigüidade — ARMADILHA). Art. 1.369 — direito de superfície (uso + fruição de solo de propriedade alheia). Art. 1.370 — pode durar até 99 anos (temporário). Art. 1.421 — enfiteuse ABOLIDA pela Lei 14.382/2022 (conversão em propriedade plena do enfiteuta, sem laudêmio). Armadilha FGV: Servidão ≠ Superfície. Servidão é RESTRIÇÃO ao imóvel serviente (proibição de certos usos). Superfície é APROVEITAMENTO DO SOLO (pode construir/plantar). Enfiteuse era regime feudal (foro, laudêmio) — EXTINTO. Art. 1.409 — prescrição aquisitiva de servidão (20 anos, CF Art. 183 não se aplica a servidões prediais)."
+            "description": "**Lei Seca:** CC Arts. 1.378-1.410, 1.369-1.377\n\n**Foco:** Servidão vs. Superfície. Enfiteuse abolida (Lei 14.382/2022).\n\n**Questões:** 12 | **Tempo:** 1h45min"
           },
           {
             "id": 78,
             "discipline": "DIREITO CONSTITUCIONAL",
             "title": "Propriedade Privada, Função Social e Políticas Públicas (CF Arts. 5º, 170, 182-184)",
             "link": "",
-            "description": "Art. 5º XXII — propriedade é direito (não é privilégio). Art. 5º XXIII — subordinação à função social. Art. 170, II-III — livre iniciativa + propriedade privada. Art. 182 — política urbana (plano diretor municipal obrigatório). Art. 182, §4º — IPTU progressivo (sanciona imóvel não-utilizado). Art. 183 — usucapião especial urbano (5 anos, até 250m²). Art. 184 — reforma agrária (desapropriação por interesse social, sem indenização de benfeitorias). Armadilha FGV: Art. 182, §4º IPTU progressivo ≠ desapropriação. IPTU é sanção; desapropriação é confisco com indenização. Art. 184 — reforma agrária pode ocorrer SEM pagamento de indenização (vinculação ao cumprimento da função social). Distância entre propriedade formal e função econômico-social."
+            "description": "**Lei Seca:** CF/88 Arts. 182-184\n\n**Foco:** Plano diretor, IPTU progressivo, desapropriação para reforma agrária.\n\n**Questões:** 8 | **Tempo:** 1h30min"
           }
         ]
       }
@@ -846,14 +846,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Alienação Fiduciária de Imóveis (Lei 9.514/97)",
             "link": "",
-            "description": "Art. 1º — alienação fiduciária é transferência de propriedade resolúvel do imóvel ao credor. Art. 22 — deve ser registrada no RI (matrícula diferenciada). Art. 23 — contratos têm CLÁUSULA PENAL (taxa de mora + multa + juros). Art. 26 — PROCEDIMENTO EXTRAJUDICIAL DE EXECUÇÃO (não precisa ação judicial): (I) inadimplemento, (II) notificação do devedor, (III) purgação da mora (2 dias úteis), (IV) se não paga, consolidação da propriedade. Art. 27 — após consolidação, LEILÃO OBRIGATÓRIO (vedação do pacto comissório — credor não pode ficar com o imóvel). Armadilha FGV: POSSE DIRETA com devedor fiduciante; PROPRIEDADE RESOLÚVEL com credor fiduciário. Após consolidação, credor tem propriedade PLENA (não mais resolúvel). Leilão é OBRIGATÓRIO (Art. 27) — se não houver oferta, é penhora direta (risco do credor). Diferença com HIPOTECA (creditor não tem propriedade, apenas direito de execução)."
+            "description": "**Lei Seca:** Lei 9.514/97, Arts. 22-27\n\n**Foco:** Propriedade resolúvel, consolidação, leilão OBRIGATÓRIO (vedação pacto comissório).\n\n**Questões:** 14 | **Tempo:** 2h00min"
           },
           {
             "id": 80,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Cédulas de Crédito Imobiliário (Lei 10.931/2004)",
             "link": "",
-            "description": "Art. 1º Lei 10.931/04 — CCI é título de crédito garantido por hipoteca (ou alienação fiduciária). Art. 3º — pode ser emitida por instituição financeira ou não. Art. 4º — é negociável (pode ser transferida — endosso). Art. 14 — tem equivalência de sentença (execução extrajudicial simples). Armadilha FGV: CCI ≠ ALIENAÇÃO FIDUCIÁRIA. Alienação fiduciária é tipo de negócio jurídico (transferência). CCI é TÍTULO DE CRÉDITO (papel, nota promissória com garantia hipotecária). CCI é negociável (pode ser vendida); alienação fiduciária não (é direito pessoal de credor específico — não transferível sem consentimento). Registro em cartório: CCI se registra como \"inscrição de direito real\" (semelhante a hipoteca); alienação fiduciária em regime próprio."
+            "description": "**Lei Seca:** Lei 10.931/04, Arts. 1º-35\n\n**Foco:** CCI é título de crédito. Pode ser endossada. Distinção para alienação fiduciária.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -865,14 +865,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Direitos Reais de Garantia — Hipoteca, Penhor, Anticrese",
             "link": "",
-            "description": "Art. 1.473 — hipoteca é direito real de garantia (credor não tem posse, apenas direito de execução). Art. 1.478 — hipoteca é registrada no RI. Art. 1.484 — ordem de hipoteca (primeira, segunda, terceira) — determina prioridade na execução. Art. 1.505 — extinção (pagamento, renúncia, prescrição 20 anos). Art. 1.431 — penhor é garantia mobiliária (objeto fica com credor). Art. 1.506 — anticrese (credor entra na posse do imóvel, usa e aufere frutos para diminuir dívida). Diferenças: HIPOTECA (sem posse credor), PENHOR (posse credor, bem móvel), ANTICRESE (posse credor, bem imóvel). Armadilha FGV: Ordem de hipoteca = PRIORIDADE (primeira hipoteca paga primeiro). Prescrição de 20 anos (não cai direito depois — apenas muda momento de execução). Lei 9.514/97 (alienação fiduciária) não é hipoteca, não segue Art. 1.478."
+            "description": "**Lei Seca:** CC Arts. 1.473-1.505, 1.431-1.470, 1.506-1.510\n\n**Foco:** Sem posse (Hipoteca), com posse móvel (Penhor), com posse imóvel e fruição (Anticrese).\n\n**Questões:** 12 | **Tempo:** 1h45min"
           },
           {
             "id": 82,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Usucapião Extrajudicial (Art. 216-A LRP / Lei 13.105/2015 — CPC)",
             "link": "",
-            "description": "Art. 216-A — procedimento ADMINISTRATIVO perante registrador (não judicial). Requisitos: (1) ata notarial comprovando posse, (2) planta e memorial descritivo georreferenciados, (3) certidões negativas (CRI, CCL, RFB), (4) justo título (comprovação de transferência anterior) OU prova de posse. Procedimento: (1) Requerente oferece documentos → (2) Registrador qualifica → (3) Se acata, notifica confrontantes, Prefeitura, MP (60 dias) → (4) Se não houver impugnação, registra → (5) Se houver impugnação, remete ao juiz. Armadilha FGV: REGISTRADOR NÃO DECIDE mérito (se houve prescrição). Só qualifica documentação. QUALIFICAÇÃO NEGATIVA = rejeição do pedido (sem remessa judicial). IMPUGNAÇÃO = discordância de terceiro → juiz decide. Art. 216-A, §5º — usucapião especial urbana (5 anos, até 250m²) dispensa planta georreferenciada (apenas estimativa)."
+            "description": "**Lei Seca:** Lei 6.015/73, Art. 216-A\n\n**Foco:** Procedimento perante o registrador, notificação de confrontantes, impugnações.\n\n**Questões:** 14 | **Tempo:** 2h00min"
           }
         ]
       },
@@ -884,14 +884,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Adjudicação Compulsória (Lei 10.931/2004 + CC Arts. 1.418-1.422)",
             "link": "",
-            "description": "Art. 1.418 CC — contrato de compra e venda pode conter cláusula de adjudicação compulsória (creditor pode obrigar devedor a transferir propriedade caso inadimplemento). Lei 10.931/04, Art. 26-35 — procedimento de adjudicação: (1) devedor inadimplente de CCI ou alienação fiduciária, (2) credor requer registro, (3) registrador registra a adjudicação, (4) propriedade é transferida compulsoriamente ao credor. Armadilha FGV: Adjudicação compulsória ≠ execução. É procedimento registral (não judicial). Transferência é AUTOMÁTICA após registro (não precisa de ação). CTN — ITBI incide sobre adjudicação compulsória (é transferência de propriedade). Distinção: ALIENAÇÃO FIDUCIÁRIA (Art. 27 Lei 9.514/97) → leilão. ADJUDICAÇÃO COMPULSÓRIA → credor fica com o imóvel. Qual é melhor para credor? Depende: leilão é mais lento, adjudicação é mais rápida."
+            "description": "**Lei Seca:** Lei 10.931/04, Arts. 26-35; CC Arts. 1.418-1.422\n\n**Foco:** Procedimento registral para transferência de propriedade por inadimplemento.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           },
           {
             "id": 84,
             "discipline": "DIREITO CIVIL",
             "title": "Obrigações e Responsabilidade Civil — Inadimplemento e Indenização",
             "link": "",
-            "description": "Art. 234 — devedor é responsável por perdas e danos (mora, culpa, garantia de resultado). Art. 237 — mora (atraso injustificado). Art. 239 — credor não é obrigado a receber antes do vencimento. Art. 402 — perdas e danos incluem prejuízos atuais e lucros cessantes (lucro que deixou de ganhar). Art. 403 — nos juros compensatórios (compensam a demora; não é multa). Art. 404 — danos morais quando há abuso. Art. 944 — dano = indenização. Art. 186 — ato ilícito gera obrigação de reparar. Armadilha FGV: MORA = atraso (vencimento + notificação / aviso prévio). CULPA CONTRATUAL ≠ CULPA EXTRACONTRATUAL. Obrigação de resultado vs. obrigação de meio (médico = meio; cirurgião = resultado?)."
+            "description": "**Lei Seca:** CC Arts. 234-301, 186-187, 402-404\n\n**Foco:** Mora, perdas e danos, danos morais e materiais.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -903,14 +903,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Garantia da Propriedade — Sistema de Registro (Publicidade e Presunção)",
             "link": "",
-            "description": "Art. 1º Lei 6.015/73 — registro é título constitutivo (faz lei, presume-se registrado). CC Art. 1.245 — transferência de propriedade por negócio jurídico é eficaz entre partes e relação a terceiros QUANDO REGISTRADA. Sem registro = vínculo obrigacional (devedor ainda é proprietário). Art. 1.251 — adquirente de boa-fé é protegido pelo registro (terceiro de boa-fé). Lei 14.382/2022 reforça publicidade eletrônica (SERP). Armadilha FGV: Presunção registral é relativa (pode ser contestada com prova). Exceções: (1) usurpação de identidade, (2) simulação provada. Boa-fé é presumida (ônus de prova está em quem alega má-fé). Terceiro de boa-fé está protegido contra direitos não registrados (ex: direito real pretérito)."
+            "description": "**Lei Seca:** Lei 6.015/73, Art. 1º; CC Arts. 1.245-1.252\n\n**Foco:** A proteção do terceiro de boa-fé. Presunção registral juris tantum.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 86,
             "discipline": "DIREITO TRIBUTÁRIO",
             "title": "ITBI — Imposto sobre Transmissão de Bens Imóveis (Lei Complementar 116/03)",
             "link": "",
-            "description": "Art. 2º LC 116/03 — ITBI incide sobre transmissão de bens imóveis (compra, venda, permuta, doação, adjudicação, usucapião extrajudicial). Fato gerador: assinatura do instrumento de transferência. Art. 3º — alíquota é definida por lei municipal (máx. 3%, em média 2-2,5%). Sujeito passivo: adquirente (obrigação de pagar). Isenções: (1) transferências para cônjuge, (2) imóvel residencial até 1 m² de área construída (município pode ampliar). Armadilha FGV: ITBI ≠ IPTU. ITBI é sobre transferência (uma vez); IPTU é anual (propriedade). Isento se transferência entre cônjuges? Depende de lei municipal. Usucapião extrajudicial incide ITBI (é transmissão). Doação incide ITBI (é transmissão a título gratuito)."
+            "description": "**Lei Seca:** LC 116/03; CTN Arts. 32-34\n\n**Foco:** Transmissão de bens imóveis (fato gerador, base de cálculo).\n\n**Questões:** 8 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -922,14 +922,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Tipicidade de Fatos Inscritíveis (Lei 14.382/2022)",
             "link": "",
-            "description": "Art. 167 Lei 6.015/73 — lista de FATOS REGISTRÁVEIS em RI. Lei 14.382/2022 ampliou significativamente (permitiu mais atos). Tipicidade: atos devem estar expressamente previstos em lei (princípio de legalidade). Inovações Lei 14.382/2022: (1) servidão e direitos de passagem podem ser registrados sem ação judicial, (2) direito real de laje (novo instituto), (3) direitos de vazão e infiltração (água), (4) hipoteca de bem futuro, (5) maior flexibilidade em retificações. Armadilha FGV: Tipicidade ≠ tipicidade estrita. Há certa abertura (atos \"assimiláveis\" aos mencionados). Registrador qualifica se é inscritível (não é decisão judicial). Recusa pelo registrador pode ser apelada ao juiz."
+            "description": "**Lei Seca:** Lei 6.015/73, Arts. 167-168; Lei 14.382/2022\n\n**Foco:** Ampliação do rol do Art. 167 (direito de laje, infiltração).\n\n**Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 88,
             "discipline": "DIREITO EMPRESARIAL",
             "title": "Títulos de Crédito — Teoria Geral e Espécies (Lei Uniforme de Genebra)",
             "link": "",
-            "description": "Art. 887 — título de crédito é documento necessário para exercer direito nele mencionado. Requisitos: (1) literalidade (o que está escrito), (2) cartularidade (posse do documento), (3) autonomia (direito não depende de relação anterior). Art. 889 — essencialidade (deve conter: nome do credor, quantia, data, assinatura do devedor). Art. 900 — endosso (transferência — assinatura do titular). Art. 901 — protesto (comprovação de inadimplemento). Espécies: letra de câmbio, nota promissória, cheque, CCI, LC (letras de crédito — LCDA, LCA), debêntures. Armadilha FGV: Literalidade = direito é exatamente o que está escrito (não há relação histórica). Cheque é título \"à vista\" (pagável imediatamente). Nota promissória é promessa de pagamento. Letra de câmbio é ordem de pagamento (sacador → sacado → tomador)."
+            "description": "**Lei Seca:** CC Arts. 887-903; Lei de Genebra\n\n**Foco:** Literalidade, cartularidade, autonomia.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       }
@@ -947,14 +947,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Georreferenciamento de Imóveis (Lei 10.267/2001 + Lei 14.382/2022)",
             "link": "",
-            "description": "Lei 10.267/01 — georreferenciamento é demarcação precisa de limites de imóvel (coordenadas GPS). Art. 1º — obrigatório para imóveis maiores que 4 módulos fiscais em áreas urbanas/rurais (com exceções). Lei 14.382/2022 ampliou obrigatoriedade (também cidades médias, áreas de conflito). Planta e memorial descritivo devem ser precisos (não basta descrição textual). Armadilha FGV: Georreferenciamento é CERTIFICADO por agrimensores credenciados. Registrador apenas registra (não valida tecnicamente). Custo é do requerente. Prazo: de acordo com Lei 10.267/01 (antes: imóveis maiores 4 MF em 2013; agora: mais cidades, prazos ampliados). Usucapião especial urbana (5 anos) dispensa georreferenciamento (apenas estimativa)."
+            "description": "**Lei Seca:** Lei 10.267/01; Lei 14.382/2022\n\n**Foco:** Obrigatoriedade, registro via coordenadas, ampliação de exigência.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 90,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Publicidade no Sistema Registral (Lei 6.015/73 + Lei 14.382/2022)",
             "link": "",
-            "description": "Art. 1º Lei 6.015/73 — PRESUNÇÃO DE REGISTRO (quem registrou é proprietário). Publicidade é FORÇA da presunção (terceiros sabem do registro). Registrador fornece certidões (CRI — Certidão de Registro de Imóvel). Lei 14.382/2022 — SERP (Sistema Eletrônico dos Registros Públicos) modernizou publicidade: acesso em tempo real, integração com órgãos públicos. CC Art. 1.245 — sem registro = obrigação (não há propriedade transferida contra terceiros). Exceção: usucapião (prescrição aquisitiva não precisa registro, mas gera direito real). Armadilha FGV: Publicidade ≠ transparência fiscal. Registro imobiliário é público (qualquer um consulta, paga taxa), mas Receita Federal é secreto (sigilo fiscal). Lei 14.382/2022 permitiu compartilhamento de dados entre RI e Receita (objetivo: combater evasão)."
+            "description": "**Lei Seca:** Lei 6.015/73, Arts. 1º-10; Lei 14.382/2022\n\n**Foco:** SERP: interoperabilidade, compartilhamento com Receita.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -966,14 +966,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Sucessões — Abertura, Herdeiros e Testamento",
             "link": "",
-            "description": "Art. 1.784 — abertura da sucessão ocorre no momento da morte (domicílio do morto). Art. 1.786 — ordem de herança: (1) descendentes, (2) ascendentes, (3) cônjuge, (4) colaterais até 4º grau. Art. 1.789 — sucessão legítima é ordem legal. Art. 1.790 — companheiro(a) concorre com cônjuge (Lei 11.441/07 — reconhecimento de união estável). Art. 1.857 — testamento é disposição de bens (revogável até morte). Art. 1.863 — requisitos (capacidade testador, livre consentimento, formalidade). Art. 1.893 — herdeiro pode renunciar herança. Armadilha FGV: HERDEIRO vs. LEGATÁRIO. Herdeiro é universal (recebe quota de herança — a tudo). Legatário é específico (recebe bem determinado). ABERTURA = morte (automaticamente). INVENTÁRIO = processo de liquidação (não é necessário, mas é prudente)."
+            "description": "**Lei Seca:** CC Arts. 1.784-1.856, 1.858-1.875\n\n**Foco:** Ordem de herança, saisine, legítima.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           },
           {
             "id": 92,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Bem de Família (Lei 8.009/90)",
             "link": "",
-            "description": "Lei 8.009/90, Art. 1º — bem de família é o imóvel residencial da família (uno + móveis de uso ordinário), IMPENHORÁVEL. Art. 2º — automático (não precisa registro; é LEGAL). Art. 3º — exceções à impenhorabilidade: (1) crédito de construtor/fornecedor material de construção, (2) crédito de pessoal da casa (empregado doméstico), (3) crédito tributário, (4) crédito por pensão alimentícia. Art. 4º — valor máximo: até 60 salários mínimos (para fins de impenhorabilidade). Lei 12.470/11 — permite bem de família VOLUNTÁRIO (casal registra declaração no RI, protegendo bem específico, mesmo acima de 60 SM). Armadilha FGV: LEI = automático. Marido + mulher vivem em casa → bem de família é LEGAL. Se crédito de construtor → BF não vale (exceção). Se crédito de banco → BF vale (não está na lista de exceções). Voluntário: casal PODE registrar bem específico (além do automático)."
+            "description": "**Lei Seca:** Lei 8.009/90; CC Arts. 1.711-1.722\n\n**Foco:** Impenhorabilidade legal vs. voluntária. Exceções à regra.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -985,14 +985,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Sistema Financeiro Imobiliário (Lei 9.514/97 + Lei 10.931/2004)",
             "link": "",
-            "description": "Lei 9.514/97 — modernizou financiamento imobiliário (alienação fiduciária como GARANTIA). Art. 1º — sistema financeiro imobiliário (SFI) autoriza operações de financiamento para construção, aquisição, reforma de imóvel. Art. 2º — participantes: bancos, CEF, construtoras, incorporadoras. Art. 22 — alienação fiduciária é ferramenta de garantia. Lei 10.931/04 — CCI (Cédula de Crédito Imobiliário) é título de crédito (negociável). Consequência: credor pode vender dívida (securitização = empacota múltiplas CCIs e vende). Estrutura: (1) devedor toma empréstimo, (2) credor registra alienação fiduciária/CCI, (3) inadimplemento → leilão extrajudicial, (4) se houver lucro → credor repassa (diferença negativa = devedor fica devendo diferença = deficiency judgment — PROIBIDO no Brasil!)."
+            "description": "**Lei Seca:** Lei 9.514/97; Lei 10.931/04\n\n**Foco:** Securitização de CCIs, execução extrajudicial, alienação fiduciária.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           },
           {
             "id": 94,
             "discipline": "DIREITO CIVIL",
             "title": "Contratos em Espécie — Compra e Venda (Imóvel)",
             "link": "",
-            "description": "Art. 481 — compra e venda é contrato (obrigação mútua). Art. 482 — comprador obriga-se a pagar preço. Art. 483 — vendedor obriga-se a transferir propriedade. Art. 484 — compra e venda é CONSENSUAL (contrato se aperfeiçoa pelo consentimento, não precisa entrega). Art. 492 — obrigação do vendedor: (1) transferência propriedade, (2) entrega em bom estado, (3) garantia de qualidade e vícios ocultos, (4) saneamento de dívidas. Art. 497 — comprador pode recusar bem com vícios (caso de redibição = anulação). Art. 498 — evicção (terceiro vem e tira o bem → vendedor indeniza). Imóvel: Lei 6.015/73, Art. 167 — venda imóvel DEVE ser registrada (sem registro = vínculo obrigacional apenas). Armadilha FGV: Contrato de compra e venda SEM registro = obrigação (comprador não é proprietário contra terceiros). Vício oculto precisa ser reclamado em 30 dias (movelidade); imóvel tem prazo maior (depende se é novo ou usado)."
+            "description": "**Lei Seca:** CC Arts. 481-504\n\n**Foco:** Obrigações recíprocas, evicção, vícios ocultos.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -1004,14 +1004,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO ADMINISTRATIVO",
             "title": "Atos Administrativos — Conceito, Características e Requisitos",
             "link": "",
-            "description": "Lei 9.784/99, Art. 1º — processo administrativo federal (aplicável à Administração Pública direta/indireta). Art. 2º — administração pública obedece princípios: legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, impessoalidade. Ato administrativo: (1) emanado de autoridade pública, (2) sob regime de direito público, (3) vinculado ou discricionário, (4) gera efeitos jurídicos. Características: (1) presunção de legitimidade, (2) imperatividade (obriga terceiros), (3) executoriedade (executa por si mesmo). Armadilha FGV: Ato administrativo ≠ contrato. Ato é UNILATERAL (autoridade decide). Contrato é BILATERAL (consenso). Ato vinculado = lei deixa uma opção. Ato discricionário = lei deixa múltiplas opções. Registrador é agente público (para fins de LIA) — seus atos são atos administrativos."
+            "description": "**Lei Seca:** Lei 9.784/99\n\n**Foco:** Legalidade, finalidade, imperatividade, presunção de legitimidade dos atos notariais.\n\n**Questões:** 8 | **Tempo:** 1h30min"
           },
           {
             "id": 96,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Invalidade e Ineficácia de Contrato e Relação com Registro (CC Arts. 104-184)",
             "link": "",
-            "description": "CC Art. 104 — requisitos ato jurídico válido: (1) agente capaz, (2) objeto lícito/possível/determinado, (3) forma prescrita/não proibida. Art. 166 — nulidade ABSOLUTA (ato é sempre nulo): incapacidade absoluta, objeto impossível, forma essencial. Art. 171 — anulabilidade (ato pode ser anulado por legitimado): incapacidade relativa, vícios de vontade (erro, dolo, coação). Diferença: nulidade = juiz pode declarar de ofício. Anulabilidade = precisa ação do interessado. RELAÇÃO COM REGISTRO: Contrato NULO não pode ser registrado (qualificação registral nega). Contrato ANULÁVEL pode ser registrado (presunção registral protege terceiro de boa-fé). Se anula depois de registrado, terceiro de boa-fé está protegido (Art. 1.251 CC). Armadilha FGV: Simulação é nulidade ou anulabilidade? (Doutrina: nulidade). Fraude é simulação? (Não: simulação = conluio; fraude = prejudicar credor)."
+            "description": "**Lei Seca:** CC Arts. 104-184\n\n**Foco:** Nulidade absoluta vs. anulabilidade (impactos no registro e terceiro de boa-fé).\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -1023,14 +1023,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Registro de Imóveis e Direito à Proteção de Dados Pessoais (LGPD + Lei 14.382/2022)",
             "link": "",
-            "description": "Lei 13.709/18 — dados pessoais (informação relacionada a pessoa identificada/identificável). LGPD se aplica ao registro de imóveis? SIM — quando registrador coleta dados sensíveis (nome, CPF, RG, endereço). Princípios: (1) legalidade (base legal), (2) finalidade (propósito específico), (3) necessidade (dados mínimos), (4) transparência (informação ao titular), (5) segurança (proteção). Lei 14.382/2022 — SERP compartilha dados com Receita Federal (combate evasão). Armadilha FGV: Registro de imóvel é PÚBLICO (qualquer pessoa consulta CRI), mas dados pessoais do titular têm proteção (LGPD). Conflito: publicidade registral vs. direito privacidade? Solução: Lei 14.382/2022 criou camadas de acesso (público = identificação, área, valor; privado = dados pessoa, endereço — acesso restrito). CF Art. 5º XXXIII — direito de acesso, mas Lei 14.382/2022 criou proteção adicional."
+            "description": "**Lei Seca:** Lei 13.709/18; Lei 14.382/2022\n\n**Foco:** Conflito entre publicidade registral e privacidade de dados.\n\n**Questões:** 8 | **Tempo:** 1h30min"
           },
           {
             "id": 98,
             "discipline": "DIREITO CONSTITUCIONAL",
             "title": "Propriedade Intelectual e Direitos Autorais (CF Art. 5º XXVII, Lei 9.610/98)",
             "link": "",
-            "description": "CF Art. 5º XXVII — propriedade intelectual é direito fundamental (tempo limitado para autores/inventores). Lei 9.610/98 — direitos autorais: (1) direitos morais (paternidade, integridade), (2) direitos patrimoniais (reprodução, distribuição, aluguel). Duração: vida do autor + 70 anos (pessoa física). Lei 9.279/96 — propriedade industrial: patente (invenção protegida por 20 anos), marca (identidade visual protegida por 10 anos renováveis), desenho industrial. Registrador: Como se aplica ao RI? INDIRETAMENTE — se bem imóvel é resultado de projeto intelectual (direito real de laje, por ex., usa desenho), ou se há obra registrada (edifício histórico = bem cultural, proteção autoral?). Armadilha FGV: Propriedade intelectual ≠ propriedade imóvel. Mas CF Art. 5º XXVII protege ambas. Duração limitada (temporária) — diferença de propriedade comum (perpetua)."
+            "description": "**Lei Seca:** CF Art. 5º, XXVII; Lei 9.610/98\n\n**Foco:** Proteção constitucional, reflexos indiretos no direito registral.\n\n**Questões:** 8 | **Tempo:** 1h30min"
           }
         ]
       }
@@ -1048,14 +1048,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Direito Real de Laje (Lei 13.465/2017 — Novo Instituto)",
             "link": "",
-            "description": "Lei 13.465/2017 — criou instituto NOVO: direito real de laje (DRL). Art. 1.510-A CC — DRL é direito real de construir/plantar SOBRE laje de propriedade alheia. Art. 1.510-B — pode ser transmissível (compravenda) e alienável (hipoteca). Art. 1.510-C — obrigação: pagar contribuição ao proprietário da laje (divisão de custos). Art. 1.510-D — registro no RI (matrícula separada). Finalidade: REGULARIZAÇÃO FUNDIÁRIA (permite legalizar construções em favelas, regularizar moradias informais). Requisitos: (1) acordo com proprietário da laje, (2) especificação de área, (3) planta georreferenciada. Armadilha FGV: DRL ≠ CONDOMÍNIO. DRL é \"direito de usar laje alheia\"; condomínio é \"fração da propriedade\". DRL é novo (pós-2017); condomínio é clássico (Lei 4.591/64). Taxa: DRL paga contribuição (não quota condominial)."
+            "description": "**Lei Seca:** CC Arts. 1.510-A-1.510-D; Lei 13.465/17\n\n**Foco:** Matrícula separada, regularização fundiária (Reurb).\n\n**Questões:** 12 | **Tempo:** 1h45min"
           },
           {
             "id": 100,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Escrituras Públicas (Lei 8.935/94 + Provimento 149/2023)",
             "link": "",
-            "description": "Lei 8.935/94, Art. 6º — tabelião de notas (notário) é responsável por escrituras. Art. 7º — oficiais de RI registram documentos. DISTINÇÃO: Notário (tabulião de notas) = autoridade que AUTENTICA e REDIGE escritura (valida assinatura, vontade, capacidade). Registrador = funcionário que REGISTRA no RI. Escritura pública é documento: (1) autenticado por notário, (2) com requisitos formais (data, assinadores, testemunhas), (3) de força probante máxima (presunção de veracidade). Provimento 149/2023 — estrutura: escritura tem seções (preâmbulo, identificação de partes, descrição do bem, cláusulas, assinatura). Obrigatoriedade: compravenda imóvel, doação imóvel, permuta imóvel, testamento (ológrafo ≠ público). Armadilha FGV: Escritura ≠ contrato. Contrato pode ser privado (entre as partes, sem notário). Escritura é PÚBLICA (notário autêntica). Contrato pode ser RATIFICADO (depois, vira escritura? NÃO — quer dizer que partes assinam escritura confirmando)."
+            "description": "**Lei Seca:** Lei 8.935/94, Arts. 6º-9º; Provimento 149/2023\n\n**Foco:** Atribuição do Tabelião vs Registrador. Forma e solenidade.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -1067,14 +1067,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Contratos em Espécie — Doação (CC Arts. 538-564)",
             "link": "",
-            "description": "Art. 538 — doação é contrato (ato de liberalidade — sem contraprestação). Art. 539 — requisitos: (1) capacidade (doador ≥ 18 anos, sã mente), (2) aceitação donatário. Art. 541 — doação é irrevogável (regra) — exceção: doador fica pobre + não consegue subsistência = revogação por ingratidão. Art. 544 — forma: doação imóvel DEVE ser por ESCRITURA PÚBLICA (obrigatoriedade). Art. 546 — doação com cláusula (condição, termo, encargo) — é válida. Art. 550 — doador responde pelos vícios do bem (garantia de qualidade). Doação mortis causa — é testamento (não é contrato). Armadilha FGV: Doação é IRREVOGÁVEL (regra). Ingratidão: (1) injúria grave, (2) crime contra doador, (3) abandono do doador em situação de indigência. Forma: imóvel = ESCRITURA PÚBLICA (obrigatória). Móvel = pode ser privada (tradição + termo). Revogação por ingratidão = ação judicial (doador precisa comprovar)."
+            "description": "**Lei Seca:** CC Arts. 538-564\n\n**Foco:** Irrevogabilidade (exceções: ingratidão), exigência de escritura pública para imóveis.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           },
           {
             "id": 102,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Contrato de Compra e Venda de Imóvel (Lei 6.015/73 + CC Arts. 481-504)",
             "link": "",
-            "description": "CC Art. 481 — contrato de compra e venda é obrigação mútua. Art. 108 — compra e venda imóvel acima de 30 SM (salários mínimos) DEVE ser por ESCRITO (Lei Uniforme de Genebra — praxe). Na prática: ESCRITURA PÚBLICA (notário redige). Obrigações: (1) vendedor: transferência propriedade (registro), entrega, garantia, saneamento dívidas, (2) comprador: preço, recebimento bem. Art. 167 Lei 6.015/73 — documentos do RI incluem contrato de compra e venda (deve ser registrado para que comprador seja proprietário contra terceiros). Cláusulas: (1) condição suspensiva (compra sob condição — se condição não ocorre, venda é desfeita), (2) condição resolutiva (compra válida mas pode ser desfeita), (3) cláusula de quitação (vendedor declara estar quites com dívidas do imóvel). Armadilha FGV: Sem registro = obrigação apenas. Comprador não é proprietário contra terceiros. Vícios ocultos: comprador pode reclamar em 30 dias (movelidade), imóvel tem regra especial (depende se novo ou usado)."
+            "description": "**Lei Seca:** CC Arts. 481-504; Lei 6.015/73, Art. 167\n\n**Foco:** Necessidade de registro para oponibilidade erga omnes.\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -1086,14 +1086,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO CIVIL",
             "title": "Contratos em Espécie — Permuta (CC Arts. 533-537) + Locação (CC Arts. 565-578)",
             "link": "",
-            "description": "PERMUTA: Art. 533 — permuta é troca de bem por bem (não há preço em dinheiro). Art. 534 — permuta de imóvel DEVE ser por ESCRITURA PÚBLICA. Art. 535 — valem as regras de compra e venda. LOCAÇÃO: Art. 565 — locação é contrato (locador cede uso/gozo; locatário paga aluguel). Art. 566 — obrigações locador: (1) entrega bem em bom estado, (2) manutenção, (3) garantia posse pacífica. Art. 567 — obrigações locatário: (1) pagamento aluguel, (2) conservação bem, (3) reparos corriqueiros. Art. 575 — duração: mínima 30 dias (Lei 8.245/91 aluguel residencial — 30 meses). Art. 578 — rescisão: pode ser por acordo, por prazo (término natural), por falta de pagamento (despejo). Armadilha FGV: Permuta = troca (valem regras de compravenda). Locação = aluguel (relação de longa duração, protegida por lei especial 8.245/91). Garantia: locador pode cobrar caução (depósito antes de ocupação)."
+            "description": "**Lei Seca:** CC Arts. 533-537, 565-578\n\n**Foco:** Regras de permuta (equiparação à venda), locação (proteção locatícia, averbação).\n\n**Questões:** 12 | **Tempo:** 1h45min"
           },
           {
             "id": 104,
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Títulos Admitidos a Registro (Lei 6.015/73, Art. 167)",
             "link": "",
-            "description": "Art. 167 Lei 6.015/73 — lista exaustiva de documentos que podem ser registrados no RI: (1) escritura pública (compravenda, doação, etc.), (2) escritura de divisão (herança), (3) sentença transitada em julgado, (4) ato de governo (decreto de desapropriação), (5) testamento (após morte), (6) contrato de opção de compra, (7) mandato irrevogável para vender. Forma: devem ser em cópia autenticada (cartório ou oficial de registro faz autenticação). Lei 14.382/2022 ampliou possibilidades (p.ex.: ato notarial, declaração de vontade). Armadilha FGV: Lei 6.015/73 é EXAUSTIVA (Art. 167 lista o que entra). Se não está na lista, NÃO entra (tipicidade registral — princípio de legalidade). Exceção: Lei 14.382/2022 abriu brecha (atos \"assimiláveis\"). Testamento: só se registra APÓS morte do testador (não entra em vida)."
+            "description": "**Lei Seca:** Lei 6.015/73, Art. 167; Lei 14.382/2022\n\n**Foco:** Rol do art. 167 (tipicidade registral).\n\n**Questões:** 12 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -1105,14 +1105,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Lei de Reforma Agrária (Lei 8.629/1993 + Lei 13.465/2017)",
             "link": "",
-            "description": "Lei 8.629/93, Art. 1º — reforma agrária é desapropriação de imóvel por interesse social (terra não cumpre função social). Art. 4º — desapropriação por interesse social: terras sem produção. Art. 6º — INCRA (Instituto Nacional de Colonização e Reforma Agrária) executa programas. Procedimento: (1) INCRA negocia compra, (2) se não conseguir, requer ao Presidente desapropriação, (3) Lei estipula indenização (SEMPRE tem indenização, mas sem juros/correção em alguns casos). Lei 13.465/17 — Reurb é REGULARIZAÇÃO (não é desapropriação, é legalização do que já existe). Art. 11 — legitimados à Reurb. Art. 44 — registro: CRF (Certidão de Regularização Fundiária) é registrada no RI. Registrador: atua na fase final (registra CRF). Armadilha FGV: Desapropriação por interesse social (CF Art. 184) ≠ Reurb. Desapropriação é COMPULSÓRIA (governo tira propriedade). Reurb é VOLITIVA (proprietário quer regularizar). INCRA IN 128/2022 — requisitos documentais para Reurb."
+            "description": "**Lei Seca:** Lei 8.629/93; Lei 13.465/17\n\n**Foco:** Desapropriação por interesse social vs. Reurb.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 106,
             "discipline": "DIREITO EMPRESARIAL",
             "title": "Sociedade Limitada — Estrutura, Quotas e Responsabilidade (CC Arts. 1.052-1.087)",
             "link": "",
-            "description": "Art. 1.052 — sociedade limitada é sociedade empresária (exercício profissão comercial). Art. 1.053 — contrato social é documento constitutivo (acordo entre sócios). Art. 1.054 — responsabilidade: sócios respondem limitadamente ao VALOR DA QUOTA (responsabilidade limitada — diferença de sociedade simples, onde responsabilidade é ilimitada). Art. 1.055 — quota é fração do capital (pode ser transferida com consentimento dos sócios — Art. 1.057). Art. 1.060 — administrador responde por perdas e danos (negligência, imprudência). Art. 1.078-1.087 — dissolução (falta sócio, prazo expirado, impossibilidade objeto). Registro: CC Art. 1.150 — sociedade limitada se registra na Junta Comercial. Armadilha FGV: Responsabilidade limitada = credor só pode ir contra o patrimônio da SOCIEDADE, não contra sócios pessoalmente (exceção: desconsideração da pessoa jurídica — abuso, confusão patrimonial). Quota ≠ ação. Quota de sociedade limitada; ação de sociedade anônima."
+            "description": "**Lei Seca:** CC Arts. 1.052-1.087\n\n**Foco:** Registro na Junta Comercial, responsabilidade limitada, quotas.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           }
         ]
       },
@@ -1124,14 +1124,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DIREITO NOTARIAL E REGISTRAL",
             "title": "RI — Parcelamento do Solo Urbano e Registro (Lei 6.766/79 — Aprofundado)",
             "link": "",
-            "description": "Lei 6.766/79, Art. 2º — conceito: loteamento é divisão de imóvel em lotes (fração menores), com abertura de ruas. Condomínio é transformação em UNIDADES AUTÔNOMAS (Lei 4.591/64). Art. 3º — OBRIGAÇÕES DO LOTEADOR: (1) licença municipal, (2) aprovação do projeto, (3) escritura transferindo áreas públicas, (4) registro no RI. Art. 4º — VEDAÇÕES: (1) lote menor 125m², (2) declividade >30%, (3) inundável, (4) inadequado. Art. 18-22 — REGISTRO: loteador registra lote inicial (com denominação). Art. 22 — transferência de lote segue regime normal (contrato + registro). Lei 13.465/17 — Reurb pode REGULARIZAR loteamentos antigos (não registrados, ilegais). Armadilha FGV: Loteamento é CONDIÇÃO DE VALIDADE (precisa registro). Sem registro = loteamento é irregular (possível ação fiscal). Lote ≠ terra nua. Lote é fração com acesso a rua (infraestrutura)."
+            "description": "**Lei Seca:** Lei 6.766/79, Arts. 1º-44\n\n**Foco:** Loteamento (divisão com ruas) vs condomínio. Regularização via Reurb.\n\n**Questões:** 10 | **Tempo:** 1h30min"
           },
           {
             "id": 108,
             "discipline": "DIREITO TRIBUTÁRIO",
             "title": "Impostos Imobiliários — ITBI, IPTU, ITR (Aprofundado)",
             "link": "",
-            "description": "ITBI — LC 116/03: (1) fato gerador = transmissão de propriedade imóvel, (2) alíquota = máx. 3% (municipal), (3) contribuinte = adquirente, (4) isenções = cônjuge, imóvel residencial pequeno. ITBI incide sobre: compravenda, doação, permuta, adjudicação, usucapião extrajudicial. IPTU — Lei Municipal: (1) fato gerador = propriedade de imóvel urbano, (2) anual, (3) valor venal do imóvel, (4) progressividade por IPTU progressivo (sanciona imóvel não-utilizado, Lei 5.249/13). ITR — Lei 9.393/96: (1) fato gerador = propriedade de imóvel rural, (2) alíquota = 0,03% a 20% (progressiva conforme tamanho), (3) contribuinte = proprietário. Armadilha FGV: ITBI x IPTU: ITBI = transferência (uma vez); IPTU = propriedade (anual). Progressividade: ITBI é fixa (máx. 3%); IPTU é progressiva (pode aumentar alíquota se imóvel não é utilizado). ITR é progressiva inversa (quanto maior propriedade, maior alíquota)."
+            "description": "**Lei Seca:** LC 116/03, Lei 5.172/66, Lei 9.393/96\n\n**Foco:** Progressividade do IPTU e ITR, diferença de fatos geradores.\n\n**Questões:** 8 | **Tempo:** 1h30min"
           }
         ]
       }
@@ -1149,14 +1149,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Tombamento: Restrição Administrativa ao Direito de Propriedade",
             "link": "",
-            "description": "Conceito de tombamento e sua anotação no RI. Efeitos patrimoniais e restrições ao proprietário. Armadilha FGV: distinção entre tombamento federal (IPHAN), estadual (SEPAC) e municipal — cada um gera obrigação de anotação no registro com titularidade distinta. Ordem de averbação conforme Lei 14.382/2022."
+            "description": "**Lei Seca:** Lei 5.771/1971; Lei 14.382/2022\n\n**Foco:** Anotação obrigatória no RI, IPHAN vs esferas locais.\n\n**Questões:** 6 | **Tempo:** 1h45min"
           },
           {
             "id": 110,
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Georreferenciamento de Imóveis Rurais e Urbanos",
             "link": "",
-            "description": "Obrigatoriedade de georreferenciamento para imóveis rurais. Certificação por profissional credenciado no INCRA. Relevância para transferência de propriedade e hipotecas. Armadilha FGV: Exigência de GRU (Gleba Rural Única) — quando é obrigatório? Diferença entre georreferenciamento e simples descrição linear. Impacto na propriedade de imóvel fracionado."
+            "description": "**Lei Seca:** Lei 10.267/2001; Lei 13.465/2017\n\n**Foco:** Gleba Rural Única (GRU), certificação INCRA, prazos.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           }
         ]
       },
@@ -1168,14 +1168,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Regularização Fundiária Urbana (REURB): Lei 13.465/2017",
             "link": "",
-            "description": "Conceito de REURB e seus objetivos. Modalidades: Reurb-S (Sustentabilidade) e Reurb-E (Escrituras). Procedimento administrativo e registral. Legitimados ativos. Armadilha FGV: Aplicação em favelas e áreas precárias vs. loteamentos clandestinos. Diferença entre REURB-S (sem transferência) e REURB-E (com transferência de propriedade). Prazo prescricional de 15 anos para usucapião ordinária em imóvel regularizado."
+            "description": "**Lei Seca:** Lei 13.465/2017; Decreto 9.310/2018\n\n**Foco:** REURB-S vs REURB-E, legitimados ativos, usucapião ordinária.\n\n**Questões:** 8 | **Tempo:** 2h00min"
           },
           {
             "id": 112,
             "discipline": "Direito Civil - Reforma Agrária",
             "title": "Lei 8.629/1993: Reforma Agrária e Proteção ao Desapropriado",
             "link": "",
-            "description": "Sistema de reforma agrária brasileira. Conceito de latifúndio improdutivo. Procedimento de desapropriação para reforma agrária. Restrições e impedimentos. Papel do INCRA. Armadilha FGV: Imóvel com benfeitorias úteis durante desapropriação — indenização vs. apreensão. Direitos do proprietário desapropriado. Prazo prescricional de ações. Incidência sobre propriedade fiduciária."
+            "description": "**Lei Seca:** Lei 8.629/1993\n\n**Foco:** Desapropriação de latifúndio improdutivo, indenizações, hipotecas sobre imóveis desapropriados.\n\n**Questões:** 7 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -1187,14 +1187,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Reforma Agrária",
             "title": "Instrução Normativa INCRA 128/2022: Procedimentos Fundiários",
             "link": "",
-            "description": "Procedimentos administrativos INCRA para reforma agrária. Etapas de desapropriação. Imissão de posse. Critérios de seleção de beneficiários. Armadilha FGV: Diferença entre imissão de posse precária (antes de sentença) vs. definitiva. Documentação necessária e prazos. Cancelamento de processo quando propriedade atende função social."
+            "description": "**Lei Seca:** IN INCRA 128/2022\n\n**Foco:** Imissão de posse precária vs definitiva, cancelamento do processo.\n\n**Questões:** 6 | **Tempo:** 1h40min"
           },
           {
             "id": 114,
             "discipline": "Direito Administrativo",
             "title": "Princípios da Administração Pública: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência",
             "link": "",
-            "description": "Princípios estruturantes do direito administrativo. Vinculação da administração pública. Aplicação aos serviços notariais e de registro. Armadilha FGV: Distinção entre moralidade administrativa e moralidade jurídica comum. Violação de princípios como fundamento para invalidação de atos. Sancionalização por descumprimento de princípios."
+            "description": "**Lei Seca:** CF/1988 Art. 37\n\n**Foco:** Legalidade, Impessoalidade, Moralidade, aplicados a cartórios.\n\n**Questões:** 6 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -1206,14 +1206,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Tipicidade de Fatos Inscritíveis à Luz da Lei 14.382/2022",
             "link": "",
-            "description": "Conceito de tipicidade na matrícula. Fatos que admitem inscrição vs. averbação. Novos fatos inscritíveis conforme Lei 14.382/2022 (gravame de direito real de laje, direito real de garantia, restrição voluntária). Armadilha FGV: Fatos que exigem matrícula nova (propriedade + direito real) vs. averbação (subordinados). Ordem de precedência de inscrições/averbações. Irrelevância da sequência de anotação para prioridade."
+            "description": "**Lei Seca:** Lei 14.382/2022\n\n**Foco:** Diferença de inscrição vs averbação, direito real de garantia.\n\n**Questões:** 8 | **Tempo:** 2h00min"
           },
           {
             "id": 116,
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Código Nacional de Matrícula (CNM) e Organização de Cartórios Eletrônicos",
             "link": "",
-            "description": "Estrutura do CNM e seus componentes (CNPJ cartório + sequencial matrícula). Unificação de matrículas. Regras de numeração e identificação única. Armadilha FGV: CNM em transferências de propriedade — quando deve ser mantido vs. criado novo. Impacto em buscas registrais e garantias. Integração com SERP e sistemas eletrônicos."
+            "description": "**Lei Seca:** Provimento CNJ 65/2008\n\n**Foco:** Estrutura do CNM (CNPJ + sequencial), unificação de matrículas.\n\n**Questões:** 6 | **Tempo:** 1h35min"
           }
         ]
       },
@@ -1225,14 +1225,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Serviço de Registro Eletrônico de Imóveis (SREI) e Operador Nacional (ONR)",
             "link": "",
-            "description": "Conceito de SREI e operacionalização. ONR como intermediário. Acesso remoto e assinatura digital. Garantias de segurança e fidedignidade. Armadilha FGV: Diferença entre cartório físico que utiliza SREI vs. cartório puramente eletrônico. Responsabilidade do ONR. Requisitos de documentação eletrônica. Efeitos jurídicos de ato praticado via SREI."
+            "description": "**Lei Seca:** Lei 14.382/2022; Provimento 115/2021\n\n**Foco:** Registro Eletrônico de Imóveis, papel centralizador do ONR.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           },
           {
             "id": 118,
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Direito Real de Laje conforme Lei 14.382/2022",
             "link": "",
-            "description": "Direito real de laje como novo direito real. Requisitos para constituição. Inscrição no registro. Relação com propriedade horizontal. Armadilha FGV: Propriedade de laje vs. concessão de uso. Diferença entre laje em imóvel convencional vs. em prédio de andares múltiplos. Transferência e gravame de laje. Exigência de projeto estrutural e responsabilidade civil."
+            "description": "**Lei Seca:** Lei 10.257/2001; Lei 14.382/2022\n\n**Foco:** Responsabilidade civil, gravames sobre laje, diferenças para propriedade horizontal.\n\n**Questões:** 6 | **Tempo:** 1h40min"
           }
         ]
       }
@@ -1250,14 +1250,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Títulos Admitidos a Registro: Tipologia Documental",
             "link": "",
-            "description": "Conceito de título em sentido registral. Documentos admitidos a registro. Requisitos formais. Armadilha FGV: Diferença entre título suficiente (inscritível) vs. insuficiente (exigência de documentos complementares). Escritura pública como pressuposto. Sentença judicial como título. Ato administrativo como título. Prazo para apresentação após lavratura/sentença."
+            "description": "**Lei Seca:** Lei 6.015/1973, Arts. 176-180\n\n**Foco:** Título suficiente vs insuficiente, prazo para apresentação.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           },
           {
             "id": 120,
             "discipline": "Direito Civil - Tabelionato",
             "title": "Escrituras Públicas: Conceito, Requisitos e Efeitos Jurídicos",
             "link": "",
-            "description": "Conceito e essência da escritura pública. Requisitos legais. Fé pública e presunção de veracidade. Lavratura e subscrição. Cópias e traslados. Armadilha FGV: Escritura por instrumento particular vs. pública — quando cada uma é exigida. Validade de contrato sem escritura pública (disposição sobre bem imóvel). Efeito de ausência de escritura em ação reivindicatória. Assinatura digital em escritura eletrônica."
+            "description": "**Lei Seca:** Lei 14.382/2022; Lei 8.935/1994\n\n**Foco:** Fé pública, presunção de veracidade, assinaturas eletrônicas.\n\n**Questões:** 8 | **Tempo:** 2h00min"
           }
         ]
       },
@@ -1269,14 +1269,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil",
             "title": "Contrato de Compra e Venda de Imóvel: Fases e Eficácia Registral",
             "link": "",
-            "description": "Elementos essenciais do contrato de compra e venda de imóvel. Fase obrigacional vs. fase real. Efeitos antes do registro. Armadilha FGV: Contrato preliminar (promessa de venda) — direitos do promissário comprador. Inscrição de contrato preliminar como direito real. Resolução contrato por inadimplemento. Perdas e danos em compra e venda. Exigência de escritura pública e registro para transferência de propriedade (nemo plus iuris)."
+            "description": "**Lei Seca:** CC/2002, arts. 481-504\n\n**Foco:** Fase obrigacional vs fase real, promessa de venda, nemo plus iuris.\n\n**Questões:** 8 | **Tempo:** 2h00min"
           },
           {
             "id": 122,
             "discipline": "Direito Civil",
             "title": "Contrato de Doação de Imóvel: Formalidades e Efeitos",
             "link": "",
-            "description": "Conceito de doação. Requisitos de forma (escritura pública obrigatória para imóvel). Animus donandi. Capacidade do doador e donatário. Armadilha FGV: Doação irrevogável vs. revogável (causas de revogação — superveniência de filhos, ingratidão). Doação com encargo (cláusula modal). Doação por morte (distinguir de legado). Indenização de benfeitorias. Transferência de propriedade via doação registral."
+            "description": "**Lei Seca:** CC/2002, arts. 538-564\n\n**Foco:** Animus donandi, revogação por superveniência de filhos ou ingratidão.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           }
         ]
       },
@@ -1288,14 +1288,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil",
             "title": "Contrato de Permuta: Características Registrais",
             "link": "",
-            "description": "Conceito de permuta (troca de dois bens). Requisitos de forma (escritura pública se envolver imóvel). Equiparação à compra e venda. Armadilha FGV: Permuta com diferença de valores (compra e venda disfarçada?). Exigência de escritura por ambos os permutantes. Registro em duas matrículas (dupla transferência). Direito de arrependimento. Nulidade de permuta por vício de consentimento."
+            "description": "**Lei Seca:** CC/2002, arts. 534-537\n\n**Foco:** Dupla transferência, equiparação à compra e venda.\n\n**Questões:** 6 | **Tempo:** 1h40min"
           },
           {
             "id": 124,
             "discipline": "Direito Civil",
             "title": "Contrato de Locação de Imóvel: Anotações Registrais",
             "link": "",
-            "description": "Conceito de locação. Requisitos de forma (não é obrigatória escritura pública, mas recomendada). Averbação de locação no RI (proteção ao locatário). Prazo máximo de locação para registro (Lei 8.245/1991). Armadilha FGV: Locação verbal X registro — validade entre partes vs. eficácia erga omnes. Averbação como forma de ônus real (direito de preferência do locatário). Transferência de propriedade com locação vigente — direitos do inquilino."
+            "description": "**Lei Seca:** Lei 8.245/1991; CC/2002\n\n**Foco:** Averbação no RI, direito de preferência, prazos.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           }
         ]
       },
@@ -1307,14 +1307,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Cédulas de Crédito: Hipoteca e Penhor de Imóvel",
             "link": "",
-            "description": "Conceito de cédula de crédito imobiliário. Negociabilidade e garantia hipotecária. Requisitos de forma (pode ser eletrônica). Inscrição como direito real de garantia. Armadilha FGV: CCI vs. hipoteca comum — vantagens do CCI. Prazo de prescrição reduzido. Incorporação de multa e juros na cédula. Transferência de CCI (endosso). Execução via ação monitória."
+            "description": "**Lei Seca:** Lei 10.931/2004\n\n**Foco:** Negociabilidade (endosso), prescrição reduzida.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           },
           {
             "id": 126,
             "discipline": "Direito Constitucional",
             "title": "Direitos e Garantias Fundamentais: Direito de Propriedade (art. 5º, XXII) e Função Social",
             "link": "",
-            "description": "Garantia constitucional de propriedade. Função social como limitação imanente. Usucapião como forma de aquisição originária. Desapropriação por interesse social/público. Armadilha FGV: Propriedade vs. posse. Propriedade não é direito absoluto (função social). Aplicação em registro de imóveis (REURB, tombamento, reforma agrária). Indenização adequada e tempestiva em desapropriação."
+            "description": "**Lei Seca:** CF/1988, art. 5º, XXII e XXIII\n\n**Foco:** Limitações à propriedade, usucapião, REURB.\n\n**Questões:** 6 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -1326,14 +1326,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil",
             "title": "Proteção de Dados Pessoais em Serviços Notariais e Registrais",
             "link": "",
-            "description": "Princípios de proteção de dados. Responsabilidade de cartórios e registros. Consentimento do titular. Direitos do titular (acesso, retificação, exclusão). Armadilha FGV: Dados sensíveis (origem racial, convicção religiosa, filiação sindical). Diferença entre consentimento e permissão legal. Responsabilidade solidária notário/registrador. Multa LGPD por violação. Prescrição de ações por violação."
+            "description": "**Lei Seca:** Lei 13.709/2018\n\n**Foco:** Consentimento, responsabilidade solidária, multas LGPD.\n\n**Questões:** 6 | **Tempo:** 1h40min"
           },
           {
             "id": 128,
             "discipline": "Direito Empresarial",
             "title": "Sociedades Empresárias: Registro de Contratos Sociais e Alterações",
             "link": "",
-            "description": "Registro de contratos sociais em Junta Comercial. Diferença entre registro comercial e registro imobiliário. Sociedades imobiliárias (sociedade em comandita por ações, sociedade anônima). Armadilha FGV: Imóvel de sócios em nome de sociedade — necessidade de transferência via RI. Dissolução e liquidação — efeitos registrais. Falência X insolvência — anotação em RI."
+            "description": "**Lei Seca:** Lei 6.404/1976\n\n**Foco:** Diferença entre Junta Comercial e RI, imóveis de sócios.\n\n**Questões:** 5 | **Tempo:** 1h30min"
           }
         ]
       }
@@ -1351,14 +1351,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Sistema Eletrônico de Registros Públicos (SERP) e Integração Nacional",
             "link": "",
-            "description": "Estrutura e funcionamento do SERP. Acesso remoto a registros. Interoperabilidade entre cartórios. Consultas públicas (certidões). Armadilha FGV: SERP como integrador nacional de registros (não substitui registros locais). Segurança de dados e sigilo (informações protegidas). Busca por matrícula eletrônica. Efeitos de publicidade registral via SERP."
+            "description": "**Lei Seca:** Lei 14.382/2022\n\n**Foco:** Interoperabilidade, certidões eletrônicas, publicidade vs. sigilo.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           },
           {
             "id": 130,
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Central Nacional de Indisponibilidade de Bens (CNIB) e Anotações de Bloqueio",
             "link": "",
-            "description": "Conceito de CNIB como repositório de anotações de indisponibilidade. Hipóteses de bloqueio. Comunicação obrigatória por órgãos judiciais e administrativos. Armadilha FGV: CNIB vs. averbação de bloqueio no RI — diferença operacional. Prazo de bloqueio. Cancelamento automático ou mediante requerimento. Efeito na transferência de propriedade (imóvel não pode ser registrado se bloqueado na CNIB)."
+            "description": "**Lei Seca:** Lei 14.382/2022\n\n**Foco:** Central Nacional de Indisponibilidade de Bens. Reflexos no registro.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           }
         ]
       },
@@ -1370,14 +1370,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Direito Real de Garantia e Marco Legal de Garantias (Lei 13.097/2015)",
             "link": "",
-            "description": "Novo direito real de garantia (substitui alienação fiduciária de bens imóveis). Constituição e inscrição. Vantagens vs. hipoteca. Armadilha FGV: Alienação fiduciária vs. direito real de garantia — transição Lei 14.382/2022. Hipoteca convencional X direito real de garantia (prioridade, execução, direito de sequela). Flutuação de direitos reais em favor do credor."
+            "description": "**Lei Seca:** Lei 13.097/2015; Lei 14.382/2022\n\n**Foco:** Novo direito real de garantia, flutuação de direitos, prioridade.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           },
           {
             "id": 132,
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Serviço de Atendimento Eletrônico Compartilhado (SAEC) e Operacionalização",
             "link": "",
-            "description": "SAEC como plataforma de atendimento compartilhado. Serviços disponibilizados (certidões, consultas, agendamentos). Responsabilidade do ONR. Segurança de acesso. Armadilha FGV: SAEC X SREI — diferença operacional. SAEC como serviço auxiliar. Custos de utilização e repasse. Assinatura digital e identificação usuário."
+            "description": "**Lei Seca:** Lei 14.382/2022 (SAEC)\n\n**Foco:** Atendimento eletrônico compartilhado, ONR.\n\n**Questões:** 6 | **Tempo:** 1h40min"
           }
         ]
       },
@@ -1389,14 +1389,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Receita do Fundo para Implementação e Custeio do SREI (Provimento 115-2021 CNJ)",
             "link": "",
-            "description": "Fundo SREI e sua arrecadação. Distribuição de recursos. Custos de implementação e manutenção. Responsabilidade dos cartórios. Armadilha FGV: Fundo SREI vs. emolumentos (diferença). Percentual retido pelos cartórios. Despesas com certificação digital, acesso a ONR. Transparência na gestão do fundo."
+            "description": "**Lei Seca:** Provimento CNJ 115/2021\n\n**Foco:** Arrecadação, custos, diferença de emolumentos.\n\n**Questões:** 5 | **Tempo:** 1h30min"
           },
           {
             "id": 134,
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Registro de Imóvel e Direito à Proteção dos Dados Pessoais",
             "link": "",
-            "description": "Aplicação de LGPD ao RI. Dados pessoais em matrículas (nomes, CPF, endereços). Necessidade de consentimento ou base legal. Armadilha FGV: Publicidade registral vs. privacidade dados. Sigilo de dados sensíveis. Transferência de propriedade — consentimento para processamento. Responsabilidade do cartório como operador de dados."
+            "description": "**Lei Seca:** LGPD\n\n**Foco:** Dados sensíveis em matrículas, direitos do titular e responsabilidade do operador.\n\n**Questões:** 6 | **Tempo:** 1h40min"
           }
         ]
       },
@@ -1408,14 +1408,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil",
             "title": "Sistema Integrado de Pagamentos Eletrônicos (SIPE) e Emolumentos Eletrônicos",
             "link": "",
-            "description": "SIPE como plataforma de pagamento integrado. Pagamento de emolumentos via sistema. Segurança de transações. Emissão de comprovantes eletrônicos. Armadilha FGV: SIPE X pagamentos convencionais (débito, crédito, transferência). Integridade de dados de pagamento. Auditoria de transações."
+            "description": "**Lei Seca:** Lei 14.382/2022\n\n**Foco:** Pagamento integrado, emissão de comprovantes.\n\n**Questões:** 6 | **Tempo:** 1h35min"
           },
           {
             "id": 136,
             "discipline": "Direito Tributário",
             "title": "Impostos sobre Propriedade Imóvel: IPTU, ITBI e Imposto de Renda (Pessoa Física)",
             "link": "",
-            "description": "IPTU como imposto municipal. Sujeito passivo (proprietário). ITBI como imposto sobre transmissão de bem imóvel. Incidência no RI. Armadilha FGV: ITBI X transferência — obrigação de recolher antes de registro. Isenções (transferências em REURB). Imposto de renda em transferência de imóvel (pessoa física). Declaração de venda de imóvel."
+            "description": "**Lei Seca:** CF Arts. 145-160\n\n**Foco:** Recolhimento antes do registro (ITBI), declaração de IR PF.\n\n**Questões:** 6 | **Tempo:** 1h45min"
           }
         ]
       },
@@ -1427,14 +1427,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil - Registro de Imóveis",
             "title": "Exame Crítico de Títulos: Legitimidade, Legitimação e Defesa do Direito",
             "link": "",
-            "description": "Obrigação de registrador de examinar títulos criticamente. Requisitos formais vs. substanciais. Legitimidade de partes. Legitimação documentada. Armadilha FGV: Dúvidas sobre autoria ou capacidade — direito de não registrar. Recusa registral fundamentada. Defesa do proprietário anterior. Prazo para arquivamento de título recusado."
+            "description": "**Lei Seca:** Lei 6.015/1973, Art. 198\n\n**Foco:** Legitimidade, recusa registral fundamentada.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           },
           {
             "id": 138,
             "discipline": "Direito Processual Civil",
             "title": "Ação Reivindicatória e Ação Possessória: Importância Registral",
             "link": "",
-            "description": "Ação reivindicatória (vindicatio) — petitório. Posse vs. propriedade. Ação possessória (manutenção, reintegração, interdito proibitório). Armadilha FGV: Registro como prova de propriedade. Decisão em ação possessória não resolve propriedade. Efeitos registrais de sentença em reivindicação."
+            "description": "**Lei Seca:** CPC/2015, arts. 556-633\n\n**Foco:** Efeitos da sentença possessória sobre o registro imobiliário.\n\n**Questões:** 5 | **Tempo:** 1h30min"
           }
         ]
       }
@@ -1452,14 +1452,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Teoria Geral do Direito Notarial e Registral",
             "title": "Provimento 149/2023 CNJ — Estrutura, Aplicação e Normatividade",
             "link": "",
-            "description": "Escopo do Provimento 149 como consolidação de normas. Vigência e abrangência (notários e registradores). Estrutura dividida em partes (Geral, Tabelionato, RI). Armadilha FGV: Provimento 149 vs. normas anteriores (possíveis conflitos). Aplicabilidade a cartórios já modernizados. Alterações substanciais em procedimentos. Obrigatoriedade de conformidade."
+            "description": "**Lei Seca:** Provimento 149/2023\n\n**Foco:** Código Nacional de Normas: abrangência e obrigatoriedade.\n\n**Questões:** 5 | **Tempo:** 1h30min"
           },
           {
             "id": 140,
             "discipline": "Direito Notarial",
             "title": "Tabelionato de Notas: Atribuições, Função Pública e Responsabilidade Profissional",
             "link": "",
-            "description": "Conceito de tabelião como oficial público. Atribuições exclusivas (lavratura de escrituras, testamentos, procurações). Responsabilidade civil e administrativa. Armadilha FGV: Tabelião X cartório (pessoa física vs. serviço). Limite de atribuições (não pode fazer trabalho notarial além de competência). Conflito de interesses. Exercício simultâneo de profissões (quando permitido?)."
+            "description": "**Lei Seca:** Lei 8.935/1994, Arts. 1-5; Prov. 149\n\n**Foco:** Atribuições exclusivas, limite de competência, conflitos de interesse.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           }
         ]
       },
@@ -1471,14 +1471,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Notarial",
             "title": "Lei 8.935/1994 — Parte I: Disposições Gerais e Requisitos de Acesso à Profissão",
             "link": "",
-            "description": "Natureza jurídica de serviço notarial e registral. Requisitos para acesso (nacionalidade, maioridade, capacidade civil, idoneidade moral, diploma de bacharel em direito). Exame de proficiência. Armadilha FGV: \"Idoneidade moral\" — avaliação subjetiva, critério jurisprudencial. Incompatibilidades (juiz, advogado, contador etc.). Proibição de cumulatividade."
+            "description": "**Lei Seca:** Lei 8.935/1994, Arts. 1-12\n\n**Foco:** Requisitos (idade, idoneidade), incompatibilidades.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           },
           {
             "id": 142,
             "discipline": "Direito Notarial",
             "title": "Lei 8.935/1994 — Parte II: Delegação, Vitaliciedade, Substituição e Extinção",
             "link": "",
-            "description": "Delegação de serviço (ato administrativo). Vitaliciedade como proteção profissional. Substituição permanente (designação de sucessor). Causas de extinção (morte, aposentadoria, exoneração, condenação). Armadilha FGV: Vitaliciedade X estabilidade — conceitos distintos. Perda de delegação por condenação penal. Exoneração ad nutum (risco político). Responsabilidade de cartório em extinção."
+            "description": "**Lei Seca:** Lei 8.935/1994, Arts. 13-35\n\n**Foco:** Causas de extinção (morte, condenação), estabilidade vs vitaliciedade.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           }
         ]
       },
@@ -1490,14 +1490,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Notarial",
             "title": "Infrações Disciplinares e Penalidades: Sanções Administrativas e Penais",
             "link": "",
-            "description": "Infrações administrativas vs. penais. Sanções disciplinares (advertência, multa, suspensão, cassação). Procedimento administrativo. Armadilha FGV: Falsificação de assinatura em escritura (crime de falsificação documental). Extravio de livros (crime previsão penal). Responsabilidade criminal pessoal vs. administrativa."
+            "description": "**Lei Seca:** Lei 8.935/1994, Arts. 36-45; Código Penal\n\n**Foco:** Falsificação vs erro administrativo, esferas de responsabilização.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           },
           {
             "id": 144,
             "discipline": "Direito Notarial",
             "title": "Emolumentos: Conceito, Cálculo, Distribuição e Tabela de Preços",
             "link": "",
-            "description": "Conceito de emolumento como remuneração do serviço notarial/registral. Base legal (Lei ou Provimento). Tabela de preços (atualização anual). Armadilha FGV: Emolumento X taxa (diferença — taxa é recolhimento ao governo, emolumento é ao profissional). Isenção de emolumentos (REURB, transferência para herdeiros). Doação de emolumentos (permitida?). Fraude em cálculo de emolumentos."
+            "description": "**Lei Seca:** Lei 8.935/1994, Arts. 46-56\n\n**Foco:** Tabela de preços, distinção para taxa, gratuidades e isenções legais.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           }
         ]
       },
@@ -1509,14 +1509,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Teoria Geral do Direito Notarial e Registral",
             "title": "Apostilamento de Documentos: Convenção de Haia e Procedimento",
             "link": "",
-            "description": "Conceito de apostilamento como certificação de autenticidade. Documentos públicos Brasil para uso no exterior (signatários Convenção). Procedimento simples (carimbo/assinatura). Armadilha FGV: Apostila vs. autenticação — diferença. Documentos que requerem apostila. Países signatários (UE, EUA, etc.). Efeito jurídico da apostila no exterior."
+            "description": "**Lei Seca:** Convenção de Haia; Prov. 149\n\n**Foco:** Documentos públicos, efeito no exterior.\n\n**Questões:** 6 | **Tempo:** 1h40min"
           },
           {
             "id": 146,
             "discipline": "Teoria Geral do Direito Notarial e Registral",
             "title": "Conciliação e Mediação nos Serviços Notariais (Lei 13.140/2015)",
             "link": "",
-            "description": "Mediação como forma de resolução de conflitos. Papel do notário/tabelião em mediação. Confidencialidade e sigilo. Armadilha FGV: Mediação vs. arbitragem. Notário como mediador (requisitos). Responsabilidade em mediação fracassada. Acordo em mediação (força executória)."
+            "description": "**Lei Seca:** Lei 13.140/2015; Prov. 149\n\n**Foco:** Notário mediador, confidencialidade, força executória do acordo.\n\n**Questões:** 6 | **Tempo:** 1h40min"
           }
         ]
       },
@@ -1528,14 +1528,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Teoria Geral do Direito Notarial e Registral",
             "title": "Organização Digital dos Serviços Notariais e Registrais: Modernização e Segurança",
             "link": "",
-            "description": "Transformação digital dos serviços. Assinatura eletrônica vs. digital. Certificação digital (ICP-Brasil). Segurança de informação. Armadilha FGV: Assinatura eletrônica avançada X qualificada. Cartório digital vs. híbrido. Responsabilidade técnica. Backup e recuperação dados."
+            "description": "**Lei Seca:** Lei 14.382/2022; Prov. 149\n\n**Foco:** ICP-Brasil, assinaturas eletrônicas, responsabilidade.\n\n**Questões:** 7 | **Tempo:** 1h50min"
           },
           {
             "id": 148,
             "discipline": "Direito Notarial e Registral - REVISÃO INTENSIVA",
             "title": "Lei 8.935/1994 Consolidada + Lei 14.382/2022 + Jurisprudência FGV/CEBRASPE",
             "link": "",
-            "description": "Síntese da Lei 8.935/1994 com Lei 14.382/2022. Mudanças substanciais (SREI, direito real de garantia, tipicidade). Questões recorrentes FGV (exame títulos, emolumentos, responsabilidade). Armadilha FGV: Pegadinhas clássicas (averbação X inscrição, emolumento X taxa, vitaliciedade X estabilidade, apostila vs. autenticação). Casos práticos integrados."
+            "description": "**Lei Seca:** Leis Integradas e Jurisprudência\n\n**Foco:** Casos práticos da FGV e armadilhas.\n\n**Questões:** 12 | **Tempo:** 2h30min"
           }
         ]
       }
@@ -1553,14 +1553,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Tabelionato de Protestos (Arts. 1-50)",
             "link": "",
-            "description": "Definição, competência, documentos protesto, qualidades do protesto. Armadilha FGV: Confundir protesto notarial com protesto cartorário em RFI. Arts. 14-20 (intimação do devedor)."
+            "description": "- Provimento 149 — Tabelionato de Protestos (Arts. 1-100)\n- Definição, competência, documentos de protesto, qualidades do protesto\n- Armadilha FGV: Confundir protesto notarial com protesto cartorário em RFI\n- Arts. 14-20 (intimação do devedor)"
           },
           {
             "id": 150,
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Tabelionato de Protestos (Arts. 51-100) + Atos de Protesto",
             "link": "",
-            "description": "Procedimento do protesto (fases), atos notariais (ciência, intimação), registro em livro de protesto. Armadilha FGV: Ordem de atos — muitas questões trocam sequência de ciência/devolução."
+            "description": "- Provimento 149 — Registro de Cartórios (RCPN) e Responsabilidade Civil do Notário\n- Procedimento do protesto (fases), atos notariais (ciência, intimação), registro em livro de protesto\n- Armadilha FGV: Ordem de atos — muitas questões trocam sequência de ciência/devolução"
           }
         ]
       },
@@ -1572,14 +1572,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Registro de Cartórios (RCPN)",
             "link": "",
-            "description": "Registro cartorial de protesto (livro próprio), requisitos de validade, averbações. Armadilha FGV: RCPN vs. Registro de Protesto em RFI — diferenças essenciais de competência e efeitos."
+            "description": "- Provimento 149 — Tabelionato de Notas (Escrituras Arts. 1-100)\n- Registro cartorial de protesto (livro próprio), requisitos de validade, averbações\n- Armadilha FGV: RCPN vs. Registro de Protesto em RFI — diferenças essenciais de competência e efeitos"
           },
           {
             "id": 152,
             "discipline": "Direito Civil",
             "title": "Revisão Leve — Títulos de Crédito e Cambial (Arts. 887-926 CC)",
             "link": "",
-            "description": "Conceito, características (literalidade, autonomia), títulos comuns (nota promissória, duplicata, cheque). Armadilha FGV: Confundir requisitos de validade de duplicata com protesto — protesto não valida título inválido."
+            "description": "- Revisão Leve: Títulos de Crédito (Arts. 887-926 CC)\n- Conceito, características (literalidade, autonomia), títulos comuns (nota promissória, duplicata, cheque)\n- Armadilha FGV: Confundir requisitos de validade de duplicata com protesto — protesto não valida título inválido"
           }
         ]
       },
@@ -1591,14 +1591,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Responsabilidade Civil do Notário em Protestos",
             "link": "",
-            "description": "Responsabilidade do notário por atos ilícitos em protesto, prazos de reclamação, compensação. Armadilha FGV: Responsabilidade objetiva vs. subjetiva — FGV mescla conceitos."
+            "description": "- Responsabilidade do notário por atos ilícitos em protesto, prazos de reclamação, compensação\n- Armadilha FGV: Responsabilidade objetiva vs. subjetiva — FGV mescla conceitos"
           },
           {
             "id": 154,
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Tabelionato de Notas — Escrituras (Arts. 1-100)",
             "link": "",
-            "description": "Competência do tabelião (escrituras, atas, reconhecimento), requisitos formais (partes, identificação, consentimento), livros de notas. Armadilha FGV: Quando tabelião NÃO pode recusar ato — ordem pública vs. conveniência pessoal."
+            "description": "- Competência do tabelião (escrituras, atas, reconhecimento), requisitos formais (partes, identificação, consentimento), livros de notas\n- Armadilha FGV: Quando tabelião NÃO pode recusar ato — ordem pública vs. conveniência pessoal"
           }
         ]
       },
@@ -1610,7 +1610,7 @@ export const TRILHAS: Trilha[] = [
             "discipline": "REVISÃO / SIMULADO CURTO",
             "title": "Resumo Semanal Semana 18 — Consolidação Rápida",
             "link": "",
-            "description": "Identificar gaps, revisar confusões comuns FGV"
+            "description": "- Simulado Curto de Fixação (8 a 10 questões rápidas mistas)\n- Identificar gaps, revisar confusões comuns FGV"
           }
         ]
       }
@@ -1628,14 +1628,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Registro de Créditos Pignoratícios (RCPJ)",
             "link": "",
-            "description": "Conceito RCPJ, bens admitidos (moeda estrangeira, ouro, valores), requisitos de registro, cancelamento. Armadilha FGV: Confundir RCPJ com cartório de protestos ou RFI — jurisdições distintas."
+            "description": "- Provimento 149 — Registro de Créditos Pignoratícios (RCPJ) e Registro de Títulos (RTD)\n- Conceito RCPJ, bens admitidos (moeda estrangeira, ouro, valores), requisitos de registro, cancelamento\n- Armadilha FGV: Confundir RCPJ com cartório de protestos ou RFI — jurisdições distintas"
           },
           {
             "id": 157,
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Registro de Títulos e Documentos (RTD)",
             "link": "",
-            "description": "Competência RTD (títulos, documentos), documentos admitidos, requisitos formais, prazo de guarda, cancelamento. Armadilha FGV: RTD não autentica conteúdo — autenticação é função notarial, não registral."
+            "description": "- Competência RTD (títulos, documentos), documentos admitidos, requisitos formais, prazo de guarda, cancelamento\n- Armadilha FGV: RTD não autentica conteúdo — autenticação é função notarial, não registral"
           }
         ]
       },
@@ -1647,14 +1647,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Registro de Imóveis (RI) — Arts. 1-100",
             "link": "",
-            "description": "Competência RI (imóveis urbanos/rurais), sistema de registro (aquisição, conservação, segurança), livros de registro, efeitos do registro. Armadilha FGV: Presunção de validade do registro vs. propriedade real — registro não cria propriedade, presume validade."
+            "description": "- Provimento 149 — Registro de Imóveis (Arts. 1-200) e propriedades rurais\n- Competência RI (imóveis urbanos/rurais), sistema de registro (aquisição, conservação, segurança), livros de registro, efeitos do registro\n- Armadilha FGV: Presunção de validade do registro vs. propriedade real — registro não cria propriedade, presume validade"
           },
           {
             "id": 159,
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Registro de Imóveis (RI) — Arts. 101-200 + Imóvel Rural",
             "link": "",
-            "description": "Procedimento de registro (prenotação, decisão, arquivamento), imóvel rural (CCIR, cadastro técnico), matrículas. Armadilha FGV: Prenotação vs. Registro — efeitos diferentes; CCIR não é título de propriedade."
+            "description": "- Procedimento de registro (prenotação, decisão, arquivamento), imóvel rural (CCIR, cadastro técnico), matrículas\n- Armadilha FGV: Prenotação vs. Registro — efeitos diferentes; CCIR não é título de propriedade"
           }
         ]
       },
@@ -1666,14 +1666,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Constitucional / Administrativo",
             "title": "Revisão Leve — Competências Administrativa (Arts. 21-25 CF88)",
             "link": "",
-            "description": "Competências privativas, comuns, concorrentes — foco em notarial/registral (competência estadual). Armadilha FGV: Confundir competência legislativa com administrativa."
+            "description": "- Revisão Leve: Competências Administrativas da CF/88 (Arts. 21-25)\n- Competências privativas, comuns, concorrentes — foco em notarial/registral (competência estadual)\n- Armadilha FGV: Confundir competência legislativa com administrativa"
           },
           {
             "id": 161,
             "discipline": "SIMULADO / REVISÃO",
             "title": "Simulado 01 — 50 questões cronometrado (versão reduzida)",
             "link": "",
-            "description": "Identificar padrões de erro FGV, velocidade de resposta sob pressão"
+            "description": "- Simulado 01 (50 questões) e Engenharia Reversa dos Erros\n- Identificar padrões de erro FGV, velocidade de resposta sob pressão"
           }
         ]
       },
@@ -1685,7 +1685,7 @@ export const TRILHAS: Trilha[] = [
             "discipline": "REVISÃO",
             "title": "Resumo Semanal Semana 19 — Análise de Erros Simulado 01",
             "link": "",
-            "description": "Padrões de erro, conceitos ainda frágeis"
+            "description": "- Padrões de erro, conceitos ainda frágeis\n- Engenharia Reversa dos Erros do Simulado 01"
           }
         ]
       }
@@ -1703,14 +1703,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Registro de Imóveis (RI) — Arts. 201-300 + Transcrição/Inscrição",
             "link": "",
-            "description": "Transcrição vs. inscrição, sequência de registro, efeitos de cada uma, cancelamento. Armadilha FGV: Confundir transcrição (aquisição) com inscrição (gravames/encargos) — ordem importa para prioridade."
+            "description": "- Provimento 149 — Registro de Imóveis (Transcrição vs Inscrição), Protesto e RFI\n- Transcrição vs. inscrição, sequência de registro, efeitos de cada uma, cancelamento\n- Armadilha FGV: Confundir transcrição (aquisição) com inscrição (gravames/encargos) — ordem importa para prioridade"
           },
           {
             "id": 164,
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Cartório de Protestos + RFI (Registro de Financiamento Imobiliário)",
             "link": "",
-            "description": "Diferenças entre protesto em Cartório de Protestos vs. RI, RFI (sistema fiduciário), prioridade de registro. Armadilha FGV: RFI é registro acessório (não registra propriedade) — confundir com RI."
+            "description": "- Diferenças entre protesto em Cartório de Protestos vs. RI, RFI (sistema fiduciário), prioridade de registro\n- Armadilha FGV: RFI é registro acessório (não registra propriedade) — confundir com RI"
           }
         ]
       },
@@ -1722,14 +1722,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Autenticação, Reconhecimento de Assinatura + Atas",
             "link": "",
-            "description": "Autenticação (cópia fiel), reconhecimento de assinatura (semelhança), atas (mediação/conciliação), requisitos formais. Armadilha FGV: Autenticação ≠ Certificação de conteúdo — autenticação é só forma; reconhecimento semelhança vs. tecnológico."
+            "description": "- Provimento 149 — Autenticações, Reconhecimento de Firma e Disposições Finais (Infrações)\n- Autenticação (cópia fiel), reconhecimento de assinatura (semelhança), atas (mediação/conciliação), requisitos formais\n- Armadilha FGV: Autenticação NÃO é Certificação de conteúdo — autenticação é só forma; reconhecimento semelhança vs. tecnológico"
           },
           {
             "id": 166,
             "discipline": "Notarial e Registral",
             "title": "Provimento 149 — Disposições Finais + Fiscalização e Disciplina",
             "link": "",
-            "description": "Deveres notariais, proibições, infrações disciplinares (suspensão, cancelamento), fiscalização pelo Judiciário. Armadilha FGV: Confundir infrações administrativas com penais — CNJ pune administrativa (suspenção), MP pune penal (crime)."
+            "description": "- Deveres notariais, proibições, infrações disciplinares (suspensão, cancelamento), fiscalização pelo Judiciário\n- Armadilha FGV: Confundir infrações administrativas com penais — CNJ pune administrativa (suspensão), MP pune penal (crime)"
           }
         ]
       },
@@ -1741,14 +1741,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Administrativo / Constitucional",
             "title": "Revisão Leve — Princípios Administrativos + Responsabilidade Civil da Administração",
             "link": "",
-            "description": "Princípios (legalidade, moralidade, impessoalidade), responsabilidade solidária Estado/notário, indenização. Armadilha FGV: Notário é delegatário (não servidor) — responsabilidade não é a mesma."
+            "description": "- Revisão Leve: Responsabilidade Civil da Administração\n- Princípios (legalidade, moralidade, impessoalidade), responsabilidade solidária Estado/notário, indenização\n- Armadilha FGV: Notário é delegatário (não servidor) — responsabilidade não é a mesma"
           },
           {
             "id": 168,
             "discipline": "SIMULADO / REVISÃO",
             "title": "Simulado 02 — 50 questões cronometrado (versão reduzida)",
             "link": "",
-            "description": "Velocidade, consolidação Provimento 149, padrões FGV em questões complexas"
+            "description": "- Simulado 02 (50 questões) e Resumo Semanal Consolidado\n- Velocidade, consolidação Provimento 149, padrões FGV em questões complexas"
           }
         ]
       },
@@ -1760,7 +1760,7 @@ export const TRILHAS: Trilha[] = [
             "discipline": "REVISÃO",
             "title": "Resumo Semanal Semana 20 — Consolidação Semanas 18-20",
             "link": "",
-            "description": "Validar conhecimento antes de retomar ritmo normal (semana 21+)"
+            "description": "- Validar conhecimento antes de retomar ritmo normal (semana 21+)\n- Resumo Semanal Consolidado das semanas reduzidas"
           }
         ]
       }
@@ -1778,14 +1778,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "SIMULADO",
             "title": "Simulado 03 — 100 questões cronometrado",
             "link": "",
-            "description": "Performance geral, identificar weak spots, timing management"
+            "description": "- Simulado 03 (100 questões cronometradas) e Análise Detalhada de Erros\n- Performance geral, identificar weak spots, timing management"
           },
           {
             "id": 171,
             "discipline": "REVISÃO / ANÁLISE DE ERROS",
             "title": "Análise Detalhada Simulado 03 — Engenharia Reversa de Erros",
             "link": "",
-            "description": "Por que errou? Qual conceito falta? Qual foi a armadilha FGV? Como não errar de novo?"
+            "description": "- Por que errou? Qual conceito falta? Qual foi a armadilha FGV? Como não errar de novo?\n- Análise detalhada de cada erro do Simulado 03"
           }
         ]
       },
@@ -1797,14 +1797,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Processual Civil",
             "title": "Microdose — Competência e Foro (Arts. 43-63 CPC)",
             "link": "",
-            "description": "Competência absoluta vs. relativa, foro competente para ações registrárias. Armadilha FGV: Confundir competência processual com competência de jurisdição notarial."
+            "description": "- Microdose: Competência Processual Civil (Arts. 43-63 CPC)\n- Competência absoluta vs. relativa, foro competente para ações registrárias\n- Armadilha FGV: Confundir competência processual com competência de jurisdição notarial"
           },
           {
             "id": 173,
             "discipline": "Direito Penal",
             "title": "Microdose — Falso Testemunho e Fraude Documental (Arts. 342-345, 298-302 CP)",
             "link": "",
-            "description": "Falsidade de documento (público e privado), falsidade em ata/autenticação notarial, elementos do crime. Armadilha FGV: Autenticação falsa é falsidade de documento público — responsabilidade penal do notário."
+            "description": "- Microdose: Falso Testemunho e Fraude (CP)\n- Falsidade de documento (público e privado), falsidade em ata/autenticação notarial, elementos do crime\n- Armadilha FGV: Autenticação falsa é falsidade de documento público — responsabilidade penal do notário"
           }
         ]
       },
@@ -1816,14 +1816,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Processual Penal",
             "title": "Microdose — Competência Penal (Arts. 69-91 CPP)",
             "link": "",
-            "description": "Foro competente para crimes praticados por notários (Justiça Estadual ou Federal?), prevenção. Armadilha FGV: Notário federal (TRF) vs. tabelião estadual — competência diferente."
+            "description": "- Microdose: Competência Penal (CPP)\n- Foro competente para crimes praticados por notários (Justiça Estadual ou Federal?), prevenção\n- Armadilha FGV: Notário federal (TRF) vs. tabelião estadual — competência diferente"
           },
           {
             "id": 175,
             "discipline": "Direito Tributário",
             "title": "Microdose — ITBI e Impostos Sobre Imóveis (Arts. 156 CF88, Lei 6.015/73)",
             "link": "",
-            "description": "ITBI (imposto de transmissão imobiliária), alíquotas, isenções, rol de documentos isentos. Armadilha FGV: Confundir ITBI com registro — registro é efeito da transmissão, ITBI é imposto."
+            "description": "- Microdose: ITBI/Impostos\n- ITBI (imposto de transmissão imobiliária), alíquotas, isenções, rol de documentos isentos\n- Armadilha FGV: Confundir ITBI com registro — registro é efeito da transmissão, ITBI é imposto"
           }
         ]
       },
@@ -1835,14 +1835,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Administrativo",
             "title": "Microdose — Licitação e Contratação Pública (Lei 14.133/21)",
             "link": "",
-            "description": "Cartórios como serviço público delegado, obrigações de transparência, contratações (se houver). Armadilha FGV: Confundir lei de licitação com organização de cartório — cartório é serviço delegado, não Administração direta."
+            "description": "- Microdose: Licitações e PLD\n- Cartórios como serviço público delegado, obrigações de transparência, contratações (se houver)\n- Armadilha FGV: Confundir lei de licitação com organização de cartório — cartório é serviço delegado, não Administração direta"
           },
           {
             "id": 177,
             "discipline": "Lavagem de Dinheiro",
             "title": "Microdose — Lei 9.613/98 + Obrigações Notariais",
             "link": "",
-            "description": "Notários como obrigados a reportar operações suspeitas (PLD), limites de valor, sigilo quebrado. Armadilha FGV: Confundir sigilo profissional com dever de reportagem — PLD quebra sigilo notarial."
+            "description": "- Microdose: PLD (Prevenção à Lavagem de Dinheiro)\n- Notários como obrigados a reportar operações suspeitas (PLD), limites de valor, sigilo quebrado\n- Armadilha FGV: Confundir sigilo profissional com dever de reportagem — PLD quebra sigilo notarial"
           }
         ]
       },
@@ -1854,14 +1854,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Proteção de Dados Pessoais",
             "title": "Microdose — Lei Geral de Proteção de Dados (LGPD)",
             "link": "",
-            "description": "Cartório como controlador de dados, direitos de titular, bases legais, sigilo vs. LGPD. Armadilha FGV: Confundir sigilo profissional com LGPD — LGPD amplia direitos, sigilo não anula."
+            "description": "- Revisão LGPD e Proteção de Dados\n- Cartório como controlador de dados, direitos de titular, bases legais, sigilo vs. LGPD\n- Armadilha FGV: Confundir sigilo profissional com LGPD — LGPD amplia direitos, sigilo não anula"
           },
           {
             "id": 179,
             "discipline": "REVISÃO",
             "title": "Consolidação Microdoses Semana 21",
             "link": "",
-            "description": "Validar aprendizado Class D, conectar com matérias principais"
+            "description": "- Validar aprendizado Classe D, conectar com matérias principais\n- Consolidação de todas as microdoses da semana 21"
           }
         ]
       }
@@ -1879,14 +1879,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "SIMULADO",
             "title": "Simulado 04 — 100 questões cronometrado",
             "link": "",
-            "description": "Validar progresso após Classe D microdoses, consolidar velocidade"
+            "description": "- Simulado 04 (100 questões cronometradas) e Análise Comparativa de Padrões FGV\n- Validar progresso após Classe D microdoses, consolidar velocidade"
           },
           {
             "id": 181,
             "discipline": "REVISÃO / ANÁLISE DE ERROS",
             "title": "Análise Comparativa Simulados 01-04 — Padrões de Erro",
             "link": "",
-            "description": "Quais temas repetem erros? Qual é o padrão? Qual armadilha FGV volta sempre?"
+            "description": "- Quais temas repetem erros? Qual é o padrão? Qual armadilha FGV volta sempre?\n- Análise Comparativa de Padrões FGV nos simulados 01-04"
           }
         ]
       },
@@ -1898,14 +1898,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Notarial e Registral",
             "title": "Revisão Densa — Provimento 149 + Lei 8.935/94 (Áreas de confusão)",
             "link": "",
-            "description": "Confusões recorrentes — protesto vs. RI, RCPN vs. RCPJ, autenticação vs. certificação, reconhecimento vs. assinatura digital"
+            "description": "- Revisões Densas: Prov. 149 + Lei 8.935/94\n- Confusões recorrentes — protesto vs. RI, RCPN vs. RCPJ, autenticação vs. certificação, reconhecimento vs. assinatura digital"
           },
           {
             "id": 183,
             "discipline": "Direito Civil",
             "title": "Revisão Densa — Lei 8.078/90 (Código de Defesa do Consumidor) + Relação Notário-Usuário",
             "link": "",
-            "description": "Notário como fornecedor de serviço, obrigações de transparência, responsabilidade por atos ilícitos, vedações. Armadilha FGV: Confundir responsabilidade notarial com CDC — CDC protege consumidor contra abusos."
+            "description": "- Revisão Densa: CDC e Notários\n- Notário como fornecedor de serviço, obrigações de transparência, responsabilidade por atos ilícitos, vedações\n- Armadilha FGV: Confundir responsabilidade notarial com CDC — CDC protege consumidor contra abusos"
           }
         ]
       },
@@ -1917,14 +1917,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil",
             "title": "Revisão Densa — Capacidade (Arts. 1-6 CC) + Poderes de Representação (Arts. 115-133 CC)",
             "link": "",
-            "description": "Quem pode ser parte em ato notarial? Menores, incapazes, representação legal vs. voluntária. Armadilha FGV: Confundir capacidade jurídica com capacidade de exercício — notário deve verificar."
+            "description": "- Revisão Densa: Capacidade e Representação\n- Quem pode ser parte em ato notarial? Menores, incapazes, representação legal vs. voluntária\n- Armadilha FGV: Confundir capacidade jurídica com capacidade de exercício — notário deve verificar"
           },
           {
             "id": 185,
             "discipline": "Organização Digital e Sistemas",
             "title": "Revisão — Lei 13.774/18 + Provimento 149 (Seção Digital)",
             "link": "",
-            "description": "Assinatura eletrônica, notarização digital, certificados ICP-Brasil, segurança. Armadilha FGV: Confundir assinatura eletrônica com reconhecimento de assinatura — efeitos diferentes."
+            "description": "- Assinatura eletrônica, notarização digital, certificados ICP-Brasil, segurança\n- Armadilha FGV: Confundir assinatura eletrônica com reconhecimento de assinatura — efeitos diferentes"
           }
         ]
       },
@@ -1936,14 +1936,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Imobiliário (Registro + Civil)",
             "title": "Revisão Densa — Posse, Propriedade, Usucapião (Arts. 1196-1333 CC)",
             "link": "",
-            "description": "Posse (conceito, efeitos), propriedade (aquisição), usucapião (requisitos, prazos), registro. Armadilha FGV: Confundir posse com propriedade — posse é fato, propriedade é direito; registro presume propriedade de possuidor registrado."
+            "description": "- Revisão Densa: Posse/Propriedade e Sucessões\n- Posse (conceito, efeitos), propriedade (aquisição), usucapião (requisitos, prazos), registro\n- Armadilha FGV: Confundir posse com propriedade — posse é fato, propriedade é direito; registro presume propriedade de possuidor registrado"
           },
           {
             "id": 187,
             "discipline": "Sucessões",
             "title": "Revisão — Lei de Sucessões (Arts. 1784-1856 CC)",
             "link": "",
-            "description": "Sucessão testamentária vs. legítima, ordem de vocação, testamento (requisitos), inventário extrajudicial (cartório). Armadilha FGV: Confundir testamento notarial com testamento cerrado — competências e requisitos distintos."
+            "description": "- Sucessão testamentária vs. legítima, ordem de vocação, testamento (requisitos), inventário extrajudicial (cartório)\n- Armadilha FGV: Confundir testamento notarial com testamento cerrado — competências e requisitos distintos"
           }
         ]
       },
@@ -1955,14 +1955,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Pessoa Jurídica + Associações",
             "title": "Revisão — Constituição de PJ (Arts. 40-88 CC)",
             "link": "",
-            "description": "Categorias de PJ, registro na Junta Comercial, cartório (atas de PJ não comercial), ato constitutivo. Armadilha FGV: Confundir registro em cartório com registro em Junta — competências diferentes."
+            "description": "- PJ e Associações\n- Categorias de PJ, registro na Junta Comercial, cartório (atas de PJ não comercial), ato constitutivo\n- Armadilha FGV: Confundir registro em cartório com registro em Junta — competências diferentes"
           },
           {
             "id": 189,
             "discipline": "REVISÃO",
             "title": "Consolidação Semana 22 — Resumo de Revisões Densas",
             "link": "",
-            "description": "Validar consolidação, identificar últimas lacunas"
+            "description": "- Validar consolidação, identificar últimas lacunas\n- Resumo de todas as revisões densas da semana 22"
           }
         ]
       }
@@ -1980,14 +1980,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "SIMULADO",
             "title": "Simulado 05 — 100 questões cronometrado (foco velocidade)",
             "link": "",
-            "description": "Velocidade máxima, eliminar hesitações, automatizar padrão de resposta"
+            "description": "- Simulados 05, 06 e 07 (100 questões cada) focados em velocidade, pressão psicológica e visão de padrões FGV\n- Velocidade máxima, eliminar hesitações, automatizar padrão de resposta"
           },
           {
             "id": 191,
             "discipline": "SIMULADO",
             "title": "Simulado 06 — 100 questões cronometrado (foco pressão psicológica)",
             "link": "",
-            "description": "Manter concentração com fadiga, lidar com pressão, não desistir em questões difíceis"
+            "description": "- Manter concentração com fadiga, lidar com pressão, não desistir em questões difíceis\n- Foco em pressão psicológica e resistência mental"
           }
         ]
       },
@@ -1999,14 +1999,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "SIMULADO",
             "title": "Simulado 07 — 100 questões cronometrado (foco visão periférica de padrões)",
             "link": "",
-            "description": "Reconhecer padrões FGV em tempo real, evitar pegadinhas comuns"
+            "description": "- Reconhecer padrões FGV em tempo real, evitar pegadinhas comuns\n- Foco em visão de padrões FGV"
           },
           {
             "id": 193,
             "discipline": "REVISÃO / ANÁLISE DE ERROS",
             "title": "Engenharia Reversa Simulados 05-07 — Por Que Errou?",
             "link": "",
-            "description": "Cada erro = aprendizado. Quebra cada questão: conceito fundamental? Armadilha FGV? Leitura de lei errada? Negligência?"
+            "description": "- Engenharia Reversa Total: \"Top 20 artigos mais errados do CC e Prov. 149\"\n- Cada erro = aprendizado. Quebra cada questão: conceito fundamental? Armadilha FGV? Leitura de lei errada? Negligência?"
           }
         ]
       },
@@ -2018,14 +2018,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Notarial e Registral",
             "title": "Top 20 Artigos Mais Errados — Provimento 149 + Lei 8.935/94",
             "link": "",
-            "description": "Os 20 artigos/temas que mais geram erro. Memorizar casos limite, exceções, detalhes."
+            "description": "- Os 20 artigos/temas que mais geram erro no Provimento 149 e Lei 8.935/94\n- Memorizar casos limite, exceções, detalhes"
           },
           {
             "id": 195,
             "discipline": "Direito Civil",
             "title": "Top 20 Artigos Mais Errados — Código Civil",
             "link": "",
-            "description": "Artigos do CC que causam confusão (capacidade, posse, propriedade, sucessão)"
+            "description": "- Top 20 artigos mais errados do Código Civil\n- Artigos do CC que causam confusão (capacidade, posse, propriedade, sucessão)"
           }
         ]
       },
@@ -2037,14 +2037,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Constitucional / Administrativo",
             "title": "Top 20 Temas Mais Errados — CF88, Lei 8.935/94, Princípios",
             "link": "",
-            "description": "Competências, princípios, responsabilidade (tema que se repete com erro)"
+            "description": "- Competências, princípios, responsabilidade (tema que se repete com erro)\n- Top 20 temas mais errados em Direito Constitucional e Administrativo"
           },
           {
             "id": 197,
             "discipline": "Classe D (Processo Civil, Penal, Tributário, PLD)",
             "title": "Top 15 Temas Mais Errados — Microdoses Recorrentes",
             "link": "",
-            "description": "Temas Classe D que aparecem em questões e geram erro"
+            "description": "- Temas Classe D que aparecem em questões e geram erro\n- Top 15 temas mais errados nas matérias de microdose"
           }
         ]
       },
@@ -2056,14 +2056,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "REVISÃO / VELOCIDADE",
             "title": "Rapid Fire — 50 questões em 1h (máxima velocidade, sem profundidade)",
             "link": "",
-            "description": "Treinar reflexo, eliminar pensamento lento, respostas por intuição consolidada"
+            "description": "- Treinamento Rapid Fire: 50 questões em 1 hora para reflexo intuitivo\n- Treinar reflexo, eliminar pensamento lento, respostas por intuição consolidada"
           },
           {
             "id": 199,
             "discipline": "REVISÃO",
             "title": "Consolidação Semana 23 — Simulados + Top 20 Artigos",
             "link": "",
-            "description": "Estar 90%+ confiante nos simulados"
+            "description": "- Estar 90%+ confiante nos simulados\n- Consolidação de todos os simulados e Top 20 artigos da semana 23"
           }
         ]
       }
@@ -2081,14 +2081,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "SIMULADO",
             "title": "Simulado 08 — 100 questões cronometrado (simulação final de prova)",
             "link": "",
-            "description": "Prova real — mesmo ambiente, mesma pressão, mesma duração. Medir desempenho final."
+            "description": "- Simulados Finais 08 e 09 (Teste Real e Resistência)\n- Prova real — mesmo ambiente, mesma pressão, mesma duração. Medir desempenho final."
           },
           {
             "id": 201,
             "discipline": "SIMULADO",
             "title": "Simulado 09 — 100 questões cronometrado (teste de resistência)",
             "link": "",
-            "description": "Manter desempenho após fadiga, testar resistência mental antes da prova"
+            "description": "- Manter desempenho após fadiga, testar resistência mental antes da prova\n- Teste de resistência: manter performance sob fadiga extrema"
           }
         ]
       },
@@ -2100,14 +2100,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "REVISÃO / ANÁLISE DE ERROS",
             "title": "Análise Final Simulados 08-09 — Últimos Ajustes",
             "link": "",
-            "description": "Últimos pontos cegos. Não é aprendizado novo — é consolidação final."
+            "description": "- Últimos pontos cegos. Não é aprendizado novo — é consolidação final.\n- Análise final dos simulados 08 e 09"
           },
           {
             "id": 203,
             "discipline": "Notarial e Registral",
             "title": "Revisão Leve — Provimento 149 (Leitura Rápida dos Pontos Críticos)",
             "link": "",
-            "description": "Repassar rapidamente os temas que causaram mais erro na semana 23. Não é aprendizado novo."
+            "description": "- Leituras Dinâmicas Leves: Passagem panorâmica do Provimento 149\n- Repassar rapidamente os temas que causaram mais erro na semana 23. Não é aprendizado novo."
           }
         ]
       },
@@ -2119,14 +2119,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "Direito Civil + Constitucional",
             "title": "Revisão Leve — Temas Críticos CC + CF88",
             "link": "",
-            "description": "Rápida passada nos temas que mais errou. Não é novo aprendizado."
+            "description": "- Leituras Dinâmicas Leves: Artigos críticos do CC/CF88\n- Rápida passada nos temas que mais errou. Não é novo aprendizado."
           },
           {
             "id": 205,
             "discipline": "REVISÃO",
             "title": "Relaxamento Estratégico — Leitura Leve + Visualização",
             "link": "",
-            "description": "Manter confiança, evitar ansiedade, relaxar mente antes da prova. Não é aprendizado."
+            "description": "- Descanso ativo, mentalização, relaxamento psicológico\n- Manter confiança, evitar ansiedade, relaxar mente antes da prova. Não é aprendizado."
           }
         ]
       },
@@ -2138,14 +2138,14 @@ export const TRILHAS: Trilha[] = [
             "discipline": "DESCANSO ATIVO",
             "title": "Análise Final de Padrão — Qual Era Meu Erro Mais Comum?",
             "link": "",
-            "description": "Identificar o único erro que se repetiu mais. Treinar aquele específico. Ganhar confiança."
+            "description": "- Zero conteúdo novo!\n- Identificar o único erro que se repetiu mais. Treinar aquele específico. Ganhar confiança."
           },
           {
             "id": 207,
             "discipline": "DESCANSO PRÉ-PROVA",
             "title": "Repouso Total + Preparação Emocional",
             "link": "",
-            "description": "Descansar. Dormir bem. Confiar no aprendizado acumulado. Mentalização positiva."
+            "description": "- Descansar. Dormir bem. Confiar no aprendizado acumulado. Mentalização positiva.\n- Zero conteúdo novo! Repouso total antes da prova ENAC."
           }
         ]
       }
