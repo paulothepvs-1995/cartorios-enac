@@ -441,36 +441,189 @@ function QuestoesTab({ data }: { data: StudyData }) {
 }
 
 /* ─── LEGISLAÇÃO ─── */
+function getLegEntry(data: StudyData, id: string): { status: number; date1?: string; date2?: string; notes?: string } {
+  const v = data.legislation_progress[id];
+  if (!v) return { status: 0 };
+  if (typeof v === "number") return { status: v };
+  return v as { status: number; date1?: string; date2?: string; notes?: string };
+}
+
 function Legislacao({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
+  const [expanded, setExpanded] = useState<string | null>(null);
+  const [notesDraft, setNotesDraft] = useState<Record<string, string>>({});
+
+  const priorityConfig = [
+    { p: 1, label: "Prioridade 1 — Leitura integral obrigatória", barColor: "#6366f1" },
+    { p: 2, label: "Prioridade 2 — Leitura dirigida", barColor: "#d97706" },
+    { p: 3, label: "Prioridade 3 — Artigos específicos", barColor: "#64748b" },
+  ];
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  const saveLeg = async (id: string, entry: { status: number; date1?: string; date2?: string; notes?: string }) => {
+    await save({ ...data, legislation_progress: { ...data.legislation_progress, [id]: entry } });
+  };
+
   return (
     <div>
-      {[1, 2, 3].map((priority) => (
-        <div key={priority} style={{ marginBottom: 24 }}>
-          <h3 style={{ fontSize: 13, fontWeight: 700, color: priority === 1 ? "#dc2626" : priority === 2 ? "#d97706" : "#64748b", textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'JetBrains Mono', monospace", marginBottom: 10 }}>
-            Prioridade {priority}{" "}
-            {priority === 1 ? "— Leitura integral obrigatória" : priority === 2 ? "— Leitura dirigida" : "— Artigos específicos"}
+      {/* Progress bars */}
+      <div style={{ display: "grid", gap: 10, marginBottom: 28 }}>
+        {priorityConfig.map(({ p, label, barColor }) => {
+          const laws = PLAN.legislation.filter((l) => l.priority === p);
+          const done = laws.filter((l) => getLegEntry(data, l.id).status >= 1).length;
+          const revised = laws.filter((l) => getLegEntry(data, l.id).status >= 2).length;
+          const pct = laws.length ? Math.round((done / laws.length) * 100) : 0;
+          return (
+            <div key={p} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "12px 16px", boxShadow: "0 1px 2px rgba(0,0,0,0.03)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                <span style={{ fontSize: 11, fontWeight: 700, color: barColor, textTransform: "uppercase", letterSpacing: "0.5px", fontFamily: "'JetBrains Mono', monospace" }}>
+                  {label}
+                </span>
+                <span style={{ fontSize: 12, color: "#64748b", fontFamily: "'JetBrains Mono', monospace" }}>
+                  {done}/{laws.length} lidas · {revised} revisadas · {pct}%
+                </span>
+              </div>
+              <div style={{ height: 6, background: "#f1f5f9", borderRadius: 3, overflow: "hidden" }}>
+                <div style={{ height: "100%", width: `${pct}%`, background: barColor, borderRadius: 3, transition: "width 0.3s" }} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Legislation lists */}
+      {priorityConfig.map(({ p, label, barColor }) => (
+        <div key={p} style={{ marginBottom: 24 }}>
+          <h3 style={{ fontSize: 13, fontWeight: 700, color: barColor, textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'JetBrains Mono', monospace", marginBottom: 10 }}>
+            {label}
           </h3>
           <div style={{ display: "grid", gap: 6 }}>
-            {PLAN.legislation.filter((l) => l.priority === priority).map((law) => {
-              const progress = data.legislation_progress[law.id] || 0;
+            {PLAN.legislation.filter((l) => l.priority === p).map((law) => {
+              const entry = getLegEntry(data, law.id);
+              const isExpanded = expanded === law.id;
+              const daysSince = entry.date1 ? Math.floor((Date.now() - new Date(entry.date1).getTime()) / 86400000) : null;
+              const daysSinceRevision = entry.date2 ? Math.floor((Date.now() - new Date(entry.date2).getTime()) / 86400000) : null;
+
               return (
-                <div key={law.id} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, boxShadow: "0 1px 2px rgba(0,0,0,0.03)" }}>
-                  <span style={{ fontSize: 13, flex: 1, opacity: progress >= law.reads ? 0.5 : 1, color: "#334155" }}>
-                    {progress >= law.reads ? "✅ " : ""}{law.name}
-                  </span>
-                  <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-                    {Array.from({ length: law.reads }).map((_, i) => (
-                      <button key={i} onClick={async () => {
-                        const newProgress = i + 1 <= progress ? i : i + 1;
-                        await save({ ...data, legislation_progress: { ...data.legislation_progress, [law.id]: newProgress } });
-                      }} style={{
-                        width: 24, height: 24, borderRadius: 6, border: i < progress ? "none" : "1px solid #cbd5e1",
-                        background: i < progress ? (priority === 1 ? "#2563eb" : priority === 2 ? "#d97706" : "#64748b") : "white",
-                        cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
-                        fontSize: 10, color: i < progress ? "white" : "#94a3b8", fontFamily: "'JetBrains Mono', monospace",
-                      }}>{i + 1}</button>
-                    ))}
+                <div key={law.id} style={{ background: "white", border: `1px solid ${entry.status >= 2 ? "#a7f3d0" : entry.status >= 1 ? "#fde68a" : "#e2e8f0"}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(0,0,0,0.03)", overflow: "hidden" }}>
+                  <div
+                    onClick={() => setExpanded(isExpanded ? null : law.id)}
+                    style={{ padding: "12px 16px", display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }}
+                  >
+                    {/* Status icon */}
+                    <span style={{ fontSize: 18, flexShrink: 0 }}>
+                      {entry.status >= 2 ? "✅" : entry.status >= 1 ? "☑️" : "⬜"}
+                    </span>
+
+                    {/* Name */}
+                    <span style={{ fontSize: 13, flex: 1, color: "#334155", opacity: entry.status >= 2 ? 0.6 : 1 }}>
+                      {law.name}
+                    </span>
+
+                    {/* Cycle badge */}
+                    {law.cycle && (
+                      <span style={{ fontSize: 10, padding: "2px 6px", borderRadius: 4, background: "rgba(99,102,241,0.1)", color: "#4338ca", fontWeight: 600, fontFamily: "'JetBrains Mono', monospace", flexShrink: 0 }}>
+                        {law.cycle}
+                      </span>
+                    )}
+
+                    {/* Date badges */}
+                    {entry.status >= 1 && entry.date1 && (
+                      <span style={{ fontSize: 10, padding: "2px 6px", borderRadius: 4, background: "#fef3c7", color: "#92400e", fontFamily: "'JetBrains Mono', monospace", flexShrink: 0 }}>
+                        1ª {entry.date1.slice(5)}
+                      </span>
+                    )}
+                    {entry.status >= 2 && entry.date2 && (
+                      <span style={{ fontSize: 10, padding: "2px 6px", borderRadius: 4, background: "#d1fae5", color: "#065f46", fontFamily: "'JetBrains Mono', monospace", flexShrink: 0 }}>
+                        2ª {entry.date2.slice(5)}
+                      </span>
+                    )}
+
+                    {/* Days since indicator */}
+                    {entry.status === 1 && daysSince !== null && daysSince > 14 && (
+                      <span style={{ fontSize: 10, padding: "2px 6px", borderRadius: 4, background: "#fef2f2", color: "#dc2626", fontFamily: "'JetBrains Mono', monospace", flexShrink: 0 }}>
+                        {daysSince}d atrás
+                      </span>
+                    )}
+
+                    <span style={{ fontSize: 10, color: "#94a3b8", flexShrink: 0 }}>{isExpanded ? "▲" : "▼"}</span>
                   </div>
+
+                  {/* Expanded panel */}
+                  {isExpanded && (
+                    <div style={{ padding: "0 16px 14px", borderTop: "1px solid #f1f5f9" }}>
+                      <div style={{ display: "flex", gap: 8, marginTop: 12, marginBottom: 12, flexWrap: "wrap" }}>
+                        {/* Status toggle buttons */}
+                        {[
+                          { s: 0, label: "Pendente", icon: "⬜", color: "#94a3b8", bg: "#f1f5f9" },
+                          { s: 1, label: "1ª Leitura", icon: "☑️", color: "#d97706", bg: "#fef3c7" },
+                          { s: 2, label: "Revisão", icon: "✅", color: "#059669", bg: "#d1fae5" },
+                        ].map(({ s, label, icon, color, bg }) => (
+                          <button key={s} onClick={async () => {
+                            const newEntry = { ...entry, status: s };
+                            if (s >= 1 && !entry.date1) newEntry.date1 = today;
+                            if (s >= 2 && !entry.date2) newEntry.date2 = today;
+                            if (s === 0) { newEntry.date1 = undefined; newEntry.date2 = undefined; }
+                            if (s === 1) { newEntry.date2 = undefined; }
+                            await saveLeg(law.id, newEntry);
+                          }} style={{
+                            padding: "6px 14px", borderRadius: 8, border: entry.status === s ? `2px solid ${color}` : "1px solid #e2e8f0",
+                            background: entry.status === s ? bg : "white", cursor: "pointer",
+                            fontSize: 12, fontWeight: entry.status === s ? 700 : 400, color: entry.status === s ? color : "#64748b",
+                            display: "flex", alignItems: "center", gap: 4,
+                          }}>
+                            {icon} {label}
+                          </button>
+                        ))}
+                      </div>
+
+                      {/* Date fields */}
+                      {entry.status >= 1 && (
+                        <div style={{ display: "flex", gap: 12, marginBottom: 10, flexWrap: "wrap" }}>
+                          <label style={{ fontSize: 11, color: "#64748b", display: "flex", alignItems: "center", gap: 6 }}>
+                            1ª Leitura:
+                            <input type="date" value={entry.date1 || today} onChange={async (e) => {
+                              await saveLeg(law.id, { ...entry, date1: e.target.value });
+                            }} style={{ fontSize: 12, padding: "4px 8px", borderRadius: 6, border: "1px solid #e2e8f0", fontFamily: "'JetBrains Mono', monospace" }} />
+                          </label>
+                          {entry.status >= 2 && (
+                            <label style={{ fontSize: 11, color: "#64748b", display: "flex", alignItems: "center", gap: 6 }}>
+                              Revisão:
+                              <input type="date" value={entry.date2 || today} onChange={async (e) => {
+                                await saveLeg(law.id, { ...entry, date2: e.target.value });
+                              }} style={{ fontSize: 12, padding: "4px 8px", borderRadius: 6, border: "1px solid #e2e8f0", fontFamily: "'JetBrains Mono', monospace" }} />
+                            </label>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Days since indicators */}
+                      {entry.status >= 1 && (
+                        <div style={{ display: "flex", gap: 12, marginBottom: 10, fontSize: 11, color: "#64748b" }}>
+                          {daysSince !== null && <span>Dias desde 1ª leitura: <strong style={{ color: daysSince > 30 ? "#dc2626" : daysSince > 14 ? "#d97706" : "#059669" }}>{daysSince}d</strong></span>}
+                          {daysSinceRevision !== null && <span>Dias desde revisão: <strong style={{ color: daysSinceRevision > 30 ? "#dc2626" : daysSinceRevision > 14 ? "#d97706" : "#059669" }}>{daysSinceRevision}d</strong></span>}
+                          {entry.status === 1 && daysSince !== null && daysSince > 14 && (
+                            <span style={{ color: "#dc2626", fontWeight: 600 }}>⚠ Revisar!</span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Notes */}
+                      <div>
+                        <textarea
+                          placeholder="Notas: artigos difíceis, dúvidas..."
+                          value={notesDraft[law.id] !== undefined ? notesDraft[law.id] : (entry.notes || "")}
+                          onChange={(e) => setNotesDraft({ ...notesDraft, [law.id]: e.target.value })}
+                          onBlur={async () => {
+                            if (notesDraft[law.id] !== undefined && notesDraft[law.id] !== (entry.notes || "")) {
+                              await saveLeg(law.id, { ...entry, notes: notesDraft[law.id] });
+                            }
+                          }}
+                          style={{ width: "100%", minHeight: 60, padding: "8px 10px", borderRadius: 8, border: "1px solid #e2e8f0", fontSize: 12, resize: "vertical", fontFamily: "inherit", color: "#334155", lineHeight: 1.5 }}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}

@@ -3,7 +3,7 @@ import { getAuthClient } from "./auth";
 // Types
 export interface QuestionEntry {
   id: string;      // Adicione esta linha
-  date: string; 
+  date: string;
   discipline: string;
   total: number;
   correct: number;
@@ -16,6 +16,13 @@ export interface StudyEntry {
   minutes: number;
 }
 
+export interface LegislationEntry {
+  status: number; // 0=pendente, 1=1ª leitura, 2=revisão
+  date1?: string; // data da 1ª leitura
+  date2?: string; // data da revisão
+  notes?: string; // anotações
+}
+
 export interface StudyData {
   id?: string;
   discipline_hours: Record<string, number>;
@@ -23,8 +30,8 @@ export interface StudyData {
   questions_resolved: number;
   question_entries: QuestionEntry[];
   simulados: Simulado[];
-  legislation_progress: Record<string, number>;
-  completed_tasks: Record<string, boolean>; 
+  legislation_progress: Record<string, number | LegislationEntry>;
+  completed_tasks: Record<string, boolean>;
   study_entries: StudyEntry[];
   updated_at?: string;
 }
