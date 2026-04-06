@@ -14,6 +14,7 @@ export interface StudyEntry {
   date: string;
   discipline: string;
   minutes: number;
+  category?: string; // estudo, jurisprudência, lei_seca, questões, simulado
 }
 
 export interface LegislationEntry {

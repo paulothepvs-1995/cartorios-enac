@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWeekStartDate } from "@/lib/plan";
-import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry } from "@/lib/supabase";
+import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado } from "@/lib/supabase";
 import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
 import { TRILHAS, type Trilha } from "@/lib/trilhas";
 
@@ -90,10 +90,6 @@ export default function App() {
   const totalHoursLogged = Object.values(data.discipline_hours).reduce((a, b) => a + b, 0);
   const pctComplete = Math.min(100, Math.round((totalHoursLogged / 900) * 100));
 
-  // Weekly hours
-  const currentWeekKey = getWeekKey(new Date(), PLAN.startDate);
-  const weeklyHoursThisWeek = Object.values(data.weekly_hours[currentWeekKey] || {}).reduce((a, b) => a + b, 0);
-
   if (!loaded || authed === null)
     return <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", background: "#f8fafc", color: "#334155", fontFamily: "'JetBrains Mono', monospace" }}><div>Carregando...</div></div>;
 
@@ -136,7 +132,7 @@ export default function App() {
       </div>
 
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "20px 16px 40px" }}>
-        {tab === "dashboard" && <Dashboard data={data} totalHoursLogged={totalHoursLogged} pctComplete={pctComplete} currentWeek={currentWeek} weeklyHours={weeklyHoursThisWeek} onLogStudy={() => setLogModal(true)} onLogSimulado={() => setSimModal(true)} onLogQuestions={() => setQModal(true)} />}
+        {tab === "dashboard" && <Dashboard data={data} totalHoursLogged={totalHoursLogged} pctComplete={pctComplete} currentWeek={currentWeek} onLogStudy={() => setLogModal(true)} onLogSimulado={() => setSimModal(true)} onLogQuestions={() => setQModal(true)} />}
         {tab === "disciplinas" && <Disciplinas data={data} />}
         {tab === "questões" && <QuestoesTab data={data} />}
         {tab === "legislação" && <Legislacao data={data} save={save} />}
@@ -189,7 +185,13 @@ function LoginPage({ onLogin }: { onLogin: (email: string, password: string) => 
 }
 
 /* ─── WEEKLY PACING RING ─── */
-function WeeklyPacingRing({ current, target }: { current: number; target: number }) {
+function WeeklyPacingRing({ data, currentWeek, target }: { data: StudyData; currentWeek: number; target: number }) {
+  const [viewWeek, setViewWeek] = useState(currentWeek);
+  const maxWeek = currentWeek;
+
+  const weekKey = `W${String(viewWeek).padStart(2, "0")}`;
+  const current = Object.values(data.weekly_hours[weekKey] || {}).reduce((a, b) => a + b, 0);
+
   const pct = Math.min(100, (current / target) * 100);
   const radius = 54;
   const circumference = 2 * Math.PI * radius;
@@ -199,25 +201,42 @@ function WeeklyPacingRing({ current, target }: { current: number; target: number
   const formattedTime = formatDecimalHours(current);
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 20, background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-      <div style={{ position: "relative", width: 130, height: 130, flexShrink: 0 }}>
-        <svg width="130" height="130" viewBox="0 0 130 130">
-          <circle cx="65" cy="65" r={radius} fill="none" stroke="#e2e8f0" strokeWidth="10" />
-          <circle cx="65" cy="65" r={radius} fill="none" stroke={color} strokeWidth="10" strokeLinecap="round"
-            strokeDasharray={circumference} strokeDashoffset={strokeDashoffset}
-            transform="rotate(-90 65 65)" style={{ transition: "stroke-dashoffset 0.5s ease" }} />
-        </svg>
-        <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ fontSize: formattedTime.length > 5 ? 20 : 26, fontWeight: 700, color, fontFamily: "'Space Grotesk', sans-serif", lineHeight: 1 }}>{formattedTime}</div>
-          <div style={{ fontSize: 10, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace", marginTop: 2 }}>de {target}h</div>
+    <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+      {/* Navigation */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+        <button onClick={() => setViewWeek(Math.max(1, viewWeek - 1))} disabled={viewWeek <= 1}
+          style={{ background: viewWeek <= 1 ? "#f1f5f9" : "#e0e7ff", border: "none", borderRadius: 6, padding: "6px 12px", cursor: viewWeek <= 1 ? "default" : "pointer", color: viewWeek <= 1 ? "#cbd5e1" : "#4338ca", fontWeight: 600, fontSize: 13 }}>&#8592;</button>
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: 14, fontWeight: 600, color: "#334155" }}>
+            Semana {viewWeek} {viewWeek === currentWeek ? "(atual)" : ""}
+          </div>
+          <div style={{ fontSize: 11, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>
+            Cadência Semanal
+          </div>
         </div>
+        <button onClick={() => setViewWeek(Math.min(maxWeek, viewWeek + 1))} disabled={viewWeek >= maxWeek}
+          style={{ background: viewWeek >= maxWeek ? "#f1f5f9" : "#e0e7ff", border: "none", borderRadius: 6, padding: "6px 12px", cursor: viewWeek >= maxWeek ? "default" : "pointer", color: viewWeek >= maxWeek ? "#cbd5e1" : "#4338ca", fontWeight: 600, fontSize: 13 }}>&#8594;</button>
       </div>
-      <div>
-        <div style={{ fontSize: 14, fontWeight: 600, color: "#334155", marginBottom: 4 }}>Cadência Semanal</div>
-        <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Meta: {target}h por semana</div>
-        <div style={{ fontSize: 24, fontWeight: 700, color, fontFamily: "'Space Grotesk', sans-serif" }}>{pct.toFixed(0)}%</div>
-        <div style={{ fontSize: 11, color: "#94a3b8" }}>
-          {pct >= 100 ? "Meta atingida!" : `Faltam ${formatDecimalHours(target - current)}`}
+
+      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        <div style={{ position: "relative", width: 130, height: 130, flexShrink: 0 }}>
+          <svg width="130" height="130" viewBox="0 0 130 130">
+            <circle cx="65" cy="65" r={radius} fill="none" stroke="#e2e8f0" strokeWidth="10" />
+            <circle cx="65" cy="65" r={radius} fill="none" stroke={color} strokeWidth="10" strokeLinecap="round"
+              strokeDasharray={circumference} strokeDashoffset={strokeDashoffset}
+              transform="rotate(-90 65 65)" style={{ transition: "stroke-dashoffset 0.5s ease" }} />
+          </svg>
+          <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ fontSize: formattedTime.length > 5 ? 20 : 26, fontWeight: 700, color, fontFamily: "'Space Grotesk', sans-serif", lineHeight: 1 }}>{formattedTime}</div>
+            <div style={{ fontSize: 10, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace", marginTop: 2 }}>de {target}h</div>
+          </div>
+        </div>
+        <div>
+          <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Meta: {target}h por semana</div>
+          <div style={{ fontSize: 24, fontWeight: 700, color, fontFamily: "'Space Grotesk', sans-serif" }}>{pct.toFixed(0)}%</div>
+          <div style={{ fontSize: 11, color: "#94a3b8" }}>
+            {pct >= 100 ? "Meta atingida!" : `Faltam ${formatDecimalHours(target - current)}`}
+          </div>
         </div>
       </div>
     </div>
@@ -320,17 +339,25 @@ function WeeklyQuestionsChart({ data, currentWeek }: { data: StudyData; currentW
 }
 
 /* ─── DASHBOARD ─── */
-function Dashboard({ data, totalHoursLogged, pctComplete, currentWeek, weeklyHours, onLogStudy, onLogSimulado, onLogQuestions }: {
-  data: StudyData; totalHoursLogged: number; pctComplete: number; currentWeek: number; weeklyHours: number;
+function Dashboard({ data, totalHoursLogged, pctComplete, currentWeek, onLogStudy, onLogSimulado, onLogQuestions }: {
+  data: StudyData; totalHoursLogged: number; pctComplete: number; currentWeek: number;
   onLogStudy: () => void; onLogSimulado: () => void; onLogQuestions: () => void;
 }) {
+  // Weekly questions count
+  const weekStart = getWeekStartDate(currentWeek, PLAN.startDate);
+  const weekEnd = new Date(weekStart.getTime() + 7 * 24 * 60 * 60 * 1000);
+  const weeklyQuestions = (data.question_entries || []).filter(e => {
+    const d = new Date(e.date + "T12:00:00");
+    return d >= weekStart && d < weekEnd;
+  }).reduce((a, e) => a + e.total, 0);
+
   return (
     <div>
       {/* KPIs */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 20 }}>
         {[
           { label: "Horas totais", value: formatDecimalHours(totalHoursLogged), sub: `de 900h (${pctComplete}%)`, accent: "#6366f1" },
-          { label: "Questões", value: data.questions_resolved, sub: "resolvidas", accent: "#059669" },
+          { label: "Questões (semana)", value: weeklyQuestions, sub: `${data.questions_resolved} total`, accent: "#059669" },
           { label: "Simulados", value: data.simulados.length, sub: data.simulados.length > 0 ? `média: ${(data.simulados.reduce((a, b) => a + b.score, 0) / data.simulados.length).toFixed(0)}/100` : "nenhum ainda", accent: "#db2777" },
         ].map((kpi, i) => (
           <div key={i} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: "18px 16px", position: "relative", overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
@@ -344,7 +371,7 @@ function Dashboard({ data, totalHoursLogged, pctComplete, currentWeek, weeklyHou
 
       {/* WEEKLY PACING */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 20 }}>
-        <WeeklyPacingRing current={weeklyHours} target={PLAN.weeklyTarget} />
+        <WeeklyPacingRing data={data} currentWeek={currentWeek} target={PLAN.weeklyTarget} />
         <WeeklyQuestionsChart data={data} currentWeek={currentWeek} />
       </div>
 
@@ -670,9 +697,19 @@ function Simulados({ data, onLogSimulado }: { data: StudyData; onLogSimulado: ()
   );
 }
 
-/* ─── LOG MODAL (AGORA COM HORAS E MINUTOS) ─── */
+/* ─── LOG MODAL (COM CATEGORIAS) ─── */
+const STUDY_CATEGORIES = [
+  { id: "estudo", label: "Estudo regular", icon: "📖" },
+  { id: "jurisprudencia", label: "Jurisprudência", icon: "⚖️" },
+  { id: "lei_seca", label: "Lei seca", icon: "📜" },
+  { id: "questoes", label: "Questões", icon: "✏️" },
+  { id: "simulado", label: "Simulado", icon: "📝" },
+  { id: "revisao", label: "Revisão", icon: "🔄" },
+];
+
 function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyData) => Promise<void>; onClose: () => void }) {
   const [disc, setDisc] = useState("notarial");
+  const [category, setCategory] = useState("estudo");
   const [hours, setHours] = useState("");
   const [minutes, setMinutes] = useState("");
 
@@ -680,10 +717,10 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
     const hVal = parseInt(hours) || 0;
     const mVal = parseInt(minutes) || 0;
     const totalMins = (hVal * 60) + mVal;
-    
+
     if (totalMins <= 0) return;
-    
-    const hDecimal = totalMins / 60; 
+
+    const hDecimal = totalMins / 60;
 
     const weekKey = getWeekKey(new Date(), PLAN.startDate);
     const currentWeekHours = { ...(data.weekly_hours[weekKey] || {}) };
@@ -693,7 +730,8 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
       id: Date.now().toString(),
       date: new Date().toISOString().slice(0, 10),
       discipline: disc,
-      minutes: totalMins
+      minutes: totalMins,
+      category,
     };
 
     await save({
@@ -711,12 +749,25 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
     <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 16, backdropFilter: "blur(4px)" }} onClick={onClose}>
       <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28, width: "100%", maxWidth: 400, boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }} onClick={(e) => e.stopPropagation()}>
         <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Registrar estudo</h3>
-        
+
+        {/* Category selector */}
+        <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 6 }}>Tipo de atividade</label>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 16 }}>
+          {STUDY_CATEGORIES.map(c => (
+            <button key={c.id} onClick={() => setCategory(c.id)} style={{
+              padding: "6px 12px", borderRadius: 8, fontSize: 12, fontWeight: 600, cursor: "pointer",
+              border: category === c.id ? "2px solid #4338ca" : "1px solid #e2e8f0",
+              background: category === c.id ? "#eef2ff" : "white",
+              color: category === c.id ? "#4338ca" : "#64748b",
+            }}>{c.icon} {c.label}</button>
+          ))}
+        </div>
+
         <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Disciplina</label>
         <select value={disc} onChange={(e) => setDisc(e.target.value)} style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 14, marginBottom: 16, outline: "none", background: "#f8fafc" }}>
           {PLAN.disciplines.map((d) => (<option key={d.id} value={d.id}>{d.name}</option>))}
         </select>
-        
+
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
           <div>
             <label style={{ fontSize: 11, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Horas</label>
@@ -727,7 +778,7 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
             <input type="number" min="0" max="59" step="1" value={minutes} onChange={(e) => setMinutes(e.target.value)} placeholder="0" style={inputStyle} />
           </div>
         </div>
-        
+
         <div style={{ display: "flex", gap: 10 }}>
           <button onClick={onClose} style={{ flex: 1, padding: "10px", background: "#f1f5f9", border: "1px solid #e2e8f0", borderRadius: 8, color: "#64748b", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Cancelar</button>
           <button onClick={handleSave} style={{ flex: 1, padding: "10px", background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 8, color: "white", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Salvar</button>
@@ -740,6 +791,7 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
 /* ─── QUESTION MODAL ─── */
 function QuestionModal({ data, save, onClose }: { data: StudyData; save: (d: StudyData) => Promise<void>; onClose: () => void }) {
   const [disc, setDisc] = useState("notarial");
+  const [isSimulado, setIsSimulado] = useState(false);
   const [total, setTotal] = useState("");
   const [correct, setCorrect] = useState("");
 
@@ -751,7 +803,7 @@ function QuestionModal({ data, save, onClose }: { data: StudyData; save: (d: Stu
     const entry: QuestionEntry = {
       id: Date.now().toString(),
       date: new Date().toISOString().slice(0, 10),
-      discipline: disc,
+      discipline: isSimulado ? "simulado" : disc,
       total: t,
       correct: c,
     };
@@ -771,10 +823,34 @@ function QuestionModal({ data, save, onClose }: { data: StudyData; save: (d: Stu
       <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28, width: "100%", maxWidth: 400, boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }} onClick={(e) => e.stopPropagation()}>
         <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Registrar questões</h3>
 
-        <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Disciplina</label>
-        <select value={disc} onChange={(e) => setDisc(e.target.value)} style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 14, marginBottom: 16, outline: "none", background: "#f8fafc" }}>
-          {PLAN.disciplines.map((d) => (<option key={d.id} value={d.id}>{d.name}</option>))}
-        </select>
+        {/* Simulado toggle */}
+        <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
+          <button onClick={() => setIsSimulado(false)} style={{
+            flex: 1, padding: "10px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer",
+            border: !isSimulado ? "2px solid #059669" : "1px solid #e2e8f0",
+            background: !isSimulado ? "#dcfce7" : "white", color: !isSimulado ? "#059669" : "#64748b",
+          }}>Por disciplina</button>
+          <button onClick={() => setIsSimulado(true)} style={{
+            flex: 1, padding: "10px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer",
+            border: isSimulado ? "2px solid #db2777" : "1px solid #e2e8f0",
+            background: isSimulado ? "#fce7f3" : "white", color: isSimulado ? "#db2777" : "#64748b",
+          }}>Simulado</button>
+        </div>
+
+        {!isSimulado && (
+          <>
+            <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Disciplina</label>
+            <select value={disc} onChange={(e) => setDisc(e.target.value)} style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 14, marginBottom: 16, outline: "none", background: "#f8fafc" }}>
+              {PLAN.disciplines.map((d) => (<option key={d.id} value={d.id}>{d.name}</option>))}
+            </select>
+          </>
+        )}
+
+        {isSimulado && (
+          <div style={{ background: "#fce7f3", borderRadius: 8, padding: "10px 14px", marginBottom: 16, fontSize: 12, color: "#9d174d" }}>
+            Registre o total de questões e acertos do simulado.
+          </div>
+        )}
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
           <div>
@@ -789,7 +865,7 @@ function QuestionModal({ data, save, onClose }: { data: StudyData; save: (d: Stu
 
         <div style={{ display: "flex", gap: 10 }}>
           <button onClick={onClose} style={{ flex: 1, padding: "10px", background: "#f1f5f9", border: "1px solid #e2e8f0", borderRadius: 8, color: "#64748b", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Cancelar</button>
-          <button onClick={handleSave} style={{ flex: 1, padding: "10px", background: "linear-gradient(135deg, #059669, #10b981)", border: "none", borderRadius: 8, color: "white", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Salvar</button>
+          <button onClick={handleSave} style={{ flex: 1, padding: "10px", background: isSimulado ? "linear-gradient(135deg, #db2777, #ec4899)" : "linear-gradient(135deg, #059669, #10b981)", border: "none", borderRadius: 8, color: "white", cursor: "pointer", fontSize: 13, fontWeight: 600 }}>Salvar</button>
         </div>
       </div>
     </div>
@@ -947,7 +1023,6 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
 
 /* ─── HISTÓRICO UNIFICADO ─── */
 function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
-  // Função para excluir Horas
   const handleDeleteStudy = async (entry: StudyEntry) => {
     if (!window.confirm(`Excluir registro de ${formatMinutes(entry.minutes)}?`)) return;
     const newEntries = (data.study_entries || []).filter(e => e.id !== entry.id);
@@ -955,14 +1030,21 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
     const newDiscHours = { ...data.discipline_hours };
     newDiscHours[entry.discipline] = Math.max(0, (newDiscHours[entry.discipline] || 0) - h);
 
-    await save({ ...data, study_entries: newEntries, discipline_hours: newDiscHours });
+    // Also fix weekly_hours
+    const dateObj = new Date(entry.date + "T12:00:00");
+    const weekKey = getWeekKey(dateObj, PLAN.startDate);
+    const newWeeklyHours = { ...data.weekly_hours };
+    if (newWeeklyHours[weekKey]) {
+      newWeeklyHours[weekKey] = { ...newWeeklyHours[weekKey] };
+      newWeeklyHours[weekKey][entry.discipline] = Math.max(0, (newWeeklyHours[weekKey][entry.discipline] || 0) - h);
+    }
+
+    await save({ ...data, study_entries: newEntries, discipline_hours: newDiscHours, weekly_hours: newWeeklyHours });
   };
 
-  // Função para excluir Questões
   const handleDeleteQuestion = async (entry: QuestionEntry) => {
     if (!window.confirm(`Excluir registro de ${entry.total} questões?`)) return;
     const newEntries = (data.question_entries || []).filter(e => e.id !== entry.id);
-
     await save({
       ...data,
       questions_resolved: Math.max(0, (data.questions_resolved || 0) - entry.total),
@@ -970,27 +1052,30 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
     });
   };
 
-  // Sincroniza e limpa as horas e questões fantasmas do passado
+  const handleDeleteSimulado = async (index: number) => {
+    const sim = data.simulados[index];
+    if (!window.confirm(`Excluir simulado "${sim.name}" (${sim.score}/100)?`)) return;
+    const newSimulados = [...data.simulados];
+    newSimulados.splice(index, 1);
+    await save({ ...data, simulados: newSimulados });
+  };
+
   const handleSync = async () => {
-    if (!window.confirm("Isso vai apagar todas as horas e questões antigas que NÃO estão listadas aqui no histórico. Deseja continuar?")) return;
+    if (!window.confirm("Isso vai recalcular todas as horas e questões a partir do histórico. Entradas sem registro serão removidas. Continuar?")) return;
 
     const newDiscHours: Record<string, number> = {};
     const newWeeklyHours: Record<string, Record<string, number>> = {};
-    const currentStudyEntries: StudyEntry[] = data.study_entries || [];
 
-    currentStudyEntries.forEach((entry: StudyEntry) => {
+    (data.study_entries || []).forEach((entry: StudyEntry) => {
       const h = entry.minutes / 60;
       newDiscHours[entry.discipline] = (newDiscHours[entry.discipline] || 0) + h;
-      
       const dateObj = new Date(entry.date + "T12:00:00");
       const weekKey = getWeekKey(dateObj, PLAN.startDate);
-      
       if (!newWeeklyHours[weekKey]) newWeeklyHours[weekKey] = {};
       newWeeklyHours[weekKey][entry.discipline] = (newWeeklyHours[weekKey][entry.discipline] || 0) + h;
     });
 
-    const currentQEntries = data.question_entries || [];
-    const newTotalQ = currentQEntries.reduce((acc, curr) => acc + curr.total, 0);
+    const newTotalQ = (data.question_entries || []).reduce((acc, curr) => acc + curr.total, 0);
 
     await save({
       ...data,
@@ -1000,25 +1085,31 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
     });
   };
 
-  // Criamos uma lista única misturando horas e questões
-  const combinedEntries = [
-    ...(data.study_entries || []).map(e => ({ ...e, type: 'study' as const })),
-    ...(data.question_entries || []).map(e => ({ ...e, type: 'question' as const }))
+  // Combined list: study + questions + simulados
+  const combinedEntries: Array<{id: string; date: string; type: 'study' | 'question' | 'simulado'; data: any; originalIndex?: number}> = [
+    ...(data.study_entries || []).map(e => ({ id: e.id, date: e.date, type: 'study' as const, data: e })),
+    ...(data.question_entries || []).map(e => ({ id: e.id, date: e.date, type: 'question' as const, data: e })),
+    ...(data.simulados || []).map((s, i) => ({ id: `sim-${i}-${s.date}`, date: s.date, type: 'simulado' as const, data: s, originalIndex: i })),
   ].sort((a, b) => {
-      const idA = a.id || '0';
-      const idB = b.id || '0';
-      return idB.localeCompare(idA);
+    // Sort by date desc, then by id desc
+    if (a.date !== b.date) return b.date.localeCompare(a.date);
+    return b.id.localeCompare(a.id);
   });
+
+  const categoryLabel = (entry: StudyEntry) => {
+    const cat = STUDY_CATEGORIES.find(c => c.id === entry.category);
+    return cat ? `${cat.icon} ${cat.label}` : "📖 Estudo";
+  };
 
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, flexWrap: "wrap", gap: 10 }}>
         <h3 style={{ fontSize: 16, fontWeight: 700, color: "#334155", margin: 0, fontFamily: "'Space Grotesk', sans-serif" }}>Linha do Tempo</h3>
         <button onClick={handleSync} style={{ background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", borderRadius: 8, padding: "8px 12px", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>
-          🗑️ Limpar fantasmas antigos
+          Recalcular totais
         </button>
       </div>
-      
+
       {combinedEntries.length === 0 ? (
         <div style={{ textAlign: "center", padding: 60, color: "#94a3b8", background: "white", borderRadius: 12, border: "1px solid #e2e8f0" }}>
           <div>Nenhum registro encontrado.</div>
@@ -1026,39 +1117,54 @@ function HistoricoTab({ data, save }: { data: StudyData; save: (d: StudyData) =>
       ) : (
         <div style={{ display: "grid", gap: 10 }}>
           {combinedEntries.map(entry => {
-            const discName = PLAN.disciplines.find(d => d.id === entry.discipline)?.name || entry.discipline;
             const isStudy = entry.type === 'study';
+            const isQuestion = entry.type === 'question';
+            const isSimulado = entry.type === 'simulado';
+
+            const discName = isSimulado ? entry.data.name
+              : (entry.data.discipline === "simulado" ? "Simulado"
+                : (PLAN.disciplines.find(d => d.id === entry.data.discipline)?.name || entry.data.discipline));
 
             return (
-              <div key={entry.id || Math.random().toString()} style={{ 
-                background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "14px 16px", 
+              <div key={entry.id} style={{
+                background: "white", border: `1px solid ${isSimulado ? "#f9a8d4" : "#e2e8f0"}`, borderRadius: 10, padding: "14px 16px",
                 display: "flex", justifyContent: "space-between", alignItems: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
                 flexWrap: "wrap", gap: 10
               }}>
                 <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-                  <div style={{ 
-                    width: 36, height: 36, borderRadius: "50%", 
-                    background: isStudy ? "rgba(99,102,241,0.1)" : "rgba(5,150,105,0.1)",
+                  <div style={{
+                    width: 36, height: 36, borderRadius: "50%",
+                    background: isStudy ? "rgba(99,102,241,0.1)" : isQuestion ? "rgba(5,150,105,0.1)" : "rgba(219,39,119,0.1)",
                     display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0
                   }}>
-                    {isStudy ? "🕒" : "✅"}
+                    {isStudy ? "🕒" : isQuestion ? "✅" : "📝"}
                   </div>
                   <div>
                     <div style={{ fontSize: 14, fontWeight: 600, color: "#334155" }}>{discName}</div>
-                    <div style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>{entry.date} • {isStudy ? "Estudo" : "Questões"}</div>
+                    <div style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>
+                      {entry.date} {isStudy ? `• ${categoryLabel(entry.data)}` : isQuestion ? "• Questões" : "• Simulado"}
+                    </div>
                   </div>
                 </div>
 
                 <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
                   <div style={{ textAlign: "right" }}>
-                    {isStudy ? (
-                      <div style={{ fontSize: 16, fontWeight: 700, color: "#4f46e5", fontFamily: "'Space Grotesk', sans-serif" }}>{formatMinutes((entry as any).minutes)}</div>
-                    ) : (
-                      <div style={{ fontSize: 16, fontWeight: 700, color: "#059669", fontFamily: "'Space Grotesk', sans-serif" }}>{(entry as any).correct}/{(entry as any).total} <span style={{fontSize: 10, color: "#94a3b8"}}>acertos</span></div>
+                    {isStudy && (
+                      <div style={{ fontSize: 16, fontWeight: 700, color: "#4f46e5", fontFamily: "'Space Grotesk', sans-serif" }}>{formatMinutes(entry.data.minutes)}</div>
+                    )}
+                    {isQuestion && (
+                      <div style={{ fontSize: 16, fontWeight: 700, color: "#059669", fontFamily: "'Space Grotesk', sans-serif" }}>{entry.data.correct}/{entry.data.total} <span style={{ fontSize: 10, color: "#94a3b8" }}>acertos</span></div>
+                    )}
+                    {isSimulado && (
+                      <div style={{ fontSize: 16, fontWeight: 700, color: entry.data.score >= 60 ? "#059669" : entry.data.score >= 50 ? "#d97706" : "#dc2626", fontFamily: "'Space Grotesk', sans-serif" }}>{entry.data.score}/100</div>
                     )}
                   </div>
-                  <button 
-                    onClick={() => isStudy ? handleDeleteStudy(entry as any) : handleDeleteQuestion(entry as any)} 
+                  <button
+                    onClick={() => {
+                      if (isStudy) handleDeleteStudy(entry.data);
+                      else if (isQuestion) handleDeleteQuestion(entry.data);
+                      else if (isSimulado && entry.originalIndex !== undefined) handleDeleteSimulado(entry.originalIndex);
+                    }}
                     style={{ background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", borderRadius: 6, padding: "6px 12px", cursor: "pointer", fontSize: 12, fontWeight: 600 }}
                   >
                     Excluir

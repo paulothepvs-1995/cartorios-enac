@@ -79,8 +79,11 @@ export const PLAN = {
 };
 
 export function getWeekNumber(startDate: string): number {
-  const start = new Date(startDate);
+  const [y, m, d] = startDate.split("-").map(Number);
+  const start = new Date(y, m - 1, d);
+  start.setHours(0, 0, 0, 0);
   const now = new Date();
+  now.setHours(0, 0, 0, 0);
   const diff = now.getTime() - start.getTime();
   if (diff < 0) return 0;
   return Math.min(Math.floor(diff / (7 * 24 * 60 * 60 * 1000)) + 1, PLAN.totalWeeks);
@@ -91,23 +94,32 @@ export function getCurrentPhase(week: number) {
 }
 
 export function daysUntilExam(): number {
-  const exam = new Date(PLAN.examDate);
+  const [y, m, d] = PLAN.examDate.split("-").map(Number);
+  const exam = new Date(y, m - 1, d);
+  exam.setHours(0, 0, 0, 0);
   const now = new Date();
+  now.setHours(0, 0, 0, 0);
   return Math.max(0, Math.ceil((exam.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
 }
 
-/** Returns the week key string like "2026-W14" for a given date */
+/** Returns the week key string like "W01" for a given date */
 export function getWeekKey(date: Date, startDate: string): string {
-  const start = new Date(startDate);
-  const diff = date.getTime() - start.getTime();
+  const [y, m, d] = startDate.split("-").map(Number);
+  const start = new Date(y, m - 1, d);
+  start.setHours(0, 0, 0, 0);
+  const localDate = new Date(date);
+  localDate.setHours(0, 0, 0, 0);
+  const diff = localDate.getTime() - start.getTime();
   if (diff < 0) return "pre";
   const weekNum = Math.floor(diff / (7 * 24 * 60 * 60 * 1000)) + 1;
   return `W${String(weekNum).padStart(2, "0")}`;
 }
 
-/** Returns the start date (Monday) for a given week number */
+/** Returns the start date for a given week number */
 export function getWeekStartDate(weekNum: number, startDate: string): Date {
-  const start = new Date(startDate);
-  const d = new Date(start.getTime() + (weekNum - 1) * 7 * 24 * 60 * 60 * 1000);
-  return d;
+  const [y, m, d] = startDate.split("-").map(Number);
+  const start = new Date(y, m - 1, d);
+  start.setHours(0, 0, 0, 0);
+  const result = new Date(start.getTime() + (weekNum - 1) * 7 * 24 * 60 * 60 * 1000);
+  return result;
 }
