@@ -595,21 +595,20 @@ function TempoTab({ data }: { data: StudyData }) {
                   ))}
                 </div>
                 {/* Bars */}
-                <div style={{ flex: 1, display: "flex", gap: 2, alignItems: "flex-end", height: 220, borderBottom: "1px solid #e2e8f0", position: "relative" }}>
+                <div style={{ flex: 1, display: "flex", gap: 2, alignItems: "stretch", height: 220, borderBottom: "1px solid #e2e8f0", position: "relative" }}>
                   {/* Grid lines */}
                   {[0.25, 0.5, 0.75, 1].map(pct => (
-                    <div key={pct} style={{ position: "absolute", bottom: `${pct * 100}%`, left: 0, right: 0, borderTop: "1px dashed #f1f5f9" }} />
+                    <div key={pct} style={{ position: "absolute", bottom: `${pct * 100}%`, left: 0, right: 0, borderTop: "1px dashed #f1f5f9", pointerEvents: "none" }} />
                   ))}
                   {byDay.map(({ day, data: dayData }) => {
                     const dayTotal = Object.values(dayData).reduce((a, b) => a + b, 0);
-                    const barHeight = dayTotal > 0 ? (dayTotal / maxDayMins) * 100 : 0;
-                    // Stack by discipline
+                    const barPx = dayTotal > 0 ? Math.max(4, Math.round((dayTotal / maxDayMins) * 200)) : 0;
                     const segments = Object.entries(dayData).sort((a, b) => b[1] - a[1]);
                     return (
-                      <div key={day} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", minWidth: 0 }}>
-                        <div style={{ width: "100%", maxWidth: 40, height: `${barHeight}%`, display: "flex", flexDirection: "column-reverse", borderRadius: "4px 4px 0 0", overflow: "hidden" }}>
+                      <div key={day} style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end", alignItems: "center", minWidth: 0 }}>
+                        <div style={{ width: "80%", maxWidth: 44, height: barPx, display: "flex", flexDirection: "column-reverse", borderRadius: "4px 4px 0 0", overflow: "hidden" }}>
                           {segments.map(([discId, mins]) => (
-                            <div key={discId} style={{ width: "100%", height: `${(mins / dayTotal) * 100}%`, background: getDiscColor(discId), minHeight: mins > 0 ? 2 : 0 }} />
+                            <div key={discId} style={{ width: "100%", flex: `${mins} 0 0%`, background: getDiscColor(discId), minHeight: mins > 0 ? 3 : 0 }} />
                           ))}
                         </div>
                         <div style={{ fontSize: 8, color: "#94a3b8", marginTop: 4, fontFamily: "'JetBrains Mono', monospace", writingMode: byDay.length > 10 ? "vertical-rl" : "horizontal-tb", transform: byDay.length > 10 ? "rotate(180deg)" : "none" }}>
