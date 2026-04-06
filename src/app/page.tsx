@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWeekStartDate } from "@/lib/plan";
-import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado } from "@/lib/supabase";
+import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado, type DailyTodoItem } from "@/lib/supabase";
 import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
 import { TRILHAS, type Trilha } from "@/lib/trilhas";
 
@@ -15,6 +15,7 @@ const defaultData = (): StudyData => ({
   legislation_progress: {},
   completed_tasks: {},
   study_entries: [],
+  daily_todos: {},
 });
 
 /* ─── HELPER DE FORMATAÇÃO DE TEMPO ─── */
@@ -132,7 +133,7 @@ export default function App() {
       </div>
 
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "20px 16px 40px" }}>
-        {tab === "dashboard" && <Dashboard data={data} totalHoursLogged={totalHoursLogged} pctComplete={pctComplete} currentWeek={currentWeek} onLogStudy={() => setLogModal(true)} onLogSimulado={() => setSimModal(true)} onLogQuestions={() => setQModal(true)} />}
+        {tab === "dashboard" && <Dashboard data={data} save={save} totalHoursLogged={totalHoursLogged} pctComplete={pctComplete} currentWeek={currentWeek} onLogStudy={() => setLogModal(true)} onLogSimulado={() => setSimModal(true)} onLogQuestions={() => setQModal(true)} />}
         {tab === "tempo" && <TempoTab data={data} />}
         {tab === "disciplinas" && <Disciplinas data={data} />}
         {tab === "questões" && <QuestoesTab data={data} />}
@@ -339,9 +340,173 @@ function WeeklyQuestionsChart({ data, currentWeek }: { data: StudyData; currentW
   );
 }
 
+/* ─── DAILY TODO LIST ─── */
+function getNextUncompletedTasks(data: StudyData, count: number): Array<{ trilhaId: string; task: { id: number; discipline: string; title: string } }> {
+  const result: Array<{ trilhaId: string; task: { id: number; discipline: string; title: string } }> = [];
+  for (const trilha of TRILHAS) {
+    for (const day of trilha.days) {
+      for (const task of day.tasks) {
+        if (result.length >= count) return result;
+        const key = `${trilha.id}:${task.id}`;
+        if (!data.completed_tasks || !data.completed_tasks[key]) {
+          result.push({ trilhaId: trilha.id, task });
+        }
+      }
+    }
+  }
+  return result;
+}
+
+function DailyTodoList({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
+  const today = new Date().toISOString().slice(0, 10);
+  const [newTodoText, setNewTodoText] = useState("");
+
+  // Get next 3 uncompleted trilha tasks
+  const nextTasks = useMemo(() => getNextUncompletedTasks(data, 3), [data]);
+
+  // Build auto-generated items for today
+  const autoItems = useMemo((): DailyTodoItem[] => {
+    const items: DailyTodoItem[] = [];
+    // 1. Flashcard review reminder
+    items.push({ id: "auto-fc", text: "🔄 Revisar flashcards do que foi estudado ontem", done: false, auto: true });
+    // 2-4. Next 3 trilha tasks
+    nextTasks.forEach((t, i) => {
+      items.push({
+        id: `auto-trilha-${t.trilhaId}-${t.task.id}`,
+        text: `📚 Trilha ${t.trilhaId} — ${t.task.title}`,
+        done: false,
+        auto: true,
+      });
+    });
+    return items;
+  }, [nextTasks]);
+
+  // Get today's saved todos, merging auto items with saved state
+  const todayTodos = useMemo((): DailyTodoItem[] => {
+    const saved = (data.daily_todos || {})[today] || [];
+    const savedMap = new Map(saved.map(t => [t.id, t]));
+
+    // Merge auto items: use saved done state if exists
+    const merged: DailyTodoItem[] = autoItems.map(item => {
+      const savedItem = savedMap.get(item.id);
+      return savedItem ? { ...item, done: savedItem.done } : item;
+    });
+
+    // Add manual items (non-auto)
+    saved.filter(t => !t.auto).forEach(t => merged.push(t));
+
+    return merged;
+  }, [data.daily_todos, today, autoItems]);
+
+  const toggleTodo = async (id: string) => {
+    const updated = todayTodos.map(t => t.id === id ? { ...t, done: !t.done } : t);
+    await save({ ...data, daily_todos: { ...data.daily_todos, [today]: updated } });
+  };
+
+  const addTodo = async () => {
+    const text = newTodoText.trim();
+    if (!text) return;
+    const newItem: DailyTodoItem = { id: `manual-${Date.now()}`, text, done: false, auto: false };
+    const updated = [...todayTodos, newItem];
+    await save({ ...data, daily_todos: { ...data.daily_todos, [today]: updated } });
+    setNewTodoText("");
+  };
+
+  const removeTodo = async (id: string) => {
+    const updated = todayTodos.filter(t => t.id !== id);
+    await save({ ...data, daily_todos: { ...data.daily_todos, [today]: updated } });
+  };
+
+  const doneCount = todayTodos.filter(t => t.done).length;
+  const totalCount = todayTodos.length;
+  const pct = totalCount > 0 ? Math.round((doneCount / totalCount) * 100) : 0;
+
+  return (
+    <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, marginBottom: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+      {/* Header */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <h3 style={{ fontSize: 14, fontWeight: 700, margin: 0, color: "#4338ca", fontFamily: "'Space Grotesk', sans-serif" }}>Tarefas do dia</h3>
+          <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 10, background: pct === 100 ? "#dcfce7" : "#eef2ff", color: pct === 100 ? "#059669" : "#4338ca", fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>
+            {doneCount}/{totalCount}
+          </span>
+        </div>
+        <div style={{ fontSize: 11, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>
+          {new Date().toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "2-digit" })}
+        </div>
+      </div>
+
+      {/* Progress bar */}
+      <div style={{ height: 4, background: "#f1f5f9", borderRadius: 2, overflow: "hidden", marginBottom: 16 }}>
+        <div style={{ height: "100%", width: `${pct}%`, background: pct === 100 ? "#059669" : "linear-gradient(90deg, #6366f1, #a78bfa)", borderRadius: 2, transition: "width 0.3s" }} />
+      </div>
+
+      {/* Todo items */}
+      <div style={{ display: "grid", gap: 4, marginBottom: 14 }}>
+        {todayTodos.map((item) => (
+          <div key={item.id} style={{
+            display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", borderRadius: 8,
+            background: item.done ? "#f8fafc" : "white",
+            border: `1px solid ${item.done ? "#e2e8f0" : "#eef2ff"}`,
+            transition: "all 0.2s",
+          }}>
+            {/* Checkbox */}
+            <button onClick={() => toggleTodo(item.id)} style={{
+              width: 22, height: 22, borderRadius: 6, flexShrink: 0, cursor: "pointer",
+              border: item.done ? "none" : "2px solid #cbd5e1",
+              background: item.done ? "#059669" : "white",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              color: "white", fontSize: 12, fontWeight: 700, transition: "all 0.2s",
+            }}>{item.done ? "✓" : ""}</button>
+
+            {/* Text */}
+            <span style={{
+              flex: 1, fontSize: 13, color: item.done ? "#94a3b8" : "#334155",
+              textDecoration: item.done ? "line-through" : "none",
+              fontWeight: item.auto ? 500 : 400,
+              transition: "all 0.2s",
+            }}>{item.text}</span>
+
+            {/* Auto badge or delete */}
+            {item.auto ? (
+              <span style={{ fontSize: 9, padding: "1px 6px", borderRadius: 4, background: "#f1f5f9", color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace", flexShrink: 0 }}>AUTO</span>
+            ) : (
+              <button onClick={() => removeTodo(item.id)} style={{
+                background: "none", border: "none", color: "#cbd5e1", cursor: "pointer", fontSize: 14,
+                padding: "2px 4px", borderRadius: 4, flexShrink: 0,
+              }} onMouseEnter={e => (e.currentTarget.style.color = "#dc2626")} onMouseLeave={e => (e.currentTarget.style.color = "#cbd5e1")}>✕</button>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Add manual todo */}
+      <div style={{ display: "flex", gap: 8 }}>
+        <input
+          type="text"
+          value={newTodoText}
+          onChange={e => setNewTodoText(e.target.value)}
+          onKeyDown={e => { if (e.key === "Enter") addTodo(); }}
+          placeholder="Adicionar tarefa..."
+          style={{
+            flex: 1, padding: "8px 12px", border: "1px solid #e2e8f0", borderRadius: 8,
+            fontSize: 13, outline: "none", color: "#334155", background: "#f8fafc",
+          }}
+        />
+        <button onClick={addTodo} disabled={!newTodoText.trim()} style={{
+          padding: "8px 16px", borderRadius: 8, border: "none",
+          background: newTodoText.trim() ? "linear-gradient(135deg, #4f46e5, #7c3aed)" : "#f1f5f9",
+          color: newTodoText.trim() ? "white" : "#cbd5e1",
+          fontWeight: 600, fontSize: 13, cursor: newTodoText.trim() ? "pointer" : "default",
+        }}>+</button>
+      </div>
+    </div>
+  );
+}
+
 /* ─── DASHBOARD ─── */
-function Dashboard({ data, totalHoursLogged, pctComplete, currentWeek, onLogStudy, onLogSimulado, onLogQuestions }: {
-  data: StudyData; totalHoursLogged: number; pctComplete: number; currentWeek: number;
+function Dashboard({ data, save, totalHoursLogged, pctComplete, currentWeek, onLogStudy, onLogSimulado, onLogQuestions }: {
+  data: StudyData; save: (d: StudyData) => Promise<void>; totalHoursLogged: number; pctComplete: number; currentWeek: number;
   onLogStudy: () => void; onLogSimulado: () => void; onLogQuestions: () => void;
 }) {
   // Weekly questions count
@@ -405,6 +570,9 @@ function Dashboard({ data, totalHoursLogged, pctComplete, currentWeek, onLogStud
           + Registrar simulado
         </button>
       </div>
+
+      {/* DAILY TODO LIST */}
+      <DailyTodoList data={data} save={save} />
 
       {/* MILESTONES */}
       <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>

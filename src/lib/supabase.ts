@@ -24,6 +24,13 @@ export interface LegislationEntry {
   notes?: string; // anotações
 }
 
+export interface DailyTodoItem {
+  id: string;
+  text: string;
+  done: boolean;
+  auto?: boolean; // generated automatically (flashcard reminder / trilha tasks)
+}
+
 export interface StudyData {
   id?: string;
   discipline_hours: Record<string, number>;
@@ -34,6 +41,7 @@ export interface StudyData {
   legislation_progress: Record<string, number | LegislationEntry>;
   completed_tasks: Record<string, boolean>;
   study_entries: StudyEntry[];
+  daily_todos?: Record<string, DailyTodoItem[]>; // keyed by date "YYYY-MM-DD"
   updated_at?: string;
 }
 
@@ -62,7 +70,8 @@ export async function loadData(): Promise<StudyData | null> {
     simulados: data.simulados || [],
     legislation_progress: data.legislation_progress || {},
     completed_tasks: data.completed_tasks || {},
-    study_entries: data.study_entries || [], // AGORA ELE PUXA O HISTÓRICO!
+    study_entries: data.study_entries || [],
+    daily_todos: data.daily_todos || {},
     updated_at: data.updated_at,
   };
 }
@@ -79,7 +88,8 @@ export async function saveData(studyData: StudyData): Promise<void> {
       simulados: studyData.simulados,
       legislation_progress: studyData.legislation_progress,
       completed_tasks: studyData.completed_tasks,
-      study_entries: studyData.study_entries, // AGORA ELE ENVIA O HISTÓRICO!
+      study_entries: studyData.study_entries,
+      daily_todos: studyData.daily_todos || {},
       updated_at: new Date().toISOString(),
     });
 
