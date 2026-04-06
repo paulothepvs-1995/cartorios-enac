@@ -1,5 +1,5 @@
 export const PLAN = {
-  startDate: "2026-03-31",
+  startDate: "2026-03-30",
   examDate: "2026-11-22",
   totalWeeks: 34,
   weeklyTarget: 30,
