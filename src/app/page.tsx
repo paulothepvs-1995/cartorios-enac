@@ -120,7 +120,7 @@ export default function App() {
       {/* TABS */}
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
         <div style={{ display: "flex", gap: 4, padding: "16px 0 0", borderBottom: "1px solid #e2e8f0", overflowX: "auto" }}>
-          {["dashboard", "disciplinas", "questões", "legislação", "simulados", "trilhas", "histórico"].map((t) => (
+          {["dashboard", "tempo", "disciplinas", "questões", "legislação", "simulados", "trilhas", "histórico"].map((t) => (
             <button key={t} onClick={() => setTab(t)} style={{
               padding: "10px 16px", background: tab === t ? "rgba(99,102,241,0.1)" : "transparent", border: "none",
               borderBottom: tab === t ? "2px solid #6366f1" : "2px solid transparent",
@@ -133,6 +133,7 @@ export default function App() {
 
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "20px 16px 40px" }}>
         {tab === "dashboard" && <Dashboard data={data} totalHoursLogged={totalHoursLogged} pctComplete={pctComplete} currentWeek={currentWeek} onLogStudy={() => setLogModal(true)} onLogSimulado={() => setSimModal(true)} onLogQuestions={() => setQModal(true)} />}
+        {tab === "tempo" && <TempoTab data={data} />}
         {tab === "disciplinas" && <Disciplinas data={data} />}
         {tab === "questões" && <QuestoesTab data={data} />}
         {tab === "legislação" && <Legislacao data={data} save={save} />}
@@ -253,7 +254,7 @@ function WeeklyQuestionsChart({ data, currentWeek }: { data: StudyData; currentW
     const startDate = getWeekStartDate(viewWeek, PLAN.startDate);
     const endDate = new Date(startDate.getTime() + 7 * 24 * 60 * 60 * 1000);
     return (data.question_entries || []).filter(e => {
-      const d = new Date(e.date);
+      const d = new Date(e.date + "T12:00:00");
       return d >= startDate && d < endDate;
     });
   }, [data.question_entries, viewWeek]);
@@ -423,6 +424,284 @@ function Dashboard({ data, totalHoursLogged, pctComplete, currentWeek, onLogStud
           );
         })}
       </div>
+    </div>
+  );
+}
+
+/* ─── TEMPO TAB (GRÁFICOS BARRA + PIZZA) ─── */
+function TempoTab({ data }: { data: StudyData }) {
+  const currentWeek = getWeekNumber(PLAN.startDate);
+  type ViewMode = "semana" | "mes" | "total";
+  const [viewMode, setViewMode] = useState<ViewMode>("semana");
+  const [weekOffset, setWeekOffset] = useState(0); // 0 = current week, -1 = last week, etc.
+
+  // Compute date range based on viewMode
+  const { rangeStart, rangeEnd, rangeLabel } = useMemo(() => {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+
+    if (viewMode === "total") {
+      const [y, m, d] = PLAN.startDate.split("-").map(Number);
+      const start = new Date(y, m - 1, d);
+      const end = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+      return { rangeStart: start, rangeEnd: end, rangeLabel: "Total" };
+    }
+
+    if (viewMode === "mes") {
+      const monthStart = new Date(now.getFullYear(), now.getMonth() + weekOffset, 1);
+      const monthEnd = new Date(now.getFullYear(), now.getMonth() + weekOffset + 1, 1);
+      const label = monthStart.toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
+      return { rangeStart: monthStart, rangeEnd: monthEnd, rangeLabel: label.charAt(0).toUpperCase() + label.slice(1) };
+    }
+
+    // semana
+    const targetWeek = Math.max(1, currentWeek + weekOffset);
+    const wStart = getWeekStartDate(targetWeek, PLAN.startDate);
+    const wEnd = new Date(wStart.getTime() + 7 * 24 * 60 * 60 * 1000);
+    const fmt = (d: Date) => d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" });
+    const endDisplay = new Date(wEnd.getTime() - 24 * 60 * 60 * 1000);
+    return { rangeStart: wStart, rangeEnd: wEnd, rangeLabel: `${fmt(wStart)} a ${fmt(endDisplay)}` };
+  }, [viewMode, weekOffset, currentWeek]);
+
+  // Filter study entries in range
+  const entries = useMemo(() => {
+    return (data.study_entries || []).filter(e => {
+      const d = new Date(e.date + "T12:00:00");
+      return d >= rangeStart && d < rangeEnd;
+    });
+  }, [data.study_entries, rangeStart, rangeEnd]);
+
+  // Group by discipline
+  const byDisc = useMemo(() => {
+    const map: Record<string, number> = {};
+    entries.forEach(e => {
+      const discId = e.discipline;
+      map[discId] = (map[discId] || 0) + e.minutes;
+    });
+    return Object.entries(map)
+      .map(([id, mins]) => ({ id, mins, disc: PLAN.disciplines.find(d => d.id === id) }))
+      .sort((a, b) => b.mins - a.mins);
+  }, [entries]);
+
+  // Group by day (for bar chart)
+  const byDay = useMemo(() => {
+    const map: Record<string, Record<string, number>> = {};
+    entries.forEach(e => {
+      if (!map[e.date]) map[e.date] = {};
+      map[e.date][e.discipline] = (map[e.date][e.discipline] || 0) + e.minutes;
+    });
+    // Generate all days in range
+    const days: string[] = [];
+    const d = new Date(rangeStart);
+    while (d < rangeEnd) {
+      days.push(d.toISOString().slice(0, 10));
+      d.setDate(d.getDate() + 1);
+    }
+    // For "total" and "mes" with many days, only show days with data
+    if (viewMode === "total" || (viewMode === "mes" && days.length > 31)) {
+      return days.filter(day => map[day]).map(day => ({ day, data: map[day] || {} }));
+    }
+    return days.map(day => ({ day, data: map[day] || {} }));
+  }, [entries, rangeStart, rangeEnd, viewMode]);
+
+  const totalMins = byDisc.reduce((a, b) => a + b.mins, 0);
+  const maxDayMins = Math.max(1, ...byDay.map(d => Object.values(d.data).reduce((a, b) => a + b, 0)));
+
+  // All disc colors
+  const getDiscColor = (id: string) => PLAN.disciplines.find(d => d.id === id)?.color || "#94a3b8";
+  const getDiscName = (id: string) => PLAN.disciplines.find(d => d.id === id)?.name || id;
+
+  // Navigation
+  const canGoBack = viewMode !== "total";
+  const canGoForward = viewMode !== "total" && weekOffset < 0;
+
+  const handlePrev = () => setWeekOffset(o => o - 1);
+  const handleNext = () => setWeekOffset(o => Math.min(0, o + 1));
+  const switchMode = (m: ViewMode) => { setViewMode(m); setWeekOffset(0); };
+
+  // PIE CHART SVG
+  const pieSlices = useMemo(() => {
+    if (totalMins === 0) return [];
+    let cumulative = 0;
+    return byDisc.map(({ id, mins }) => {
+      const startAngle = (cumulative / totalMins) * 360;
+      cumulative += mins;
+      const endAngle = (cumulative / totalMins) * 360;
+      const pct = (mins / totalMins) * 100;
+      return { id, mins, startAngle, endAngle, pct, color: getDiscColor(id) };
+    });
+  }, [byDisc, totalMins]);
+
+  const polarToCartesian = (cx: number, cy: number, r: number, angleDeg: number) => {
+    const rad = ((angleDeg - 90) * Math.PI) / 180;
+    return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+  };
+
+  const describeArc = (cx: number, cy: number, r: number, start: number, end: number) => {
+    if (end - start >= 359.99) {
+      // Full circle
+      const m1 = polarToCartesian(cx, cy, r, start);
+      const m2 = polarToCartesian(cx, cy, r, start + 180);
+      return `M ${m1.x} ${m1.y} A ${r} ${r} 0 1 1 ${m2.x} ${m2.y} A ${r} ${r} 0 1 1 ${m1.x} ${m1.y}`;
+    }
+    const s = polarToCartesian(cx, cy, r, start);
+    const e = polarToCartesian(cx, cy, r, end);
+    const largeArc = end - start > 180 ? 1 : 0;
+    return `M ${cx} ${cy} L ${s.x} ${s.y} A ${r} ${r} 0 ${largeArc} 1 ${e.x} ${e.y} Z`;
+  };
+
+  return (
+    <div>
+      {/* Mode selector */}
+      <div style={{ display: "flex", gap: 6, marginBottom: 20, flexWrap: "wrap" }}>
+        {(["semana", "mes", "total"] as ViewMode[]).map(m => (
+          <button key={m} onClick={() => switchMode(m)} style={{
+            padding: "8px 20px", borderRadius: 8, border: viewMode === m ? "2px solid #4338ca" : "1px solid #e2e8f0",
+            background: viewMode === m ? "#eef2ff" : "white", color: viewMode === m ? "#4338ca" : "#64748b",
+            fontWeight: 600, fontSize: 13, cursor: "pointer", textTransform: "capitalize",
+            fontFamily: "'Space Grotesk', sans-serif",
+          }}>{m === "mes" ? "Mês" : m.charAt(0).toUpperCase() + m.slice(1)}</button>
+        ))}
+      </div>
+
+      {/* Navigation */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 24 }}>
+        {canGoBack && (
+          <button onClick={handlePrev} style={{ width: 40, height: 40, borderRadius: "50%", border: "1px solid #e2e8f0", background: "white", cursor: "pointer", fontSize: 18, color: "#4338ca", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>◀</button>
+        )}
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: 18, fontWeight: 700, color: "#1e293b", fontFamily: "'Space Grotesk', sans-serif" }}>{rangeLabel}</div>
+        </div>
+        {canGoForward && (
+          <button onClick={handleNext} style={{ width: 40, height: 40, borderRadius: "50%", border: "1px solid #e2e8f0", background: "white", cursor: "pointer", fontSize: 18, color: "#4338ca", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>▶</button>
+        )}
+      </div>
+
+      {/* CONTENT: Two columns on desktop */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 24 }}>
+        {/* BAR CHART */}
+        <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)", minHeight: 300 }}>
+          <h4 style={{ fontSize: 13, fontWeight: 700, color: "#4338ca", marginBottom: 16, fontFamily: "'JetBrains Mono', monospace", textTransform: "uppercase", letterSpacing: "0.5px" }}>Linha do Tempo</h4>
+          {byDay.length === 0 || totalMins === 0 ? (
+            <div style={{ textAlign: "center", padding: 40, color: "#94a3b8", fontSize: 13 }}>Nenhum registro neste período.</div>
+          ) : (
+            <div>
+              {/* Y-axis labels + bars */}
+              <div style={{ display: "flex", gap: 4, position: "relative" }}>
+                {/* Y-axis */}
+                <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: 220, paddingBottom: 20, width: 35, flexShrink: 0 }}>
+                  {[maxDayMins, Math.round(maxDayMins * 0.75), Math.round(maxDayMins * 0.5), Math.round(maxDayMins * 0.25), 0].map((v, i) => (
+                    <div key={i} style={{ fontSize: 9, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace", textAlign: "right" }}>{formatMinutes(v)}</div>
+                  ))}
+                </div>
+                {/* Bars */}
+                <div style={{ flex: 1, display: "flex", gap: 2, alignItems: "flex-end", height: 220, borderBottom: "1px solid #e2e8f0", position: "relative" }}>
+                  {/* Grid lines */}
+                  {[0.25, 0.5, 0.75, 1].map(pct => (
+                    <div key={pct} style={{ position: "absolute", bottom: `${pct * 100}%`, left: 0, right: 0, borderTop: "1px dashed #f1f5f9" }} />
+                  ))}
+                  {byDay.map(({ day, data: dayData }) => {
+                    const dayTotal = Object.values(dayData).reduce((a, b) => a + b, 0);
+                    const barHeight = dayTotal > 0 ? (dayTotal / maxDayMins) * 100 : 0;
+                    // Stack by discipline
+                    const segments = Object.entries(dayData).sort((a, b) => b[1] - a[1]);
+                    return (
+                      <div key={day} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", minWidth: 0 }}>
+                        <div style={{ width: "100%", maxWidth: 40, height: `${barHeight}%`, display: "flex", flexDirection: "column-reverse", borderRadius: "4px 4px 0 0", overflow: "hidden" }}>
+                          {segments.map(([discId, mins]) => (
+                            <div key={discId} style={{ width: "100%", height: `${(mins / dayTotal) * 100}%`, background: getDiscColor(discId), minHeight: mins > 0 ? 2 : 0 }} />
+                          ))}
+                        </div>
+                        <div style={{ fontSize: 8, color: "#94a3b8", marginTop: 4, fontFamily: "'JetBrains Mono', monospace", writingMode: byDay.length > 10 ? "vertical-rl" : "horizontal-tb", transform: byDay.length > 10 ? "rotate(180deg)" : "none" }}>
+                          {day.slice(8, 10)}/{day.slice(5, 7)}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* PIE CHART + Legend */}
+        <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+          <h4 style={{ fontSize: 13, fontWeight: 700, color: "#4338ca", marginBottom: 16, fontFamily: "'JetBrains Mono', monospace", textTransform: "uppercase", letterSpacing: "0.5px" }}>Tempo de Estudo</h4>
+
+          {/* Total */}
+          <div style={{ textAlign: "center", marginBottom: 12 }}>
+            <div style={{ fontSize: 28, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>{formatMinutes(totalMins)}</div>
+            <div style={{ fontSize: 11, color: "#94a3b8" }}>Tempo total no período</div>
+          </div>
+
+          {totalMins === 0 ? (
+            <div style={{ textAlign: "center", padding: 40, color: "#94a3b8", fontSize: 13 }}>Sem dados.</div>
+          ) : (
+            <>
+              {/* SVG Pie */}
+              <div style={{ display: "flex", justifyContent: "center", marginBottom: 16 }}>
+                <svg width="200" height="200" viewBox="0 0 200 200">
+                  {pieSlices.map((slice) => (
+                    <path key={slice.id} d={describeArc(100, 100, 90, slice.startAngle, slice.endAngle)} fill={slice.color} stroke="white" strokeWidth="2" />
+                  ))}
+                </svg>
+              </div>
+
+              {/* Legend */}
+              <div style={{ display: "grid", gap: 8 }}>
+                {byDisc.map(({ id, mins }) => {
+                  const pct = ((mins / totalMins) * 100).toFixed(1);
+                  return (
+                    <div key={id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "6px 0" }}>
+                      <div style={{ width: 14, height: 14, borderRadius: 4, background: getDiscColor(id), flexShrink: 0 }} />
+                      <div style={{ flex: 1 }}>
+                        <span style={{ fontSize: 12, fontWeight: 600, color: "#334155" }}>{getDiscName(id)}</span>
+                      </div>
+                      <div style={{ textAlign: "right" }}>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: "#1e293b", fontFamily: "'JetBrains Mono', monospace" }}>{formatMinutes(mins)}</span>
+                        <span style={{ fontSize: 11, color: "#94a3b8", marginLeft: 6 }}>({pct}%)</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* BY CATEGORY (if any entries have categories) */}
+      {entries.some(e => e.category) && (
+        <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+          <h4 style={{ fontSize: 13, fontWeight: 700, color: "#4338ca", marginBottom: 16, fontFamily: "'JetBrains Mono', monospace", textTransform: "uppercase", letterSpacing: "0.5px" }}>Por Tipo de Atividade</h4>
+          <div style={{ display: "grid", gap: 8 }}>
+            {(() => {
+              const catMap: Record<string, number> = {};
+              entries.forEach(e => {
+                const cat = e.category || "estudo";
+                catMap[cat] = (catMap[cat] || 0) + e.minutes;
+              });
+              const catEntries = Object.entries(catMap).sort((a, b) => b[1] - a[1]);
+              const maxCat = Math.max(1, ...catEntries.map(([, v]) => v));
+              const catColors: Record<string, string> = { estudo: "#6366f1", jurisprudencia: "#d97706", lei_seca: "#059669", questoes: "#2563eb", simulado: "#db2777", revisao: "#7c3aed" };
+              return catEntries.map(([cat, mins]) => {
+                const label = STUDY_CATEGORIES.find(c => c.id === cat);
+                return (
+                  <div key={cat}>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
+                      <span style={{ fontSize: 12, color: "#334155", fontWeight: 500 }}>{label ? `${label.icon} ${label.label}` : cat}</span>
+                      <span style={{ fontSize: 11, color: "#64748b", fontFamily: "'JetBrains Mono', monospace" }}>{formatMinutes(mins)} ({((mins / totalMins) * 100).toFixed(0)}%)</span>
+                    </div>
+                    <div style={{ height: 12, background: "#f1f5f9", borderRadius: 4, overflow: "hidden" }}>
+                      <div style={{ height: "100%", width: `${(mins / maxCat) * 100}%`, background: catColors[cat] || "#94a3b8", borderRadius: 4, transition: "width 0.3s" }} />
+                    </div>
+                  </div>
+                );
+              });
+            })()}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
