@@ -41,7 +41,6 @@ export interface StudyData {
   legislation_progress: Record<string, number | LegislationEntry>;
   completed_tasks: Record<string, boolean>;
   study_entries: StudyEntry[];
-  daily_todos?: Record<string, DailyTodoItem[]>; // keyed by date "YYYY-MM-DD"
   updated_at?: string;
 }
 
@@ -71,7 +70,6 @@ export async function loadData(): Promise<StudyData | null> {
     legislation_progress: data.legislation_progress || {},
     completed_tasks: data.completed_tasks || {},
     study_entries: data.study_entries || [],
-    daily_todos: data.daily_todos || {},
     updated_at: data.updated_at,
   };
 }
@@ -89,7 +87,6 @@ export async function saveData(studyData: StudyData): Promise<void> {
       legislation_progress: studyData.legislation_progress,
       completed_tasks: studyData.completed_tasks,
       study_entries: studyData.study_entries,
-      daily_todos: studyData.daily_todos || {},
       updated_at: new Date().toISOString(),
     });
 

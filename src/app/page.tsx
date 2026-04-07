@@ -3,6 +3,26 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWeekStartDate } from "@/lib/plan";
 import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado, type DailyTodoItem } from "@/lib/supabase";
+
+/* ─── LOCAL STORAGE HELPERS FOR DAILY TODOS ─── */
+const TODOS_STORAGE_KEY = "cartorios-enac-daily-todos";
+function loadDailyTodos(dateKey: string): DailyTodoItem[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem(TODOS_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as Record<string, DailyTodoItem[]>;
+    return parsed[dateKey] || [];
+  } catch { return []; }
+}
+function saveDailyTodos(dateKey: string, items: DailyTodoItem[]) {
+  if (typeof window === "undefined") return;
+  try {
+    // Only keep today's data (auto-cleanup of old days)
+    const obj: Record<string, DailyTodoItem[]> = { [dateKey]: items };
+    localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(obj));
+  } catch { /* ignore */ }
+}
 import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
 import { TRILHAS, type Trilha } from "@/lib/trilhas";
 
@@ -15,7 +35,6 @@ const defaultData = (): StudyData => ({
   legislation_progress: {},
   completed_tasks: {},
   study_entries: [],
-  daily_todos: {},
 });
 
 /* ─── HELPER DE FORMATAÇÃO DE TEMPO ─── */
@@ -357,9 +376,15 @@ function getNextUncompletedTasks(data: StudyData, count: number): Array<{ trilha
   return result;
 }
 
-function DailyTodoList({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
+function DailyTodoList({ data }: { data: StudyData }) {
   const today = new Date().toISOString().slice(0, 10);
   const [newTodoText, setNewTodoText] = useState("");
+  const [savedTodos, setSavedTodos] = useState<DailyTodoItem[]>([]);
+
+  // Load from localStorage on mount and when date changes
+  useEffect(() => {
+    setSavedTodos(loadDailyTodos(today));
+  }, [today]);
 
   // Get next 3 uncompleted trilha tasks
   const nextTasks = useMemo(() => getNextUncompletedTasks(data, 3), [data]);
@@ -367,13 +392,11 @@ function DailyTodoList({ data, save }: { data: StudyData; save: (d: StudyData) =
   // Build auto-generated items for today
   const autoItems = useMemo((): DailyTodoItem[] => {
     const items: DailyTodoItem[] = [];
-    // 1. Flashcard review reminder
-    items.push({ id: "auto-fc", text: "🔄 Revisar flashcards do que foi estudado ontem", done: false, auto: true });
-    // 2-4. Next 3 trilha tasks
-    nextTasks.forEach((t, i) => {
+    items.push({ id: "auto-fc", text: "Revisar flashcards do que foi estudado ontem", done: false, auto: true });
+    nextTasks.forEach((t) => {
       items.push({
         id: `auto-trilha-${t.trilhaId}-${t.task.id}`,
-        text: `📚 Trilha ${t.trilhaId} — ${t.task.title}`,
+        text: `Trilha ${t.trilhaId} — ${t.task.title}`,
         done: false,
         auto: true,
       });
@@ -381,40 +404,39 @@ function DailyTodoList({ data, save }: { data: StudyData; save: (d: StudyData) =
     return items;
   }, [nextTasks]);
 
-  // Get today's saved todos, merging auto items with saved state
+  // Merge auto items with saved state from localStorage
   const todayTodos = useMemo((): DailyTodoItem[] => {
-    const saved = (data.daily_todos || {})[today] || [];
-    const savedMap = new Map(saved.map(t => [t.id, t]));
-
-    // Merge auto items: use saved done state if exists
+    const savedMap = new Map(savedTodos.map(t => [t.id, t]));
     const merged: DailyTodoItem[] = autoItems.map(item => {
       const savedItem = savedMap.get(item.id);
       return savedItem ? { ...item, done: savedItem.done } : item;
     });
-
-    // Add manual items (non-auto)
-    saved.filter(t => !t.auto).forEach(t => merged.push(t));
-
+    savedTodos.filter(t => !t.auto).forEach(t => merged.push(t));
     return merged;
-  }, [data.daily_todos, today, autoItems]);
+  }, [savedTodos, autoItems]);
 
-  const toggleTodo = async (id: string) => {
-    const updated = todayTodos.map(t => t.id === id ? { ...t, done: !t.done } : t);
-    await save({ ...data, daily_todos: { ...data.daily_todos, [today]: updated } });
+  const persistTodos = (updated: DailyTodoItem[]) => {
+    setSavedTodos(updated);
+    saveDailyTodos(today, updated);
   };
 
-  const addTodo = async () => {
+  const toggleTodo = (id: string) => {
+    const updated = todayTodos.map(t => t.id === id ? { ...t, done: !t.done } : t);
+    persistTodos(updated);
+  };
+
+  const addTodo = () => {
     const text = newTodoText.trim();
     if (!text) return;
     const newItem: DailyTodoItem = { id: `manual-${Date.now()}`, text, done: false, auto: false };
     const updated = [...todayTodos, newItem];
-    await save({ ...data, daily_todos: { ...data.daily_todos, [today]: updated } });
+    persistTodos(updated);
     setNewTodoText("");
   };
 
-  const removeTodo = async (id: string) => {
+  const removeTodo = (id: string) => {
     const updated = todayTodos.filter(t => t.id !== id);
-    await save({ ...data, daily_todos: { ...data.daily_todos, [today]: updated } });
+    persistTodos(updated);
   };
 
   const doneCount = todayTodos.filter(t => t.done).length;
@@ -572,7 +594,7 @@ function Dashboard({ data, save, totalHoursLogged, pctComplete, currentWeek, onL
       </div>
 
       {/* DAILY TODO LIST */}
-      <DailyTodoList data={data} save={save} />
+      <DailyTodoList data={data} />
 
       {/* MILESTONES */}
       <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
