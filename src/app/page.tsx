@@ -5,22 +5,24 @@ import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWee
 import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado, type DailyTodoItem } from "@/lib/supabase";
 
 /* ─── LOCAL STORAGE HELPERS FOR DAILY TODOS ─── */
-const TODOS_STORAGE_KEY = "cartorios-enac-daily-todos";
+const TODOS_STORAGE_KEY = "enac-todos-v2";
 function loadDailyTodos(dateKey: string): DailyTodoItem[] {
   if (typeof window === "undefined") return [];
   try {
+    // Cleanup old storage key
+    localStorage.removeItem("cartorios-enac-daily-todos");
     const raw = localStorage.getItem(TODOS_STORAGE_KEY);
     if (!raw) return [];
-    const parsed = JSON.parse(raw) as Record<string, DailyTodoItem[]>;
-    return parsed[dateKey] || [];
+    const parsed = JSON.parse(raw) as { date: string; items: DailyTodoItem[] };
+    // Only return if the stored date matches today's local date
+    if (parsed.date !== dateKey) return [];
+    return parsed.items || [];
   } catch { return []; }
 }
 function saveDailyTodos(dateKey: string, items: DailyTodoItem[]) {
   if (typeof window === "undefined") return;
   try {
-    // Only keep today's data (auto-cleanup of old days)
-    const obj: Record<string, DailyTodoItem[]> = { [dateKey]: items };
-    localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(obj));
+    localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify({ date: dateKey, items }));
   } catch { /* ignore */ }
 }
 import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
