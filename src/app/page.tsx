@@ -4,25 +4,30 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWeekStartDate } from "@/lib/plan";
 import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado, type DailyTodoItem } from "@/lib/supabase";
 
-/* ─── LOCAL STORAGE HELPERS FOR DAILY TODOS ─── */
-const TODOS_STORAGE_KEY = "enac-todos-v2";
-function loadDailyTodos(dateKey: string): DailyTodoItem[] {
-  if (typeof window === "undefined") return [];
+/* ─── LOCAL STORAGE FOR DAILY TODOS ─── */
+const TODO_KEY = "enac-td3";
+function loadTodoState(dateKey: string): { checked: Record<string, boolean>; manualItems: DailyTodoItem[] } {
+  if (typeof window === "undefined") return { checked: {}, manualItems: [] };
   try {
-    // Cleanup old storage key
-    localStorage.removeItem("cartorios-enac-daily-todos");
-    const raw = localStorage.getItem(TODOS_STORAGE_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw) as { date: string; items: DailyTodoItem[] };
-    // Only return if the stored date matches today's local date
-    if (parsed.date !== dateKey) return [];
-    return parsed.items || [];
-  } catch { return []; }
+    // Cleanup ALL old keys
+    ["cartorios-enac-daily-todos", "enac-todos-v2"].forEach(k => localStorage.removeItem(k));
+    const raw = localStorage.getItem(TODO_KEY);
+    if (!raw) return { checked: {}, manualItems: [] };
+    const parsed = JSON.parse(raw);
+    if (parsed.d !== dateKey) {
+      localStorage.removeItem(TODO_KEY);
+      return { checked: {}, manualItems: [] };
+    }
+    return { checked: parsed.c || {}, manualItems: parsed.m || [] };
+  } catch {
+    localStorage.removeItem(TODO_KEY);
+    return { checked: {}, manualItems: [] };
+  }
 }
-function saveDailyTodos(dateKey: string, items: DailyTodoItem[]) {
+function saveTodoState(dateKey: string, checked: Record<string, boolean>, manualItems: DailyTodoItem[]) {
   if (typeof window === "undefined") return;
   try {
-    localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify({ date: dateKey, items }));
+    localStorage.setItem(TODO_KEY, JSON.stringify({ d: dateKey, c: checked, m: manualItems }));
   } catch { /* ignore */ }
 }
 import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
@@ -386,68 +391,68 @@ function getLocalDateKey(): string {
 function DailyTodoList({ data }: { data: StudyData }) {
   const today = getLocalDateKey();
   const [newTodoText, setNewTodoText] = useState("");
-  const [savedTodos, setSavedTodos] = useState<DailyTodoItem[]>([]);
 
-  // Load from localStorage on mount and when date changes
+  // Load checked state and manual items from localStorage (synced with today)
+  const initial = useMemo(() => loadTodoState(today), [today]);
+  const [checked, setChecked] = useState<Record<string, boolean>>(initial.checked);
+  const [manualItems, setManualItems] = useState<DailyTodoItem[]>(initial.manualItems);
+
+  // Reload if date changes (e.g. user leaves tab open past midnight)
   useEffect(() => {
-    setSavedTodos(loadDailyTodos(today));
+    const state = loadTodoState(today);
+    setChecked(state.checked);
+    setManualItems(state.manualItems);
   }, [today]);
 
   // Get next 3 uncompleted trilha tasks
   const nextTasks = useMemo(() => getNextUncompletedTasks(data, 3), [data]);
 
-  // Build auto-generated items for today
-  const autoItems = useMemo((): DailyTodoItem[] => {
-    const items: DailyTodoItem[] = [];
-    items.push({ id: "auto-fc", text: "Revisar flashcards do que foi estudado ontem", done: false, auto: true });
-    nextTasks.forEach((t) => {
-      items.push({
-        id: `auto-trilha-${t.trilhaId}-${t.task.id}`,
-        text: `Trilha ${t.trilhaId} — ${t.task.title}`,
-        done: false,
-        auto: true,
-      });
-    });
+  // Auto-generated items (always fresh)
+  const autoItems: Array<{ id: string; text: string }> = useMemo(() => [
+    { id: "fc", text: "🔄 Revisar flashcards do que foi estudado ontem" },
+    ...nextTasks.map(t => ({
+      id: `tr-${t.trilhaId}-${t.task.id}`,
+      text: `📚 Trilha ${t.trilhaId} — ${t.task.title}`,
+    })),
+  ], [nextTasks]);
+
+  // Combine auto + manual into full list
+  const allItems = useMemo(() => {
+    const items: DailyTodoItem[] = autoItems.map(a => ({
+      id: a.id, text: a.text, done: !!checked[a.id], auto: true,
+    }));
+    manualItems.forEach(m => items.push({ ...m, done: !!checked[m.id] }));
     return items;
-  }, [nextTasks]);
+  }, [autoItems, manualItems, checked]);
 
-  // Merge auto items with saved state from localStorage
-  const todayTodos = useMemo((): DailyTodoItem[] => {
-    const savedMap = new Map(savedTodos.map(t => [t.id, t]));
-    const merged: DailyTodoItem[] = autoItems.map(item => {
-      const savedItem = savedMap.get(item.id);
-      return savedItem ? { ...item, done: savedItem.done } : item;
-    });
-    savedTodos.filter(t => !t.auto).forEach(t => merged.push(t));
-    return merged;
-  }, [savedTodos, autoItems]);
-
-  const persistTodos = (updated: DailyTodoItem[]) => {
-    setSavedTodos(updated);
-    saveDailyTodos(today, updated);
+  const persist = (newChecked: Record<string, boolean>, newManual: DailyTodoItem[]) => {
+    setChecked(newChecked);
+    setManualItems(newManual);
+    saveTodoState(today, newChecked, newManual);
   };
 
   const toggleTodo = (id: string) => {
-    const updated = todayTodos.map(t => t.id === id ? { ...t, done: !t.done } : t);
-    persistTodos(updated);
+    const newChecked = { ...checked, [id]: !checked[id] };
+    persist(newChecked, manualItems);
   };
 
   const addTodo = () => {
     const text = newTodoText.trim();
     if (!text) return;
-    const newItem: DailyTodoItem = { id: `manual-${Date.now()}`, text, done: false, auto: false };
-    const updated = [...todayTodos, newItem];
-    persistTodos(updated);
+    const newItem: DailyTodoItem = { id: `m-${Date.now()}`, text, done: false, auto: false };
+    persist(checked, [...manualItems, newItem]);
     setNewTodoText("");
   };
 
   const removeTodo = (id: string) => {
-    const updated = todayTodos.filter(t => t.id !== id);
-    persistTodos(updated);
+    const newManual = manualItems.filter(t => t.id !== id);
+    const newChecked = { ...checked };
+    delete newChecked[id];
+    persist(newChecked, newManual);
   };
 
-  const doneCount = todayTodos.filter(t => t.done).length;
-  const totalCount = todayTodos.length;
+  const doneCount = allItems.filter(t => t.done).length;
+  const totalCount = allItems.length;
   const pct = totalCount > 0 ? Math.round((doneCount / totalCount) * 100) : 0;
 
   return (
@@ -461,7 +466,7 @@ function DailyTodoList({ data }: { data: StudyData }) {
           </span>
         </div>
         <div style={{ fontSize: 11, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>
-          {new Date().toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "2-digit" })}
+          {today}
         </div>
       </div>
 
@@ -472,14 +477,13 @@ function DailyTodoList({ data }: { data: StudyData }) {
 
       {/* Todo items */}
       <div style={{ display: "grid", gap: 4, marginBottom: 14 }}>
-        {todayTodos.map((item) => (
+        {allItems.map((item) => (
           <div key={item.id} style={{
             display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", borderRadius: 8,
             background: item.done ? "#f8fafc" : "white",
             border: `1px solid ${item.done ? "#e2e8f0" : "#eef2ff"}`,
             transition: "all 0.2s",
           }}>
-            {/* Checkbox */}
             <button onClick={() => toggleTodo(item.id)} style={{
               width: 22, height: 22, borderRadius: 6, flexShrink: 0, cursor: "pointer",
               border: item.done ? "none" : "2px solid #cbd5e1",
@@ -488,7 +492,6 @@ function DailyTodoList({ data }: { data: StudyData }) {
               color: "white", fontSize: 12, fontWeight: 700, transition: "all 0.2s",
             }}>{item.done ? "✓" : ""}</button>
 
-            {/* Text */}
             <span style={{
               flex: 1, fontSize: 13, color: item.done ? "#94a3b8" : "#334155",
               textDecoration: item.done ? "line-through" : "none",
@@ -496,7 +499,6 @@ function DailyTodoList({ data }: { data: StudyData }) {
               transition: "all 0.2s",
             }}>{item.text}</span>
 
-            {/* Auto badge or delete */}
             {item.auto ? (
               <span style={{ fontSize: 9, padding: "1px 6px", borderRadius: 4, background: "#f1f5f9", color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace", flexShrink: 0 }}>AUTO</span>
             ) : (
