@@ -376,8 +376,13 @@ function getNextUncompletedTasks(data: StudyData, count: number): Array<{ trilha
   return result;
 }
 
+function getLocalDateKey(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
 function DailyTodoList({ data }: { data: StudyData }) {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = getLocalDateKey();
   const [newTodoText, setNewTodoText] = useState("");
   const [savedTodos, setSavedTodos] = useState<DailyTodoItem[]>([]);
 
