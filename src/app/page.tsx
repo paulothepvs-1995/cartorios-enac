@@ -962,7 +962,7 @@ function Legislacao({ data, save }: { data: StudyData; save: (d: StudyData) => P
     { p: 3, label: "Prioridade 3 — Artigos específicos", barColor: "#64748b" },
   ];
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = getLocalDateKey();
 
   const saveLeg = async (id: string, entry: { status: number; date1?: string; date2?: string; notes?: string }) => {
     await save({ ...data, legislation_progress: { ...data.legislation_progress, [id]: entry } });
@@ -1205,7 +1205,7 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
 
     const newEntry: StudyEntry = {
       id: Date.now().toString(),
-      date: new Date().toISOString().slice(0, 10),
+      date: getLocalDateKey(),
       discipline: disc,
       minutes: totalMins,
       category,
@@ -1279,7 +1279,7 @@ function QuestionModal({ data, save, onClose }: { data: StudyData; save: (d: Stu
 
     const entry: QuestionEntry = {
       id: Date.now().toString(),
-      date: new Date().toISOString().slice(0, 10),
+      date: getLocalDateKey(),
       discipline: isSimulado ? "simulado" : disc,
       total: t,
       correct: c,
@@ -1357,7 +1357,7 @@ function SimModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
   const handleSave = async () => {
     const s = parseInt(score) || 0;
     if (s < 0 || s > 100) return;
-    await save({ ...data, simulados: [...data.simulados, { name: name || `Simulado ${data.simulados.length + 1}`, score: s, date: new Date().toISOString().slice(0, 10) }] });
+    await save({ ...data, simulados: [...data.simulados, { name: name || `Simulado ${data.simulados.length + 1}`, score: s, date: getLocalDateKey() }] });
     onClose();
   };
 
