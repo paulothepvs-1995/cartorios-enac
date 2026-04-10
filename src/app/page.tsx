@@ -147,7 +147,7 @@ export default function App() {
       {/* TABS */}
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
         <div style={{ display: "flex", gap: 4, padding: "16px 0 0", borderBottom: "1px solid #e2e8f0", overflowX: "auto" }}>
-          {["dashboard", "tempo", "disciplinas", "questões", "legislação", "simulados", "trilhas", "histórico"].map((t) => (
+          {["dashboard", "trilhas", "tempo", "disciplinas", "questões", "legislação", "simulados", "histórico"].map((t) => (
             <button key={t} onClick={() => setTab(t)} style={{
               padding: "10px 16px", background: tab === t ? "rgba(99,102,241,0.1)" : "transparent", border: "none",
               borderBottom: tab === t ? "2px solid #6366f1" : "2px solid transparent",
