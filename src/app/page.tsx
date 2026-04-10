@@ -408,13 +408,22 @@ function DailyTodoList({ data }: { data: StudyData }) {
   const nextTasks = useMemo(() => getNextUncompletedTasks(data, 3), [data]);
 
   // Auto-generated items (always fresh)
-  const autoItems: Array<{ id: string; text: string }> = useMemo(() => [
-    { id: "fc", text: "🔄 Revisar flashcards do que foi estudado ontem" },
-    ...nextTasks.map(t => ({
-      id: `tr-${t.trilhaId}-${t.task.id}`,
-      text: `📚 Trilha ${t.trilhaId} — ${t.task.title}`,
-    })),
-  ], [nextTasks]);
+  const autoItems: Array<{ id: string; text: string }> = useMemo(() => {
+    const items = [
+      { id: "fc", text: "🔄 Revisar flashcards do que foi estudado ontem" },
+      { id: "inf", text: "📰 Buscar informativos no Dizer o Direito sobre o tema estudado" },
+      ...nextTasks.map(t => ({
+        id: `tr-${t.trilhaId}-${t.task.id}`,
+        text: `📚 Trilha ${t.trilhaId} — ${t.task.title}`,
+      })),
+    ];
+    // Dissertativa semanal a partir da semana 18
+    const cw = getWeekNumber(PLAN.startDate);
+    if (cw >= 18) items.push({ id: "dissert", text: "✍️ Dissertativa da semana — cronometrada" });
+    // Peça prática a partir da semana 24
+    if (cw >= 24) items.push({ id: "peca", text: "📋 Peça prática da semana" });
+    return items;
+  }, [nextTasks]);
 
   // Combine auto + manual into full list
   const allItems = useMemo(() => {
@@ -630,14 +639,15 @@ function Dashboard({ data, save, totalHoursLogged, pctComplete, currentWeek, onL
 /* ─── TEMPO TAB (GRÁFICOS BARRA + PIZZA) ─── */
 function TempoTab({ data }: { data: StudyData }) {
   const currentWeek = getWeekNumber(PLAN.startDate);
-  type ViewMode = "semana" | "mes" | "total";
+  type ViewMode = "dia" | "semana" | "mes" | "total";
   const [viewMode, setViewMode] = useState<ViewMode>("semana");
-  const [weekOffset, setWeekOffset] = useState(0); // 0 = current week, -1 = last week, etc.
+  const [weekOffset, setWeekOffset] = useState(0);
 
   // Compute date range based on viewMode
   const { rangeStart, rangeEnd, rangeLabel } = useMemo(() => {
     const now = new Date();
     now.setHours(0, 0, 0, 0);
+    const fmt = (d: Date) => d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" });
 
     if (viewMode === "total") {
       const [y, m, d] = PLAN.startDate.split("-").map(Number);
@@ -653,11 +663,18 @@ function TempoTab({ data }: { data: StudyData }) {
       return { rangeStart: monthStart, rangeEnd: monthEnd, rangeLabel: label.charAt(0).toUpperCase() + label.slice(1) };
     }
 
+    if (viewMode === "dia") {
+      const dayDate = new Date(now);
+      dayDate.setDate(dayDate.getDate() + weekOffset);
+      const dayEnd = new Date(dayDate.getTime() + 24 * 60 * 60 * 1000);
+      const weekdayName = dayDate.toLocaleDateString("pt-BR", { weekday: "long" });
+      return { rangeStart: dayDate, rangeEnd: dayEnd, rangeLabel: `${weekdayName.charAt(0).toUpperCase() + weekdayName.slice(1)}, ${fmt(dayDate)}` };
+    }
+
     // semana
     const targetWeek = Math.max(1, currentWeek + weekOffset);
     const wStart = getWeekStartDate(targetWeek, PLAN.startDate);
     const wEnd = new Date(wStart.getTime() + 7 * 24 * 60 * 60 * 1000);
-    const fmt = (d: Date) => d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" });
     const endDisplay = new Date(wEnd.getTime() - 24 * 60 * 60 * 1000);
     return { rangeStart: wStart, rangeEnd: wEnd, rangeLabel: `${fmt(wStart)} a ${fmt(endDisplay)}` };
   }, [viewMode, weekOffset, currentWeek]);
@@ -753,7 +770,7 @@ function TempoTab({ data }: { data: StudyData }) {
     <div>
       {/* Mode selector */}
       <div style={{ display: "flex", gap: 6, marginBottom: 20, flexWrap: "wrap" }}>
-        {(["semana", "mes", "total"] as ViewMode[]).map(m => (
+        {(["dia", "semana", "mes", "total"] as ViewMode[]).map(m => (
           <button key={m} onClick={() => switchMode(m)} style={{
             padding: "8px 20px", borderRadius: 8, border: viewMode === m ? "2px solid #4338ca" : "1px solid #e2e8f0",
             background: viewMode === m ? "#eef2ff" : "white", color: viewMode === m ? "#4338ca" : "#64748b",
