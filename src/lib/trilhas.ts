@@ -2150,5 +2150,557 @@ export const TRILHAS: Trilha[] = [
         ]
       }
     ]
+  },
+  {
+    "id": "25",
+    "title": "Ciclo 25 — Revisão Dirigida por Gaps + Dissertativa 01",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 208,
+            "discipline": "REVISÃO DIRIGIDA",
+            "title": "Mapeamento de Gaps — Análise Consolidada de Todos os Simulados",
+            "link": "",
+            "description": "**Material:** Gabaritos de todos os simulados realizados (Tarefas 161, 168, 170, 179, 185, 191, 197, 201)\n\n**Lei Seca Obrigatória:** Todos os erros acumulados — agrupar por tema/artigo\n\n**Foco:** Criar uma lista dos 20 temas/artigos que mais geraram erro. Classificar: (1) erro por desconhecimento, (2) erro por confusão entre conceitos, (3) erro por desatenção. Priorizar os erros tipo 1 e 2.\n\n**Flashcards:** Criar 15 clozes novos focados nos temas de maior erro | **Questões:** Nenhuma (tarefa analítica) | **Tempo:** 2h00min"
+          },
+          {
+            "id": 209,
+            "discipline": "DIREITO NOTARIAL E REGISTRAL",
+            "title": "Revisão Profunda — Top 5 Temas de Erro em Notarial/Registral",
+            "link": "",
+            "description": "**Material:** Material original dos temas identificados na Tarefa 208\n\n**Lei Seca Obrigatória:** Artigos específicos dos 5 temas de maior erro em Notarial/Registral\n\n**Foco:** Releitura dirigida dos dispositivos que geraram mais erro. Comparar com flashcards existentes — estão imprecisos? Reescrever se necessário.\n\n**Flashcards:** Revisar/reescrever 10 clozes imprecisos + criar 5 novos | **Questões:** 20 (exclusivamente dos temas de erro) | **Tempo:** 2h00min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 210,
+            "discipline": "DIREITO CIVIL",
+            "title": "Revisão Profunda — Top 3 Temas de Erro em Civil",
+            "link": "",
+            "description": "**Material:** Material original dos temas identificados na Tarefa 208\n\n**Lei Seca Obrigatória:** CC artigos dos 3 temas de maior erro\n\n**Foco:** Releitura de artigos + doutrina nos pontos de confusão. Especial atenção a: regime de bens + efeitos registrais, legítima + testamento, usucapião requisitos.\n\n**Flashcards:** Revisar/reescrever 8 clozes + criar 4 novos | **Questões:** 15 (dos temas de erro) | **Tempo:** 1h30min"
+          },
+          {
+            "id": 211,
+            "discipline": "DISSERTATIVA",
+            "title": "Dissertativa 01 — Tema de Prova Anterior (Notarial/Registral)",
+            "link": "",
+            "description": "**Material:** Banco de provas anteriores ENAC + TJ-BA + TJ-SP (selecionar 1 tema)\n\n**Lei Seca Obrigatória:** Artigos conforme tema escolhido\n\n**Foco:** Cronometrar 90 minutos. Temas sugeridos: (1) Usucapião extrajudicial, requisitos, procedimento registral e inovações legislativas; (2) Natureza jurídica da atividade notarial e registral à luz do Art. 236 CF e da Lei 8.935/94; (3) Comparação alienação fiduciária de imóvel e hipoteca quanto aos aspectos registrais. Estrutura: introdução (conceito + fundamento legal), desenvolvimento (requisitos, procedimento, jurisprudência), conclusão.\n\n**Flashcards:** Criar 3 clozes com os pontos que esqueceu/errou na dissertativa | **Questões:** Nenhuma | **Tempo:** 1h30min (escrita) + 30min (análise/correção)"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 212,
+            "discipline": "SIMULADO",
+            "title": "Simulado 07 — 100 questões cronometrado",
+            "link": "",
+            "description": "**Material:** Questões ENAC + Banco Estratégia Cartórios (questões inéditas)\n\n**Lei Seca Obrigatória:** Revisão pós-simulado — análise de erros imediata\n\n**Foco:** Performance pós-revisão de gaps. Comparar com simulados anteriores.\n\n**Flashcards:** Criar 10 clozes com base nos erros | **Questões:** 100 | **Tempo:** 2h45min + 1h análise"
+          },
+          {
+            "id": 213,
+            "discipline": "JURISPRUDÊNCIA",
+            "title": "Revisão Consolidada — Top 10 Julgados Notariais/Registrais",
+            "link": "",
+            "description": "**Material:** Informativos Dizer o Direito acumulados ao longo do plano\n\n**Lei Seca Obrigatória:** Selecionar os 10 julgados mais relevantes para o ENAC dentre os que foram estudados\n\n**Foco:** Consolidar teses em formato de flashcard. Verificar se houve atualização/superação de algum julgado.\n\n**Flashcards:** Revisar 20 clozes de jurisprudência + criar 5 novos | **Questões:** 10 (jurisprudência FGV) | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 214,
+            "discipline": "REVISÃO",
+            "title": "Revisão de Legislação Seca — Lei 6.015/73 Título IV (3ª passada dirigida)",
+            "link": "",
+            "description": "**Material:** Vade Mecum — Lei 6.015/73, Arts. 167-299\n\n**Lei Seca Obrigatória:** Lei 6.015/73 Título IV completo — LEITURA DIRIGIDA (apenas artigos de alto erro)\n\n**Foco:** Leitura rápida focada nos artigos que mais geraram confusão. Marcar os que ainda causam dúvida.\n\n**Flashcards:** Revisar 15 clozes existentes | **Questões:** Nenhuma | **Tempo:** 1h30min"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "title": "Ciclo 26 — Lei Seca Intensiva + Dissertativa 02",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 215,
+            "discipline": "REVISÃO DE LEI SECA",
+            "title": "Lei 8.935/94 — Releitura Integral Anotada (3ª passada)",
+            "link": "",
+            "description": "**Material:** Vade Mecum — Lei 8.935/94 (íntegra, 56 artigos)\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Arts. 1º-56 — INTEGRAL\n\n**Foco:** Releitura integral com anotação dos pontos de dúvida. 56 artigos = leitura possível em ~90min. Comparar com flashcards existentes.\n\n**Flashcards:** Revisar 20 clozes + criar 5 de artigos negligenciados | **Questões:** 15 (focadas em Lei 8.935) | **Tempo:** 2h00min"
+          },
+          {
+            "id": 216,
+            "discipline": "REVISÃO DE LEI SECA",
+            "title": "Provimento 149/2023 — Releitura Dirigida (Parte Geral + Tabelionato)",
+            "link": "",
+            "description": "**Material:** Provimento 149/2023 CNJ — Parte Geral + Tabelionato de Notas\n\n**Lei Seca Obrigatória:** Provimento 149 — artigos de alto erro (identificados nos simulados)\n\n**Foco:** Não é leitura integral — é revisão dos pontos que mais erraram nos simulados.\n\n**Flashcards:** Revisar 15 clozes + criar 3 novos | **Questões:** 10 (sobre Provimento 149) | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 217,
+            "discipline": "REVISÃO DE LEI SECA",
+            "title": "CC — Direitos Reais + Família + Sucessões (artigos registrais — 3ª passada)",
+            "link": "",
+            "description": "**Material:** Vade Mecum — CC, artigos selecionados com impacto registral\n\n**Lei Seca Obrigatória:** CC Arts. 1.225-1.276 (direitos reais), 1.511-1.570 (casamento), 1.639-1.688 (regime bens), 1.784-1.856 (sucessão legítima), 1.857-1.990 (testamento)\n\n**Foco:** Apenas os artigos com conexão registral direta. Não é releitura de Civil por inteiro.\n\n**Flashcards:** Revisar 20 clozes existentes | **Questões:** 15 (Civil com viés registral) | **Tempo:** 2h00min"
+          },
+          {
+            "id": 218,
+            "discipline": "DISSERTATIVA",
+            "title": "Dissertativa 02 — Tema de Direito Civil com Viés Registral",
+            "link": "",
+            "description": "**Material:** Provas anteriores (selecionar 1 tema)\n\n**Lei Seca Obrigatória:** Artigos conforme tema escolhido\n\n**Foco:** 90 minutos cronometrados. Temas sugeridos: (1) Efeitos registrais do pacto antenupcial e da alteração de regime de bens; (2) Inventário extrajudicial: requisitos, procedimento e atuação do tabelião; (3) Transmissão de propriedade imobiliária inter vivos e causa mortis quanto aos aspectos registrais. Estrutura jurídica com artigos precisos.\n\n**Flashcards:** Criar 3 clozes com pontos fracos identificados | **Questões:** Nenhuma | **Tempo:** 1h30min + 30min análise"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 219,
+            "discipline": "SIMULADO",
+            "title": "Simulado 08 — 100 questões cronometrado",
+            "link": "",
+            "description": "**Material:** Questões ENAC + FGV cartórios (inéditas)\n\n**Lei Seca Obrigatória:** Análise de erros imediata + comparação com simulados anteriores\n\n**Foco:** Benchmark de evolução. Meta: superar pontuação do Simulado 07.\n\n**Flashcards:** Criar 10 clozes dos erros | **Questões:** 100 | **Tempo:** 2h45min + 1h análise"
+          },
+          {
+            "id": 220,
+            "discipline": "REVISÃO",
+            "title": "Classe B/C — Revisão Relâmpago Constitucional + Administrativo + Tributário",
+            "link": "",
+            "description": "**Material:** Flashcards existentes de Constitucional, Administrativo e Tributário\n\n**Lei Seca Obrigatória:** CF Art. 236, Art. 37; Lei 8.429 (trechos); CTN arts. ITBI/ITCMD\n\n**Foco:** Revisão de todos os flashcards de Classe B/C. Identificar lacunas.\n\n**Flashcards:** Revisar 30 clozes + criar 5 novos | **Questões:** 15 (mistas: Const. + Admin. + Trib.) | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 221,
+            "discipline": "REVISÃO",
+            "title": "Classe D — Microdose Final: Proc. Civil + Penal + Proc. Penal + Empresarial",
+            "link": "",
+            "description": "**Material:** Flashcards existentes + Direto ao Ponto (consulta rápida)\n\n**Lei Seca Obrigatória:** CPC arts. registrais, CP arts. 297-302, CCom arts. societários\n\n**Foco:** Última passada nas matérias de ROI baixo. Apenas revisar flashcards e resolver questões — zero conteúdo novo.\n\n**Flashcards:** Revisar 20 clozes | **Questões:** 10 (mistas Classe D) | **Tempo:** 1h00min"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Ciclo 27 — Simulados Intensivos + Dissertativa 03",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 222,
+            "discipline": "SIMULADO",
+            "title": "Simulado 09 — 100 questões cronometrado (simulação real)",
+            "link": "",
+            "description": "**Material:** Prova completa montada com distribuição ENAC (60 Notarial + 14 Civil + 9 Const. + restante)\n\n**Lei Seca Obrigatória:** Revisão pós-simulado\n\n**Foco:** Simular condições reais de prova. Cronometrar 5 horas. Sem consulta.\n\n**Flashcards:** Criar 10 clozes dos erros | **Questões:** 100 | **Tempo:** 5h (simulação real)"
+          },
+          {
+            "id": 223,
+            "discipline": "REVISÃO / ANÁLISE",
+            "title": "Análise Detalhada Simulado 09 — Engenharia Reversa",
+            "link": "",
+            "description": "**Material:** Gabarito + legislação de cada questão errada\n\n**Lei Seca Obrigatória:** Cada questão errada — análise por que errou, qual artigo esqueceu\n\n**Foco:** Padrão de erros persistentes vs. novos.\n\n**Flashcards:** Criar 10 clozes específicos | **Questões:** Revisar 20 questões erradas | **Tempo:** 2h00min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 224,
+            "discipline": "DISSERTATIVA",
+            "title": "Dissertativa 03 — Tema de Notarial/Registral (Procedimento)",
+            "link": "",
+            "description": "**Material:** Provas anteriores\n\n**Lei Seca Obrigatória:** Artigos conforme tema escolhido\n\n**Foco:** 90 minutos cronometrados. Temas sugeridos: (1) Procedimento da dúvida registral, seus legitimados e recursos cabíveis; (2) Retificação extrajudicial de registro imobiliário; (3) Procedimento de protesto de títulos, desde a apresentação até o cancelamento. Foco em procedimentos — etapas sequenciais com fundamento legal.\n\n**Flashcards:** Criar 3 clozes | **Questões:** Nenhuma | **Tempo:** 1h30min + 30min análise"
+          },
+          {
+            "id": 225,
+            "discipline": "PEÇA PRÁTICA",
+            "title": "Peça Prática 01 — Ata Notarial",
+            "link": "",
+            "description": "**Material:** Provimento 149/2023 (Tabelionato de Notas — Atas Notariais); modelos práticos\n\n**Lei Seca Obrigatória:** Lei 8.935/94, Art. 7º, III; Provimento 149 (seção de atas); CPC Art. 384\n\n**Foco:** Redigir uma ata notarial completa. Cenário: constatação de conteúdo publicado em rede social para fins de prova em processo judicial. Incluir: qualificação do solicitante, descrição detalhada dos fatos, capturas de tela (referência), declaração de fé pública, encerramento.\n\n**Flashcards:** Criar 5 clozes sobre requisitos formais da ata notarial | **Questões:** Nenhuma | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 226,
+            "discipline": "REVISÃO DIRIGIDA",
+            "title": "Revisão de Armadilhas FGV — Top 15 Pegadinhas Recorrentes",
+            "link": "",
+            "description": "**Material:** Caderno de erros acumulado + análises de simulados\n\n**Lei Seca Obrigatória:** As 15 armadilhas FGV que mais apareceram nos simulados\n\n**Foco:** Para cada armadilha: (1) qual é a pegadinha, (2) qual a resposta correta, (3) qual o artigo. Ex: 'fé pública é juris tantum, não juris et de jure'; 'pacto antenupcial sem registro é ineficaz contra terceiros, não nulo'.\n\n**Flashcards:** Revisar/criar 15 clozes (1 por armadilha) | **Questões:** 15 (que contenham armadilhas identificadas) | **Tempo:** 1h30min"
+          },
+          {
+            "id": 227,
+            "discipline": "JURISPRUDÊNCIA",
+            "title": "Informativos STJ/STF — Temas Registrais Atualizados",
+            "link": "",
+            "description": "**Material:** Dizer o Direito — informativos dos últimos 6 meses sobre temas registrais/notariais\n\n**Lei Seca Obrigatória:** Buscar informativos recentes sobre usucapião, alienação fiduciária, REURB, registro eletrônico, responsabilidade do notário\n\n**Foco:** Identificar teses novas ou consolidação de entendimentos que possam cair na prova.\n\n**Flashcards:** Criar 8 clozes com teses recentes | **Questões:** Nenhuma | **Tempo:** 1h30min"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "title": "Ciclo 28 — Peças + Simulado + Dissertativa 04",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 228,
+            "discipline": "PEÇA PRÁTICA",
+            "title": "Peça Prática 02 — Escritura Pública de Compra e Venda de Imóvel",
+            "link": "",
+            "description": "**Material:** Provimento 149/2023 (Tabelionato de Notas — Escrituras); Lei 7.433/85; modelos\n\n**Lei Seca Obrigatória:** Lei 7.433/85, Art. 1º; CC Art. 108; Provimento 149 (escrituras)\n\n**Foco:** Redigir escritura completa. Cenário: compra e venda de imóvel urbano entre particulares, com cláusula de financiamento parcial. Incluir: qualificação completa, descrição do imóvel (conforme matrícula), preço e forma de pagamento, certidões negativas, declarações fiscais.\n\n**Flashcards:** Criar 5 clozes sobre requisitos da escritura de compra e venda | **Questões:** Nenhuma | **Tempo:** 1h30min"
+          },
+          {
+            "id": 229,
+            "discipline": "DISSERTATIVA",
+            "title": "Dissertativa 04 — Tema de Direito Constitucional/Administrativo com Viés Registral",
+            "link": "",
+            "description": "**Material:** Provas anteriores\n\n**Lei Seca Obrigatória:** Artigos conforme tema escolhido\n\n**Foco:** 90 minutos cronometrados. Tema interdisciplinar. Temas sugeridos: (1) Natureza jurídica dos emolumentos à luz da jurisprudência do STF; (2) Fiscalização da atividade notarial e registral pelo Poder Judiciário e pelo CNJ; (3) Regime de responsabilidade do notário comparado ao do servidor público.\n\n**Flashcards:** Criar 3 clozes | **Questões:** Nenhuma | **Tempo:** 1h30min + 30min análise"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 230,
+            "discipline": "SIMULADO",
+            "title": "Simulado 10 — 100 questões cronometrado",
+            "link": "",
+            "description": "**Material:** Questões inéditas ENAC/FGV\n\n**Lei Seca Obrigatória:** Análise de erros\n\n**Foco:** Consolidação. Meta: 65+ acertos.\n\n**Flashcards:** Criar 8 clozes dos erros | **Questões:** 100 | **Tempo:** 2h45min + 1h análise"
+          },
+          {
+            "id": 231,
+            "discipline": "REVISÃO / ANÁLISE",
+            "title": "Análise Comparativa — Evolução nos Simulados 01-10",
+            "link": "",
+            "description": "**Material:** Planilha de resultados de todos os simulados\n\n**Lei Seca Obrigatória:** Comparar pontuações, % de acerto por disciplina, tendências\n\n**Foco:** Visualizar a curva de evolução. Identificar disciplinas que estagnaram. Definir foco cirúrgico para as últimas 4 semanas.\n\n**Flashcards:** Nenhum | **Questões:** Nenhuma | **Tempo:** 1h00min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 232,
+            "discipline": "REVISÃO",
+            "title": "Revisão Profunda — Lei 6.015/73 Art. 167 (Registro vs. Averbação — 4ª passada)",
+            "link": "",
+            "description": "**Material:** Vade Mecum — Lei 6.015/73, Art. 167\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Art. 167, incisos I e II — DECORAR CADA INCISO\n\n**Foco:** O artigo mais cobrado da prova inteira. Cada inciso do I (registro) e do II (averbação) deve estar memorizado.\n\n**Flashcards:** Revisar 15 clozes do Art. 167 | **Questões:** 15 (exclusivamente sobre Art. 167) | **Tempo:** 1h30min"
+          },
+          {
+            "id": 233,
+            "discipline": "REVISÃO",
+            "title": "Lei 9.514/97 + Lei 14.711/2023 — Garantias Imobiliárias (Revisão Final)",
+            "link": "",
+            "description": "**Material:** Vade Mecum + Flashcards existentes\n\n**Lei Seca Obrigatória:** Lei 9.514/97 (alienação fiduciária — procedimento), Lei 14.711/2023 (Marco Legal Garantias — alterações)\n\n**Foco:** Procedimento de execução extrajudicial (art. 26-27 Lei 9.514), consolidação de propriedade, leilão. Alterações do Marco Legal.\n\n**Flashcards:** Revisar 10 clozes + criar 3 novos | **Questões:** 10 | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 234,
+            "discipline": "JURISPRUDÊNCIA",
+            "title": "CNJ — Pedidos de Providência e Consultas Recentes (Revisão)",
+            "link": "",
+            "description": "**Material:** Dizer o Direito + site do CNJ\n\n**Lei Seca Obrigatória:** Consultas e pedidos de providência do CNJ sobre temas registrais/notariais (últimos 12 meses)\n\n**Foco:** O ENAC é prova do CNJ — entender como o próprio CNJ interpreta a legislação é vantagem competitiva.\n\n**Flashcards:** Criar 5 clozes com entendimentos do CNJ | **Questões:** Nenhuma | **Tempo:** 1h00min"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "title": "Ciclo 29 — Simulado Real + Peça + Dissertativa 05",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 235,
+            "discipline": "SIMULADO",
+            "title": "Simulado 11 — Simulação Real Completa (5h cronometradas)",
+            "link": "",
+            "description": "**Material:** Prova montada com distribuição ENAC exata\n\n**Lei Seca Obrigatória:** —\n\n**Foco:** Condições reais: 5h, sem consulta, sem interrupção. Meta: 68+ acertos.\n\n**Flashcards:** Criar 8 clozes dos erros | **Questões:** 100 | **Tempo:** 5h + 1h análise"
+          },
+          {
+            "id": 236,
+            "discipline": "PEÇA PRÁTICA",
+            "title": "Peça Prática 03 — Escritura de Inventário Extrajudicial",
+            "link": "",
+            "description": "**Material:** Provimento 149 + Res. CNJ 35/2007 + CC Arts. 1.784-1.856\n\n**Lei Seca Obrigatória:** CC Arts. 1.784-1.856; CPC Art. 610, §1º; Res. CNJ 35/2007\n\n**Foco:** Redigir escritura de inventário extrajudicial. Cenário: falecido casado em comunhão parcial, 2 filhos maiores e capazes, imóvel urbano + veículo. Incluir: qualificação do falecido e herdeiros, descrição dos bens, partilha, meação, ITCMD.\n\n**Flashcards:** Criar 5 clozes sobre requisitos do inventário extrajudicial | **Questões:** Nenhuma | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 237,
+            "discipline": "DISSERTATIVA",
+            "title": "Dissertativa 05 — Tema Complexo (Interdisciplinar)",
+            "link": "",
+            "description": "**Material:** Provas anteriores\n\n**Lei Seca Obrigatória:** Artigos conforme tema escolhido\n\n**Foco:** 90 minutos cronometrados. Tema complexo que exige domínio de múltiplas leis. Temas sugeridos: (1) Sistema de Registro Eletrônico de Imóveis (SREI), o ONR e o SERP, comparando suas funções e impacto na modernização registral; (2) Regularização fundiária urbana (Reurb) quanto ao procedimento, modalidades e efeitos registrais; (3) Regimes de responsabilidade civil do notário e do registrador.\n\n**Flashcards:** Criar 3 clozes | **Questões:** Nenhuma | **Tempo:** 1h30min + 30min análise"
+          },
+          {
+            "id": 238,
+            "discipline": "REVISÃO",
+            "title": "Revisão Final — Provimento 149 (RI + Protestos)",
+            "link": "",
+            "description": "**Material:** Provimento 149/2023 — Seções RI e Protestos\n\n**Lei Seca Obrigatória:** Provimento 149 — artigos sobre RI e Protestos\n\n**Foco:** Última passada nos trechos do Provimento 149 que mais geraram dúvida.\n\n**Flashcards:** Revisar 20 clozes | **Questões:** 10 | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 239,
+            "discipline": "REVISÃO",
+            "title": "Top 30 Artigos Mais Cobrados — Revisão Focada",
+            "link": "",
+            "description": "**Material:** Vade Mecum\n\n**Lei Seca Obrigatória:** Os 30 artigos que mais aparecem nas provas FGV de cartórios: Art. 167 LRP, Art. 176 LRP, Art. 186 LRP, Art. 195 LRP, Art. 198 LRP, Art. 216-A LRP, Art. 236 CF, Art. 1.245 CC, Art. 1.227 CC, Art. 108 CC, Art. 1.641 CC, Art. 1.829 CC, entre outros.\n\n**Foco:** Ler cada artigo, fechar os olhos, recitar de memória. Repetir até fixar.\n\n**Flashcards:** Revisar 30 clozes (1 por artigo) | **Questões:** Nenhuma | **Tempo:** 2h00min"
+          },
+          {
+            "id": 240,
+            "discipline": "REVISÃO",
+            "title": "Revisão de Flashcards — Maratona (todas as disciplinas)",
+            "link": "",
+            "description": "**Material:** Todos os flashcards no RemNote\n\n**Lei Seca Obrigatória:** Revisão espaçada de TODOS os cards vencidos/próximos do vencimento\n\n**Foco:** Sessão longa de revisão. Meta: revisar 100+ cards.\n\n**Flashcards:** Revisar 100+ clozes | **Questões:** Nenhuma | **Tempo:** 2h00min"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "title": "Ciclo 30 — Simulados Finais + Peça + Dissertativa 06",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 241,
+            "discipline": "SIMULADO",
+            "title": "Simulado 12 — 100 questões cronometrado",
+            "link": "",
+            "description": "**Material:** Questões inéditas\n\n**Lei Seca Obrigatória:** —\n\n**Foco:** Benchmark final. Meta: 70+ acertos.\n\n**Flashcards:** Criar 8 clozes dos erros | **Questões:** 100 | **Tempo:** 2h45min + 1h análise"
+          },
+          {
+            "id": 242,
+            "discipline": "PEÇA PRÁTICA",
+            "title": "Peça Prática 04 — Escritura de Divórcio Consensual Extrajudicial",
+            "link": "",
+            "description": "**Material:** Provimento 149 + Res. CNJ 35/2007 + CC Arts. 1.571-1.582\n\n**Lei Seca Obrigatória:** CC Arts. 1.571-1.582; Res. CNJ 35/2007; EC 66/2010\n\n**Foco:** Redigir escritura de divórcio consensual. Cenário: casal sem filhos menores, comunhão parcial, 1 imóvel, partilha consensual. Incluir: qualificação, declaração de vontade, partilha de bens, uso do nome, ITBI (se houver).\n\n**Flashcards:** Criar 3 clozes | **Questões:** Nenhuma | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 243,
+            "discipline": "DISSERTATIVA",
+            "title": "Dissertativa 06 — Tema Livre (escolha do candidato)",
+            "link": "",
+            "description": "**Material:** Provas anteriores — escolher o tema que mais causa insegurança\n\n**Lei Seca Obrigatória:** Artigos conforme tema escolhido\n\n**Foco:** 90 minutos cronometrados. Desafiar-se no tema mais fraco.\n\n**Flashcards:** Criar 3 clozes | **Questões:** Nenhuma | **Tempo:** 1h30min + 30min análise"
+          },
+          {
+            "id": 244,
+            "discipline": "REVISÃO",
+            "title": "Lei 6.015/73 — Dúvida Registral (Art. 198-204) — Revisão Final",
+            "link": "",
+            "description": "**Material:** Vade Mecum + material de estudo regular\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Arts. 198-204\n\n**Foco:** Procedimento de dúvida: suscitação, prazos, recursos, efeitos. Tema frequente.\n\n**Flashcards:** Revisar 8 clozes | **Questões:** 10 (sobre dúvida registral) | **Tempo:** 1h00min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 245,
+            "discipline": "REVISÃO",
+            "title": "Lei 9.492/97 — Protesto de Títulos (Revisão Final)",
+            "link": "",
+            "description": "**Material:** Vade Mecum + flashcards\n\n**Lei Seca Obrigatória:** Lei 9.492/97 (íntegra)\n\n**Foco:** Revisão integral. Procedimento de protesto, intimação, pagamento, sustação, cancelamento.\n\n**Flashcards:** Revisar 15 clozes | **Questões:** 10 | **Tempo:** 1h30min"
+          },
+          {
+            "id": 246,
+            "discipline": "REVISÃO",
+            "title": "Usucapião Extrajudicial (Art. 216-A LRP) — Revisão Final",
+            "link": "",
+            "description": "**Material:** Vade Mecum + material de estudo regular\n\n**Lei Seca Obrigatória:** Lei 6.015/73, Art. 216-A; Provimento 65/2017 CNJ\n\n**Foco:** Procedimento completo: requerimento, documentos, notificação, silêncio como concordância, impugnação, remessa ao juiz.\n\n**Flashcards:** Revisar 10 clozes | **Questões:** 8 | **Tempo:** 1h00min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 04",
+        "tasks": [
+          {
+            "id": 247,
+            "discipline": "REVISÃO",
+            "title": "Resumo Semanal — Consolidação Semana 30",
+            "link": "",
+            "description": "**Material:** Flashcards da semana\n\n**Lei Seca Obrigatória:** Todos os cards novos + revisão de erros do Simulado 12\n\n**Foco:** Preparar mente para as 2 últimas semanas.\n\n**Flashcards:** Revisar 50 clozes | **Questões:** Nenhuma | **Tempo:** 1h00min"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "title": "Ciclo 31 — Simulado Diagnóstico Final + Revisão Cirúrgica",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 248,
+            "discipline": "SIMULADO",
+            "title": "Simulado 13 (Diagnóstico Final) — 100 questões cronometrado",
+            "link": "",
+            "description": "**Material:** Prova montada com distribuição ENAC exata (última simulação formal)\n\n**Lei Seca Obrigatória:** —\n\n**Foco:** Última simulação real. Resultado = projeção para a prova. Meta: 70+.\n\n**Flashcards:** Criar 5 clozes dos erros (apenas os mais críticos) | **Questões:** 100 | **Tempo:** 2h45min + 1h análise"
+          },
+          {
+            "id": 249,
+            "discipline": "REVISÃO CIRÚRGICA",
+            "title": "Análise Final de Erros — O Que Ainda Cai?",
+            "link": "",
+            "description": "**Material:** Análise de todos os simulados\n\n**Lei Seca Obrigatória:** —\n\n**Foco:** Dos erros do Simulado 13, quais são erros novos? Quais são erros que se repetem? Para os repetidos: revisão profunda do dispositivo. Para os novos: verificar se é tema marginal (ignorar) ou central (revisar agora).\n\n**Flashcards:** Criar/revisar 10 clozes finais | **Questões:** 10 (dos erros repetidos) | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 250,
+            "discipline": "REVISÃO",
+            "title": "Top 50 Flashcards Mais Difíceis — Revisão Intensiva",
+            "link": "",
+            "description": "**Material:** RemNote — filtrar pelos cards com menor taxa de acerto\n\n**Lei Seca Obrigatória:** —\n\n**Foco:** Revisar os 50 flashcards que mais erraram ao longo de todo o plano. Se não acertar 80%+, reescrever o card.\n\n**Flashcards:** Revisar 50 clozes | **Questões:** Nenhuma | **Tempo:** 1h30min"
+          },
+          {
+            "id": 251,
+            "discipline": "REVISÃO",
+            "title": "Revisão de Legislação — Leis Nucleares (Última Passada)",
+            "link": "",
+            "description": "**Material:** Vade Mecum\n\n**Lei Seca Obrigatória:** Lei 6.015/73 (Arts. 167, 176, 186, 195, 198, 216-A), Lei 8.935/94 (Arts. 1-5, 14-16, 22-24, 28-35), Lei 10.169/2000 (Arts. 1-7), Art. 236 CF\n\n**Foco:** Última passada nos artigos-chave. Leitura rápida, conferindo com flashcards.\n\n**Flashcards:** Revisar 30 clozes | **Questões:** Nenhuma | **Tempo:** 1h30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 252,
+            "discipline": "REVISÃO",
+            "title": "Princípios Registrais — Revisão de Fixação",
+            "link": "",
+            "description": "**Material:** Flashcards + Vade Mecum\n\n**Lei Seca Obrigatória:** LRP Arts. 1º, 167, 176, 186, 195; Lei 8.935 Art. 1º\n\n**Foco:** Publicidade, autenticidade, segurança, eficácia, inscrição, prioridade, especialidade, continuidade, legalidade, instância, tipicidade. Recitar de memória com artigo correspondente.\n\n**Flashcards:** Revisar 12 clozes (1 por princípio) | **Questões:** 10 (sobre princípios) | **Tempo:** 1h00min"
+          },
+          {
+            "id": 253,
+            "discipline": "REVISÃO LEVE",
+            "title": "Temas Confortáveis — Reforço de Confiança",
+            "link": "",
+            "description": "**Material:** Resumos e flashcards dos temas que mais domina\n\n**Lei Seca Obrigatória:** —\n\n**Foco:** Revisar apenas temas que domina bem. Objetivo psicológico: reforçar confiança, lembrar que sabe muito.\n\n**Flashcards:** Revisar 30 clozes (temas fortes) | **Questões:** Nenhuma | **Tempo:** 45min"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "32",
+    "title": "Ciclo 32 — PRÉ-PROVA | Revisão Final + Descanso",
+    "days": [
+      {
+        "dayLabel": "Dia 01",
+        "tasks": [
+          {
+            "id": 254,
+            "discipline": "REVISÃO",
+            "title": "Revisão Final — Art. 167 LRP + Art. 236 CF + Art. 1.245 CC",
+            "link": "",
+            "description": "**Material:** Vade Mecum\n\n**Lei Seca Obrigatória:** Os 3 artigos mais importantes da prova\n\n**Foco:** Leitura lenta, palavra por palavra. Esses 3 artigos sozinhos cobrem ~15% da prova.\n\n**Flashcards:** Revisar 10 clozes | **Questões:** Nenhuma | **Tempo:** 30min"
+          },
+          {
+            "id": 255,
+            "discipline": "REVISÃO",
+            "title": "Flashcards — Maratona Final (Top 80)",
+            "link": "",
+            "description": "**Material:** RemNote — todos os flashcards\n\n**Lei Seca Obrigatória:** Última revisão geral\n\n**Foco:** Revisar 80 flashcards priorizados por taxa de erro e importância.\n\n**Flashcards:** Revisar 80 clozes | **Questões:** Nenhuma | **Tempo:** 2h00min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 02",
+        "tasks": [
+          {
+            "id": 256,
+            "discipline": "REVISÃO LEVE",
+            "title": "Temas Críticos — Última Passada Rápida",
+            "link": "",
+            "description": "**Material:** Resumos pessoais\n\n**Lei Seca Obrigatória:** CC arts. regime de bens + CF art. 236 + Lei 8.935 arts. 22-24\n\n**Foco:** Rápida passada nos temas que mais causaram dúvida. Não é novo aprendizado.\n\n**Flashcards:** Revisar 20 clozes | **Questões:** Nenhuma | **Tempo:** 45min"
+          },
+          {
+            "id": 257,
+            "discipline": "REVISÃO",
+            "title": "Relaxamento Estratégico — Leitura Leve + Visualização",
+            "link": "",
+            "description": "**Material:** Resumos criados (não legislação bruta)\n\n**Lei Seca Obrigatória:** Leve — apenas temas confortáveis\n\n**Foco:** Manter confiança, evitar ansiedade, relaxar mente. Não é aprendizado.\n\n**Flashcards:** Revisar 20 clozes (temas que domina) | **Questões:** Nenhuma | **Tempo:** 30min"
+          }
+        ]
+      },
+      {
+        "dayLabel": "Dia 03",
+        "tasks": [
+          {
+            "id": 258,
+            "discipline": "DESCANSO ATIVO",
+            "title": "Análise Final — Qual Era Meu Erro Mais Comum?",
+            "link": "",
+            "description": "**Material:** Todos os simulados\n\n**Lei Seca Obrigatória:** Padrão de erro ao longo de toda a preparação\n\n**Foco:** Identificar o único erro que se repetiu mais. Treinar aquele específico. Ganhar confiança.\n\n**Flashcards:** Criar 5 clozes com seu erro mais comum (mentalização final) | **Questões:** 5 (do seu erro mais comum) | **Tempo:** 45min"
+          },
+          {
+            "id": 259,
+            "discipline": "DESCANSO PRÉ-PROVA",
+            "title": "Repouso Total + Preparação Emocional",
+            "link": "",
+            "description": "**Material:** Nenhum\n\n**Lei Seca Obrigatória:** Nenhuma\n\n**Foco:** Descansar. Dormir bem. Confiar no aprendizado acumulado. Mentalização positiva.\n\n**Flashcards:** Nenhuma | **Questões:** Nenhuma | **Tempo:** Atividade de descanso (não estudo)"
+          }
+        ]
+      }
+    ]
   }
 ];
