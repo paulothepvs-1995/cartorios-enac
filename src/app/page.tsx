@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWeekStartDate } from "@/lib/plan";
-import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado, type DailyTodoItem } from "@/lib/supabase";
+import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado, type DailyTodoItem, type JulgadoEntry } from "@/lib/supabase";
 
 /* ─── LOCAL STORAGE FOR DAILY TODOS ─── */
 const TODO_KEY = "enac-td3";
@@ -42,6 +42,7 @@ const defaultData = (): StudyData => ({
   legislation_progress: {},
   completed_tasks: {},
   study_entries: [],
+  julgados: [],
 });
 
 /* ─── HELPER DE FORMATAÇÃO DE TEMPO ─── */
@@ -147,7 +148,7 @@ export default function App() {
       {/* TABS */}
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
         <div style={{ display: "flex", gap: 4, padding: "16px 0 0", borderBottom: "1px solid #e2e8f0", overflowX: "auto" }}>
-          {["dashboard", "trilhas", "tempo", "disciplinas", "questões", "legislação", "simulados", "histórico"].map((t) => (
+          {["dashboard", "trilhas", "tempo", "disciplinas", "questões", "legislação", "julgados", "simulados", "histórico"].map((t) => (
             <button key={t} onClick={() => setTab(t)} style={{
               padding: "10px 16px", background: tab === t ? "rgba(99,102,241,0.1)" : "transparent", border: "none",
               borderBottom: tab === t ? "2px solid #6366f1" : "2px solid transparent",
@@ -166,6 +167,7 @@ export default function App() {
         {tab === "legislação" && <Legislacao data={data} save={save} />}
         {tab === "simulados" && <Simulados data={data} onLogSimulado={() => setSimModal(true)} />}
         {tab === "trilhas" && <TrilhasTab data={data} save={save} />}
+        {tab === "julgados" && <JulgadosTab data={data} save={save} />}
         {tab === "histórico" && <HistoricoTab data={data} save={save} />}
       </div>
 
@@ -1511,6 +1513,269 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+/* ─── JULGADOS STF/STJ ─── */
+const MATERIAS_JULGADOS = ["Notarial e Registral", "Direito Civil", "Constitucional", "Empresarial", "Tributário", "Administrativo", "Processual Civil", "Penal/PP/CG"];
+
+function JulgadosTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
+  const [showForm, setShowForm] = useState(false);
+  const [editId, setEditId] = useState<string | null>(null);
+  const [filtro, setFiltro] = useState<"todos" | "STF" | "STJ">("todos");
+  const [form, setForm] = useState<{
+    date: string; tribunal: "STF" | "STJ"; tema: string;
+    tese1: string; tese2: string; tese3: string;
+    relevancia: "alta" | "média" | "baixa"; materia: string;
+    status: "lido" | "fichado" | "no_remnote";
+  }>({ date: "", tribunal: "STF", tema: "", tese1: "", tese2: "", tese3: "", relevancia: "alta", materia: MATERIAS_JULGADOS[0], status: "lido" });
+
+  const resetForm = () => {
+    setForm({ date: "", tribunal: "STF", tema: "", tese1: "", tese2: "", tese3: "", relevancia: "alta", materia: MATERIAS_JULGADOS[0], status: "lido" });
+    setEditId(null);
+    setShowForm(false);
+  };
+
+  const handleSave = async () => {
+    if (!form.tema.trim() || !form.tese1.trim() || !form.date) return;
+    const teses = [form.tese1, form.tese2, form.tese3].filter(t => t.trim());
+    const entry: JulgadoEntry = {
+      id: editId || crypto.randomUUID(),
+      date: form.date, tribunal: form.tribunal, tema: form.tema.trim(),
+      teses, relevancia: form.relevancia, materia: form.materia, status: form.status,
+    };
+    const julgados = [...(data.julgados || [])];
+    if (editId) {
+      const idx = julgados.findIndex(j => j.id === editId);
+      if (idx >= 0) julgados[idx] = entry;
+    } else {
+      julgados.unshift(entry);
+    }
+    await save({ ...data, julgados });
+    resetForm();
+  };
+
+  const handleEdit = (j: JulgadoEntry) => {
+    setForm({
+      date: j.date, tribunal: j.tribunal, tema: j.tema,
+      tese1: j.teses[0] || "", tese2: j.teses[1] || "", tese3: j.teses[2] || "",
+      relevancia: j.relevancia, materia: j.materia, status: j.status,
+    });
+    setEditId(j.id);
+    setShowForm(true);
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!window.confirm("Excluir este julgado?")) return;
+    await save({ ...data, julgados: (data.julgados || []).filter(j => j.id !== id) });
+  };
+
+  const handleStatusCycle = async (j: JulgadoEntry) => {
+    const order: Array<"lido" | "fichado" | "no_remnote"> = ["lido", "fichado", "no_remnote"];
+    const next = order[(order.indexOf(j.status) + 1) % order.length];
+    const julgados = (data.julgados || []).map(x => x.id === j.id ? { ...x, status: next } : x);
+    await save({ ...data, julgados });
+  };
+
+  const julgados = (data.julgados || []).filter(j => filtro === "todos" || j.tribunal === filtro);
+  const stfList = julgados.filter(j => j.tribunal === "STF");
+  const stjList = julgados.filter(j => j.tribunal === "STJ");
+
+  const relBadge = (r: string) => {
+    const colors: Record<string, { bg: string; fg: string }> = {
+      alta: { bg: "#fef2f2", fg: "#dc2626" },
+      "média": { bg: "#fffbeb", fg: "#d97706" },
+      baixa: { bg: "#f0fdf4", fg: "#16a34a" },
+    };
+    const c = colors[r] || colors.baixa;
+    return { background: c.bg, color: c.fg, border: `1px solid ${c.fg}33`, borderRadius: 6, padding: "2px 8px", fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" };
+  };
+
+  const statusBadge = (s: string) => {
+    const map: Record<string, { label: string; bg: string; fg: string }> = {
+      lido: { label: "Lido", bg: "#eff6ff", fg: "#2563eb" },
+      fichado: { label: "Fichado", bg: "#f5f3ff", fg: "#7c3aed" },
+      no_remnote: { label: "No RemNote", bg: "#ecfdf5", fg: "#059669" },
+    };
+    const c = map[s] || map.lido;
+    return { label: c.label, style: { background: c.bg, color: c.fg, border: `1px solid ${c.fg}33`, borderRadius: 6, padding: "2px 8px", fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", cursor: "pointer" } };
+  };
+
+  const renderCard = (j: JulgadoEntry) => {
+    const sb = statusBadge(j.status);
+    return (
+      <div key={j.id} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: 14, marginBottom: 10, boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8, marginBottom: 6 }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: "#1e293b", fontFamily: "'Space Grotesk', sans-serif", flex: 1 }}>{j.tema}</div>
+          <div style={{ display: "flex", gap: 4, flexShrink: 0 }}>
+            <span style={relBadge(j.relevancia)}>{j.relevancia.toUpperCase()}</span>
+            <span style={sb.style} onClick={() => handleStatusCycle(j)} title="Clique para avançar status">{sb.label}</span>
+          </div>
+        </div>
+        <div style={{ fontSize: 11, color: "#64748b", marginBottom: 6, fontFamily: "'JetBrains Mono', monospace" }}>
+          {j.date} &middot; {j.materia}
+        </div>
+        {j.teses.map((t, i) => (
+          <div key={i} style={{ fontSize: 12, color: "#334155", marginBottom: 3, paddingLeft: 10, borderLeft: "2px solid #e2e8f0", lineHeight: 1.5 }}>{t}</div>
+        ))}
+        <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
+          <button onClick={() => handleEdit(j)} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 6, padding: "4px 10px", cursor: "pointer", fontSize: 11, fontWeight: 600, color: "#4338ca" }}>Editar</button>
+          <button onClick={() => handleDelete(j.id)} style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: 6, padding: "4px 10px", cursor: "pointer", fontSize: 11, fontWeight: 600, color: "#dc2626" }}>Excluir</button>
+        </div>
+      </div>
+    );
+  };
+
+  const inputStyle = { width: "100%", padding: "8px 10px", border: "1px solid #e2e8f0", borderRadius: 8, fontSize: 13, color: "#1e293b", background: "#f8fafc", fontFamily: "'Segoe UI', sans-serif", boxSizing: "border-box" as const, outline: "none" };
+  const selectStyle = { ...inputStyle, cursor: "pointer" };
+  const labelStyle = { fontSize: 12, fontWeight: 600, color: "#475569", marginBottom: 4, display: "block" as const };
+
+  const totalAll = (data.julgados || []).length;
+  const totalStf = (data.julgados || []).filter(j => j.tribunal === "STF").length;
+  const totalStj = (data.julgados || []).filter(j => j.tribunal === "STJ").length;
+  const totalAlta = (data.julgados || []).filter(j => j.relevancia === "alta").length;
+
+  return (
+    <div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, flexWrap: "wrap", gap: 10 }}>
+        <h2 style={{ margin: 0, fontSize: 18, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Julgados STF/STJ</h2>
+        <button onClick={() => { resetForm(); setShowForm(true); }} style={{
+          background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 10, padding: "10px 18px",
+          color: "white", fontWeight: 600, cursor: "pointer", fontSize: 13, fontFamily: "'Space Grotesk', sans-serif",
+          boxShadow: "0 4px 15px rgba(79,70,229,0.3)",
+        }}>+ Novo Julgado</button>
+      </div>
+
+      {/* KPIs */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))", gap: 10, marginBottom: 16 }}>
+        {[
+          { label: "Total", value: totalAll, color: "#4338ca" },
+          { label: "STF", value: totalStf, color: "#2563eb" },
+          { label: "STJ", value: totalStj, color: "#059669" },
+          { label: "Alta Relevância", value: totalAlta, color: "#dc2626" },
+        ].map(k => (
+          <div key={k.label} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "12px 14px", textAlign: "center" }}>
+            <div style={{ fontSize: 22, fontWeight: 800, color: k.color, fontFamily: "'JetBrains Mono', monospace" }}>{k.value}</div>
+            <div style={{ fontSize: 11, color: "#64748b", fontWeight: 600 }}>{k.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Filter */}
+      <div style={{ display: "flex", gap: 4, marginBottom: 16 }}>
+        {(["todos", "STF", "STJ"] as const).map(f => (
+          <button key={f} onClick={() => setFiltro(f)} style={{
+            padding: "8px 16px", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 13, fontWeight: 600,
+            fontFamily: "'Space Grotesk', sans-serif",
+            background: filtro === f ? "rgba(99,102,241,0.1)" : "white",
+            color: filtro === f ? "#4338ca" : "#94a3b8",
+            boxShadow: filtro === f ? "none" : "0 1px 3px rgba(0,0,0,0.05)",
+          }}>{f === "todos" ? "Todos" : f}</button>
+        ))}
+      </div>
+
+      {/* Two-column layout */}
+      {filtro === "todos" ? (
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#2563eb", marginBottom: 10, fontFamily: "'Space Grotesk', sans-serif", padding: "6px 12px", background: "#eff6ff", borderRadius: 8, textAlign: "center" }}>
+              STF ({stfList.length})
+            </div>
+            {stfList.length === 0 && <div style={{ color: "#94a3b8", fontSize: 13, textAlign: "center", padding: 20 }}>Nenhum julgado STF</div>}
+            {stfList.map(renderCard)}
+          </div>
+          <div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#059669", marginBottom: 10, fontFamily: "'Space Grotesk', sans-serif", padding: "6px 12px", background: "#ecfdf5", borderRadius: 8, textAlign: "center" }}>
+              STJ ({stjList.length})
+            </div>
+            {stjList.length === 0 && <div style={{ color: "#94a3b8", fontSize: 13, textAlign: "center", padding: 20 }}>Nenhum julgado STJ</div>}
+            {stjList.map(renderCard)}
+          </div>
+        </div>
+      ) : (
+        <div>
+          {julgados.length === 0 && <div style={{ color: "#94a3b8", fontSize: 13, textAlign: "center", padding: 40 }}>Nenhum julgado {filtro}</div>}
+          {julgados.map(renderCard)}
+        </div>
+      )}
+
+      {/* Modal de formulário */}
+      {showForm && (
+        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 16, backdropFilter: "blur(4px)" }} onClick={resetForm}>
+          <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 16, padding: 24, width: "100%", maxWidth: 480, boxShadow: "0 20px 60px rgba(0,0,0,0.15)", maxHeight: "90vh", overflowY: "auto" }} onClick={e => e.stopPropagation()}>
+            <h3 style={{ margin: "0 0 16px", fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }}>{editId ? "Editar Julgado" : "Novo Julgado"}</h3>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 10 }}>
+              <div>
+                <label style={labelStyle}>Data do Julgado</label>
+                <input type="date" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} style={inputStyle} />
+              </div>
+              <div>
+                <label style={labelStyle}>Tribunal</label>
+                <select value={form.tribunal} onChange={e => setForm({ ...form, tribunal: e.target.value as "STF" | "STJ" })} style={selectStyle}>
+                  <option value="STF">STF</option>
+                  <option value="STJ">STJ</option>
+                </select>
+              </div>
+            </div>
+
+            <div style={{ marginBottom: 10 }}>
+              <label style={labelStyle}>Tema</label>
+              <input value={form.tema} onChange={e => setForm({ ...form, tema: e.target.value })} placeholder="Ex: Usucapião extrajudicial — requisitos" style={inputStyle} />
+            </div>
+
+            <div style={{ marginBottom: 10 }}>
+              <label style={labelStyle}>Tese Central 1 *</label>
+              <input value={form.tese1} onChange={e => setForm({ ...form, tese1: e.target.value })} placeholder="Tese principal do julgado" style={inputStyle} />
+            </div>
+            <div style={{ marginBottom: 10 }}>
+              <label style={labelStyle}>Tese Central 2 (opcional)</label>
+              <input value={form.tese2} onChange={e => setForm({ ...form, tese2: e.target.value })} placeholder="Segunda tese (se houver)" style={inputStyle} />
+            </div>
+            <div style={{ marginBottom: 10 }}>
+              <label style={labelStyle}>Tese Central 3 (opcional)</label>
+              <input value={form.tese3} onChange={e => setForm({ ...form, tese3: e.target.value })} placeholder="Terceira tese (se houver)" style={inputStyle} />
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginBottom: 16 }}>
+              <div>
+                <label style={labelStyle}>Relevância ENAC</label>
+                <select value={form.relevancia} onChange={e => setForm({ ...form, relevancia: e.target.value as "alta" | "média" | "baixa" })} style={selectStyle}>
+                  <option value="alta">Alta</option>
+                  <option value="média">Média</option>
+                  <option value="baixa">Baixa</option>
+                </select>
+              </div>
+              <div>
+                <label style={labelStyle}>Matéria</label>
+                <select value={form.materia} onChange={e => setForm({ ...form, materia: e.target.value })} style={selectStyle}>
+                  {MATERIAS_JULGADOS.map(m => <option key={m} value={m}>{m}</option>)}
+                </select>
+              </div>
+              <div>
+                <label style={labelStyle}>Status</label>
+                <select value={form.status} onChange={e => setForm({ ...form, status: e.target.value as "lido" | "fichado" | "no_remnote" })} style={selectStyle}>
+                  <option value="lido">Lido</option>
+                  <option value="fichado">Fichado</option>
+                  <option value="no_remnote">No RemNote</option>
+                </select>
+              </div>
+            </div>
+
+            <div style={{ display: "flex", gap: 8 }}>
+              <button onClick={handleSave} style={{
+                flex: 1, background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 10, padding: "12px",
+                color: "white", fontWeight: 600, cursor: "pointer", fontSize: 14, fontFamily: "'Space Grotesk', sans-serif",
+              }}>Salvar</button>
+              <button onClick={resetForm} style={{
+                background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "12px 20px",
+                color: "#64748b", fontWeight: 600, cursor: "pointer", fontSize: 14, fontFamily: "'Space Grotesk', sans-serif",
+              }}>Cancelar</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
