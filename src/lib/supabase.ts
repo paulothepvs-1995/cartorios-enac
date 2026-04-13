@@ -51,15 +51,21 @@ export interface Simulado {
   date: string;
 }
 
+export interface TeseCentral {
+  texto: string;
+  relevancia: "alta" | "média" | "baixa";
+  materia: string;
+  status: "lido" | "fichado" | "no_remnote";
+}
+
 export interface JulgadoEntry {
   id: string;
   date: string;           // data do julgado
+  createdAt: string;      // data de inclusão no sistema
   tribunal: "STF" | "STJ";
-  tema: string;
-  teses: string[];        // até 3 frases
-  relevancia: "alta" | "média" | "baixa";
-  materia: string;        // notarial, civil, constitucional etc.
-  status: "lido" | "fichado" | "no_remnote";
+  informativo: string;    // número do informativo
+  relevancia: "alta" | "média" | "baixa"; // relevância geral do informativo
+  teses: TeseCentral[];
 }
 
 const DATA_KEY = "main";

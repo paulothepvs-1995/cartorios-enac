@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { PLAN, getWeekNumber, getCurrentPhase, daysUntilExam, getWeekKey, getWeekStartDate } from "@/lib/plan";
-import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado, type DailyTodoItem, type JulgadoEntry } from "@/lib/supabase";
+import { loadData, saveData, type StudyData, type QuestionEntry, type StudyEntry, type Simulado, type DailyTodoItem, type JulgadoEntry, type TeseCentral } from "@/lib/supabase";
 
 /* ─── LOCAL STORAGE FOR DAILY TODOS ─── */
 const TODO_KEY = "enac-td3";
@@ -1519,31 +1519,52 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
 
 /* ─── JULGADOS STF/STJ ─── */
 const MATERIAS_JULGADOS = ["Notarial e Registral", "Direito Civil", "Constitucional", "Empresarial", "Tributário", "Administrativo", "Processual Civil", "Penal/PP/CG"];
+const REL_ORDER: Record<string, number> = { alta: 0, "média": 1, baixa: 2 };
+const REL_COLORS: Record<string, { bg: string; fg: string; border: string }> = {
+  alta:    { bg: "#fef2f2", fg: "#dc2626", border: "#fca5a5" },
+  "média": { bg: "#fffbeb", fg: "#b45309", border: "#fcd34d" },
+  baixa:   { bg: "#f0fdf4", fg: "#15803d", border: "#86efac" },
+};
+const STATUS_MAP: Record<string, { label: string; bg: string; fg: string; border: string }> = {
+  lido:       { label: "Lido",       bg: "#eff6ff", fg: "#2563eb", border: "#93c5fd" },
+  fichado:    { label: "Fichado",    bg: "#f5f3ff", fg: "#7c3aed", border: "#c4b5fd" },
+  no_remnote: { label: "RemNote",    bg: "#ecfdf5", fg: "#059669", border: "#6ee7b7" },
+};
+const EMPTY_TESE = (): TeseCentral => ({ texto: "", relevancia: "alta", materia: MATERIAS_JULGADOS[0], status: "lido" });
 
 function JulgadosTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
   const [showForm, setShowForm] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
   const [filtro, setFiltro] = useState<"todos" | "STF" | "STJ">("todos");
-  const [form, setForm] = useState<{
-    date: string; tribunal: "STF" | "STJ"; tema: string;
-    tese1: string; tese2: string; tese3: string;
-    relevancia: "alta" | "média" | "baixa"; materia: string;
-    status: "lido" | "fichado" | "no_remnote";
-  }>({ date: "", tribunal: "STF", tema: "", tese1: "", tese2: "", tese3: "", relevancia: "alta", materia: MATERIAS_JULGADOS[0], status: "lido" });
+  const [sortBy, setSortBy] = useState<"relevancia" | "data" | "inclusao">("inclusao");
+  const [formDate, setFormDate] = useState("");
+  const [formTribunal, setFormTribunal] = useState<"STF" | "STJ">("STF");
+  const [formInformativo, setFormInformativo] = useState("");
+  const [formRelevancia, setFormRelevancia] = useState<"alta" | "média" | "baixa">("alta");
+  const [formTeses, setFormTeses] = useState<TeseCentral[]>([EMPTY_TESE()]);
 
   const resetForm = () => {
-    setForm({ date: "", tribunal: "STF", tema: "", tese1: "", tese2: "", tese3: "", relevancia: "alta", materia: MATERIAS_JULGADOS[0], status: "lido" });
-    setEditId(null);
-    setShowForm(false);
+    setFormDate(""); setFormTribunal("STF"); setFormInformativo(""); setFormRelevancia("alta");
+    setFormTeses([EMPTY_TESE()]); setEditId(null); setShowForm(false);
+  };
+
+  const updateTese = (idx: number, patch: Partial<TeseCentral>) => {
+    setFormTeses(prev => prev.map((t, i) => i === idx ? { ...t, ...patch } : t));
+  };
+
+  const removeTese = (idx: number) => {
+    if (formTeses.length <= 1) return;
+    setFormTeses(prev => prev.filter((_, i) => i !== idx));
   };
 
   const handleSave = async () => {
-    if (!form.tema.trim() || !form.tese1.trim() || !form.date) return;
-    const teses = [form.tese1, form.tese2, form.tese3].filter(t => t.trim());
+    if (!formInformativo.trim() || !formDate || formTeses.every(t => !t.texto.trim())) return;
+    const teses = formTeses.filter(t => t.texto.trim());
     const entry: JulgadoEntry = {
       id: editId || crypto.randomUUID(),
-      date: form.date, tribunal: form.tribunal, tema: form.tema.trim(),
-      teses, relevancia: form.relevancia, materia: form.materia, status: form.status,
+      date: formDate, createdAt: editId ? (data.julgados || []).find(j => j.id === editId)?.createdAt || new Date().toISOString() : new Date().toISOString(),
+      tribunal: formTribunal, informativo: formInformativo.trim(),
+      relevancia: formRelevancia, teses,
     };
     const julgados = [...(data.julgados || [])];
     if (editId) {
@@ -1557,221 +1578,310 @@ function JulgadosTab({ data, save }: { data: StudyData; save: (d: StudyData) => 
   };
 
   const handleEdit = (j: JulgadoEntry) => {
-    setForm({
-      date: j.date, tribunal: j.tribunal, tema: j.tema,
-      tese1: j.teses[0] || "", tese2: j.teses[1] || "", tese3: j.teses[2] || "",
-      relevancia: j.relevancia, materia: j.materia, status: j.status,
-    });
-    setEditId(j.id);
-    setShowForm(true);
+    setFormDate(j.date); setFormTribunal(j.tribunal); setFormInformativo(j.informativo);
+    setFormRelevancia(j.relevancia);
+    setFormTeses(j.teses.length > 0 ? j.teses.map(t => ({ ...t })) : [EMPTY_TESE()]);
+    setEditId(j.id); setShowForm(true);
   };
 
   const handleDelete = async (id: string) => {
-    if (!window.confirm("Excluir este julgado?")) return;
+    if (!window.confirm("Excluir este informativo?")) return;
     await save({ ...data, julgados: (data.julgados || []).filter(j => j.id !== id) });
   };
 
-  const handleStatusCycle = async (j: JulgadoEntry) => {
+  const handleTeseStatusCycle = async (jId: string, teseIdx: number) => {
     const order: Array<"lido" | "fichado" | "no_remnote"> = ["lido", "fichado", "no_remnote"];
-    const next = order[(order.indexOf(j.status) + 1) % order.length];
-    const julgados = (data.julgados || []).map(x => x.id === j.id ? { ...x, status: next } : x);
+    const julgados = (data.julgados || []).map(j => {
+      if (j.id !== jId) return j;
+      const teses = j.teses.map((t, i) => i === teseIdx ? { ...t, status: order[(order.indexOf(t.status) + 1) % order.length] } : t);
+      return { ...j, teses };
+    });
     await save({ ...data, julgados });
   };
 
-  const julgados = (data.julgados || []).filter(j => filtro === "todos" || j.tribunal === filtro);
-  const stfList = julgados.filter(j => j.tribunal === "STF");
-  const stjList = julgados.filter(j => j.tribunal === "STJ");
-
-  const relBadge = (r: string) => {
-    const colors: Record<string, { bg: string; fg: string }> = {
-      alta: { bg: "#fef2f2", fg: "#dc2626" },
-      "média": { bg: "#fffbeb", fg: "#d97706" },
-      baixa: { bg: "#f0fdf4", fg: "#16a34a" },
-    };
-    const c = colors[r] || colors.baixa;
-    return { background: c.bg, color: c.fg, border: `1px solid ${c.fg}33`, borderRadius: 6, padding: "2px 8px", fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" };
+  // Migration: convert old format entries that have tema/string teses
+  const migrateEntry = (j: JulgadoEntry): JulgadoEntry => {
+    const legacy = j as JulgadoEntry & { tema?: string };
+    if (!j.informativo && legacy.tema) return { ...j, informativo: legacy.tema, createdAt: j.createdAt || j.date };
+    if (!j.createdAt) return { ...j, createdAt: j.date };
+    if (j.teses.length > 0 && typeof j.teses[0] === "string") {
+      return { ...j, teses: (j.teses as unknown as string[]).map(t => ({ texto: t, relevancia: j.relevancia || "alta", materia: "Direito Civil", status: "lido" })) };
+    }
+    return j;
   };
 
-  const statusBadge = (s: string) => {
-    const map: Record<string, { label: string; bg: string; fg: string }> = {
-      lido: { label: "Lido", bg: "#eff6ff", fg: "#2563eb" },
-      fichado: { label: "Fichado", bg: "#f5f3ff", fg: "#7c3aed" },
-      no_remnote: { label: "No RemNote", bg: "#ecfdf5", fg: "#059669" },
-    };
-    const c = map[s] || map.lido;
-    return { label: c.label, style: { background: c.bg, color: c.fg, border: `1px solid ${c.fg}33`, borderRadius: 6, padding: "2px 8px", fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", cursor: "pointer" } };
-  };
+  const allJulgados = useMemo(() => (data.julgados || []).map(migrateEntry), [data.julgados]);
+
+  const sorted = useMemo(() => {
+    const filtered = allJulgados.filter(j => filtro === "todos" || j.tribunal === filtro);
+    return [...filtered].sort((a, b) => {
+      if (sortBy === "relevancia") return (REL_ORDER[a.relevancia] ?? 2) - (REL_ORDER[b.relevancia] ?? 2);
+      if (sortBy === "data") return b.date.localeCompare(a.date);
+      return (b.createdAt || b.date).localeCompare(a.createdAt || a.date);
+    });
+  }, [allJulgados, filtro, sortBy]);
+
+  const stfList = sorted.filter(j => j.tribunal === "STF");
+  const stjList = sorted.filter(j => j.tribunal === "STJ");
+
+  const totalAll = allJulgados.length;
+  const totalStf = allJulgados.filter(j => j.tribunal === "STF").length;
+  const totalStj = allJulgados.filter(j => j.tribunal === "STJ").length;
+  const totalAlta = allJulgados.filter(j => j.relevancia === "alta").length;
+  const totalTeses = allJulgados.reduce((acc, j) => acc + j.teses.length, 0);
+
+  const tribunalAccent = (t: string) => t === "STF" ? "#2563eb" : "#059669";
 
   const renderCard = (j: JulgadoEntry) => {
-    const sb = statusBadge(j.status);
+    const rc = REL_COLORS[j.relevancia] || REL_COLORS.baixa;
+    const accent = tribunalAccent(j.tribunal);
     return (
-      <div key={j.id} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: 14, marginBottom: 10, boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8, marginBottom: 6 }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: "#1e293b", fontFamily: "'Space Grotesk', sans-serif", flex: 1 }}>{j.tema}</div>
-          <div style={{ display: "flex", gap: 4, flexShrink: 0 }}>
-            <span style={relBadge(j.relevancia)}>{j.relevancia.toUpperCase()}</span>
-            <span style={sb.style} onClick={() => handleStatusCycle(j)} title="Clique para avançar status">{sb.label}</span>
+      <div key={j.id} style={{ background: "white", borderRadius: 12, marginBottom: 14, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", overflow: "hidden", border: "1px solid #e2e8f0" }}>
+        {/* Header */}
+        <div style={{ background: `linear-gradient(135deg, ${accent}08, ${accent}04)`, borderBottom: "1px solid #e2e8f0", padding: "12px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, flex: 1, minWidth: 0 }}>
+            <div style={{ background: accent, color: "white", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 800, fontFamily: "'JetBrains Mono', monospace", flexShrink: 0 }}>
+              {j.tribunal}
+            </div>
+            <div style={{ fontSize: 16, fontWeight: 700, color: "#1e293b", fontFamily: "'Space Grotesk', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              Informativo {j.informativo}
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: 6, alignItems: "center", flexShrink: 0 }}>
+            <span style={{ background: rc.bg, color: rc.fg, border: `1px solid ${rc.border}`, borderRadius: 20, padding: "3px 10px", fontSize: 10, fontWeight: 800, fontFamily: "'JetBrains Mono', monospace", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              {j.relevancia}
+            </span>
+            <span style={{ fontSize: 11, color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace" }}>{j.date}</span>
           </div>
         </div>
-        <div style={{ fontSize: 11, color: "#64748b", marginBottom: 6, fontFamily: "'JetBrains Mono', monospace" }}>
-          {j.date} &middot; {j.materia}
+
+        {/* Teses */}
+        <div style={{ padding: "10px 16px 6px" }}>
+          {j.teses.map((t, i) => {
+            const trc = REL_COLORS[t.relevancia] || REL_COLORS.baixa;
+            const ts = STATUS_MAP[t.status] || STATUS_MAP.lido;
+            return (
+              <div key={i} style={{ padding: "10px 12px", marginBottom: 8, background: "#fafbfc", borderRadius: 8, borderLeft: `3px solid ${trc.fg}` }}>
+                <div style={{ fontSize: 13, color: "#1e293b", lineHeight: 1.6, marginBottom: 6 }}>{t.texto}</div>
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
+                  <span style={{ background: trc.bg, color: trc.fg, border: `1px solid ${trc.border}`, borderRadius: 4, padding: "1px 7px", fontSize: 10, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>
+                    {t.relevancia}
+                  </span>
+                  <span style={{ background: "#f1f5f9", color: "#475569", borderRadius: 4, padding: "1px 7px", fontSize: 10, fontWeight: 600, fontFamily: "'JetBrains Mono', monospace" }}>
+                    {t.materia}
+                  </span>
+                  <span onClick={() => handleTeseStatusCycle(j.id, i)} title="Clique para avançar" style={{
+                    background: ts.bg, color: ts.fg, border: `1px solid ${ts.border}`, borderRadius: 4, padding: "1px 7px",
+                    fontSize: 10, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", cursor: "pointer", userSelect: "none",
+                  }}>
+                    {ts.label}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        {j.teses.map((t, i) => (
-          <div key={i} style={{ fontSize: 12, color: "#334155", marginBottom: 3, paddingLeft: 10, borderLeft: "2px solid #e2e8f0", lineHeight: 1.5 }}>{t}</div>
-        ))}
-        <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
-          <button onClick={() => handleEdit(j)} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 6, padding: "4px 10px", cursor: "pointer", fontSize: 11, fontWeight: 600, color: "#4338ca" }}>Editar</button>
-          <button onClick={() => handleDelete(j.id)} style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: 6, padding: "4px 10px", cursor: "pointer", fontSize: 11, fontWeight: 600, color: "#dc2626" }}>Excluir</button>
+
+        {/* Footer */}
+        <div style={{ padding: "0 16px 10px", display: "flex", gap: 6 }}>
+          <button onClick={() => handleEdit(j)} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 6, padding: "5px 12px", cursor: "pointer", fontSize: 11, fontWeight: 600, color: "#4338ca", fontFamily: "'Space Grotesk', sans-serif" }}>Editar</button>
+          <button onClick={() => handleDelete(j.id)} style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: 6, padding: "5px 12px", cursor: "pointer", fontSize: 11, fontWeight: 600, color: "#dc2626", fontFamily: "'Space Grotesk', sans-serif" }}>Excluir</button>
         </div>
       </div>
     );
   };
 
-  const inputStyle = { width: "100%", padding: "8px 10px", border: "1px solid #e2e8f0", borderRadius: 8, fontSize: 13, color: "#1e293b", background: "#f8fafc", fontFamily: "'Segoe UI', sans-serif", boxSizing: "border-box" as const, outline: "none" };
+  const inputStyle = { width: "100%", padding: "9px 12px", border: "1px solid #e2e8f0", borderRadius: 8, fontSize: 13, color: "#1e293b", background: "#f8fafc", fontFamily: "'Segoe UI', sans-serif", boxSizing: "border-box" as const, outline: "none" };
   const selectStyle = { ...inputStyle, cursor: "pointer" };
-  const labelStyle = { fontSize: 12, fontWeight: 600, color: "#475569", marginBottom: 4, display: "block" as const };
-
-  const totalAll = (data.julgados || []).length;
-  const totalStf = (data.julgados || []).filter(j => j.tribunal === "STF").length;
-  const totalStj = (data.julgados || []).filter(j => j.tribunal === "STJ").length;
-  const totalAlta = (data.julgados || []).filter(j => j.relevancia === "alta").length;
+  const labelStyle = { fontSize: 11, fontWeight: 700, color: "#64748b", marginBottom: 4, display: "block" as const, textTransform: "uppercase" as const, letterSpacing: "0.04em" };
+  const pillBtn = (active: boolean) => ({
+    padding: "7px 14px", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 12, fontWeight: 600,
+    fontFamily: "'Space Grotesk', sans-serif", transition: "all 0.15s",
+    background: active ? "#4338ca" : "white", color: active ? "white" : "#94a3b8",
+    boxShadow: active ? "0 2px 8px rgba(67,56,202,0.25)" : "0 1px 3px rgba(0,0,0,0.05)",
+  });
 
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, flexWrap: "wrap", gap: 10 }}>
-        <h2 style={{ margin: 0, fontSize: 18, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Julgados STF/STJ</h2>
+      {/* Header */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, flexWrap: "wrap", gap: 10 }}>
+        <div>
+          <h2 style={{ margin: 0, fontSize: 20, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Informativos STF / STJ</h2>
+          <p style={{ margin: "4px 0 0", fontSize: 12, color: "#94a3b8" }}>{totalTeses} teses em {totalAll} informativos</p>
+        </div>
         <button onClick={() => { resetForm(); setShowForm(true); }} style={{
-          background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 10, padding: "10px 18px",
+          background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 10, padding: "10px 20px",
           color: "white", fontWeight: 600, cursor: "pointer", fontSize: 13, fontFamily: "'Space Grotesk', sans-serif",
           boxShadow: "0 4px 15px rgba(79,70,229,0.3)",
-        }}>+ Novo Julgado</button>
+        }}>+ Novo Informativo</button>
       </div>
 
       {/* KPIs */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))", gap: 10, marginBottom: 16 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: 10, marginBottom: 18 }}>
         {[
-          { label: "Total", value: totalAll, color: "#4338ca" },
+          { label: "Informativos", value: totalAll, color: "#4338ca" },
           { label: "STF", value: totalStf, color: "#2563eb" },
           { label: "STJ", value: totalStj, color: "#059669" },
-          { label: "Alta Relevância", value: totalAlta, color: "#dc2626" },
+          { label: "Teses", value: totalTeses, color: "#7c3aed" },
+          { label: "Alta Relev.", value: totalAlta, color: "#dc2626" },
         ].map(k => (
-          <div key={k.label} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "12px 14px", textAlign: "center" }}>
-            <div style={{ fontSize: 22, fontWeight: 800, color: k.color, fontFamily: "'JetBrains Mono', monospace" }}>{k.value}</div>
-            <div style={{ fontSize: 11, color: "#64748b", fontWeight: 600 }}>{k.label}</div>
+          <div key={k.label} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "10px 12px", textAlign: "center" }}>
+            <div style={{ fontSize: 20, fontWeight: 800, color: k.color, fontFamily: "'JetBrains Mono', monospace" }}>{k.value}</div>
+            <div style={{ fontSize: 10, color: "#94a3b8", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em" }}>{k.label}</div>
           </div>
         ))}
       </div>
 
-      {/* Filter */}
-      <div style={{ display: "flex", gap: 4, marginBottom: 16 }}>
-        {(["todos", "STF", "STJ"] as const).map(f => (
-          <button key={f} onClick={() => setFiltro(f)} style={{
-            padding: "8px 16px", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 13, fontWeight: 600,
-            fontFamily: "'Space Grotesk', sans-serif",
-            background: filtro === f ? "rgba(99,102,241,0.1)" : "white",
-            color: filtro === f ? "#4338ca" : "#94a3b8",
-            boxShadow: filtro === f ? "none" : "0 1px 3px rgba(0,0,0,0.05)",
-          }}>{f === "todos" ? "Todos" : f}</button>
-        ))}
+      {/* Filtros + Ordenação */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, flexWrap: "wrap", gap: 8 }}>
+        <div style={{ display: "flex", gap: 4 }}>
+          {(["todos", "STF", "STJ"] as const).map(f => (
+            <button key={f} onClick={() => setFiltro(f)} style={pillBtn(filtro === f)}>{f === "todos" ? "Todos" : f}</button>
+          ))}
+        </div>
+        <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
+          <span style={{ fontSize: 11, color: "#94a3b8", fontWeight: 600, marginRight: 4 }}>Ordenar:</span>
+          {([["inclusao", "Recentes"], ["relevancia", "Relevância"], ["data", "Data"]] as const).map(([val, label]) => (
+            <button key={val} onClick={() => setSortBy(val)} style={pillBtn(sortBy === val)}>{label}</button>
+          ))}
+        </div>
       </div>
 
-      {/* Two-column layout */}
+      {/* Two-column or single-column */}
       {filtro === "todos" ? (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, alignItems: "start" }}>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: "#2563eb", marginBottom: 10, fontFamily: "'Space Grotesk', sans-serif", padding: "6px 12px", background: "#eff6ff", borderRadius: 8, textAlign: "center" }}>
+            <div style={{ background: "linear-gradient(135deg, #2563eb, #3b82f6)", color: "white", borderRadius: 10, padding: "8px 14px", marginBottom: 12, textAlign: "center", fontSize: 13, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", boxShadow: "0 2px 8px rgba(37,99,235,0.2)" }}>
               STF ({stfList.length})
             </div>
-            {stfList.length === 0 && <div style={{ color: "#94a3b8", fontSize: 13, textAlign: "center", padding: 20 }}>Nenhum julgado STF</div>}
+            {stfList.length === 0 && <div style={{ color: "#cbd5e1", fontSize: 13, textAlign: "center", padding: 30, background: "white", borderRadius: 10, border: "1px dashed #e2e8f0" }}>Nenhum informativo STF</div>}
             {stfList.map(renderCard)}
           </div>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: "#059669", marginBottom: 10, fontFamily: "'Space Grotesk', sans-serif", padding: "6px 12px", background: "#ecfdf5", borderRadius: 8, textAlign: "center" }}>
+            <div style={{ background: "linear-gradient(135deg, #059669, #10b981)", color: "white", borderRadius: 10, padding: "8px 14px", marginBottom: 12, textAlign: "center", fontSize: 13, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", boxShadow: "0 2px 8px rgba(5,150,105,0.2)" }}>
               STJ ({stjList.length})
             </div>
-            {stjList.length === 0 && <div style={{ color: "#94a3b8", fontSize: 13, textAlign: "center", padding: 20 }}>Nenhum julgado STJ</div>}
+            {stjList.length === 0 && <div style={{ color: "#cbd5e1", fontSize: 13, textAlign: "center", padding: 30, background: "white", borderRadius: 10, border: "1px dashed #e2e8f0" }}>Nenhum informativo STJ</div>}
             {stjList.map(renderCard)}
           </div>
         </div>
       ) : (
         <div>
-          {julgados.length === 0 && <div style={{ color: "#94a3b8", fontSize: 13, textAlign: "center", padding: 40 }}>Nenhum julgado {filtro}</div>}
-          {julgados.map(renderCard)}
+          {sorted.length === 0 && <div style={{ color: "#cbd5e1", fontSize: 13, textAlign: "center", padding: 40, background: "white", borderRadius: 10, border: "1px dashed #e2e8f0" }}>Nenhum informativo {filtro}</div>}
+          {sorted.map(renderCard)}
         </div>
       )}
 
-      {/* Modal de formulário */}
+      {/* Modal */}
       {showForm && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 16, backdropFilter: "blur(4px)" }} onClick={resetForm}>
-          <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 16, padding: 24, width: "100%", maxWidth: 480, boxShadow: "0 20px 60px rgba(0,0,0,0.15)", maxHeight: "90vh", overflowY: "auto" }} onClick={e => e.stopPropagation()}>
-            <h3 style={{ margin: "0 0 16px", fontSize: 16, fontFamily: "'Space Grotesk', sans-serif" }}>{editId ? "Editar Julgado" : "Novo Julgado"}</h3>
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 10 }}>
-              <div>
-                <label style={labelStyle}>Data do Julgado</label>
-                <input type="date" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} style={inputStyle} />
-              </div>
-              <div>
-                <label style={labelStyle}>Tribunal</label>
-                <select value={form.tribunal} onChange={e => setForm({ ...form, tribunal: e.target.value as "STF" | "STJ" })} style={selectStyle}>
-                  <option value="STF">STF</option>
-                  <option value="STJ">STJ</option>
-                </select>
-              </div>
+        <div style={{ position: "fixed", inset: 0, background: "rgba(15,23,42,0.4)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 16, backdropFilter: "blur(6px)" }} onClick={resetForm}>
+          <div style={{ background: "white", borderRadius: 16, padding: 0, width: "100%", maxWidth: 560, boxShadow: "0 25px 60px rgba(0,0,0,0.2)", maxHeight: "92vh", overflowY: "auto" }} onClick={e => e.stopPropagation()}>
+            {/* Modal header */}
+            <div style={{ background: "linear-gradient(135deg, #4f46e5, #7c3aed)", padding: "16px 24px", borderRadius: "16px 16px 0 0" }}>
+              <h3 style={{ margin: 0, fontSize: 17, fontFamily: "'Space Grotesk', sans-serif", color: "white", fontWeight: 700 }}>
+                {editId ? "Editar Informativo" : "Novo Informativo"}
+              </h3>
             </div>
 
-            <div style={{ marginBottom: 10 }}>
-              <label style={labelStyle}>Tema</label>
-              <input value={form.tema} onChange={e => setForm({ ...form, tema: e.target.value })} placeholder="Ex: Usucapião extrajudicial — requisitos" style={inputStyle} />
-            </div>
-
-            <div style={{ marginBottom: 10 }}>
-              <label style={labelStyle}>Tese Central 1 *</label>
-              <input value={form.tese1} onChange={e => setForm({ ...form, tese1: e.target.value })} placeholder="Tese principal do julgado" style={inputStyle} />
-            </div>
-            <div style={{ marginBottom: 10 }}>
-              <label style={labelStyle}>Tese Central 2 (opcional)</label>
-              <input value={form.tese2} onChange={e => setForm({ ...form, tese2: e.target.value })} placeholder="Segunda tese (se houver)" style={inputStyle} />
-            </div>
-            <div style={{ marginBottom: 10 }}>
-              <label style={labelStyle}>Tese Central 3 (opcional)</label>
-              <input value={form.tese3} onChange={e => setForm({ ...form, tese3: e.target.value })} placeholder="Terceira tese (se houver)" style={inputStyle} />
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginBottom: 16 }}>
-              <div>
-                <label style={labelStyle}>Relevância ENAC</label>
-                <select value={form.relevancia} onChange={e => setForm({ ...form, relevancia: e.target.value as "alta" | "média" | "baixa" })} style={selectStyle}>
-                  <option value="alta">Alta</option>
-                  <option value="média">Média</option>
-                  <option value="baixa">Baixa</option>
-                </select>
+            <div style={{ padding: "20px 24px 24px" }}>
+              {/* Row 1: Data, Tribunal, Informativo */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginBottom: 14 }}>
+                <div>
+                  <label style={labelStyle}>Data</label>
+                  <input type="date" value={formDate} onChange={e => setFormDate(e.target.value)} style={inputStyle} />
+                </div>
+                <div>
+                  <label style={labelStyle}>Tribunal</label>
+                  <select value={formTribunal} onChange={e => setFormTribunal(e.target.value as "STF" | "STJ")} style={selectStyle}>
+                    <option value="STF">STF</option>
+                    <option value="STJ">STJ</option>
+                  </select>
+                </div>
+                <div>
+                  <label style={labelStyle}>Informativo N.</label>
+                  <input value={formInformativo} onChange={e => setFormInformativo(e.target.value)} placeholder="Ex: 881" style={inputStyle} />
+                </div>
               </div>
-              <div>
-                <label style={labelStyle}>Matéria</label>
-                <select value={form.materia} onChange={e => setForm({ ...form, materia: e.target.value })} style={selectStyle}>
-                  {MATERIAS_JULGADOS.map(m => <option key={m} value={m}>{m}</option>)}
-                </select>
-              </div>
-              <div>
-                <label style={labelStyle}>Status</label>
-                <select value={form.status} onChange={e => setForm({ ...form, status: e.target.value as "lido" | "fichado" | "no_remnote" })} style={selectStyle}>
-                  <option value="lido">Lido</option>
-                  <option value="fichado">Fichado</option>
-                  <option value="no_remnote">No RemNote</option>
-                </select>
-              </div>
-            </div>
 
-            <div style={{ display: "flex", gap: 8 }}>
-              <button onClick={handleSave} style={{
-                flex: 1, background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 10, padding: "12px",
-                color: "white", fontWeight: 600, cursor: "pointer", fontSize: 14, fontFamily: "'Space Grotesk', sans-serif",
-              }}>Salvar</button>
-              <button onClick={resetForm} style={{
-                background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "12px 20px",
-                color: "#64748b", fontWeight: 600, cursor: "pointer", fontSize: 14, fontFamily: "'Space Grotesk', sans-serif",
-              }}>Cancelar</button>
+              {/* Relevância geral */}
+              <div style={{ marginBottom: 16 }}>
+                <label style={labelStyle}>Relevância Geral do Informativo</label>
+                <div style={{ display: "flex", gap: 6 }}>
+                  {(["alta", "média", "baixa"] as const).map(r => {
+                    const rc = REL_COLORS[r];
+                    const active = formRelevancia === r;
+                    return (
+                      <button key={r} onClick={() => setFormRelevancia(r)} style={{
+                        flex: 1, padding: "8px", border: `2px solid ${active ? rc.fg : "#e2e8f0"}`, borderRadius: 8,
+                        background: active ? rc.bg : "white", color: active ? rc.fg : "#94a3b8",
+                        fontWeight: 700, fontSize: 12, cursor: "pointer", fontFamily: "'Space Grotesk', sans-serif",
+                        textTransform: "uppercase", transition: "all 0.15s",
+                      }}>{r}</button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Teses */}
+              <div style={{ marginBottom: 16 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                  <label style={{ ...labelStyle, margin: 0 }}>Teses ({formTeses.length})</label>
+                  <button onClick={() => setFormTeses(prev => [...prev, EMPTY_TESE()])} style={{
+                    background: "#f0fdf4", border: "1px solid #86efac", borderRadius: 6, padding: "4px 10px",
+                    color: "#15803d", fontWeight: 700, cursor: "pointer", fontSize: 11, fontFamily: "'Space Grotesk', sans-serif",
+                  }}>+ Tese</button>
+                </div>
+
+                {formTeses.map((t, i) => (
+                  <div key={i} style={{ background: "#fafbfc", border: "1px solid #e2e8f0", borderRadius: 10, padding: 12, marginBottom: 8 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                      <span style={{ fontSize: 11, fontWeight: 700, color: "#64748b" }}>Tese {i + 1}</span>
+                      {formTeses.length > 1 && (
+                        <button onClick={() => removeTese(i)} style={{ background: "none", border: "none", color: "#dc2626", cursor: "pointer", fontSize: 16, fontWeight: 700, lineHeight: 1, padding: "0 4px" }} title="Remover">x</button>
+                      )}
+                    </div>
+                    <textarea value={t.texto} onChange={e => updateTese(i, { texto: e.target.value })} placeholder="Texto da tese central..." rows={2}
+                      style={{ ...inputStyle, resize: "vertical", minHeight: 50, fontFamily: "'Segoe UI', sans-serif", marginBottom: 8 }} />
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 6 }}>
+                      <div>
+                        <label style={{ fontSize: 10, color: "#94a3b8", fontWeight: 600 }}>Relevância</label>
+                        <select value={t.relevancia} onChange={e => updateTese(i, { relevancia: e.target.value as "alta" | "média" | "baixa" })} style={{ ...selectStyle, padding: "6px 8px", fontSize: 12 }}>
+                          <option value="alta">Alta</option>
+                          <option value="média">Média</option>
+                          <option value="baixa">Baixa</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label style={{ fontSize: 10, color: "#94a3b8", fontWeight: 600 }}>Matéria</label>
+                        <select value={t.materia} onChange={e => updateTese(i, { materia: e.target.value })} style={{ ...selectStyle, padding: "6px 8px", fontSize: 12 }}>
+                          {MATERIAS_JULGADOS.map(m => <option key={m} value={m}>{m}</option>)}
+                        </select>
+                      </div>
+                      <div>
+                        <label style={{ fontSize: 10, color: "#94a3b8", fontWeight: 600 }}>Status</label>
+                        <select value={t.status} onChange={e => updateTese(i, { status: e.target.value as "lido" | "fichado" | "no_remnote" })} style={{ ...selectStyle, padding: "6px 8px", fontSize: 12 }}>
+                          <option value="lido">Lido</option>
+                          <option value="fichado">Fichado</option>
+                          <option value="no_remnote">No RemNote</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Actions */}
+              <div style={{ display: "flex", gap: 8 }}>
+                <button onClick={handleSave} style={{
+                  flex: 1, background: "linear-gradient(135deg, #4f46e5, #7c3aed)", border: "none", borderRadius: 10, padding: "12px",
+                  color: "white", fontWeight: 700, cursor: "pointer", fontSize: 14, fontFamily: "'Space Grotesk', sans-serif",
+                  boxShadow: "0 4px 15px rgba(79,70,229,0.3)",
+                }}>Salvar</button>
+                <button onClick={resetForm} style={{
+                  background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "12px 20px",
+                  color: "#64748b", fontWeight: 600, cursor: "pointer", fontSize: 14, fontFamily: "'Space Grotesk', sans-serif",
+                }}>Cancelar</button>
+              </div>
             </div>
           </div>
         </div>
