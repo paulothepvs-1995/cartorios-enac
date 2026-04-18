@@ -32,6 +32,7 @@ function saveTodoState(dateKey: string, checked: Record<string, boolean>, manual
 }
 import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
 import { TRILHAS, type Trilha } from "@/lib/trilhas";
+import { LEI_SECA_DAYS, LEI_SECA_SUBTASKS } from "@/lib/leiseca";
 
 const defaultData = (): StudyData => ({
   discipline_hours: {},
@@ -148,7 +149,7 @@ export default function App() {
       {/* TABS */}
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
         <div style={{ display: "flex", gap: 4, padding: "16px 0 0", borderBottom: "1px solid #e2e8f0", overflowX: "auto" }}>
-          {["dashboard", "trilhas", "tempo", "disciplinas", "questões", "legislação", "julgados", "simulados", "histórico"].map((t) => (
+          {["dashboard", "trilhas", "lei seca", "tempo", "disciplinas", "questões", "legislação", "julgados", "simulados", "histórico"].map((t) => (
             <button key={t} onClick={() => setTab(t)} style={{
               padding: "10px 16px", background: tab === t ? "rgba(99,102,241,0.1)" : "transparent", border: "none",
               borderBottom: tab === t ? "2px solid #6366f1" : "2px solid transparent",
@@ -167,6 +168,7 @@ export default function App() {
         {tab === "legislação" && <Legislacao data={data} save={save} />}
         {tab === "simulados" && <Simulados data={data} onLogSimulado={() => setSimModal(true)} />}
         {tab === "trilhas" && <TrilhasTab data={data} save={save} />}
+        {tab === "lei seca" && <LeiSecaTab data={data} save={save} />}
         {tab === "julgados" && <JulgadosTab data={data} save={save} />}
         {tab === "histórico" && <HistoricoTab data={data} save={save} />}
       </div>
@@ -1513,6 +1515,237 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+/* ─── LEI SECA (Reta Final ENAC - 75 Dias) ─── */
+function LeiSecaTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
+  const [expanded, setExpanded] = useState<Set<number>>(new Set());
+  const [filter, setFilter] = useState<"todos" | "pendentes" | "concluidos">("todos");
+
+  const keyFor = (day: number, subIdx: number) => `leiseca:${day}:${subIdx}`;
+  const dayKey = (day: number) => `leiseca:${day}`;
+
+  const isSubDone = (day: number, subIdx: number) => !!data.completed_tasks?.[keyFor(day, subIdx)];
+  const dayCompletion = (day: number) => {
+    const done = LEI_SECA_SUBTASKS.filter((_, i) => isSubDone(day, i)).length;
+    return { done, total: LEI_SECA_SUBTASKS.length, pct: Math.round((done / LEI_SECA_SUBTASKS.length) * 100) };
+  };
+
+  const toggleSub = async (day: number, subIdx: number) => {
+    const key = keyFor(day, subIdx);
+    const newCompleted = { ...(data.completed_tasks || {}) };
+    if (newCompleted[key]) delete newCompleted[key];
+    else newCompleted[key] = true;
+
+    // Also update day-level flag if all subtasks complete
+    const allDone = LEI_SECA_SUBTASKS.every((_, i) => {
+      const k = keyFor(day, i);
+      return i === subIdx ? !!newCompleted[k] : !!newCompleted[k];
+    });
+    if (allDone) newCompleted[dayKey(day)] = true;
+    else delete newCompleted[dayKey(day)];
+
+    await save({ ...data, completed_tasks: newCompleted });
+  };
+
+  const toggleAllDay = async (day: number) => {
+    const { done, total } = dayCompletion(day);
+    const shouldComplete = done < total;
+    const newCompleted = { ...(data.completed_tasks || {}) };
+    LEI_SECA_SUBTASKS.forEach((_, i) => {
+      const k = keyFor(day, i);
+      if (shouldComplete) newCompleted[k] = true;
+      else delete newCompleted[k];
+    });
+    if (shouldComplete) newCompleted[dayKey(day)] = true;
+    else delete newCompleted[dayKey(day)];
+    await save({ ...data, completed_tasks: newCompleted });
+  };
+
+  const toggleExpand = (day: number) => {
+    setExpanded(prev => {
+      const next = new Set(prev);
+      if (next.has(day)) next.delete(day);
+      else next.add(day);
+      return next;
+    });
+  };
+
+  const totalDays = LEI_SECA_DAYS.length;
+  const completedDays = LEI_SECA_DAYS.filter(d => dayCompletion(d.day).done === LEI_SECA_SUBTASKS.length).length;
+  const totalSubs = totalDays * LEI_SECA_SUBTASKS.length;
+  const doneSubs = LEI_SECA_DAYS.reduce((acc, d) => acc + dayCompletion(d.day).done, 0);
+  const pctOverall = Math.round((doneSubs / totalSubs) * 100);
+
+  const filtered = LEI_SECA_DAYS.filter(d => {
+    const c = dayCompletion(d.day);
+    if (filter === "pendentes") return c.done < c.total;
+    if (filter === "concluidos") return c.done === c.total;
+    return true;
+  });
+
+  const pillBtn = (active: boolean) => ({
+    padding: "7px 14px", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 12, fontWeight: 600,
+    fontFamily: "'Space Grotesk', sans-serif", transition: "all 0.15s",
+    background: active ? "#4338ca" : "white", color: active ? "white" : "#94a3b8",
+    boxShadow: active ? "0 2px 8px rgba(67,56,202,0.25)" : "0 1px 3px rgba(0,0,0,0.05)",
+  });
+
+  const expandAll = () => setExpanded(new Set(LEI_SECA_DAYS.map(d => d.day)));
+  const collapseAll = () => setExpanded(new Set());
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ margin: 0, fontSize: 20, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Lei Seca</h2>
+        <p style={{ margin: "4px 0 0", fontSize: 12, color: "#94a3b8" }}>Reta Final ENAC — 75 dias · {completedDays}/{totalDays} dias concluídos · {pctOverall}% geral</p>
+      </div>
+
+      {/* Progress overall */}
+      <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 16, marginBottom: 18, boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#334155", fontFamily: "'Space Grotesk', sans-serif" }}>Progresso Geral</div>
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#4338ca", fontFamily: "'JetBrains Mono', monospace" }}>{doneSubs} / {totalSubs}</div>
+        </div>
+        <div style={{ height: 10, background: "#f1f5f9", borderRadius: 10, overflow: "hidden" }}>
+          <div style={{ height: "100%", width: `${pctOverall}%`, background: "linear-gradient(90deg, #4f46e5, #7c3aed)", borderRadius: 10, transition: "width 0.4s" }} />
+        </div>
+      </div>
+
+      {/* KPIs */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: 10, marginBottom: 16 }}>
+        {[
+          { label: "Dias Totais", value: totalDays, color: "#4338ca" },
+          { label: "Concluídos", value: completedDays, color: "#059669" },
+          { label: "Pendentes", value: totalDays - completedDays, color: "#d97706" },
+          { label: "Tarefas OK", value: doneSubs, color: "#7c3aed" },
+        ].map(k => (
+          <div key={k.label} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 10, padding: "10px 12px", textAlign: "center" }}>
+            <div style={{ fontSize: 20, fontWeight: 800, color: k.color, fontFamily: "'JetBrains Mono', monospace" }}>{k.value}</div>
+            <div style={{ fontSize: 10, color: "#94a3b8", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em" }}>{k.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Filters + expand controls */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14, flexWrap: "wrap", gap: 8 }}>
+        <div style={{ display: "flex", gap: 4 }}>
+          {([["todos", "Todos"], ["pendentes", "Pendentes"], ["concluidos", "Concluídos"]] as const).map(([val, label]) => (
+            <button key={val} onClick={() => setFilter(val)} style={pillBtn(filter === val)}>{label}</button>
+          ))}
+        </div>
+        <div style={{ display: "flex", gap: 4 }}>
+          <button onClick={expandAll} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 8, padding: "6px 12px", cursor: "pointer", fontSize: 11, fontWeight: 600, color: "#475569", fontFamily: "'Space Grotesk', sans-serif" }}>Expandir todos</button>
+          <button onClick={collapseAll} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 8, padding: "6px 12px", cursor: "pointer", fontSize: 11, fontWeight: 600, color: "#475569", fontFamily: "'Space Grotesk', sans-serif" }}>Recolher</button>
+        </div>
+      </div>
+
+      {/* Day cards */}
+      <div>
+        {filtered.length === 0 && (
+          <div style={{ color: "#cbd5e1", fontSize: 13, textAlign: "center", padding: 40, background: "white", borderRadius: 10, border: "1px dashed #e2e8f0" }}>
+            Nenhum dia nesta visualização
+          </div>
+        )}
+        {filtered.map(d => {
+          const c = dayCompletion(d.day);
+          const isDone = c.done === c.total;
+          const isExpanded = expanded.has(d.day);
+          const accent = isDone ? "#059669" : c.done > 0 ? "#d97706" : "#64748b";
+
+          return (
+            <div key={d.day} style={{
+              background: "white", border: "1px solid #e2e8f0", borderRadius: 12, marginBottom: 10,
+              boxShadow: "0 1px 3px rgba(0,0,0,0.04)", overflow: "hidden",
+              opacity: isDone ? 0.85 : 1,
+            }}>
+              {/* Day header */}
+              <div onClick={() => toggleExpand(d.day)} style={{
+                padding: "12px 14px", cursor: "pointer", display: "flex", justifyContent: "space-between",
+                alignItems: "center", gap: 10,
+                background: isDone ? "linear-gradient(135deg, #f0fdf4, #ffffff)" : "white",
+                borderBottom: isExpanded ? "1px solid #e2e8f0" : "none",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1, minWidth: 0 }}>
+                  <div style={{
+                    background: accent, color: "white", borderRadius: 8, width: 40, height: 40,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: 13, fontWeight: 800, fontFamily: "'JetBrains Mono', monospace", flexShrink: 0,
+                  }}>{d.day}</div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#1e293b", fontFamily: "'Space Grotesk', sans-serif", marginBottom: 2 }}>
+                      Dia {d.day}º {isDone && <span style={{ color: "#059669", marginLeft: 4 }}>✓</span>}
+                    </div>
+                    <div style={{ fontSize: 11, color: "#64748b", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {d.topics.join(" · ")}
+                    </div>
+                  </div>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
+                  <div style={{ fontSize: 11, color: "#64748b", fontFamily: "'JetBrains Mono', monospace", fontWeight: 700 }}>
+                    {c.done}/{c.total}
+                  </div>
+                  <div style={{ width: 60, height: 6, background: "#f1f5f9", borderRadius: 10, overflow: "hidden" }}>
+                    <div style={{ height: "100%", width: `${c.pct}%`, background: accent, transition: "width 0.3s" }} />
+                  </div>
+                  <span style={{ fontSize: 14, color: "#94a3b8", transform: isExpanded ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s", display: "inline-block" }}>▶</span>
+                </div>
+              </div>
+
+              {/* Expanded content */}
+              {isExpanded && (
+                <div style={{ padding: "12px 14px 14px", background: "#fafbfc" }}>
+                  {/* Topics */}
+                  <div style={{ marginBottom: 12 }}>
+                    <div style={{ fontSize: 10, fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 6 }}>Metas do dia</div>
+                    {d.topics.map((t, i) => (
+                      <div key={i} style={{ fontSize: 12, color: "#334155", padding: "6px 10px", background: "white", borderRadius: 6, marginBottom: 4, borderLeft: "3px solid #6366f1", lineHeight: 1.5 }}>
+                        {t}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Subtasks */}
+                  <div style={{ marginBottom: 10 }}>
+                    <div style={{ fontSize: 10, fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 6 }}>Tarefas</div>
+                    {LEI_SECA_SUBTASKS.map((sub, i) => {
+                      const done = isSubDone(d.day, i);
+                      return (
+                        <label key={i} style={{
+                          display: "flex", alignItems: "center", gap: 10, padding: "8px 10px",
+                          background: done ? "#f0fdf4" : "white", borderRadius: 6, marginBottom: 4, cursor: "pointer",
+                          border: `1px solid ${done ? "#86efac" : "#e2e8f0"}`,
+                        }}>
+                          <input type="checkbox" checked={done} onChange={() => toggleSub(d.day, i)} style={{
+                            width: 16, height: 16, cursor: "pointer", accentColor: "#059669",
+                          }} />
+                          <span style={{ fontSize: 12, color: done ? "#15803d" : "#334155", fontWeight: done ? 600 : 500, textDecoration: done ? "line-through" : "none" }}>
+                            {sub}
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
+
+                  {/* Quick action */}
+                  <button onClick={() => toggleAllDay(d.day)} style={{
+                    background: isDone ? "#fef2f2" : "linear-gradient(135deg, #4f46e5, #7c3aed)",
+                    color: isDone ? "#dc2626" : "white",
+                    border: isDone ? "1px solid #fecaca" : "none",
+                    borderRadius: 8, padding: "7px 14px", cursor: "pointer", fontSize: 12, fontWeight: 600,
+                    fontFamily: "'Space Grotesk', sans-serif",
+                  }}>
+                    {isDone ? "Desmarcar dia" : "Marcar dia inteiro"}
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
