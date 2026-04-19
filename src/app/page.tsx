@@ -1752,6 +1752,7 @@ function LeiSecaTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
 
 /* ─── JULGADOS STF/STJ ─── */
 const MATERIAS_JULGADOS = ["Notarial e Registral", "Direito Civil", "Constitucional", "Empresarial", "Tributário", "Administrativo", "Processual Civil", "Penal/PP/CG"];
+const OUTRAS_MATERIAS_LABEL = "Outras matérias…";
 const REL_ORDER: Record<string, number> = { alta: 0, "média": 1, baixa: 2 };
 const REL_COLORS: Record<string, { bg: string; fg: string; border: string }> = {
   alta:    { bg: "#fef2f2", fg: "#dc2626", border: "#fca5a5" },
@@ -2020,7 +2021,7 @@ function JulgadosTab({ data, save }: { data: StudyData; save: (d: StudyData) => 
               {/* Row 1: Data, Tribunal, Informativo */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginBottom: 14 }}>
                 <div>
-                  <label style={labelStyle}>Data</label>
+                  <label style={labelStyle}>Data de Leitura</label>
                   <input type="date" value={formDate} onChange={e => setFormDate(e.target.value)} style={inputStyle} />
                 </div>
                 <div>
@@ -2073,8 +2074,8 @@ function JulgadosTab({ data, save }: { data: StudyData; save: (d: StudyData) => 
                         <button onClick={() => removeTese(i)} style={{ background: "none", border: "none", color: "#dc2626", cursor: "pointer", fontSize: 16, fontWeight: 700, lineHeight: 1, padding: "0 4px" }} title="Remover">x</button>
                       )}
                     </div>
-                    <textarea value={t.texto} onChange={e => updateTese(i, { texto: e.target.value })} placeholder="Texto da tese central..." rows={2}
-                      style={{ ...inputStyle, resize: "vertical", minHeight: 50, fontFamily: "'Segoe UI', sans-serif", marginBottom: 8 }} />
+                    <textarea value={t.texto} onChange={e => updateTese(i, { texto: e.target.value })} placeholder="Texto da tese central..." rows={6}
+                      style={{ ...inputStyle, resize: "vertical", minHeight: 140, fontFamily: "'Segoe UI', sans-serif", marginBottom: 8, lineHeight: 1.5 }} />
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 6 }}>
                       <div>
                         <label style={{ fontSize: 10, color: "#94a3b8", fontWeight: 600 }}>Relevância</label>
@@ -2086,9 +2087,34 @@ function JulgadosTab({ data, save }: { data: StudyData; save: (d: StudyData) => 
                       </div>
                       <div>
                         <label style={{ fontSize: 10, color: "#94a3b8", fontWeight: 600 }}>Matéria</label>
-                        <select value={t.materia} onChange={e => updateTese(i, { materia: e.target.value })} style={{ ...selectStyle, padding: "6px 8px", fontSize: 12 }}>
-                          {MATERIAS_JULGADOS.map(m => <option key={m} value={m}>{m}</option>)}
-                        </select>
+                        {(() => {
+                          const isCustom = !MATERIAS_JULGADOS.includes(t.materia);
+                          return (
+                            <>
+                              <select
+                                value={isCustom ? OUTRAS_MATERIAS_LABEL : t.materia}
+                                onChange={e => {
+                                  const v = e.target.value;
+                                  if (v === OUTRAS_MATERIAS_LABEL) updateTese(i, { materia: "" });
+                                  else updateTese(i, { materia: v });
+                                }}
+                                style={{ ...selectStyle, padding: "6px 8px", fontSize: 12 }}
+                              >
+                                {MATERIAS_JULGADOS.map(m => <option key={m} value={m}>{m}</option>)}
+                                <option value={OUTRAS_MATERIAS_LABEL}>{OUTRAS_MATERIAS_LABEL}</option>
+                              </select>
+                              {isCustom && (
+                                <input
+                                  type="text"
+                                  placeholder="Digite a matéria"
+                                  value={t.materia}
+                                  onChange={e => updateTese(i, { materia: e.target.value })}
+                                  style={{ ...inputStyle, padding: "6px 8px", fontSize: 12, marginTop: 4 }}
+                                />
+                              )}
+                            </>
+                          );
+                        })()}
                       </div>
                       <div>
                         <label style={{ fontSize: 10, color: "#94a3b8", fontWeight: 600 }}>Status</label>
