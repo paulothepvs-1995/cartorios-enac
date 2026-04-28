@@ -31,7 +31,7 @@ function saveTodoState(dateKey: string, checked: Record<string, boolean>, manual
   } catch { /* ignore */ }
 }
 import { signIn, signOut, getSession, getAuthClient } from "@/lib/auth";
-import { TRILHAS, type Trilha } from "@/lib/trilhas";
+import { TRILHAS, type Trilha, type TrilhaTask } from "@/lib/trilhas";
 import { LEI_SECA_DAYS, LEI_SECA_SUBTASKS } from "@/lib/leiseca";
 
 const defaultData = (): StudyData => ({
@@ -149,7 +149,7 @@ export default function App() {
       {/* TABS */}
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
         <div style={{ display: "flex", gap: 4, padding: "16px 0 0", borderBottom: "1px solid #e2e8f0", overflowX: "auto" }}>
-          {["dashboard", "trilhas", "lei seca", "julgados", "tempo", "disciplinas", "legislação", "simulados", "questões", "histórico"].map((t) => (
+          {["dashboard", "trilhas", "unificadas", "lei seca", "julgados", "tempo", "disciplinas", "legislação", "simulados", "questões", "histórico"].map((t) => (
             <button key={t} onClick={() => setTab(t)} style={{
               padding: "10px 16px", background: tab === t ? "rgba(99,102,241,0.1)" : "transparent", border: "none",
               borderBottom: tab === t ? "2px solid #6366f1" : "2px solid transparent",
@@ -168,6 +168,7 @@ export default function App() {
         {tab === "legislação" && <Legislacao data={data} save={save} />}
         {tab === "simulados" && <Simulados data={data} onLogSimulado={() => setSimModal(true)} />}
         {tab === "trilhas" && <TrilhasTab data={data} save={save} />}
+        {tab === "unificadas" && <TrilhasUnificadasTab data={data} save={save} />}
         {tab === "lei seca" && <LeiSecaTab data={data} save={save} />}
         {tab === "julgados" && <JulgadosTab data={data} save={save} />}
         {tab === "histórico" && <HistoricoTab data={data} save={save} />}
@@ -1515,6 +1516,260 @@ function TrilhasTab({ data, save }: { data: StudyData; save: (d: StudyData) => P
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+/* ─── TRILHAS UNIFICADAS POR MATÉRIA ─── */
+interface UnifiedTask {
+  trilhaId: string;
+  trilhaTitle: string;
+  task: TrilhaTask;
+  key: string;
+}
+
+function TrilhasUnificadasTab({ data, save }: { data: StudyData; save: (d: StudyData) => Promise<void> }) {
+  const [expandedDisc, setExpandedDisc] = useState<Set<string>>(new Set());
+  const [filter, setFilter] = useState<"todos" | "pendentes" | "concluidos">("todos");
+  const [expandedTask, setExpandedTask] = useState<Set<string>>(new Set());
+
+  const grouped = useMemo(() => {
+    const map: Record<string, UnifiedTask[]> = {};
+    TRILHAS.forEach(trilha => {
+      trilha.days.forEach(day => {
+        day.tasks.forEach(task => {
+          const disc = task.discipline || "OUTROS";
+          if (!map[disc]) map[disc] = [];
+          map[disc].push({
+            trilhaId: trilha.id,
+            trilhaTitle: trilha.title,
+            task,
+            key: `${trilha.id}:${task.id}`,
+          });
+        });
+      });
+    });
+    // Sort each group by ciclo id then task id
+    Object.keys(map).forEach(k => {
+      map[k].sort((a, b) => a.trilhaId.localeCompare(b.trilhaId) || a.task.id - b.task.id);
+    });
+    return map;
+  }, []);
+
+  const isDone = (key: string) => !!(data.completed_tasks && data.completed_tasks[key]);
+
+  const toggle = async (key: string) => {
+    const newCompleted = { ...(data.completed_tasks || {}) };
+    if (newCompleted[key]) delete newCompleted[key];
+    else newCompleted[key] = true;
+    await save({ ...data, completed_tasks: newCompleted });
+  };
+
+  const toggleDisc = (disc: string) => {
+    setExpandedDisc(prev => {
+      const next = new Set(prev);
+      if (next.has(disc)) next.delete(disc);
+      else next.add(disc);
+      return next;
+    });
+  };
+
+  const toggleTaskExpand = (key: string) => {
+    setExpandedTask(prev => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
+  const discProgress = (disc: string) => {
+    const list = grouped[disc] || [];
+    const done = list.filter(u => isDone(u.key)).length;
+    return { done, total: list.length, pct: list.length ? Math.round((done / list.length) * 100) : 0 };
+  };
+
+  const nextPendingTasks = (disc: string, count = 3) => {
+    return (grouped[disc] || []).filter(u => !isDone(u.key)).slice(0, count);
+  };
+
+  const filteredTasksFor = (disc: string) => {
+    const list = grouped[disc] || [];
+    if (filter === "pendentes") return list.filter(u => !isDone(u.key));
+    if (filter === "concluidos") return list.filter(u => isDone(u.key));
+    return list;
+  };
+
+  // Color per discipline (consistent palette)
+  const discColor = (disc: string): string => {
+    const map: Record<string, string> = {
+      "DIREITO NOTARIAL E REGISTRAL": "#2563eb",
+      "DIREITO CIVIL": "#059669",
+      "DIREITO CONSTITUCIONAL": "#d97706",
+      "DIREITO ADMINISTRATIVO": "#9333ea",
+      "DIREITO TRIBUTÁRIO": "#be185d",
+      "DIREITO EMPRESARIAL": "#7c3aed",
+      "DIREITO PROCESSUAL CIVIL": "#0891b2",
+      "DIREITO PROCESSUAL PENAL": "#475569",
+      "DIREITO PENAL": "#dc2626",
+      "LGPD": "#ea580c",
+      "SIMULADO": "#4338ca",
+      "DISSERTATIVA": "#0d9488",
+      "PEÇA PRÁTICA": "#65a30d",
+      "REVISÃO": "#64748b",
+      "LEI SECA — 2ª/3ª PASSADA": "#a16207",
+      "JURISPRUDÊNCIA": "#c026d3",
+      "LAVAGEM DE DINHEIRO": "#991b1b",
+    };
+    return map[disc] || "#64748b";
+  };
+
+  // Order disciplines by total tasks (most relevant first)
+  const orderedDisciplines = useMemo(() =>
+    Object.keys(grouped).sort((a, b) => grouped[b].length - grouped[a].length),
+    [grouped]
+  );
+
+  const totalTasks = Object.values(grouped).reduce((acc, list) => acc + list.length, 0);
+  const totalDone = Object.values(grouped).reduce((acc, list) => acc + list.filter(u => isDone(u.key)).length, 0);
+  const overallPct = totalTasks ? Math.round((totalDone / totalTasks) * 100) : 0;
+
+  const pillBtn = (active: boolean) => ({
+    padding: "7px 14px", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 12, fontWeight: 600,
+    fontFamily: "'Space Grotesk', sans-serif",
+    background: active ? "#4338ca" : "white", color: active ? "white" : "#94a3b8",
+    boxShadow: active ? "0 2px 8px rgba(67,56,202,0.25)" : "0 1px 3px rgba(0,0,0,0.05)",
+  });
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ margin: 0, fontSize: 20, fontFamily: "'Space Grotesk', sans-serif", color: "#1e293b" }}>Trilhas Unificadas por Matéria</h2>
+        <p style={{ margin: "4px 0 0", fontSize: 12, color: "#94a3b8" }}>{totalDone}/{totalTasks} tarefas · {overallPct}% · {orderedDisciplines.length} matérias</p>
+      </div>
+
+      {/* Progresso geral */}
+      <div style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, padding: 16, marginBottom: 18, boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#334155", fontFamily: "'Space Grotesk', sans-serif" }}>Progresso Geral</div>
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#4338ca", fontFamily: "'JetBrains Mono', monospace" }}>{totalDone} / {totalTasks}</div>
+        </div>
+        <div style={{ height: 10, background: "#f1f5f9", borderRadius: 10, overflow: "hidden" }}>
+          <div style={{ height: "100%", width: `${overallPct}%`, background: "linear-gradient(90deg, #4f46e5, #7c3aed)", borderRadius: 10, transition: "width 0.4s" }} />
+        </div>
+      </div>
+
+      {/* Filtros */}
+      <div style={{ display: "flex", gap: 4, marginBottom: 16 }}>
+        {([["todos", "Todos"], ["pendentes", "Pendentes"], ["concluidos", "Concluídos"]] as const).map(([val, label]) => (
+          <button key={val} onClick={() => setFilter(val)} style={pillBtn(filter === val)}>{label}</button>
+        ))}
+      </div>
+
+      {/* Lista por matéria */}
+      <div>
+        {orderedDisciplines.map(disc => {
+          const c = discProgress(disc);
+          const color = discColor(disc);
+          const isExpanded = expandedDisc.has(disc);
+          const next = nextPendingTasks(disc, 3);
+          const tasksToShow = isExpanded ? filteredTasksFor(disc) : [];
+
+          return (
+            <div key={disc} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, marginBottom: 12, boxShadow: "0 1px 3px rgba(0,0,0,0.04)", overflow: "hidden" }}>
+              {/* Header da matéria */}
+              <div onClick={() => toggleDisc(disc)} style={{
+                padding: "14px 16px", cursor: "pointer", display: "flex", justifyContent: "space-between",
+                alignItems: "center", gap: 12,
+                background: `linear-gradient(135deg, ${color}10, transparent)`,
+                borderLeft: `4px solid ${color}`,
+              }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: "#1e293b", fontFamily: "'Space Grotesk', sans-serif", marginBottom: 4, textTransform: "capitalize" }}>
+                    {disc.toLowerCase()}
+                  </div>
+                  <div style={{ fontSize: 11, color: "#64748b", fontFamily: "'JetBrains Mono', monospace", marginBottom: 6 }}>
+                    {c.done}/{c.total} concluídas · {c.pct}%
+                  </div>
+                  <div style={{ height: 5, background: "#f1f5f9", borderRadius: 10, overflow: "hidden" }}>
+                    <div style={{ height: "100%", width: `${c.pct}%`, background: color, transition: "width 0.3s" }} />
+                  </div>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
+                  <div style={{ background: color, color: "white", borderRadius: 8, padding: "4px 10px", fontSize: 12, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>
+                    {c.total}
+                  </div>
+                  <span style={{ fontSize: 14, color: "#94a3b8", transform: isExpanded ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s", display: "inline-block" }}>▶</span>
+                </div>
+              </div>
+
+              {/* Próximas tarefas (sempre visível, mesmo recolhido) */}
+              {!isExpanded && next.length > 0 && (
+                <div style={{ padding: "10px 16px 12px", borderTop: "1px dashed #e2e8f0", background: "#fafbfc" }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 6 }}>
+                    Próximas tarefas
+                  </div>
+                  {next.map(u => (
+                    <div key={u.key} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 0", fontSize: 12 }}>
+                      <input type="checkbox" checked={false} onChange={() => toggle(u.key)} onClick={e => e.stopPropagation()} style={{ width: 14, height: 14, cursor: "pointer", accentColor: color }} />
+                      <span style={{ background: `${color}15`, color: color, borderRadius: 4, padding: "1px 6px", fontSize: 10, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", flexShrink: 0 }}>
+                        T{u.task.id}
+                      </span>
+                      <span style={{ color: "#475569", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        {u.task.title}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Lista expandida */}
+              {isExpanded && (
+                <div style={{ padding: "12px 16px 14px", background: "#fafbfc", borderTop: "1px solid #e2e8f0" }}>
+                  {tasksToShow.length === 0 && (
+                    <div style={{ color: "#cbd5e1", fontSize: 13, textAlign: "center", padding: 20 }}>
+                      Nenhuma tarefa nesta visualização
+                    </div>
+                  )}
+                  {tasksToShow.map(u => {
+                    const done = isDone(u.key);
+                    const tExpanded = expandedTask.has(u.key);
+                    return (
+                      <div key={u.key} style={{
+                        background: "white", border: `1px solid ${done ? "#bbf7d0" : "#e2e8f0"}`, borderRadius: 8,
+                        marginBottom: 6, padding: "10px 12px", opacity: done ? 0.75 : 1,
+                      }}>
+                        <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                          <input type="checkbox" checked={done} onChange={() => toggle(u.key)} style={{ width: 16, height: 16, cursor: "pointer", accentColor: "#059669", marginTop: 2, flexShrink: 0 }} />
+                          <div style={{ flex: 1, minWidth: 0, cursor: "pointer" }} onClick={() => toggleTaskExpand(u.key)}>
+                            <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", marginBottom: 3 }}>
+                              <span style={{ background: `${color}15`, color: color, borderRadius: 4, padding: "1px 6px", fontSize: 10, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>
+                                T{u.task.id}
+                              </span>
+                              <span style={{ background: "#f1f5f9", color: "#64748b", borderRadius: 4, padding: "1px 6px", fontSize: 10, fontWeight: 600, fontFamily: "'JetBrains Mono', monospace" }}>
+                                C{u.trilhaId}
+                              </span>
+                            </div>
+                            <div style={{ fontSize: 13, fontWeight: 600, color: done ? "#15803d" : "#1e293b", textDecoration: done ? "line-through" : "none", lineHeight: 1.4 }}>
+                              {u.task.title}
+                            </div>
+                            {tExpanded && (
+                              <div style={{ fontSize: 11, color: "#64748b", marginTop: 8, lineHeight: 1.6, whiteSpace: "pre-wrap" }}>
+                                {u.task.description}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
