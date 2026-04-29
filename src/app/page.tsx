@@ -1211,6 +1211,7 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
   const [category, setCategory] = useState("estudo");
   const [hours, setHours] = useState("");
   const [minutes, setMinutes] = useState("");
+  const [date, setDate] = useState(getLocalDateKey());
 
   const handleSave = async () => {
     const hVal = parseInt(hours) || 0;
@@ -1218,16 +1219,18 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
     const totalMins = (hVal * 60) + mVal;
 
     if (totalMins <= 0) return;
+    if (!date) return;
 
     const hDecimal = totalMins / 60;
 
-    const weekKey = getWeekKey(new Date(), PLAN.startDate);
+    const dateObj = new Date(date + "T12:00:00");
+    const weekKey = getWeekKey(dateObj, PLAN.startDate);
     const currentWeekHours = { ...(data.weekly_hours[weekKey] || {}) };
     currentWeekHours[disc] = (currentWeekHours[disc] || 0) + hDecimal;
 
     const newEntry: StudyEntry = {
       id: Date.now().toString(),
-      date: getLocalDateKey(),
+      date,
       discipline: disc,
       minutes: totalMins,
       category,
@@ -1260,6 +1263,36 @@ function LogModal({ data, save, onClose }: { data: StudyData; save: (d: StudyDat
               color: category === c.id ? "#4338ca" : "#64748b",
             }}>{c.icon} {c.label}</button>
           ))}
+        </div>
+
+        <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Data</label>
+        <input
+          type="date"
+          value={date}
+          max={getLocalDateKey()}
+          onChange={(e) => setDate(e.target.value)}
+          style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: 8, color: "#1e293b", fontSize: 14, marginBottom: 6, outline: "none", background: "#f8fafc", fontFamily: "'JetBrains Mono', monospace", boxSizing: "border-box" }}
+        />
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 16 }}>
+          {[
+            { label: "Hoje", offset: 0 },
+            { label: "Ontem", offset: -1 },
+            { label: "-2d", offset: -2 },
+            { label: "-3d", offset: -3 },
+          ].map(p => {
+            const d = new Date();
+            d.setDate(d.getDate() + p.offset);
+            const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+            const active = date === key;
+            return (
+              <button key={p.label} type="button" onClick={() => setDate(key)} style={{
+                padding: "5px 10px", borderRadius: 6, fontSize: 11, fontWeight: 600, cursor: "pointer",
+                border: active ? "1px solid #4338ca" : "1px solid #e2e8f0",
+                background: active ? "#eef2ff" : "white",
+                color: active ? "#4338ca" : "#64748b",
+              }}>{p.label}</button>
+            );
+          })}
         </div>
 
         <label style={{ fontSize: 12, color: "#64748b", fontWeight: 600, display: "block", marginBottom: 4 }}>Disciplina</label>
